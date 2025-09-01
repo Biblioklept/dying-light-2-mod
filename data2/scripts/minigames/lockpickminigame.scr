@@ -1,0 +1,62 @@
+//a LockpickDifficulty(s,        <-- difficulty identifier
+//b                    s,        <-- localized description
+//c                    f,        <-- durability (larger -> harder to break picklocks)
+//d                    f,        <-- movement possibility range (angle around the required value where you can move the lock - angle per side)
+//e                    f,        <-- success angle - how much can one deviate from the required angle and still succed(per side)
+//f                    f,        <-- angle randomization range (per side)
+//g                    f,        <-- angle randomization - excluded part (per side)
+//h                    f,        <-- hold to fast-break time (seconds)
+//i                    i,        <-- lockpicks amount to fast-break
+//j                    i,        <-- cube level 
+//k                    i,        <-- required lockpicking skill level
+//l                    i)        <-- required lockpick break skill level
+
+//a SafeDifficulty(s, <-- difficulty identifier
+//b                s, <-- localized description
+//c                i, <-- combination lenght
+//d                i, <-- max number
+//e                i, <-- tolerance
+//f                f, <-- fast-break
+//g                i) <-- cube-level
+
+
+//a FrequncyDifficulty(s, <-- difficulty identifier
+//b                    s, <-- localized description
+//c                    f, <-- range min
+//d                    f, <-- range max
+//e                    i, <-- divisor
+//f                    f, <-- blocked angle left and right from 6 o'clock, defaults to 0
+//g                    f) <-- time to hold in valid position for success
+
+
+sub main()
+{                    //a             b                          c       d       e       f       g    h    i     j   k   l
+	LockpickDifficulty("easy",       "&Lockpicking_Easy&",		91.9, 	20.0, 	100.00,	0.0,	0.0, 1.0, 1,    0,  1,  1);
+	LockpickDifficulty("medium",     "&Lockpicking_Medium&",	91.9, 	15.0, 	100.00,	0.0,	0.0, 1.0, 1,    0,  1,  2);
+	LockpickDifficulty("hard",       "&Lockpicking_Hard&",		91.9, 	8.0, 	100.00,	0.0,	0.0, 1.0, 1,    0,  1,  3);
+	LockpickDifficulty("impossible", "&Lockpicking_Imposible&",	91.9, 	5.0, 	100.00,	0.0,	0.0, 1.0, 1,    0,  1,  4);
+	LockpickDifficulty("cube1",      "&Lockpicking_Imposible&",	91.9, 	5.0, 	100.00,	0.0,	0.0, 1.0, 1,   1,  1,  0);
+	LockpickDifficulty("cube2",      "&Lockpicking_Imposible&",	91.9, 	5.0, 	100.00,	0.0,	0.0, 1.0, 1,   2,  1,  0);
+	LockpickDifficulty("cube3",      "&Lockpicking_Imposible&",	91.9, 	5.0, 	100.00,	0.0,	0.0, 1.0, 1,  3,  1,  0);
+	LockpickDifficulty("cube4",      "&Lockpicking_Imposible&",	91.9, 	5.0, 	100.00,	0.0,	0.0, 1.0, 1,  4,  1,  0);
+    
+                  //a             b             c  d   e  f  g  
+    SafeDifficulty("safe",       "&safe&",	    3, 99, 99, 0, 0);
+    SafeDifficulty("easy_safe",  "&safe&",	    3, 39, 99, 0, 0);
+    
+                      //a            b             c      d      e   f   g
+    FrequncyDifficulty("frequency", "&TriggerUse&", 80.0, 450.0, 1,  30, 3.0);
+    
+    /*
+    CustomizeDifficulty("frequency")
+    {
+        //StartAudioEventName("wwise name");
+        //StopAudioEventName("wwise name");
+        //CloseHalfRange(15.0); // -/+ from valid angle
+        //GoodHalfRange(2.0); // -/+ from valid angle
+        //MoveThreshold(0.0); //minimal change to trigger move wwise event
+        //MoveTimeout(2.5); // move wwise event timeout in seconds 
+    }
+    */
+    
+}

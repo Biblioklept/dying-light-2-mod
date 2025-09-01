@@ -1,0 +1,282 @@
+sub main()
+{
+    Class("Tank")
+    {
+        Appearance("CuttingEdge");
+        PlayerBarkAffix("player_m_tank");
+
+        Item("Medkit_Small_TR", 8);
+		
+        Health(550);
+        Stamina(500);
+        Immunity(320);
+        Buff("TowerRaid_Base_Skills");
+        Buff("TowerRaid_TankParameters");
+
+        DefaultLootUnlockTagFilter("tr.potionhealthregen.stage1;tr.throwablemolotov.stage1;tr.throwingknife.stage1;tr.weapon.scythe;tr.weapon.reinforcedstick;tr.weapon.dirtykatana;tr.weapon.torch;tr.weapon.discbrakegreataxe;tr.weapon.duckhammer;tr.weapon.warsaw;tr.weapon.meatsquasher;tr.weapon.thirstyaxe;tr.weapon.thecrosier;tr.weapon.glaive;tr.weapon.firemachete.t4;tr.weapon.frostmachete.t4;tr.weapon.shockmachete.t4;tr.weapon.firemace.t7;tr.weapon.frostmace.t7;tr.weapon.shockmace.t7;tr.ammo.pistol.stage1;tr.ammo.smg.stage1;tr.ammo.rifle.stage1;tr.ammo.shotgun.stage1");
+		
+		ItemGroup()
+        {
+            Item("wpn_tank_TR_Legendary", 1, "Craftplan_TR_Tank_Weapon_Legendary");
+            Item("wpn_tank_TR_Artifact", 1, "Craftplan_TR_Tank_Weapon_Artifact");
+            Item("wpn_tank_TR_Unique", 1, "Craftplan_TR_Tank_Weapon_Unique");
+            Item("wpn_tank_TR_Rare", 1, "Craftplan_TR_Tank_Weapon_Rare");
+            Item("wpn_tank_TR_Uncommon", 1, "Craftplan_TR_Tank_Weapon_Uncommon");
+            Item("wpn_tank_TR", 1, "Craftplan_TR_Tank_Weapon_Common");
+        }
+		
+		ItemGroup()
+        {
+            Item("HeatMod_SpecialAttack_Upgrade8_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade8");
+            Item("HeatMod_SpecialAttack_Upgrade7_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade7");
+            Item("HeatMod_SpecialAttack_Upgrade6_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade6");
+			Item("HeatMod_SpecialAttack_Upgrade5_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade5");
+            Item("HeatMod_SpecialAttack_Upgrade4_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade4");
+            Item("HeatMod_SpecialAttack_Upgrade3_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade3");
+            Item("HeatMod_SpecialAttack_Upgrade2_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade2");
+            Item("HeatMod_SpecialAttack_Upgrade1_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack_Upgrade1");
+            Item("HeatMod_SpecialAttack_TR", 1, "Craftplan_TR_Mod_Heat_SpecialAttack");
+        }
+		
+		ItemGroup()
+        {
+            Item("Potion_HealthRegeneration_Upgrade8_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade8");
+            Item("Potion_HealthRegeneration_Upgrade7_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade7");
+            Item("Potion_HealthRegeneration_Upgrade6_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade6");
+            Item("Potion_HealthRegeneration_Upgrade5_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade5");
+            Item("Potion_HealthRegeneration_Upgrade4_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade4");
+            Item("Potion_HealthRegeneration_Upgrade3_TR", 5, "Craftplan_TR_Potion_HealthRegeneration_Upgrade3");
+        }
+		
+		ItemGroup()
+        {
+            Item("Remote_Explosive_Upgrade8_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade8");
+            Item("Remote_Explosive_Upgrade7_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade7");
+            Item("Remote_Explosive_Upgrade6_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade6");
+            Item("Remote_Explosive_Upgrade5_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade5");
+            Item("Remote_Explosive_Upgrade4_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade4");
+            Item("Remote_Explosive_Upgrade3_TR", 8, "Craftplan_TR_Remote_Explosive_Upgrade3");
+        }
+		
+		ItemGroup()
+        {
+            Item("Mine_Explosive_Upgrade8_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade8");
+            Item("Mine_Explosive_Upgrade7_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade7");
+            Item("Mine_Explosive_Upgrade6_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade6");
+            Item("Mine_Explosive_Upgrade5_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade5");
+            Item("Mine_Explosive_Upgrade4_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade4");
+            Item("Mine_Explosive_Upgrade3_TR", 6, "Craftplan_TR_Mine_Explosive_Upgrade3");
+        }
+		
+		ItemGroup()
+        {
+            Item("LockpickItem_Upgrade8_TR", 10, "Craftplan_TR_Lockpick_Upgrade8");
+            Item("LockpickItem_Upgrade7_TR", 10, "Craftplan_TR_Lockpick_Upgrade7");
+            Item("LockpickItem_Upgrade6_TR", 10, "Craftplan_TR_Lockpick_Upgrade6");
+            Item("LockpickItem_Upgrade5_TR", 10, "Craftplan_TR_Lockpick_Upgrade5");
+            Item("LockpickItem_Upgrade4_TR", 10, "Craftplan_TR_Lockpick_Upgrade4");
+        }
+		
+		UITrait("raid_trait_icon_armor", "&Class_Tank_Trait1_Desc&");
+
+        //FirstTimeCompletionRewards()
+        //{
+            //RewardItem("wpn_2hs_r_htr", 1);
+            //RewardItem("Craftplan_htr_scarecrow_Unique", 1);
+        //}
+    }
+	
+	Class("Specialist")
+    {
+        Appearance("PostApoHealer");
+        PlayerBarkAffix("player_m_specialist");
+
+        Item("Medkit_Large_TR", 3);
+        Item("Medkit_Small_TR", 6);
+        Item("LockpickItem_Upgrade8_TR", 10);
+
+        Health(450);
+        Stamina(500);
+        Immunity(320);
+        Buff("TowerRaid_Base_Skills");
+        Buff("TowerRaid_SpecialistParameters");
+        Buff("TowerRaid_Grapplehook");
+        
+        DefaultLootUnlockTagFilter("tr.potionhealthregen.stage1;tr.throwablemolotov.stage1;tr.throwingknife.stage1;tr.weapon.scythe;tr.weapon.reinforcedstick;tr.weapon.dirtykatana;tr.weapon.torch;tr.weapon.discbrakegreataxe;tr.weapon.duckhammer;tr.weapon.warsaw;tr.weapon.meatsquasher;tr.weapon.thirstyaxe;tr.weapon.thecrosier;tr.weapon.glaive;tr.weapon.firemachete.t4;tr.weapon.frostmachete.t4;tr.weapon.shockmachete.t4;tr.weapon.firemace.t7;tr.weapon.frostmace.t7;tr.weapon.shockmace.t7;tr.ammo.pistol.stage1;tr.ammo.smg.stage1;tr.ammo.rifle.stage1;tr.ammo.shotgun.stage1");		
+		
+        UITrait("raid_trait_icon_parkour_dmg", "&Class_Specialist_Trait1_Desc&");
+
+		ItemGroup()
+        {
+            Item("wpn_specialist_TR_Legendary", 1, "Craftplan_TR_Specialist_Weapon_Legendary");
+            Item("wpn_specialist_TR_Artifact", 1, "Craftplan_TR_Specialist_Weapon_Artifact");
+            Item("wpn_specialist_TR_Unique", 1, "Craftplan_TR_Specialist_Weapon_Unique");
+            Item("wpn_specialist_TR_Rare", 1, "Craftplan_TR_Specialist_Weapon_Rare");
+            Item("wpn_specialist_TR_Uncommon", 1, "Craftplan_TR_Specialist_Weapon_Uncommon");
+            Item("wpn_specialist_TR", 1, "Craftplan_TR_Specialist_Weapon_Common");
+        }
+		
+		ItemGroup()
+        {
+            Item("ShockMod_PowerAttack_Upgrade8_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade8");
+            Item("ShockMod_PowerAttack_Upgrade7_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade7");
+            Item("ShockMod_PowerAttack_Upgrade6_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade6");
+			Item("ShockMod_PowerAttack_Upgrade5_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade5");
+            Item("ShockMod_PowerAttack_Upgrade4_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade4");
+            Item("ShockMod_PowerAttack_Upgrade3_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade3");
+            Item("ShockMod_PowerAttack_Upgrade2_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade2");
+            Item("ShockMod_PowerAttack_Upgrade1_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack_Upgrade1");
+            Item("ShockMod_PowerAttack_TR", 1, "Craftplan_TR_Mod_Shock_PowerAttack");
+        }
+		
+		ItemGroup()
+        {
+            Item("Throwable_ExplodingKnife_TR_Upgrade8", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade8");
+            Item("Throwable_ExplodingKnife_TR_Upgrade7", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade7");
+            Item("Throwable_ExplodingKnife_TR_Upgrade6", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade6");
+            Item("Throwable_ExplodingKnife_TR_Upgrade5", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade5");
+            Item("Throwable_ExplodingKnife_TR_Upgrade4", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade4");
+            Item("Throwable_ExplodingKnife_TR_Upgrade3", 10, "Craftplan_TR_ThrowingKnives_Exlpoding_Specialist_Upgrade3");
+        }
+
+        //FirstTimeCompletionRewards()
+        //{
+            //RewardItem("wpn_sword_pirate_htr", 1);
+            //RewardItem("Craftplan_htr_pirate_Unique", 1);
+        //}
+    }
+
+    Class("Brawler")
+    {
+        Appearance("Brawler_TR");
+        PlayerBarkAffix("player_m_brawler");
+
+        Item("Medkit_Small_TR", 6);
+        Item("Medkit_Large_TR", 1);
+
+        Health(450);
+        Stamina(700);
+        Immunity(320);
+        Buff("TowerRaid_Base_Skills");
+        Buff("TowerRaid_BrawlerParameters");
+
+        DefaultLootUnlockTagFilter("tr.potionhealthregen.stage1;tr.throwablemolotov.stage1;tr.throwingknife.stage1;tr.weapon.scythe;tr.weapon.reinforcedstick;tr.weapon.dirtykatana;tr.weapon.torch;tr.weapon.discbrakegreataxe;tr.weapon.duckhammer;tr.weapon.warsaw;tr.weapon.meatsquasher;tr.weapon.thirstyaxe;tr.weapon.thecrosier;tr.weapon.glaive;tr.weapon.firemachete.t4;tr.weapon.frostmachete.t4;tr.weapon.shockmachete.t4;tr.weapon.firemace.t7;tr.weapon.frostmace.t7;tr.weapon.shockmace.t7;tr.ammo.pistol.stage1;tr.ammo.smg.stage1;tr.ammo.rifle.stage1;tr.ammo.shotgun.stage1");		
+		
+		ItemGroup()
+        {
+            Item("wpn_brawler_TR_Legendary", 1, "Craftplan_TR_Brawler_Weapon_Legendary");
+            Item("wpn_brawler_TR_Artifact", 1, "Craftplan_TR_Brawler_Weapon_Artifact");
+            Item("wpn_brawler_TR_Unique", 1, "Craftplan_TR_Brawler_Weapon_Unique");
+            Item("wpn_brawler_TR_Rare", 1, "Craftplan_TR_Brawler_Weapon_Rare");
+            Item("wpn_brawler_TR_Uncommon", 1, "Craftplan_TR_Brawler_Weapon_Uncommon");
+            Item("wpn_brawler_TR", 1, "Craftplan_TR_Brawler_Weapon_Common");
+        }
+		
+		ItemGroup()
+        {
+            Item("ToxicMod_SpecialAttack_Upgrade8_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade8");
+            Item("ToxicMod_SpecialAttack_Upgrade7_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade7");
+            Item("ToxicMod_SpecialAttack_Upgrade6_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade6");
+			Item("ToxicMod_SpecialAttack_Upgrade5_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade5");
+            Item("ToxicMod_SpecialAttack_Upgrade4_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade4");
+            Item("ToxicMod_SpecialAttack_Upgrade3_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade3");
+            Item("ToxicMod_SpecialAttack_Upgrade2_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade2");
+            Item("ToxicMod_SpecialAttack_Upgrade1_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack_Upgrade1");
+            Item("ToxicMod_SpecialAttack_TR", 1, "Craftplan_TR_Mod_Toxic_SpecialAttack");
+        }
+		
+		ItemGroup()
+        {
+            Item("Throwable_ThrowingKnifeToxic_Upgrade8_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade8");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade7_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade7");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade6_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade6");
+			Item("Throwable_ThrowingKnifeToxic_Upgrade5_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade5");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade4_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade4");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade3_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade3");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade2_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade2");
+            Item("Throwable_ThrowingKnifeToxic_Upgrade1_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler_Upgrade1");
+            Item("Throwable_ThrowingKnifeToxic_TR", 15, "Craftplan_TR_ThrowingKnives_Toxic_Brawler");
+        }
+		
+		ItemGroup()
+        {
+            Item("LockpickItem_Upgrade8_TR", 10, "Craftplan_TR_Lockpick_Upgrade8");
+            Item("LockpickItem_Upgrade7_TR", 10, "Craftplan_TR_Lockpick_Upgrade7");
+            Item("LockpickItem_Upgrade6_TR", 10, "Craftplan_TR_Lockpick_Upgrade6");
+            Item("LockpickItem_Upgrade5_TR", 10, "Craftplan_TR_Lockpick_Upgrade5");
+            Item("LockpickItem_Upgrade4_TR", 10, "Craftplan_TR_Lockpick_Upgrade4");
+        }
+		
+		UITrait("raid_trait_icon_1h_dmg", "&Class_Brawler_Trait1_Desc&");
+        //FirstTimeCompletionRewards()
+        //{
+            //RewardItem("wpn_1hs_axe_01_htr", 1);
+            //RewardItem("Craftplan_htr_plague_Unique", 1);
+        //}
+    }
+
+    Class("Ranged")
+    {
+        Appearance("Ranger");
+        PlayerBarkAffix("player_m_ranged");
+        
+        Item("wpn_ranged_tr_crossbow", 1);
+        
+		Item("Ammo_Bolt", 150);
+        Item("Medkit_Small_TR", 6);
+		Item("Medkit_Large_TR", 3);
+		
+
+        Health(400);
+        Stamina(400);
+        Immunity(320);
+        Buff("TowerRaid_Base_Skills");
+        Buff("TowerRaid_RangedParameters");
+        Buff("TowerRaid_UVflashlight");
+
+        DefaultLootUnlockTagFilter("tr.potionhealthregen.stage1;tr.throwablemolotov.stage1;tr.throwingknife.stage1;tr.weapon.scythe;tr.weapon.reinforcedstick;tr.weapon.dirtykatana;tr.weapon.torch;tr.weapon.discbrakegreataxe;tr.weapon.duckhammer;tr.weapon.warsaw;tr.weapon.meatsquasher;tr.weapon.thirstyaxe;tr.weapon.thecrosier;tr.weapon.glaive;tr.weapon.firemachete.t4;tr.weapon.frostmachete.t4;tr.weapon.shockmachete.t4;tr.weapon.firemace.t7;tr.weapon.frostmace.t7;tr.weapon.shockmace.t7;tr.ammo.pistol.stage1;tr.ammo.smg.stage1;tr.ammo.rifle.stage1;tr.ammo.shotgun.stage1");		
+		
+		ItemGroup()
+        {
+            Item("wpn_ranged_TR_Legendary", 1, "Craftplan_TR_Ranged_Weapon_Legendary");
+            Item("wpn_ranged_TR_Artifact", 1, "Craftplan_TR_Ranged_Weapon_Artifact");
+            Item("wpn_ranged_TR_Unique", 1, "Craftplan_TR_Ranged_Weapon_Unique");
+            Item("wpn_ranged_TR_Rare", 1, "Craftplan_TR_Ranged_Weapon_Rare");
+            Item("wpn_ranged_TR_Uncommon", 1, "Craftplan_TR_Ranged_Weapon_Uncommon");
+            Item("wpn_ranged_TR", 1, "Craftplan_TR_Ranged_Weapon_Common");
+        }
+		
+		ItemGroup()
+        {
+            Item("BleedingMod_PowerAttack_Upgrade8_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade8");
+            Item("BleedingMod_PowerAttack_Upgrade7_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade7");
+            Item("BleedingMod_PowerAttack_Upgrade6_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade6");
+			Item("BleedingMod_PowerAttack_Upgrade5_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade5");
+            Item("BleedingMod_PowerAttack_Upgrade4_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade4");
+            Item("BleedingMod_PowerAttack_Upgrade3_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade3");
+            Item("BleedingMod_PowerAttack_Upgrade2_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade2");
+            Item("BleedingMod_PowerAttack_Upgrade1_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack_Upgrade1");
+            Item("BleedingMod_PowerAttack_TR", 1, "Craftplan_TR_Mod_Bleeding_PowerAttack");
+        }
+		
+		ItemGroup()
+        {
+            Item("LockpickItem_Upgrade8_TR", 10, "Craftplan_TR_Lockpick_Upgrade8");
+            Item("LockpickItem_Upgrade7_TR", 10, "Craftplan_TR_Lockpick_Upgrade7");
+            Item("LockpickItem_Upgrade6_TR", 10, "Craftplan_TR_Lockpick_Upgrade6");
+            Item("LockpickItem_Upgrade5_TR", 10, "Craftplan_TR_Lockpick_Upgrade5");
+            Item("LockpickItem_Upgrade4_TR", 10, "Craftplan_TR_Lockpick_Upgrade4");
+        }
+		
+		// The auto pickup system will work only for the shot ammo, i.e. projectiles stuck in objects. It won't work for the ammo placed in containers.
+        AutoPickupAmmoTypes("Bolt", "Arrow"); // Values of EAmmoType enum
+        AutoPickupAmmoRadius(2.0);
+		
+		UITrait("raid_trait_icon_guns_dmg", "&Class_Ranger_Trait1_Desc&");
+        //FirstTimeCompletionRewards()
+        //{
+            //RewardItem("wpn_2hr_crossbow_e_vanaiden_htr", 1);
+        //}
+    }
+
+}

@@ -1,0 +1,1682 @@
+{
+    "version": 1,
+    "symbol_uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+    "symbol_size": "480.000000 509.985992",
+    "data_context_class": "GuiPlayerToolData",
+    "class": "gui::ISymbolRoot",
+    "uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+    "Id": "player_tool_popup",
+    "components": [
+        {
+            "class": "gui::IElementComponent",
+            "uuid": "{5da0ebfa-4b27-49a4-8301-ad5c0df5d473}",
+            "InheritDataContextFromParent": "0"
+        },
+        {
+            "class": "gui::ILayoutComponent",
+            "uuid": "{f03ec612-4135-49c9-ada0-a0a85d5d2bc3}",
+            "Height": "328.000000",
+            "Width": "480.000000",
+            "SizeModeY": "AutoSizeToElements"
+        },
+        {
+            "class": "gui::ILogicComponent",
+            "uuid": "{c69bee8a-3daf-493a-84f1-643d0ddc534d}",
+            "data": [
+                {
+                    "type": "CVariablesComponentSymbolData"
+                },
+                {
+                    "type": "CActionGraphSymbolData",
+                    "uuid": "{fcec69e0-4561-4f37-8661-96f0b6e7ccc3}",
+                    "hash": "",
+                    "nodes": [
+                        {
+                            "type": "CActionAnd",
+                            "id": 67,
+                            "Value1": {
+                                "src_node": 39,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 41,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3731.0,
+                                "y": 1125.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 66,
+                            "Value": {
+                                "src_node": 63,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "meta": {
+                                "x": 3518.008544921875,
+                                "y": 432.9461059570313
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text/flavor_text",
+                                "element_uuid": "{88b6e5c7-7f32-4cac-bb0f-5777ebc969c3}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 65,
+                            "Value": {
+                                "src_node": 61,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Next": 66,
+                            "meta": {
+                                "x": 3256.99169921875,
+                                "y": 420.57623291015627
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/title_header_text/title_sub_text",
+                                "element_uuid": "{528f3eca-4849-4fa9-bc82-0e771fdba388}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 64,
+                            "Value": {
+                                "src_node": 62,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Next": 65,
+                            "meta": {
+                                "x": 2825.28271484375,
+                                "y": 372.3336486816406
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/title_header_text/title_header_text",
+                                "element_uuid": "{9cf0fc6e-5527-4e35-b945-59b93211aa76}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 57,
+                            "meta": {
+                                "x": 1606.016845703125,
+                                "y": -1475.889404296875
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData"
+                            },
+                            "msg_rtti": "GuiPlayerToolMuteGREEvent"
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 56,
+                            "Next": 57,
+                            "meta": {
+                                "x": 1305.0,
+                                "y": -1560.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/button_cancel",
+                                "element_uuid": "{b499da82-0fb2-48c9-9d78-ff68a83f9aa0}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 55,
+                            "Value": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 1543.0,
+                                "y": -696.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 54,
+                            "Value": {
+                                "src_node": 55,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 1740.0,
+                                "y": -810.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/button_cancel",
+                                "element_uuid": "{b499da82-0fb2-48c9-9d78-ff68a83f9aa0}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Collapsed"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 47,
+                            "Next": 54,
+                            "meta": {
+                                "x": 1455.0,
+                                "y": -810.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_ShowMuteGREButton"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 44,
+                            "meta": {
+                                "x": 1260.0,
+                                "y": -705.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_ShowMuteGREButton"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingBool",
+                            "id": 53,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 51,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value on True": {
+                                "value": "&MenuPlayers_UnMute&"
+                            },
+                            "Value on False": {
+                                "value": "&MenuPlayers_Mute&"
+                            },
+                            "meta": {
+                                "x": 1470.0,
+                                "y": -1095.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 52,
+                            "Next": 50,
+                            "meta": {
+                                "x": 1395.0,
+                                "y": -1200.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_IsGREDetectorMuted"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 51,
+                            "meta": {
+                                "x": 1155.0,
+                                "y": -1110.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_IsGREDetectorMuted"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 50,
+                            "Value": {
+                                "src_node": 53,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 1830.0,
+                                "y": -1200.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/button_cancel",
+                                "element_uuid": "{b499da82-0fb2-48c9-9d78-ff68a83f9aa0}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "button_text"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 49,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 3195.0,
+                                "y": -495.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp/online_spinner_symbol",
+                                "element_uuid": "{967881ab-5a02-4342-b87b-a63d28cdd1da}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 48,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 45,
+                            "meta": {
+                                "x": 2490.0,
+                                "y": -525.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp/online_spinner_symbol",
+                                "element_uuid": "{967881ab-5a02-4342-b87b-a63d28cdd1da}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 43,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MInv_ToolLevel&  %1s/%2s"
+                            },
+                            "%1s": {
+                                "src_node": 32,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "%2s": {
+                                "src_node": 34,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 3824.0,
+                                "y": 1306.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 40,
+                            "Value": {
+                                "src_node": 43,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4305.0,
+                                "y": 1155.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/upgrade_level_bar/text",
+                                "element_uuid": "{a4d0b4d7-2931-4a2f-a863-a1cdbf0a7af0}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 42,
+                            "Value": {
+                                "src_node": 39,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 40,
+                            "meta": {
+                                "x": 4140.0,
+                                "y": 975.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/upgrade_level_bar/group1",
+                                "element_uuid": "{394483fe-591c-4943-9e67-ba100e7794c9}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 39,
+                            "Value1": {
+                                "src_node": 34,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "1"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 3360.0,
+                                "y": 1035.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 38,
+                            "Value": {
+                                "src_node": 67,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 42,
+                            "meta": {
+                                "x": 3825.0,
+                                "y": 840.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/upgrade_level_bar",
+                                "element_uuid": "{19172df4-4d03-4aca-819e-a4dd6d87df22}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetInt",
+                            "id": 37,
+                            "Value": {
+                                "src_node": 34,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Next": 38,
+                            "meta": {
+                                "x": 3221.119140625,
+                                "y": 834.967529296875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/upgrade_level_bar/group1/current_item_level_bar",
+                                "element_uuid": "{3854e994-a6c5-4319-b656-299f27e635b7}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "val_max"
+                            }
+                        },
+                        {
+                            "type": "CActionSetInt",
+                            "id": 36,
+                            "Value": {
+                                "src_node": 32,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Next": 38,
+                            "meta": {
+                                "x": 3240.0,
+                                "y": 600.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/upgrade_level_bar/group1/current_item_level_bar",
+                                "element_uuid": "{3854e994-a6c5-4319-b656-299f27e635b7}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "val"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 35,
+                            "Next": 37,
+                            "meta": {
+                                "x": 2910.0,
+                                "y": 840.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_MaxLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 34,
+                            "meta": {
+                                "x": 2910.0,
+                                "y": 1050.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_MaxLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 33,
+                            "Next": 36,
+                            "meta": {
+                                "x": 3000.31494140625,
+                                "y": 566.7072143554688
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Level"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 32,
+                            "meta": {
+                                "x": 3000.0,
+                                "y": 690.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Level"
+                            }
+                        },
+                        {
+                            "type": "CActionHasValidDataContext",
+                            "id": 29,
+                            "meta": {
+                                "x": 2565.0,
+                                "y": -120.0
+                            }
+                        },
+                        {
+                            "type": "CActionBranch",
+                            "id": 28,
+                            "Condition": {
+                                "src_node": 29,
+                                "src_prop": "Is Valid",
+                                "value": "1"
+                            },
+                            "True": 26,
+                            "meta": {
+                                "x": 2745.0,
+                                "y": -195.0
+                            }
+                        },
+                        {
+                            "type": "CActionStopTimer",
+                            "id": 27,
+                            "Timer": {
+                                "src_node": 21,
+                                "src_prop": "Timer",
+                                "value": ""
+                            },
+                            "Next": 64,
+                            "meta": {
+                                "x": 2415.0,
+                                "y": 45.0
+                            }
+                        },
+                        {
+                            "type": "CActionPlayMovie",
+                            "id": 26,
+                            "Strech": {
+                                "value": "1"
+                            },
+                            "FileName": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "Loop Video": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 2985.0,
+                                "y": -240.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp/movie",
+                                "element_uuid": "{9dd9521f-3bec-4b04-bd61-5c657412f711}",
+                                "component_class": "gui::IMovieComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionOnTimerFinished",
+                            "id": 25,
+                            "Next": 28,
+                            "Timer": {
+                                "src_node": 21,
+                                "src_prop": "Timer",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2490.0,
+                                "y": -225.0
+                            }
+                        },
+                        {
+                            "type": "CActionStartTimer",
+                            "id": 21,
+                            "Duration": {
+                                "value": "0.400000"
+                            },
+                            "TickInterval": {
+                                "value": "0.000000"
+                            },
+                            "Loop": {
+                                "value": "0"
+                            },
+                            "StopPrevious": {
+                                "value": "1"
+                            },
+                            "Next": 48,
+                            "meta": {
+                                "x": 2205.0,
+                                "y": -255.0
+                            }
+                        },
+                        {
+                            "type": "CActionStringNotEmpty",
+                            "id": 24,
+                            "Value": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 1560.0,
+                                "y": 30.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 23,
+                            "Value": {
+                                "src_node": 24,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 20,
+                            "meta": {
+                                "x": 1740.0,
+                                "y": -150.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp",
+                                "element_uuid": "{6a0dfa9c-3fde-4744-8e1d-270563a3e0d9}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionStopMovie",
+                            "id": 22,
+                            "Next": 27,
+                            "meta": {
+                                "x": 2205.0,
+                                "y": -30.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp/movie",
+                                "element_uuid": "{9dd9521f-3bec-4b04-bd61-5c657412f711}",
+                                "component_class": "gui::IMovieComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionBranch",
+                            "id": 20,
+                            "Condition": {
+                                "src_node": 24,
+                                "src_prop": "Result",
+                                "value": "1"
+                            },
+                            "True": 30,
+                            "False": 22,
+                            "meta": {
+                                "x": 1950.0,
+                                "y": -120.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 19,
+                            "Next": 23,
+                            "meta": {
+                                "x": 1382.657958984375,
+                                "y": -97.68031311035156
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Movie"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 18,
+                            "meta": {
+                                "x": 1380.0,
+                                "y": 15.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Movie"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 17,
+                            "Next": 6,
+                            "meta": {
+                                "x": 1318.5572509765626,
+                                "y": 458.82659912109377
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Desc"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 16,
+                            "meta": {
+                                "x": 1318.5572509765626,
+                                "y": 570.046630859375
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Desc"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 15,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 22,
+                            "meta": {
+                                "x": 1992.0,
+                                "y": 351.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 14,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 64,
+                            "meta": {
+                                "x": 1997.0,
+                                "y": 224.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionCastTo",
+                            "id": 13,
+                            "Success": 14,
+                            "Failed": 15,
+                            "InputPtr": {
+                                "src_node": 12,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 1665.0,
+                                "y": 270.0
+                            },
+                            "ptr_class": "GuiPlayerToolData"
+                        },
+                        {
+                            "type": "CActionGetRawPtr",
+                            "id": 12,
+                            "meta": {
+                                "x": 1365.0,
+                                "y": 315.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            },
+                            "ptr_class": "gui::CDataSource"
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 11,
+                            "Next": 13,
+                            "meta": {
+                                "x": 1380.0,
+                                "y": 180.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{b4f121de-90b5-4aa1-a56a-abb50b531816}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 9,
+                            "Value": {
+                                "value": "&MInv_LockedTool_D&"
+                            },
+                            "meta": {
+                                "x": 2355.0,
+                                "y": 945.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text/flavor_text",
+                                "element_uuid": "{88b6e5c7-7f32-4cac-bb0f-5777ebc969c3}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 7,
+                            "Value1": {
+                                "src_node": 1,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 1605.0,
+                                "y": 960.0
+                            }
+                        },
+                        {
+                            "type": "CActionBranch",
+                            "id": 6,
+                            "Condition": {
+                                "src_node": 7,
+                                "src_prop": "Result",
+                                "value": "1"
+                            },
+                            "True": 5,
+                            "False": 8,
+                            "meta": {
+                                "x": 1770.0,
+                                "y": 810.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 5,
+                            "Value": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "Next": 10,
+                            "meta": {
+                                "x": 2010.0,
+                                "y": 750.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/title_header_text/title_header_text",
+                                "element_uuid": "{9cf0fc6e-5527-4e35-b945-59b93211aa76}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 4,
+                            "Next": 6,
+                            "meta": {
+                                "x": 1318.0,
+                                "y": 933.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Name"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 3,
+                            "meta": {
+                                "x": 1318.0,
+                                "y": 1033.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Name"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 2,
+                            "Next": 6,
+                            "meta": {
+                                "x": 1320.0,
+                                "y": 645.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Level"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 1,
+                            "meta": {
+                                "x": 1320.0,
+                                "y": 780.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiPlayerToolData",
+                                "field": "m_Level"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 8,
+                            "Value": {
+                                "value": "&MInv_LockedTool&"
+                            },
+                            "Next": 9,
+                            "meta": {
+                                "x": 2025.0,
+                                "y": 945.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/title_header_text/title_header_text",
+                                "element_uuid": "{9cf0fc6e-5527-4e35-b945-59b93211aa76}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 10,
+                            "Value": {
+                                "src_node": 16,
+                                "src_prop": "Value",
+                                "value": "&MInv_LockedTool_D&"
+                            },
+                            "meta": {
+                                "x": 2340.0,
+                                "y": 765.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text/flavor_text",
+                                "element_uuid": "{88b6e5c7-7f32-4cac-bb0f-5777ebc969c3}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionStopMovie",
+                            "id": 30,
+                            "Next": 31,
+                            "meta": {
+                                "x": 2040.0,
+                                "y": -390.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/movie_grp/movie",
+                                "element_uuid": "{9dd9521f-3bec-4b04-bd61-5c657412f711}",
+                                "component_class": "gui::IMovieComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionStopTimer",
+                            "id": 31,
+                            "Timer": {
+                                "src_node": 21,
+                                "src_prop": "Timer",
+                                "value": ""
+                            },
+                            "Next": 21,
+                            "meta": {
+                                "x": 2235.0,
+                                "y": -360.0
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 41,
+                            "Value1": {
+                                "src_node": 32,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 3360.0,
+                                "y": 1215.0
+                            }
+                        },
+                        {
+                            "type": "CActionStartTimer",
+                            "id": 45,
+                            "Duration": {
+                                "value": "0.050000"
+                            },
+                            "TickInterval": {
+                                "value": "0.100000"
+                            },
+                            "Loop": {
+                                "value": "0"
+                            },
+                            "StopPrevious": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 2765.0,
+                                "y": -481.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnTimerFinished",
+                            "id": 46,
+                            "Next": 49,
+                            "Timer": {
+                                "src_node": 45,
+                                "src_prop": "Timer",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3005.0,
+                                "y": -451.0
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 58,
+                            "meta": {
+                                "x": 3068.27978515625,
+                                "y": 130.0258941650391
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Subheader"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 59,
+                            "meta": {
+                                "x": 2800.54296875,
+                                "y": 235.01063537597657
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Header"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 60,
+                            "meta": {
+                                "x": 3418.69189453125,
+                                "y": 61.84944152832031
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Fluff"
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 61,
+                            "Value1": {
+                                "src_node": 58,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "15.250000"
+                            },
+                            "meta": {
+                                "x": 3444.14794921875,
+                                "y": 250.1995391845703
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 62,
+                            "Value1": {
+                                "src_node": 59,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "21.000000"
+                            },
+                            "meta": {
+                                "x": 3151.36669921875,
+                                "y": 294.16912841796877
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 63,
+                            "Value1": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "15.250000"
+                            },
+                            "meta": {
+                                "x": 3731.69189453125,
+                                "y": 166.8494415283203
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IMouseReceiverComponent",
+            "uuid": "{ad0aaa30-6a50-45d9-8009-b79e0b87b0f5}",
+            "TrackMouseOutside": "1"
+        },
+        {
+            "class": "gui::CHintPositionComponent",
+            "uuid": "{ab2f6ff5-fc99-4210-bc58-21d4835f8a00}"
+        }
+    ],
+    "objects": [
+        {
+            "class": "gui::IGroup",
+            "uuid": "{347d120b-7b89-4c27-90ce-d761cdf5f394}",
+            "Id": "info_popup_contents",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{4036327a-5937-4a46-821b-057eb19e7881}",
+                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{795c65b9-7c1a-478f-8412-8f5be302aa1c}",
+                    "Height": "212.000000",
+                    "Width": "400.000000",
+                    "SizeModeY": "AutoSizeToElements",
+                    "MarginBottom": "24.000000",
+                    "MarginAnchorX": "Center"
+                },
+                {
+                    "class": "gui::IWrapPanelComponent",
+                    "uuid": "{058fffa5-40c2-4e42-b078-4bd2aaeaf96e}",
+                    "Wrap": "0",
+                    "Orientation": "Vertical"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{11ac6cf7-335d-4c85-9784-08e1099f5271}",
+                    "Id": "title_header_text",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{52fb2d32-4733-4b6c-b6f8-9a485c52ded4}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{97b9c6b3-a327-43c5-b708-88c5e96cb308}",
+                            "Height": "0.000000",
+                            "Width": "400.000000"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{9cf0fc6e-5527-4e35-b945-59b93211aa76}",
+                            "Id": "title_header_text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{c36e56cc-e075-42c4-a0a2-2f05293dccdb}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{48006405-b3f9-4479-8f54-9629dc5005c5}",
+                                    "Height": "36.000000",
+                                    "Width": "400.000000",
+                                    "MarginTop": "24.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{6038f2fc-1df5-4ca7-a6e8-230ec14d3f64}",
+                                    "_preset_": "H1_HeaderTitle",
+                                    "MinFontSize": "14.000000",
+                                    "TrimmingMode": "Animate",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_white",
+                                    "UseControlSequence": "0",
+                                    "Multiline": "0",
+                                    "_StylePreset_": "H1_HeaderTitle",
+                                    "TextValue": "item name here www"
+                                },
+                                {
+                                    "class": "gui::IMaskComponent",
+                                    "uuid": "{cdd92d99-bbce-4164-ab4d-466d8b2038e2}",
+                                    "ClipEdge": "0",
+                                    "MaskChildren": "0",
+                                    "MaskSource": "{10ccee0d-9a31-4dcd-82ae-e85cb6cb2b72};info_popup_contents/title_header_text/title_header_text/text_mask_headers_title;0",
+                                    "MaskTexture": "text_mask_headers"
+                                },
+                                {
+                                    "class": "gui::IMaterialEffectComponent",
+                                    "uuid": "{545d7443-54a7-46c5-8510-5226e9dc7679}",
+                                    "mask_mul_value": "0.150000",
+                                    "Effect": "mask_mul"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{10ccee0d-9a31-4dcd-82ae-e85cb6cb2b72}",
+                                    "Id": "text_mask_headers_title",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{76652795-b99a-4a80-8b55-a1723ed0ec10}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{8d9f2ec8-52ca-4d00-9917-bde247ee6345}",
+                                            "Height": "32.000000",
+                                            "Width": "256.000000",
+                                            "MarginTop": "2.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{528f3eca-4849-4fa9-bc82-0e771fdba388}",
+                            "Id": "title_sub_text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{88649152-31be-4c8a-864e-f1a2a7663938}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{89e47d63-3c61-49f4-9189-2fd9eb361f18}",
+                                    "Height": "24.000000",
+                                    "Width": "400.000000",
+                                    "MarginTop": "60.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{bb6cd4a5-9e06-4d91-b1b9-bbb30842c1fb}",
+                                    "_preset_": "H2_HeaderSubtitle",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_highlight",
+                                    "Multiline": "0",
+                                    "_StylePreset_": "H2_HeaderSubtitle",
+                                    "TextValue": "&ItemType_PlayerTool&"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{0eb3fef1-87c2-4c75-84e5-dbd920ef416f}",
+                    "Id": "header",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{1b892d62-78f8-4c32-80d4-148b5be673f7}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{5845cb75-1b8a-4cc3-ad50-d60df9355e2c}",
+                            "Height": "112.000000",
+                            "Width": "804.438293",
+                            "SizeModeX": "Stretch"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{6a0dfa9c-3fde-4744-8e1d-270563a3e0d9}",
+                    "Id": "movie_grp",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{f282f553-7634-4e67-9571-ddaab93b22ba}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{34cbcd04-3763-45d3-8fa6-7db9fa0d4062}",
+                            "Height": "200.164505",
+                            "Width": "463.503113",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "Stretch",
+                            "MarginBottom": "8.000000"
+                        },
+                        {
+                            "class": "gui::IMaskComponent",
+                            "uuid": "{6f9fcb34-30fc-4a2b-b1d0-7580b6ef01ba}",
+                            "MaskSource": "{cc0c7530-145a-4488-8e8b-618ca1335353};info_popup_contents/movie_grp/video_border/video_mask;0",
+                            "MaskTexture": "video_mask"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{fdee4054-7c84-4701-9c5b-50c468fffd0f}",
+                            "Id": "video_border",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{16e7926b-e8a7-4ce6-9021-c892a19150aa}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{2766c533-c15d-49b6-ac1b-e75abf2b13ac}",
+                                    "Height": "244.000000",
+                                    "Width": "420.000000",
+                                    "SizeModeY": "Stretch",
+                                    "MarginBottom": "-4.000000",
+                                    "MarginRight": "-2.000000",
+                                    "MarginTop": "-4.000000",
+                                    "MarginLeft": "-2.000000",
+                                    "MarginAnchorY": "Center",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{a9bc617d-c348-4bd1-ad00-c80ae63c9167}",
+                                    "Texture": "video_border"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{cc0c7530-145a-4488-8e8b-618ca1335353}",
+                                    "Id": "video_mask",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{3b20db85-4592-4c03-b094-30f18b69d177}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{1c69e04c-defe-479c-9ddd-7d6382d7fd8f}",
+                                            "Height": "236.000000",
+                                            "Width": "420.000000",
+                                            "MarginAnchorY": "Center",
+                                            "MarginAnchorX": "Center"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{efc0c4d0-0130-4472-bf13-6ef295f9e1b8}",
+                                            "Texture": "video_mask",
+                                            "ComponentEnabled": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{9dd9521f-3bec-4b04-bd61-5c657412f711}",
+                            "Id": "movie",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{c1be6b12-2e2d-470e-9314-12ef7a1d2069}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{4a3fa972-6324-4004-b74a-9c4a924ac1f0}",
+                                    "Height": "236.000000",
+                                    "Width": "420.000000",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IMovieComponent",
+                                    "uuid": "{bedbe934-4ed4-4415-9611-f80481438460}"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{967881ab-5a02-4342-b87b-a63d28cdd1da}",
+                            "Id": "online_spinner_symbol",
+                            "sub_symbol": "online_spinner_symbol",
+                            "components": [
+                                {
+                                    "target_component_uuid": "{cfcefb98-ad3f-4597-a2e1-3dac4f5d44e0}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginTop": "-2.000000",
+                                    "MarginLeft": "104.000000",
+                                    "MarginAnchorY": "Center"
+                                },
+                                {
+                                    "target_component_uuid": "{f0e079f2-dc92-4040-83bc-79b4ae601614}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [
+                                        {
+                                            "name": "text",
+                                            "type": "string",
+                                            "value": " "
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{75883b25-cdbf-4edb-88af-7e02f0ab4a85}",
+                            "Id": "movie_still",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3f3f6287-0504-4969-87b8-c9b09c7246c5}",
+                                    "RenderChildFirst": "1"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{b4db0526-1c6f-4f8f-9f09-19d9897f3830}",
+                                    "Height": "236.000000",
+                                    "Width": "420.000000",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{b2fdaf47-2826-45b9-b785-8cb037b27585}",
+                                    "ImageColorMul": "2A2A2AB2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{19172df4-4d03-4aca-819e-a4dd6d87df22}",
+                    "Id": "upgrade_level_bar",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{d2dca88e-b6d7-4e49-9127-77b65ddea904}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{fc5b0fa4-5609-4bcb-b87b-8c401616dddf}",
+                            "Height": "24.000000",
+                            "Width": "400.000000"
+                        },
+                        {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{c5be69dd-f0f1-4f1e-93e9-aa047d47cdb5}"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{394483fe-591c-4943-9e67-ba100e7794c9}",
+                            "Id": "group1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{6f256c18-75ca-422d-a314-4a1b5e9123e8}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{960af637-2112-40e8-a091-99f97405cea1}",
+                                    "Height": "10.000000",
+                                    "Width": "125.000000",
+                                    "MarginRight": "8.000000",
+                                    "MarginAnchorY": "Center"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{3854e994-a6c5-4319-b656-299f27e635b7}",
+                                    "Id": "current_item_level_bar",
+                                    "sub_symbol": "item_lvl_bar"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{a4d0b4d7-2931-4a2f-a863-a1cdbf0a7af0}",
+                            "Id": "text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{d57e7028-9daa-43f6-96ca-90d3b1a7c05a}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{fa1ea8e8-d988-4d40-a41c-18efc275a990}",
+                                    "Height": "24.000000",
+                                    "Width": "24.000000",
+                                    "SizeModeX": "AutoSizeToComponents"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{9106ef15-e2af-4768-b5eb-b469dc4addd7}",
+                                    "_preset_": "H2_HeaderSubtitle",
+                                    "AlignmentY": "Center",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_white",
+                                    "Multiline": "0",
+                                    "_StylePreset_": "H2_HeaderSubtitle",
+                                    "TextValue": "&MInv_ToolLevel& 1/2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{248d4dc1-7f4d-480f-a1ea-c24829ba9f12}",
+                    "Id": "flavour_text",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{14b5c77e-d239-405a-a703-66cc1fe1484c}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{ad3c1064-3808-420e-93ae-3f5139324bca}",
+                            "Height": "31.746185",
+                            "Width": "400.000000",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "Stretch",
+                            "MarginBottom": "16.000000",
+                            "MarginTop": "8.000000"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{88b6e5c7-7f32-4cac-bb0f-5777ebc969c3}",
+                            "Id": "flavor_text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{5d99739f-ad4f-413f-9d1f-dea9499ab6ef}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{6404b09e-7013-43cf-b8da-9d9e9c1474ab}",
+                                    "Height": "23.855999",
+                                    "Width": "407.960144",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "SizeModeX": "Stretch"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{794bbffe-23df-4904-a780-37729bef10c6}",
+                                    "_preset_": "B2M_BodyTextMedium",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_white",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "B2M_BodyTextMedium",
+                                    "TextValue": "Flavor text goes in here \n"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::CSymbolRoot",
+                    "uuid": "{b499da82-0fb2-48c9-9d78-ff68a83f9aa0}",
+                    "Id": "button_cancel",
+                    "sub_symbol": "legend_button",
+                    "components": [
+                        {
+                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                            "class": "gui::ILayoutComponent",
+                            "Width": "119.664841",
+                            "MarginBottom": "8.000000",
+                            "MarginTop": "8.000000"
+                        },
+                        {
+                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                            "class": "gui::ILogicComponent",
+                            "dyn_fields": [
+                                {
+                                    "name": "button_text",
+                                    "type": "string",
+                                    "value": "&ChallengeRestart&"
+                                }
+                            ]
+                        },
+                        {
+                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                            "class": "gui::IButtonComponent",
+                            "HoldTime": "0.001000",
+                            "PressAction": "_ACTION_GUI_PAD_X"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::CSymbolRoot",
+            "uuid": "{3a4ce065-aec8-4cb1-ae2a-1dd28e5396a2}",
+            "Id": "tooltip_background_symbol",
+            "sub_symbol": "tooltip_background_symbol",
+            "components": [
+                {
+                    "target_component_uuid": "{0f63e07f-c5e9-400b-a368-aa87e9c2081a}",
+                    "class": "gui::ILayoutComponent",
+                    "Height": "259.358612",
+                    "SizeModeY": "Stretch",
+                    "MarginAnchorX": "Center"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,4070 @@
+{
+	"version": 1,
+	"symbol_uuid": "{230c4e72-67ff-4653-b7e7-cfdab6c8cf25}",
+	"symbol_size": "1920.000000 289.985992",
+	"data_context_class": "GuiShopItemData",
+	"class": "gui::ISymbolRoot",
+	"uuid": "{230c4e72-67ff-4653-b7e7-cfdab6c8cf25}",
+	"Id": "shop_item_tooltip_addon",
+	"components": [
+		{
+			"class": "gui::IElementComponent",
+			"uuid": "{cdc1be9a-a7e1-451b-b326-b3164252a86f}"
+		},
+		{
+			"class": "gui::ILayoutComponent",
+			"uuid": "{d57edc18-3dd9-4354-bd9e-07298205a53d}",
+			"SizeModeY": "AutoSizeToElements",
+			"SizeModeX": "Stretch"
+		},
+		{
+			"class": "gui::ILogicComponent",
+			"uuid": "{b2095988-3f3d-4eda-9815-38c5fc4e7aeb}",
+			"data": [
+				{
+					"type": "CVariablesComponentSymbolData",
+					"dyn_fields": [
+						{
+							"name": "reset_buttons",
+							"type": "bool",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"type": "CActionGraphSymbolData",
+					"uuid": "{834befd2-eccf-48e4-9459-d134c2458062}",
+					"hash": "",
+					"nodes": [
+						{
+							"type": "CActionAnd",
+							"id": 178,
+							"Value1": {
+								"src_node": 153,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 180,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8055.0,
+								"y": 2805.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 177,
+							"Value": {
+								"src_node": 175,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 10905.0,
+								"y": 1920.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/group1/btn_trade_agent_cash_all",
+								"element_uuid": "{8e5a6379-b98a-4361-80ea-30128a004155}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 171,
+							"Value": {
+								"src_node": 170,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 128,
+							"meta": {
+								"x": 8760.0,
+								"y": 1920.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/group1/btn_trade_agent_cash_all",
+								"element_uuid": "{8e5a6379-b98a-4361-80ea-30128a004155}",
+								"component_class": "gui::IElementComponent",
+								"field": "Collapsed"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 161,
+							"Value": {
+								"src_node": 126,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 171,
+							"meta": {
+								"x": 8145.0,
+								"y": 1920.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/group1/btn_trade_agent_cash_all",
+								"element_uuid": "{8e5a6379-b98a-4361-80ea-30128a004155}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 167,
+							"Value1": {
+								"value": "&MShop_Buy&"
+							},
+							"Value2": {
+								"src_node": 165,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 10185.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 165,
+							"Value1": {
+								"src_node": 163,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Value2": {
+								"value": ")"
+							},
+							"meta": {
+								"x": 9975.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 164,
+							"Value": {
+								"src_node": 160,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 9495.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 163,
+							"Value1": {
+								"value": " &MenuChooseMax& ("
+							},
+							"Value2": {
+								"src_node": 164,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 9675.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 162,
+							"Value": {
+								"src_node": 167,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 10500.0,
+								"y": 2565.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade_all",
+								"element_uuid": "{3bb32b13-a854-492d-8314-4ba28ce044ab}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 160,
+							"meta": {
+								"x": 9285.0,
+								"y": 2685.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AffordsCount"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 158,
+							"meta": {
+								"x": 8520.0,
+								"y": 2715.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAfford"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 159,
+							"Value": {
+								"src_node": 158,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8754.50390625,
+								"y": 2724.04248046875
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 157,
+							"Value": {
+								"src_node": 159,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 162,
+							"meta": {
+								"x": 8970.0,
+								"y": 2565.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade_all",
+								"element_uuid": "{3bb32b13-a854-492d-8314-4ba28ce044ab}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 156,
+							"Value": {
+								"src_node": 178,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8265.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 155,
+							"Value": {
+								"src_node": 156,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 157,
+							"meta": {
+								"x": 8520.0,
+								"y": 2565.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade_all",
+								"element_uuid": "{3bb32b13-a854-492d-8314-4ba28ce044ab}",
+								"component_class": "gui::IElementComponent",
+								"field": "Collapsed"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 154,
+							"Value1": {
+								"src_node": 152,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "1"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 7725.0,
+								"y": 2790.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 153,
+							"Value1": {
+								"src_node": 150,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 154,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8055.0,
+								"y": 2685.0
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 152,
+							"meta": {
+								"x": 7470.0,
+								"y": 2775.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ItemCount"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 151,
+							"Next": 155,
+							"meta": {
+								"x": 7496.4912109375,
+								"y": 2582.588623046875
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 150,
+							"meta": {
+								"x": 7481.4912109375,
+								"y": 2681.865234375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 148,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 88,
+							"meta": {
+								"x": 6030.0,
+								"y": 1830.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/btn_upgrade_blueprint",
+								"element_uuid": "{f0844fed-6977-460d-9925-6e3448a8724b}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionComment",
+							"id": 147,
+							"meta": {
+								"x": 4525.0,
+								"y": 865.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "Resetting the hold time on item name change to prevent accidental crafts",
+							"group_moves": true,
+							"size": "559.000000 233.000000"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 149,
+							"Next": 146,
+							"meta": {
+								"x": 4545.0,
+								"y": 960.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ItemName"
+							}
+						},
+						{
+							"type": "CActionSetFloat",
+							"id": 146,
+							"Value": {
+								"value": "0.000000"
+							},
+							"meta": {
+								"x": 4770.0,
+								"y": 960.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/btn_upgrade_blueprint",
+								"element_uuid": "{f0844fed-6977-460d-9925-6e3448a8724b}",
+								"component_class": "gui::IButtonComponent",
+								"field": "BtnPressElapsedTime"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 145,
+							"Value1": {
+								"src_node": 143,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 111,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4387.62890625,
+								"y": 1733.9197998046876
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 141,
+							"Value": {
+								"src_node": 138,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5835.0,
+								"y": 4845.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 140,
+							"Value1": {
+								"src_node": 141,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 78,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5987.0263671875,
+								"y": 4862.5380859375
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 139,
+							"Next": 57,
+							"meta": {
+								"x": 5325.0,
+								"y": 4380.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 138,
+							"meta": {
+								"x": 5610.0,
+								"y": 4830.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 137,
+							"Value": {
+								"src_node": 134,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6495.0,
+								"y": 810.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 136,
+							"Value": {
+								"src_node": 137,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6675.0,
+								"y": 705.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/btn_upgrade_blueprint",
+								"element_uuid": "{f0844fed-6977-460d-9925-6e3448a8724b}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 135,
+							"Next": 136,
+							"meta": {
+								"x": 6360.0,
+								"y": 705.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAlternatePrice"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 134,
+							"meta": {
+								"x": 6195.0,
+								"y": 795.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAlternatePrice"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 133,
+							"Next": 131,
+							"meta": {
+								"x": 6435.0,
+								"y": 1035.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 132,
+							"meta": {
+								"x": 6382.21923828125,
+								"y": 1157.3790283203126
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 131,
+							"Value": {
+								"src_node": 132,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6675.0,
+								"y": 1065.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/btn_upgrade_blueprint",
+								"element_uuid": "{f0844fed-6977-460d-9925-6e3448a8724b}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionComment",
+							"id": 130,
+							"meta": {
+								"x": 4695.0,
+								"y": 4350.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "jurban: hack/fix vendor shop (Opera) have CanBuy set on false when it when CantAfford",
+							"group_moves": true,
+							"size": "607.000000 248.000000"
+						},
+						{
+							"type": "CActionSetColor",
+							"id": 128,
+							"Value": {
+								"src_node": 127,
+								"src_prop": "Result",
+								"value": "FFFFFFFF"
+							},
+							"Next": 177,
+							"meta": {
+								"x": 9555.0,
+								"y": 1905.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/price_group/cash_group/text",
+								"element_uuid": "{7c14b9e9-777a-4152-acbc-82ee1e61ab5e}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextColorMul"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 126,
+							"Value": {
+								"src_node": 124,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 7874.0,
+								"y": 2065.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 125,
+							"Next": 123,
+							"meta": {
+								"x": 7455.0,
+								"y": 1883.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAgentBuyWithCoins"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 124,
+							"meta": {
+								"x": 7440.0,
+								"y": 2070.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAgentBuyWithCoins"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 123,
+							"Value": {
+								"src_node": 126,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 161,
+							"meta": {
+								"x": 7770.0,
+								"y": 1920.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/group1/btn_trade_agent_cash",
+								"element_uuid": "{8ce2897e-a327-489c-8b99-5c2606dcdbf0}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 122,
+							"Value": {
+								"src_node": 120,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 6105.0,
+								"y": 2310.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 121,
+							"Next": 119,
+							"meta": {
+								"x": 5970.0,
+								"y": 2122.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 120,
+							"meta": {
+								"x": 5970.0,
+								"y": 2222.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 119,
+							"Value": {
+								"src_node": 122,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 6255.0,
+								"y": 2155.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash/price_group/cash_group/text",
+								"element_uuid": "{7c14b9e9-777a-4152-acbc-82ee1e61ab5e}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 118,
+							"Next": 116,
+							"meta": {
+								"x": 6156.0,
+								"y": 2841.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AgentBuyWithCoins"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 117,
+							"meta": {
+								"x": 6156.0,
+								"y": 2941.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AgentBuyWithCoins"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 116,
+							"Value": {
+								"src_node": 117,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6480.0,
+								"y": 2850.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/agent_cash",
+								"element_uuid": "{0c242565-f6fe-40c5-b624-d5b1b90a2fb5}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 39,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Float",
+									"wc_type_nvec": "FloatVector"
+								}
+							],
+							"Selector": {
+								"src_node": 110,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "0.000000"
+							},
+							"Value on False": {
+								"value": "16.000000"
+							},
+							"meta": {
+								"x": 4845.0,
+								"y": 1545.0
+							}
+						},
+						{
+							"type": "CActionSetFloat",
+							"id": 38,
+							"Value": {
+								"src_node": 39,
+								"src_prop": "Result",
+								"value": "0.000000"
+							},
+							"meta": {
+								"x": 5083.66552734375,
+								"y": 1442.6259765625
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2",
+								"element_uuid": "{c40b68db-62e3-4bc1-aaeb-1f1be0f84d21}",
+								"component_class": "gui::ILayoutComponent",
+								"field": "MarginTop"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 115,
+							"Next": 113,
+							"meta": {
+								"x": 5716.0,
+								"y": 5446.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowAltPriceNearBuyBtn"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 114,
+							"meta": {
+								"x": 5716.0,
+								"y": 5546.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowAltPriceNearBuyBtn"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 113,
+							"Value": {
+								"src_node": 114,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6084.0,
+								"y": 5446.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/price_group/alt_agent",
+								"element_uuid": "{1e01cb7c-0a2a-4b4e-9256-f8b320ecd061}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 112,
+							"Value1": {
+								"src_node": 140,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 111,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6150.0,
+								"y": 4785.0
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 111,
+							"Value": {
+								"src_node": 109,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4185.0,
+								"y": 1785.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 110,
+							"Value1": {
+								"src_node": 145,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 79,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4470.0,
+								"y": 1800.0
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 109,
+							"meta": {
+								"x": 3909.0,
+								"y": 1767.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_JustBuyButton"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 107,
+							"Value": {
+								"src_node": 108,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 66,
+							"meta": {
+								"x": 3336.567626953125,
+								"y": 4083.99853515625
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1/group1/btn_trade_tokens",
+								"element_uuid": "{b0f44e5d-f5cb-45a1-b43a-0570076bead5}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 102,
+							"Value": {
+								"src_node": 103,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 107,
+							"meta": {
+								"x": 3570.0,
+								"y": 3750.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group3/alternative_cost_panel/group1/btn_alt_trade",
+								"element_uuid": "{9e85840d-ad46-4853-909d-ca040f3c7502}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 106,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 104,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "&MShop_Upgrade&"
+							},
+							"Value on False": {
+								"value": "&MShop_Buy&"
+							},
+							"meta": {
+								"x": 4320.0,
+								"y": 4170.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 105,
+							"Next": 102,
+							"meta": {
+								"x": 3090.0,
+								"y": 3780.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsUpgrade"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 104,
+							"meta": {
+								"x": 3000.0,
+								"y": 3915.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsUpgrade"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 100,
+							"Value": {
+								"src_node": 97,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4738.0,
+								"y": 4607.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group4",
+								"element_uuid": "{0fcf2cdb-7eca-41cc-9736-16c6ec7306e8}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 101,
+							"Value": {
+								"value": "&MQuartermaster_BtnRedeemDocket&"
+							},
+							"meta": {
+								"x": 4905.0,
+								"y": 4740.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group4/group1/btn_redeem",
+								"element_uuid": "{b3c85eb5-81d0-4490-9851-c5ec01bd1405}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 97,
+							"meta": {
+								"x": 4005.0,
+								"y": 4650.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsVoucher"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 96,
+							"Next": 93,
+							"meta": {
+								"x": 4035.0,
+								"y": 4530.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsVoucher"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 95,
+							"Next": 99,
+							"meta": {
+								"x": 4050.0,
+								"y": 4800.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsDocket"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 94,
+							"meta": {
+								"x": 4035.0,
+								"y": 4935.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsDocket"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 90,
+							"Next": 66,
+							"meta": {
+								"x": 3720.0,
+								"y": 4065.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsBuybackItem"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 89,
+							"meta": {
+								"x": 4050.0,
+								"y": 4080.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_IsBuybackItem"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 87,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 148,
+							"meta": {
+								"x": 5820.0,
+								"y": 1800.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group3/alternative_cost_panel/group1/btn_alt_trade",
+								"element_uuid": "{9e85840d-ad46-4853-909d-ca040f3c7502}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 86,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 87,
+							"meta": {
+								"x": 5610.0,
+								"y": 1815.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1/group1/btn_trade_tokens",
+								"element_uuid": "{b0f44e5d-f5cb-45a1-b43a-0570076bead5}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 85,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 86,
+							"meta": {
+								"x": 5415.0,
+								"y": 1815.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 88,
+							"Value": {
+								"value": "0"
+							},
+							"meta": {
+								"x": 6345.0,
+								"y": 1845.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{230c4e72-67ff-4653-b7e7-cfdab6c8cf25}",
+								"component_class": "gui::ILogicComponent",
+								"field": "reset_buttons"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 84,
+							"Condition": {
+								"src_node": 81,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 85,
+							"meta": {
+								"x": 5235.0,
+								"y": 1860.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 83,
+							"Next": 84,
+							"meta": {
+								"x": 5040.0,
+								"y": 1815.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{230c4e72-67ff-4653-b7e7-cfdab6c8cf25}",
+								"component_class": "gui::ILogicComponent",
+								"field": "reset_buttons"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 81,
+							"meta": {
+								"x": 5025.0,
+								"y": 1920.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{230c4e72-67ff-4653-b7e7-cfdab6c8cf25}",
+								"component_class": "gui::ILogicComponent",
+								"field": "reset_buttons"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 80,
+							"Value": {
+								"src_node": 110,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4680.0,
+								"y": 1830.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group3/alternative_cost_panel",
+								"element_uuid": "{aa6f9c8d-a2fe-400d-8b15-69ebd64e4159}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 79,
+							"Value1": {
+								"src_node": 77,
+								"src_prop": "Size",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 4260.0,
+								"y": 1935.0
+							}
+						},
+						{
+							"type": "CActionVectorGetSize",
+							"id": 77,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "RawPtr",
+									"wc_type_nvec": "RawPtrVector",
+									"wc_subtype": "GuiAlternativePriceData"
+								}
+							],
+							"Vector": {
+								"src_node": 23,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 4109.0,
+								"y": 1942.0528564453128
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 73,
+							"Next": 80,
+							"meta": {
+								"x": 3804.0,
+								"y": 1833.0528564453128
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AlternativePrice"
+							}
+						},
+						{
+							"type": "CActionGetRawPtrVector",
+							"id": 23,
+							"meta": {
+								"x": 3804.0,
+								"y": 1933.0528564453128
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AlternativePrice"
+							},
+							"ptr_class": "GuiAlternativePriceData"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 12,
+							"Value": {
+								"src_node": 71,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 2985.0,
+								"y": 1965.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2",
+								"element_uuid": "{c40b68db-62e3-4bc1-aaeb-1f1be0f84d21}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 1,
+							"Next": 10,
+							"meta": {
+								"x": 1950.0,
+								"y": 2190.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanTradeAdd"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 71,
+							"Value1": {
+								"src_node": 50,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 2670.0,
+								"y": 2085.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 68,
+							"Next": 12,
+							"meta": {
+								"x": 2497.0,
+								"y": 1964.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 50,
+							"meta": {
+								"x": 2497.0,
+								"y": 2064.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 28,
+							"Value": {
+								"src_node": 60,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 42,
+							"meta": {
+								"x": 4860.0,
+								"y": 3675.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/cant_fit_text",
+								"element_uuid": "{f1ecd452-b8e4-4ed2-8deb-7dad37326a67}",
+								"component_class": "gui::IElementComponent",
+								"field": "Collapsed"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 10,
+							"Value": {
+								"src_node": 7,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 82,
+							"meta": {
+								"x": 2865.0,
+								"y": 2340.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1/group1/btn_trade_tokens",
+								"element_uuid": "{b0f44e5d-f5cb-45a1-b43a-0570076bead5}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 22,
+							"Value": {
+								"src_node": 31,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 14,
+							"meta": {
+								"x": 8415.0,
+								"y": 3165.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 65,
+							"Value": {
+								"src_node": 49,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5760.0,
+								"y": 3225.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group3/alternative_cost_panel/group1/btn_alt_trade",
+								"element_uuid": "{9e85840d-ad46-4853-909d-ca040f3c7502}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 58,
+							"Value": {
+								"src_node": 112,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6060.0,
+								"y": 4455.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/price_group/cash_group",
+								"element_uuid": "{b8ac142b-977b-4e17-91d6-76ee46499b9a}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 57,
+							"Value": {
+								"src_node": 75,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 58,
+							"meta": {
+								"x": 5775.0,
+								"y": 4470.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/price_group/cash_group/text",
+								"element_uuid": "{6e031bc4-00c3-4a95-983c-230818fda9ef}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 43,
+							"Value": {
+								"src_node": 106,
+								"src_prop": "Result",
+								"value": "&MShop_Buy&"
+							},
+							"meta": {
+								"x": 4680.0,
+								"y": 4050.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 42,
+							"Value": {
+								"src_node": 61,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5190.0,
+								"y": 3675.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/cant_fit_text",
+								"element_uuid": "{f1ecd452-b8e4-4ed2-8deb-7dad37326a67}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 37,
+							"Value": {
+								"src_node": 62,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 6735.0,
+								"y": 3705.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1/price_group1/token_group/text",
+								"element_uuid": "{b81fe8e1-37cd-4a8e-b644-064f30f3239b}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 21,
+							"Value": {
+								"src_node": 110,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 38,
+							"meta": {
+								"x": 4755.0,
+								"y": 1395.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group3",
+								"element_uuid": "{c641d133-a239-4ccf-9b84-49a182307d55}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 18,
+							"Value": {
+								"src_node": 27,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6405.0,
+								"y": 2460.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/cant_fit_text",
+								"element_uuid": "{f1ecd452-b8e4-4ed2-8deb-7dad37326a67}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetColor",
+							"id": 14,
+							"Value": {
+								"src_node": 34,
+								"src_prop": "Result",
+								"value": "FFFFFFFF"
+							},
+							"meta": {
+								"x": 8685.0,
+								"y": 3165.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/price_group/cash_group/text",
+								"element_uuid": "{6e031bc4-00c3-4a95-983c-230818fda9ef}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextColorMul"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 5,
+							"Value": {
+								"src_node": 16,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4350.0,
+								"y": 2085.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1",
+								"element_uuid": "{683e6805-c205-425f-8c48-ac81b9459e41}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetColor",
+							"id": 82,
+							"Value": {
+								"src_node": 9,
+								"src_prop": "Result",
+								"value": "FFFFFFFF"
+							},
+							"meta": {
+								"x": 3285.0,
+								"y": 2340.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group1/price_group1/token_group/text",
+								"element_uuid": "{b81fe8e1-37cd-4a8e-b644-064f30f3239b}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextColorMul"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 2,
+							"Next": 10,
+							"meta": {
+								"x": 1938.0,
+								"y": 2292.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordTokenPrice"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 3,
+							"Next": 10,
+							"meta": {
+								"x": 1938.0,
+								"y": 2382.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_HasData"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 4,
+							"meta": {
+								"x": 1938.0,
+								"y": 2472.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_HasData"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 6,
+							"Value1": {
+								"src_node": 4,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 8,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 2208.0,
+								"y": 2517.0
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 7,
+							"Value": {
+								"src_node": 11,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 2523.0,
+								"y": 2517.0
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 8,
+							"meta": {
+								"x": 1893.0,
+								"y": 2547.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordTokenPrice"
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 9,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Color",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"Selector": {
+								"src_node": 11,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "white_color"
+							},
+							"Value on False": {
+								"value": "menu_red"
+							},
+							"meta": {
+								"x": 2688.0,
+								"y": 2562.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 11,
+							"Value1": {
+								"src_node": 6,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 13,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 2358.0,
+								"y": 2592.0
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 13,
+							"meta": {
+								"x": 1953.0,
+								"y": 2622.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanTradeAdd"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 15,
+							"Next": 5,
+							"meta": {
+								"x": 3746.1328125,
+								"y": 2092.73583984375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_TokenBuyCost"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 16,
+							"Value1": {
+								"src_node": 17,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 3997.6806640625,
+								"y": 2192.07958984375
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 17,
+							"meta": {
+								"x": 3746.1328125,
+								"y": 2203.9560546875
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_TokenBuyCost"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 19,
+							"Next": 22,
+							"meta": {
+								"x": 7845.7744140625,
+								"y": 3178.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAfford"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 20,
+							"Next": 22,
+							"meta": {
+								"x": 7845.7744140625,
+								"y": 3074.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanTradeAdd"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 24,
+							"meta": {
+								"x": 5805.7744140625,
+								"y": 2534.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_DoesFitIntoInv"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 25,
+							"Next": 22,
+							"meta": {
+								"x": 7845.7744140625,
+								"y": 3298.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_HasData"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 26,
+							"Next": 18,
+							"meta": {
+								"x": 5834.158203125,
+								"y": 2445.611328125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_DoesFitIntoInv"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 27,
+							"Value": {
+								"src_node": 24,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 6100.7744140625,
+								"y": 2543.569580078125
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 29,
+							"meta": {
+								"x": 7590.7744140625,
+								"y": 3400.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_HasData"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 30,
+							"Value1": {
+								"src_node": 29,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 32,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 7800.7744140625,
+								"y": 3419.569580078125
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 31,
+							"Value": {
+								"src_node": 33,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8250.7744140625,
+								"y": 3419.569580078125
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 32,
+							"meta": {
+								"x": 7575.7744140625,
+								"y": 3479.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAfford"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 33,
+							"Value1": {
+								"src_node": 30,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 36,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 7980.7744140625,
+								"y": 3479.569580078125
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 34,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Color",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"Selector": {
+								"src_node": 33,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "loc_orange"
+							},
+							"Value on False": {
+								"value": "menu_red"
+							},
+							"meta": {
+								"x": 8400.0,
+								"y": 3495.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 35,
+							"Next": 21,
+							"meta": {
+								"x": 4380.7744140625,
+								"y": 1394.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AlternativePrice"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 36,
+							"meta": {
+								"x": 7575.7744140625,
+								"y": 3569.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanTradeAdd"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 40,
+							"Next": 65,
+							"meta": {
+								"x": 4785.7744140625,
+								"y": 3089.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AlternativePrice"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 41,
+							"Next": 65,
+							"meta": {
+								"x": 4785.7744140625,
+								"y": 3179.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 45,
+							"Next": 65,
+							"meta": {
+								"x": 4740.7744140625,
+								"y": 3269.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAlternatePrice"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 46,
+							"meta": {
+								"x": 4605.7744140625,
+								"y": 3359.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanAffordAlternatePrice"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 47,
+							"Value1": {
+								"src_node": 48,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 55,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5085.7744140625,
+								"y": 3389.569580078125
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 49,
+							"Value": {
+								"src_node": 52,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5610.0,
+								"y": 3375.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 52,
+							"Value1": {
+								"src_node": 47,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 54,
+								"src_prop": "NotEmpty",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5460.0,
+								"y": 3390.0
+							}
+						},
+						{
+							"type": "CActionGetRawPtrVector",
+							"id": 53,
+							"meta": {
+								"x": 5040.7744140625,
+								"y": 3494.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AlternativePrice"
+							},
+							"ptr_class": "GuiAlternativePriceData"
+						},
+						{
+							"type": "CActionVectorIsNotEmpty",
+							"id": 54,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "RawPtr",
+									"wc_type_nvec": "RawPtrVector",
+									"wc_subtype": "GuiAlternativePriceData"
+								}
+							],
+							"Vector": {
+								"src_node": 53,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 5295.7744140625,
+								"y": 3509.569580078125
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 55,
+							"meta": {
+								"x": 4755.7744140625,
+								"y": 3509.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanTradeAdd"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 56,
+							"Next": 28,
+							"meta": {
+								"x": 4635.7744140625,
+								"y": 3659.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_DoesFitIntoInv"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 59,
+							"Next": 37,
+							"meta": {
+								"x": 6191.7744140625,
+								"y": 3732.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_TokenBuyCost"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 60,
+							"meta": {
+								"x": 4560.7744140625,
+								"y": 3764.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_DoesFitIntoInv"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 61,
+							"Value": {
+								"src_node": 60,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5025.0,
+								"y": 3765.0
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 62,
+							"Value": {
+								"src_node": 63,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 6441.2744140625,
+								"y": 3806.069580078125
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 63,
+							"meta": {
+								"x": 6191.7744140625,
+								"y": 3832.569580078125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_TokenBuyCost"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 64,
+							"Next": 66,
+							"meta": {
+								"x": 3720.7744140625,
+								"y": 4169.5693359375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 66,
+							"Condition": {
+								"src_node": 69,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 91,
+							"False": 70,
+							"meta": {
+								"x": 4035.0,
+								"y": 4215.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 67,
+							"Next": 66,
+							"meta": {
+								"x": 3720.7744140625,
+								"y": 4259.5693359375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanSell"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 69,
+							"meta": {
+								"x": 3720.0,
+								"y": 4365.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 70,
+							"Condition": {
+								"src_node": 72,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 44,
+							"False": 129,
+							"meta": {
+								"x": 4279.7744140625,
+								"y": 4377.5693359375
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 72,
+							"meta": {
+								"x": 4065.0,
+								"y": 4440.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanSell"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 74,
+							"Next": 57,
+							"meta": {
+								"x": 5325.7744140625,
+								"y": 4484.5693359375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 75,
+							"Value": {
+								"src_node": 76,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 5581.7744140625,
+								"y": 4561.0693359375
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 76,
+							"meta": {
+								"x": 5325.7744140625,
+								"y": 4604.5693359375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_Price"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 78,
+							"Value1": {
+								"src_node": 76,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Different"
+							},
+							"meta": {
+								"x": 5715.0,
+								"y": 4950.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 44,
+							"Value": {
+								"value": "&MShop_Sell&"
+							},
+							"meta": {
+								"x": 4785.0,
+								"y": 4230.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 91,
+							"Condition": {
+								"src_node": 89,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 92,
+							"False": 43,
+							"meta": {
+								"x": 4395.0,
+								"y": 4020.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 92,
+							"Value": {
+								"value": "&MShop_Buyback&"
+							},
+							"meta": {
+								"x": 4680.0,
+								"y": 3915.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 48,
+							"Value1": {
+								"src_node": 46,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 51,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4905.7744140625,
+								"y": 3389.569580078125
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 51,
+							"meta": {
+								"x": 4680.0,
+								"y": 3435.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_CanBuy"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 93,
+							"Value": {
+								"src_node": 97,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 100,
+							"meta": {
+								"x": 4515.0,
+								"y": 4590.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group4/group1/btn_redeem",
+								"element_uuid": "{b3c85eb5-81d0-4490-9851-c5ec01bd1405}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 99,
+							"Condition": {
+								"src_node": 94,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 101,
+							"False": 98,
+							"meta": {
+								"x": 4470.0,
+								"y": 4845.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 98,
+							"Value": {
+								"value": "&MQuartermaster_BtnCAItem&"
+							},
+							"meta": {
+								"x": 4905.0,
+								"y": 4905.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group4/group1/btn_redeem",
+								"element_uuid": "{b3c85eb5-81d0-4490-9851-c5ec01bd1405}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 103,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 104,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "&MTrade_AltUpgrade&"
+							},
+							"Value on False": {
+								"value": "&MTrade_AltBuy&"
+							},
+							"meta": {
+								"x": 3300.0,
+								"y": 3900.0
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 108,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 104,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "&MTrade_TokensUpgrade&"
+							},
+							"Value on False": {
+								"value": "&MTrade_TokensBuy&"
+							},
+							"meta": {
+								"x": 3067.415283203125,
+								"y": 4176.31103515625
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 127,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Color",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"Selector": {
+								"src_node": 124,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "loc_orange"
+							},
+							"Value on False": {
+								"value": "menu_red"
+							},
+							"meta": {
+								"x": 8990.0,
+								"y": 2083.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 129,
+							"Value": {
+								"value": "&MShop_Buy&"
+							},
+							"meta": {
+								"x": 4785.0,
+								"y": 4485.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "wrap_panel/btns/group2/group1/btn_trade",
+								"element_uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 142,
+							"meta": {
+								"x": 4020.0,
+								"y": 1665.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 143,
+							"Value": {
+								"src_node": 142,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4256.93017578125,
+								"y": 1667.698486328125
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 144,
+							"Next": 80,
+							"meta": {
+								"x": 3791.93017578125,
+								"y": 1607.698486328125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ShowUpgrade"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 166,
+							"Value1": {
+								"src_node": 168,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "1"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 7896.5146484375,
+								"y": 2222.410888671875
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 168,
+							"meta": {
+								"x": 7641.5146484375,
+								"y": 2207.410888671875
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_ItemCount"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 169,
+							"Value1": {
+								"src_node": 124,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 166,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8256.5146484375,
+								"y": 2147.410888671875
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 170,
+							"Value": {
+								"src_node": 169,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 8466.5146484375,
+								"y": 2147.410888671875
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 172,
+							"Value1": {
+								"value": " &MenuChooseMax& ("
+							},
+							"Value2": {
+								"src_node": 173,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 9985.0771484375,
+								"y": 2087.068359375
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 173,
+							"Value": {
+								"src_node": 176,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 9805.0771484375,
+								"y": 2087.068359375
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 174,
+							"Value1": {
+								"src_node": 172,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Value2": {
+								"value": ")"
+							},
+							"meta": {
+								"x": 10285.0771484375,
+								"y": 2087.068359375
+							}
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 175,
+							"Value1": {
+								"value": "&MShop_Buy&"
+							},
+							"Value2": {
+								"src_node": 174,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 10495.0771484375,
+								"y": 2087.068359375
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 176,
+							"meta": {
+								"x": 9595.0771484375,
+								"y": 2087.068359375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AffordsCount"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 179,
+							"meta": {
+								"x": 7470.0,
+								"y": 2910.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "GuiShopItemData",
+								"field": "m_AffordsCount"
+							}
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 180,
+							"Value1": {
+								"src_node": 179,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 7725.0,
+								"y": 2910.0
+							}
+						}
+					]
+				}
+			],
+			"dyn_fields": [
+				{
+					"name": "reset_buttons",
+					"type": "bool",
+					"value": "0"
+				}
+			]
+		}
+	],
+	"objects": [
+		{
+			"class": "gui::IGroup",
+			"uuid": "{a0e43f9a-f125-4243-b074-ed3824783103}",
+			"Id": "wrap_panel",
+			"components": [
+				{
+					"class": "gui::IElementComponent",
+					"uuid": "{39037161-d591-4cee-9134-b553d9797fa0}"
+				},
+				{
+					"class": "gui::ILayoutComponent",
+					"uuid": "{a58c2479-df99-4775-b3d6-5112b1a78663}",
+					"Height": "150.000000",
+					"Width": "1880.000000",
+					"SizeModeY": "AutoSizeToElements",
+					"SizeModeX": "Stretch",
+					"MarginBottom": "4.000000",
+					"MarginRight": "20.000000",
+					"MarginTop": "4.000000"
+				},
+				{
+					"class": "gui::IWrapPanelComponent",
+					"uuid": "{b8ff31ce-b01c-44fc-8bc9-81fdbaeea530}",
+					"Wrap": "0",
+					"Orientation": "Vertical"
+				}
+			],
+			"objects": [
+				{
+					"class": "gui::IGroup",
+					"uuid": "{07a7a43b-78f7-41ac-b116-62fd2d732df1}",
+					"Id": "btns",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{af051718-8e56-4c26-a952-a6ff95fc12b1}",
+							"RenderChildFirst": "1",
+							"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{534b0386-dde0-43bd-9ceb-38750f78d98f}",
+							"Height": "68.006165",
+							"Width": "345.000000",
+							"SizeModeY": "AutoSizeToElements",
+							"SizeModeX": "Stretch"
+						},
+						{
+							"class": "gui::IWrapPanelComponent",
+							"uuid": "{1b780d91-8942-402f-b923-f97c00ffd54e}",
+							"Wrap": "0",
+							"Orientation": "Vertical"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::IGroup",
+							"uuid": "{c641d133-a239-4ccf-9b84-49a182307d55}",
+							"Id": "group3",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{0b4d28d0-7625-485e-9685-09d99fd64e82}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{d108aad9-1a6b-47b8-966f-68a4bffbffd8}",
+									"Height": "40.000000",
+									"Width": "119.664841",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "Stretch",
+									"MarginBottom": "10.000000"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{aa6f9c8d-a2fe-400d-8b15-69ebd64e4159}",
+									"Id": "alternative_cost_panel",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{fbb98ef5-1695-4717-8ed4-30bd1f4f2d0e}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{bc648580-63c0-4bdd-af62-6f05e6707d90}",
+											"SizeModeY": "AutoSizeToElements",
+											"SizeModeX": "Stretch"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{cbf65eac-e5bd-49f8-8436-e6de811dd7c6}",
+											"AlignmentY": "Center"
+										},
+										{
+											"class": "gui::IElementGeneratorComponent",
+											"uuid": "{9882daa2-a6f6-495b-8423-85bed7d281d7}",
+											"DisableSorting": "1",
+											"DefaultSymbol": "alternative_price_symbol",
+											"FieldPath": "m_AlternativePrice",
+											"ComponentEnabled": "0"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{981c20d6-7e17-499d-82a9-12c547bde09f}",
+											"Id": "group1",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{0956dfed-44af-4ffa-8cd1-c194c3069266}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{4c8b06a2-2a93-4065-aec7-0751b348f67c}",
+													"Height": "40.000000",
+													"Width": "119.664841",
+													"SizeModeY": "AutoSizeToElements",
+													"SizeModeX": "AutoSizeToElements",
+													"MarginRight": "16.000000"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::CSymbolRoot",
+													"uuid": "{9e85840d-ad46-4853-909d-ca040f3c7502}",
+													"Id": "btn_alt_trade",
+													"sub_symbol": "legend_button",
+													"components": [
+														{
+															"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+															"class": "gui::ILayoutComponent",
+															"Width": "101.589844"
+														},
+														{
+															"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+															"class": "gui::ILogicComponent",
+															"dyn_fields": [
+																{
+																	"name": "button_icon",
+																	"type": "string",
+																	"value": "%KEY(_ACTION_GUI_PAD_A_OR_LMB,NOBRACKETS)"
+																},
+																{
+																	"name": "button_text",
+																	"type": "string",
+																	"value": "&MTrade_AltBuy&"
+																}
+															]
+														},
+														{
+															"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+															"class": "gui::IButtonComponent",
+															"HoldAbortSound": "hud_shop_purchase_stop",
+															"HoldStartSound": "hud_shop_purchase_start",
+															"PressSound": "",
+															"HoldTime": "0.001000",
+															"PressAction": "_ACTION_GUI_PAD_A_OR_LMB"
+														}
+													]
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{adf01d59-4f8f-42ed-9241-8a270f0f1776}",
+											"Id": "alternative_price_symbol",
+											"sub_symbol": "alternative_price_symbol",
+											"components": [
+												{
+													"target_component_uuid": "{9bcecca1-1882-419a-bb34-c3f390299b1e}",
+													"class": "gui::IElementComponent",
+													"Visible": "0"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{ced8bd98-a148-4823-8243-91c7971998d7}",
+											"Id": "alternative_price_symbol1",
+											"sub_symbol": "alternative_price_symbol",
+											"components": [
+												{
+													"target_component_uuid": "{9bcecca1-1882-419a-bb34-c3f390299b1e}",
+													"class": "gui::IElementComponent",
+													"Visible": "0"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{18019fb8-4df1-46fb-bae0-a60a17e0d983}",
+											"Id": "alternative_price_symbol2",
+											"sub_symbol": "alternative_price_symbol",
+											"components": [
+												{
+													"target_component_uuid": "{9bcecca1-1882-419a-bb34-c3f390299b1e}",
+													"class": "gui::IElementComponent",
+													"Visible": "0"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{6d730976-5c99-4957-b5ce-0942d2eef275}",
+											"Id": "alternative_price_symbol3",
+											"sub_symbol": "alternative_price_symbol",
+											"components": [
+												{
+													"target_component_uuid": "{9bcecca1-1882-419a-bb34-c3f390299b1e}",
+													"class": "gui::IElementComponent",
+													"Visible": "0"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{c40b68db-62e3-4bc1-aaeb-1f1be0f84d21}",
+							"Id": "group2",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{79e9f080-6ea9-49ef-b13e-b0ba940a2072}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{584811db-f7af-4271-ac1c-b9e160a928d5}",
+									"Height": "40.000000",
+									"Width": "215.727341",
+									"MarginBottom": "10.000000",
+									"MarginRight": "20.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{c3c1279d-917a-41bf-bae8-5849e7d77183}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{07a305e7-0f68-4399-9933-5083ac17dd81}",
+									"Id": "group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{e88e5a78-7a61-4b84-ad4f-328bc92beb5e}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{a9eb4efd-b120-40d2-9b9c-159170e1efef}",
+											"Height": "40.000000",
+											"Width": "119.664841",
+											"SizeModeX": "AutoSizeToElements",
+											"MarginRight": "16.000000"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{f1ce2df5-9bab-46ec-a0c7-642a70f9179e}",
+											"Wrap": "0"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{04ce146c-f33b-42ee-bd04-93ca6d5dfd31}",
+											"Id": "btn_trade",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_A_OR_LMB,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MShop_Buy&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.001000",
+													"PressAction": "_ACTION_GUI_PAD_A_OR_LMB"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{3bb32b13-a854-492d-8314-4ba28ce044ab}",
+											"Id": "btn_trade_all",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844",
+													"MarginLeft": "16.000000"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_Y,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MShop_BuyAll&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.001000",
+													"PressAction": "_ACTION_GUI_PAD_Y"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{7dd9a59d-8ae1-4897-9ad7-255dfa39e91e}",
+									"Id": "price_group",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{e104ff03-b76f-47eb-80e5-c153bfe298c6}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{398f7610-6f10-4af2-a802-832d272d6631}",
+											"Height": "40.000000",
+											"Width": "76.062500"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{5f1e72e9-fc6c-4a25-8684-7118a5080630}",
+											"Wrap": "0"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{b8ac142b-977b-4e17-91d6-76ee46499b9a}",
+											"Id": "cash_group",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{cda0a62f-d65e-4b24-9124-ddcd24d1a099}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{8116afdf-8a33-4ac3-a097-0a4836edcca3}",
+													"Height": "45.000000",
+													"Width": "76.062500",
+													"SizeModeY": "AutoSizeToElements",
+													"SizeModeX": "AutoSizeToElements",
+													"MarginRight": "24.000000",
+													"MarginTop": "-2.500000"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::IGroup",
+													"uuid": "{ab72e557-35da-4760-b704-b4791a6f0cf6}",
+													"Id": "white",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{a19ab44c-5485-499d-b0cc-c33c2a1260b9}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{21f5133f-cfe1-46cc-867a-cbe0c2868eca}",
+															"Height": "45.000000",
+															"Width": "45.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::IImageComponent",
+															"uuid": "{76da2e4a-2124-4b6e-83c4-15015880d558}",
+															"Texture": "money_icon"
+														}
+													]
+												},
+												{
+													"class": "gui::IGroup",
+													"uuid": "{6e031bc4-00c3-4a95-983c-230818fda9ef}",
+													"Id": "text",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{daa0da23-2234-4f1e-b13a-a78b40ad338d}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{51a5f7a4-f6a3-47db-83fa-3154333c6256}",
+															"SizeModeY": "AutoSizeToComponents",
+															"SizeModeX": "AutoSizeToComponents",
+															"MarginLeft": "50.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::ITextComponent",
+															"uuid": "{269e74db-c42f-475b-8804-3cb1a666cfba}",
+															"_preset_": "H1_HeaderTitle",
+															"ShadowColor": "000000C0",
+															"ShadowOffset": "1.000000 1.000000",
+															"DropShadow": "1",
+															"TextColorMul": "rarity_legendary",
+															"Multiline": "0",
+															"_StylePreset_": "H1_HeaderTitle",
+															"TextValue": "30"
+														}
+													]
+												}
+											]
+										},
+										{
+											"class": "gui::IGroup",
+											"uuid": "{1e01cb7c-0a2a-4b4e-9256-f8b320ecd061}",
+											"Id": "alt_agent",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{eccc94fd-4344-4e77-b8a8-57efac8507a2}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{e3dd720e-8d01-4205-93e4-9c6357919079}",
+													"MarginTop": "-3.000000"
+												},
+												{
+													"class": "gui::IWrapPanelComponent",
+													"uuid": "{e6e911a1-f522-4bbe-b7c8-e97c0c1f9b92}",
+													"Wrap": "0"
+												},
+												{
+													"class": "gui::IElementGeneratorComponent",
+													"uuid": "{6898c3bb-7503-4834-ad79-ecc0df94c9d9}",
+													"DefaultSymbol": "alt_agent_price_symbol",
+													"FieldPath": "m_AlternativePrice"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::CSymbolRoot",
+													"uuid": "{39aa8bdb-43c8-4aa2-ab70-0bd7dd1f572e}",
+													"Id": "alt_agent_price_symbol",
+													"sub_symbol": "alt_agent_price_symbol",
+													"components": [
+														{
+															"target_component_uuid": "{e6a38aa8-fd6f-40c4-b2d2-3db4a4fba791}",
+															"class": "gui::ILayoutComponent",
+															"SizeModeX": "AutoSizeToElements"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{0c242565-f6fe-40c5-b624-d5b1b90a2fb5}",
+							"Id": "agent_cash",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{e85d4d83-545e-4169-95aa-78f12ff3ff5e}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{86397d38-3b8f-4ed0-ac82-086a5c02ad67}",
+									"Height": "40.000000",
+									"Width": "215.727341",
+									"MarginBottom": "10.000000",
+									"MarginRight": "20.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{65f6fdd6-353d-43d4-b761-6c751077ed59}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{eaf74911-00c6-47e7-8cbb-b10906392dce}",
+									"Id": "group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{b02af3ef-3125-42d3-8f11-d99d1f6867d3}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{ac669a6d-4831-423c-ad83-1218d957eb76}",
+											"Height": "40.000000",
+											"Width": "119.664841",
+											"SizeModeX": "AutoSizeToElements",
+											"MarginRight": "16.000000"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{c9aa4000-5d98-43e1-94e0-32f8d2b86cb2}",
+											"Wrap": "0"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{8ce2897e-a327-489c-8b99-5c2606dcdbf0}",
+											"Id": "btn_trade_agent_cash",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_Y_OR_MMB,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MShop_Buy&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.001000",
+													"PressAction": "_ACTION_GUI_PAD_Y_OR_MMB"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{8e5a6379-b98a-4361-80ea-30128a004155}",
+											"Id": "btn_trade_agent_cash_all",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844",
+													"MarginLeft": "16.000000"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_Y_OR_MMB,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MShop_Buy&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.001000",
+													"PressAction": "_ACTION_GUI_PAD_Y_OR_MMB"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{17d5ab7f-e3db-4d0a-9174-e7657c0847bb}",
+									"Id": "price_group",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{0b4f3400-e333-441f-8059-48e38010a2eb}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{15b56d59-a1ad-45d8-937a-a56d6723b2ed}",
+											"Height": "40.000000",
+											"Width": "76.062500"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{36eea354-4562-4374-b2a8-5af6ae144e74}",
+											"Wrap": "0"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{268603b4-ae97-454b-af1a-d290359d8d3f}",
+											"Id": "cash_group",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{53b477b2-55a8-4033-a458-153ad009e0c8}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{768b8a90-9679-4d0f-a0b7-026bb7a5263a}",
+													"Height": "45.000000",
+													"Width": "76.062500",
+													"SizeModeY": "AutoSizeToElements",
+													"SizeModeX": "AutoSizeToElements",
+													"MarginRight": "24.000000",
+													"MarginTop": "-2.500000"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::IGroup",
+													"uuid": "{2325fe7a-be43-44af-a9c5-b3857dbc62f8}",
+													"Id": "white",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{eba4abed-8d64-4634-8b23-aa256710d7bd}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{48be6161-8138-4771-9084-da5b0b2a00b6}",
+															"Height": "45.000000",
+															"Width": "45.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::IImageComponent",
+															"uuid": "{db0a5934-a350-4145-b5d5-528dcbda90fb}",
+															"Texture": "money_icon"
+														}
+													]
+												},
+												{
+													"class": "gui::IGroup",
+													"uuid": "{7c14b9e9-777a-4152-acbc-82ee1e61ab5e}",
+													"Id": "text",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{b097270f-2bd3-42c2-8b5d-25e3f9b6ad04}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{cedb6445-2dc0-4482-bb2c-48b33154f07b}",
+															"SizeModeY": "AutoSizeToComponents",
+															"SizeModeX": "AutoSizeToComponents",
+															"MarginLeft": "50.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::ITextComponent",
+															"uuid": "{babe4bb6-fb08-45ec-848d-521e3d401e19}",
+															"_preset_": "H1_HeaderTitle",
+															"ShadowColor": "000000C0",
+															"ShadowOffset": "1.000000 1.000000",
+															"DropShadow": "1",
+															"TextColorMul": "rarity_legendary",
+															"Multiline": "0",
+															"_StylePreset_": "H1_HeaderTitle",
+															"TextValue": "30"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{683e6805-c205-425f-8c48-ac81b9459e41}",
+							"Id": "group1",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{6ba18795-23d8-44ab-bcdd-e752da78a5c2}",
+									"Collapsed": "1",
+									"Visible": "0",
+									"Opacity": "0.000000"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{a8af1518-4a11-4adc-b5e4-8859e751f17b}",
+									"Height": "40.000000",
+									"Width": "215.727341",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginBottom": "10.000000",
+									"MarginRight": "20.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{294feffb-ed88-4aea-863f-87ff2a7939bf}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{e0264c3b-055e-4ff1-9667-4751d2029b1d}",
+									"Id": "group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{b01f28e4-0f2b-4942-9786-1b7842f0a036}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{d0a6dc6f-c550-42a3-b97e-5e94989e4e6c}",
+											"Height": "40.000000",
+											"Width": "119.664841",
+											"SizeModeX": "AutoSizeToElements",
+											"MarginRight": "16.000000"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{b0f44e5d-f5cb-45a1-b43a-0570076bead5}",
+											"Id": "btn_trade_tokens",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_A_OR_LMB,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MTrade_TokensBuy&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.001000",
+													"PressAction": "_ACTION_GUI_PAD_A_OR_LMB"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{fcf04a38-d062-4eab-a668-6b72679f2e3b}",
+									"Id": "price_group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{60dbe4e6-77b2-4aba-a948-0237cfef5650}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{f65331c0-0ca0-4ca7-93a0-2576d4fd00bf}",
+											"Height": "40.000000",
+											"Width": "76.062500",
+											"SizeModeX": "AutoSizeToElements"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{310e4087-0a13-4523-8a23-e446c6690f53}",
+											"Id": "token_group",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{473493b5-8b2d-46ce-a2db-6289cce15664}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{2ca161bd-b119-465e-b6fe-0fb9772de3cb}",
+													"Height": "45.000000",
+													"Width": "76.062500",
+													"SizeModeY": "AutoSizeToElements",
+													"SizeModeX": "AutoSizeToElements",
+													"MarginTop": "-2.500000"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::IGroup",
+													"uuid": "{f829ba91-9248-49d3-a996-72213f4f555a}",
+													"Id": "white",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{4419dc6c-4913-4309-994f-1836dae67be0}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{2e32d7b4-4f89-420d-b6be-c28897c43707}",
+															"Height": "45.000000",
+															"Width": "45.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::IImageComponent",
+															"uuid": "{a75b64fe-dc44-47b2-b46b-7c01a1bbb0d0}",
+															"Texture": "icon_token"
+														}
+													]
+												},
+												{
+													"class": "gui::IGroup",
+													"uuid": "{b81fe8e1-37cd-4a8e-b644-064f30f3239b}",
+													"Id": "text",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{b9c01651-6c52-46aa-95e3-a3cf26b3c7ee}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{79578cab-daa8-4968-8bf7-9c16612161d2}",
+															"SizeModeY": "AutoSizeToComponents",
+															"SizeModeX": "AutoSizeToComponents",
+															"MarginLeft": "50.000000",
+															"MarginAnchorY": "Center"
+														},
+														{
+															"class": "gui::ITextComponent",
+															"uuid": "{32d4d111-3b25-4a83-a09c-6f8ab8493835}",
+															"ShadowOffset": "1.000000 1.000000",
+															"DropShadow": "1",
+															"TextColorMul": "white_color",
+															"Multiline": "0",
+															"FontSize": "18.000000",
+															"FontStyle": "Bold",
+															"TextValue": "30"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{0fcf2cdb-7eca-41cc-9736-16c6ec7306e8}",
+							"Id": "group4",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{4d7f1415-90c0-4976-af50-de38e2f466c7}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{96ae91b7-ed5a-488a-99cc-886c22da3e14}",
+									"Height": "40.000000",
+									"Width": "215.727341",
+									"MarginBottom": "10.000000",
+									"MarginRight": "20.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{dd776749-43bb-40e7-ae50-118e65744936}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{a875dda2-a177-47ac-b78a-686da59334b7}",
+									"Id": "group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{cb65774e-c3ef-4b62-b4dd-34efc2b106e3}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{4a8908b5-b63c-48e8-82c4-a0137b13371d}",
+											"Height": "40.000000",
+											"Width": "119.664841",
+											"SizeModeX": "AutoSizeToElements",
+											"MarginRight": "16.000000"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{b3c85eb5-81d0-4490-9851-c5ec01bd1405}",
+											"Id": "btn_redeem",
+											"sub_symbol": "legend_button",
+											"components": [
+												{
+													"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+													"class": "gui::ILayoutComponent",
+													"Width": "101.589844"
+												},
+												{
+													"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+													"class": "gui::ILogicComponent",
+													"dyn_fields": [
+														{
+															"name": "button_icon",
+															"type": "string",
+															"value": "%KEY(_ACTION_GUI_PAD_X_OR_LMB,NOBRACKETS)"
+														},
+														{
+															"name": "button_text",
+															"type": "string",
+															"value": "&MQuartermaster_BtnRedeemDocket&"
+														}
+													]
+												},
+												{
+													"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+													"class": "gui::IButtonComponent",
+													"HoldAbortSound": "hud_shop_purchase_stop",
+													"HoldStartSound": "hud_shop_purchase_start",
+													"PressSound": "",
+													"HoldTime": "0.500000",
+													"PressAction": "_ACTION_GUI_PAD_X_OR_LMB"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::CSymbolRoot",
+							"uuid": "{f0844fed-6977-460d-9925-6e3448a8724b}",
+							"Id": "btn_upgrade_blueprint",
+							"sub_symbol": "legend_button",
+							"components": [
+								{
+									"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+									"class": "gui::ILayoutComponent",
+									"Width": "101.589844"
+								},
+								{
+									"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+									"class": "gui::ILogicComponent",
+									"dyn_fields": [
+										{
+											"name": "button_icon",
+											"type": "string",
+											"value": "%KEY(_ACTION_GUI_PAD_Y)"
+										},
+										{
+											"name": "button_text",
+											"type": "string",
+											"value": "&MShop_UpgradeBlueprint&"
+										}
+									]
+								},
+								{
+									"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+									"class": "gui::IButtonComponent",
+									"PressSound": "",
+									"HoldTime": "0.001000",
+									"PressAction": "_ACTION_GUI_PAD_Y"
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{f1ecd452-b8e4-4ed2-8deb-7dad37326a67}",
+					"Id": "cant_fit_text",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{c4cee6cb-a905-4a10-aaf4-943f44a161e8}"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{021d2718-c9e1-40c3-a36b-bab4b72070d8}",
+							"Height": "25.986000",
+							"Width": "196.133408",
+							"SizeModeY": "AutoSizeToComponents",
+							"SizeModeX": "AutoSizeToComponents",
+							"MarginRight": "20.000000",
+							"MarginTop": "16.000000",
+							"MarginLeft": "4.000000"
+						},
+						{
+							"class": "gui::ITextComponent",
+							"uuid": "{be51eb3e-f6aa-4e15-b07c-ad4e94de384f}",
+							"_preset_": "B2B_BodyTextBold",
+							"ShadowColor": "000000C0",
+							"ShadowOffset": "1.000000 1.000000",
+							"DropShadow": "1",
+							"TextColorMul": "text_fail",
+							"Multiline": "0",
+							"_StylePreset_": "B2B_BodyTextBold",
+							"TextValue": "&MShop_NotEnoughSlots&"
+						}
+					]
+				}
+			]
+		}
+	]
+}

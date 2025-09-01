@@ -1,0 +1,3411 @@
+{
+    "version": 1,
+    "symbol_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+    "symbol_size": "1920.000000 1080.000000",
+    "data_context_class": "MenuPlayGameController",
+    "class": "gui::ISymbolRoot",
+    "uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+    "Id": "MenuPlayCampaign",
+    "components": [{
+            "class": "gui::IElementComponent",
+            "uuid": "{3e10fd6a-4d2d-426e-94a7-3480ef886e6f}"
+        }, {
+            "class": "gui::ILayoutComponent",
+            "uuid": "{7bf697e2-d59c-4b37-8419-43e5130351cb}",
+            "Height": "1080.000000",
+            "Width": "1920.000000"
+        }, {
+            "class": "gui::IResolutionScalerComponent",
+            "uuid": "{88561e14-14e7-4e2e-b6c2-1056502bf051}"
+        }, {
+            "class": "gui::CScreenComponent",
+            "uuid": "{8c8f265a-b1e1-44f4-9411-8ad8402b8c54}",
+            "DependencyScreen0": "MainBackground",
+            "UsePadCursor": "1",
+            "DataClassName": "MenuPlayGameController"
+        }, {
+            "class": "gui::ILogicComponent",
+            "uuid": "{8092b6d9-437a-4e33-9a84-64bbf9fc8591}",
+            "data": [{
+                    "type": "CVariablesComponentSymbolData",
+                    "dyn_fields": [{
+                            "name": "slot_idx",
+                            "type": "int",
+                            "value": "-1"
+                        }
+                    ]
+                }, {
+                    "type": "CActionGraphSymbolData",
+                    "uuid": "{83ba3a8c-3c6b-4dbb-b20f-9bf5b6a0e1ac}",
+                    "hash": "",
+                    "nodes": [{
+                            "type": "CActionSetBool",
+                            "id": 153,
+                            "Value": {
+                                "src_node": 151,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 6168.0009765625,
+                                "y": 2945.5224609375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_mods_order",
+                                "element_uuid": "{74980580-5932-443b-bd14-b6cca5d10eec}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetString",
+                            "id": 155,
+                            "Value": {
+                                "src_node": 154,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "Next": 153,
+                            "meta": {
+                                "x": 5880.0,
+                                "y": 2940.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_toggle_mods",
+                                "element_uuid": "{c5800d99-8deb-417d-98dd-1de31e46ef84}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "button_text"
+                            }
+                        }, {
+                            "type": "CActionSelectUsingBool",
+                            "id": 154,
+                            "wc_spec_type": [{
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 151,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value on True": {
+                                "value": "&MPlayCampaing_Mods_On&"
+                            },
+                            "Value on False": {
+                                "value": "&MPlayCampaing_Mods_Off&"
+                            },
+                            "meta": {
+                                "x": 5550.0,
+                                "y": 3045.0
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 152,
+                            "Next": 155,
+                            "meta": {
+                                "x": 5323.0,
+                                "y": 2913.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ModsEnabled"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 151,
+                            "meta": {
+                                "x": 5323.0,
+                                "y": 3013.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ModsEnabled"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 150,
+                            "Value": {
+                                "src_node": 148,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 6148.0,
+                                "y": 2163.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_mods_order",
+                                "element_uuid": "{74980580-5932-443b-bd14-b6cca5d10eec}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Collapsed"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 149,
+                            "Value": {
+                                "src_node": 148,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 150,
+                            "meta": {
+                                "x": 5859.0,
+                                "y": 2168.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_toggle_mods",
+                                "element_uuid": "{c5800d99-8deb-417d-98dd-1de31e46ef84}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Collapsed"
+                            }
+                        }, {
+                            "type": "CActionNot",
+                            "id": 148,
+                            "Value": {
+                                "src_node": 146,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5698.0,
+                                "y": 2274.0
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 147,
+                            "Next": 149,
+                            "meta": {
+                                "x": 5383.0,
+                                "y": 2126.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowModsButtons"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 146,
+                            "meta": {
+                                "x": 5383.0,
+                                "y": 2226.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowModsButtons"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 144,
+                            "Next": 145,
+                            "meta": {
+                                "x": 5371.0,
+                                "y": 2663.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_toggle_mods",
+                                "element_uuid": "{c5800d99-8deb-417d-98dd-1de31e46ef84}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 142,
+                            "Next": 143,
+                            "meta": {
+                                "x": 5368.0986328125,
+                                "y": 2418.802001953125
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_mods_order",
+                                "element_uuid": "{74980580-5932-443b-bd14-b6cca5d10eec}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 141,
+                            "meta": {
+                                "x": 4270.0,
+                                "y": 2350.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "btn_import_saves",
+                            "group_moves": true,
+                            "size": "619.000000 465.000000"
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 140,
+                            "Value": {
+                                "src_node": 139,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 4665.0,
+                                "y": 2655.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_import_saves_",
+                                "element_uuid": "{33abadb0-a622-41cf-8c37-1b396c8df323}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 139,
+                            "meta": {
+                                "x": 4290.0,
+                                "y": 2730.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowImportSavesButton"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 138,
+                            "Next": 140,
+                            "meta": {
+                                "x": 4290.0,
+                                "y": 2625.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowImportSavesButton"
+                            }
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 137,
+                            "m_Action": {
+                                "value": "ImportSaves"
+                            },
+                            "m_Index": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 4590.0,
+                                "y": 2415.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 136,
+                            "Next": 137,
+                            "meta": {
+                                "x": 4290.0,
+                                "y": 2415.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_import_saves_",
+                                "element_uuid": "{33abadb0-a622-41cf-8c37-1b396c8df323}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 134,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 1665.0,
+                                "y": 3750.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group3",
+                                "element_uuid": "{9756b796-d9c5-40f7-a895-013dcb737ff9}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionIntToFloat",
+                            "id": 133,
+                            "Value": {
+                                "src_node": 131,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 1170.0,
+                                "y": 4275.0
+                            }
+                        }, {
+                            "type": "CActionSetFloat",
+                            "id": 132,
+                            "Value": {
+                                "src_node": 133,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "meta": {
+                                "x": 1335.0,
+                                "y": 4185.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2",
+                                "element_uuid": "{f38109b7-4c15-4781-ab29-9a7a9daec38d}",
+                                "component_class": "gui::ILayoutComponent",
+                                "field": "MarginTop"
+                            }
+                        }, {
+                            "type": "CActionMultiplyInt",
+                            "id": 131,
+                            "Value1": {
+                                "src_node": 130,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "140"
+                            },
+                            "meta": {
+                                "x": 990.0,
+                                "y": 4290.0
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 127,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 1470.0,
+                                "y": 3750.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2",
+                                "element_uuid": "{f38109b7-4c15-4781-ab29-9a7a9daec38d}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionBranch",
+                            "id": 126,
+                            "Condition": {
+                                "src_node": 125,
+                                "src_prop": "Result",
+                                "value": "1"
+                            },
+                            "True": 127,
+                            "False": 128,
+                            "meta": {
+                                "x": 1290.0,
+                                "y": 3870.0
+                            }
+                        }, {
+                            "type": "CActionCompareInt",
+                            "id": 125,
+                            "Value1": {
+                                "src_node": 110,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 975.0,
+                                "y": 3945.0
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 124,
+                            "Next": 126,
+                            "meta": {
+                                "x": 750.0,
+                                "y": 3840.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_SelectedSlot"
+                            }
+                        }, {
+                            "type": "CActionGetInt",
+                            "id": 110,
+                            "meta": {
+                                "x": 750.0,
+                                "y": 3945.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_SelectedSlot"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 108,
+                            "Value": {
+                                "src_node": 123,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5205.0,
+                                "y": 5850.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_show_my_game_plus",
+                                "element_uuid": "{65869096-9ef2-4448-a461-e2bc78fe391b}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 123,
+                            "meta": {
+                                "x": 4980.0,
+                                "y": 6000.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowMyGamePlusButton"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 122,
+                            "Next": 98,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5430.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowMyGamePlusButton"
+                            }
+                        }, {
+                            "type": "CActionBranch",
+                            "id": 119,
+                            "Condition": {
+                                "src_node": 120,
+                                "src_prop": "Value",
+                                "value": "1"
+                            },
+                            "True": 106,
+                            "False": 121,
+                            "meta": {
+                                "x": 3315.0,
+                                "y": 5145.0
+                            }
+                        }, {
+                            "type": "CActionOr",
+                            "id": 118,
+                            "Value1": {
+                                "src_node": 92,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 117,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3165.0,
+                                "y": 5790.0
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 117,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5865.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_MyGamePlusMode"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 113,
+                            "Next": 98,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5520.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_MyGamePlusMode"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 116,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 4095.0,
+                                "y": 4635.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_MyGamePlusMode"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 115,
+                            "meta": {
+                                "x": 2925.0,
+                                "y": 4740.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionBranch",
+                            "id": 114,
+                            "Condition": {
+                                "src_node": 115,
+                                "src_prop": "Value",
+                                "value": "1"
+                            },
+                            "True": 79,
+                            "False": 112,
+                            "meta": {
+                                "x": 3195.0,
+                                "y": 4590.0
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 111,
+                            "Next": 116,
+                            "meta": {
+                                "x": 3825.0,
+                                "y": 4590.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_show_my_game_plus",
+                                "element_uuid": "{65869096-9ef2-4448-a461-e2bc78fe391b}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 102,
+                            "Next": 107,
+                            "meta": {
+                                "x": 3750.0,
+                                "y": 3810.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_new_game_plus",
+                                "element_uuid": "{ffdb6395-a344-4180-b7a5-9d7b6a87552a}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 97,
+                            "Next": 95,
+                            "meta": {
+                                "x": 3750.0,
+                                "y": 3585.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowNewGamePlusButton"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 96,
+                            "meta": {
+                                "x": 3750.0,
+                                "y": 3675.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowNewGamePlusButton"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 95,
+                            "Value": {
+                                "src_node": 96,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 4095.0,
+                                "y": 3585.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_new_game_plus",
+                                "element_uuid": "{ffdb6395-a344-4180-b7a5-9d7b6a87552a}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 94,
+                            "Next": 98,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5700.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 92,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5790.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 105,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 3240.0,
+                                "y": 4980.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 104,
+                            "Next": 44,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 2835.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 101,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 3090.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionNot",
+                            "id": 99,
+                            "Value": {
+                                "src_node": 101,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3270.0,
+                                "y": 3075.0
+                            }
+                        }, {
+                            "type": "CActionAnd",
+                            "id": 100,
+                            "Value1": {
+                                "src_node": 41,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 99,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3405.0,
+                                "y": 2955.0
+                            }
+                        }, {
+                            "type": "CActionBranch",
+                            "id": 98,
+                            "Condition": {
+                                "src_node": 118,
+                                "src_prop": "Result",
+                                "value": "1"
+                            },
+                            "True": 83,
+                            "False": 84,
+                            "meta": {
+                                "x": 3315.0,
+                                "y": 5685.0
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 93,
+                            "Next": 98,
+                            "meta": {
+                                "x": 2850.0,
+                                "y": 5610.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ModsEnabled"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 90,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 109,
+                            "meta": {
+                                "x": 5010.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/text1",
+                                "element_uuid": "{8da1d65a-9600-4269-80bb-a8137a14c4d5}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 83,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 77,
+                            "meta": {
+                                "x": 3555.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots",
+                                "element_uuid": "{5ed0567f-d1e8-4763-b619-00f7be5fde8d}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 81,
+                            "Next": 119,
+                            "meta": {
+                                "x": 3045.0,
+                                "y": 5085.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_hide_play_from_chapter",
+                                "element_uuid": "{820401c7-98f0-412b-ae8f-2faa81dd31a4}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 80,
+                            "Next": 105,
+                            "meta": {
+                                "x": 3045.0,
+                                "y": 4935.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group3/btn_show_play_from_chapter",
+                                "element_uuid": "{445b75d9-0a61-4c6e-b340-2f444736bf89}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 77,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 76,
+                            "meta": {
+                                "x": 3750.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/play_from_chapter",
+                                "element_uuid": "{d3e1e40f-b328-4805-a001-c3267ecb4f1a}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 76,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 75,
+                            "meta": {
+                                "x": 3990.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group3/btn_show_play_from_chapter",
+                                "element_uuid": "{445b75d9-0a61-4c6e-b340-2f444736bf89}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 75,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 74,
+                            "meta": {
+                                "x": 4275.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_play_from_chapter_start",
+                                "element_uuid": "{4a0c1ee9-2adb-40e2-a983-e1bcb7fb6bfd}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 74,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 73,
+                            "meta": {
+                                "x": 4560.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_hide_play_from_chapter",
+                                "element_uuid": "{820401c7-98f0-412b-ae8f-2faa81dd31a4}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 73,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 90,
+                            "meta": {
+                                "x": 4830.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_back_",
+                                "element_uuid": "{7a1383fc-d1df-4f2f-b1a4-d71415557ba3}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetWString",
+                            "id": 82,
+                            "Value": {
+                                "src_node": 18,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4800.0,
+                                "y": 1110.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/play_from_chapter/group1/group2/game_visibility",
+                                "element_uuid": "{d11a6b7a-2e66-40a9-910d-ac8d5964c135}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 78,
+                            "Next": 114,
+                            "meta": {
+                                "x": 2955.0,
+                                "y": 4530.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_play_from_chapter_start",
+                                "element_uuid": "{4a0c1ee9-2adb-40e2-a983-e1bcb7fb6bfd}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 71,
+                            "Next": 72,
+                            "meta": {
+                                "x": 3015.0,
+                                "y": 3975.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_rollback",
+                                "element_uuid": "{aac48b9e-3bc6-4f58-88c4-b422b5ce81e1}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionGameDataEvent",
+                            "id": 48,
+                            "Next": 6,
+                            "meta": {
+                                "x": 1890.0,
+                                "y": 1290.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CScreenAboutToShow"
+                        }, {
+                            "type": "CActionGetCurrentHover",
+                            "id": 47,
+                            "meta": {
+                                "x": 1961.9208984375,
+                                "y": 1672.7489013671876
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 45,
+                            "Next": 5,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 3225.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_delete",
+                                "element_uuid": "{8656ec2a-2489-4951-b90a-6739882f42e0}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 44,
+                            "Value": {
+                                "src_node": 100,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3555.0,
+                                "y": 2835.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_delete",
+                                "element_uuid": "{8656ec2a-2489-4951-b90a-6739882f42e0}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 43,
+                            "Next": 44,
+                            "meta": {
+                                "x": 2984.06494140625,
+                                "y": 2929.03369140625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowDeleteSave"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 41,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 3015.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowDeleteSave"
+                            }
+                        }, {
+                            "type": "CActionGetFieldFromPtr",
+                            "id": 27,
+                            "MenuPlayGameSlotData": {
+                                "src_node": 12,
+                                "src_prop": "OutputPtr",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2445.0,
+                                "y": 1695.0
+                            },
+                            "rtti": "MenuPlayGameSlotData",
+                            "field": "m_SlotIdx",
+                            "type": "int",
+                            "subtype": ""
+                        }, {
+                            "type": "CActionCastTo",
+                            "id": 12,
+                            "Success": 58,
+                            "Failed": 57,
+                            "InputPtr": {
+                                "src_node": 47,
+                                "src_prop": "DataContext",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2220.0,
+                                "y": 1515.0
+                            },
+                            "ptr_class": "MenuPlayGameSlotData"
+                        }, {
+                            "type": "CActionIntToString",
+                            "id": 11,
+                            "Value": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Format": {
+                                "value": "%d"
+                            },
+                            "meta": {
+                                "x": 3390.0,
+                                "y": 1245.0
+                            }
+                        }, {
+                            "type": "CActionSetString",
+                            "id": 7,
+                            "Value": {
+                                "src_node": 11,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3578.64794921875,
+                                "y": 1082.7381591796876
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/text",
+                                "element_uuid": "{e62499ce-8982-41ec-bfec-d2669360d115}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        }, {
+                            "type": "CActionNot",
+                            "id": 38,
+                            "Value": {
+                                "src_node": 51,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5220.0,
+                                "y": 1500.0
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 4,
+                            "Value": {
+                                "src_node": 38,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5385.0,
+                                "y": 1395.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_advanced_",
+                                "element_uuid": "{67ad92c8-aebf-453d-a669-17be23eb24be}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Collapsed"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 65,
+                            "Value": {
+                                "src_node": 61,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 23,
+                            "meta": {
+                                "x": 3297.12646484375,
+                                "y": 909.9944458007813
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_advanced_",
+                                "element_uuid": "{67ad92c8-aebf-453d-a669-17be23eb24be}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 63,
+                            "Value": {
+                                "src_node": 61,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 65,
+                            "meta": {
+                                "x": 3105.0,
+                                "y": 915.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_play_",
+                                "element_uuid": "{be0ff989-f909-4b67-81ec-4ccf46c1711f}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 64,
+                            "Next": 63,
+                            "meta": {
+                                "x": 2906.9404296875,
+                                "y": 903.8739013671876
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "slot_idx"
+                            }
+                        }, {
+                            "type": "CActionBranch",
+                            "id": 62,
+                            "Condition": {
+                                "src_node": 61,
+                                "src_prop": "Result",
+                                "value": "1"
+                            },
+                            "True": 9,
+                            "meta": {
+                                "x": 2472.17919921875,
+                                "y": 1886.0
+                            }
+                        }, {
+                            "type": "CActionCompareInt",
+                            "id": 61,
+                            "Value1": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "-1"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 2520.0,
+                                "y": 2115.0
+                            }
+                        }, {
+                            "type": "CActionGetInt",
+                            "id": 60,
+                            "meta": {
+                                "x": 2321.17919921875,
+                                "y": 2113.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "slot_idx"
+                            }
+                        }, {
+                            "type": "CActionSetInt",
+                            "id": 57,
+                            "Value": {
+                                "value": "-1"
+                            },
+                            "meta": {
+                                "x": 2565.0,
+                                "y": 1590.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "slot_idx"
+                            }
+                        }, {
+                            "type": "CActionGameDataEvent",
+                            "id": 10,
+                            "Next": 12,
+                            "meta": {
+                                "x": 1905.0,
+                                "y": 1485.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CHoverChangedEvent"
+                        }, {
+                            "type": "CActionSetWString",
+                            "id": 56,
+                            "Value": {
+                                "src_node": 18,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "Next": 82,
+                            "meta": {
+                                "x": 4539.0,
+                                "y": 1192.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/group2/game_visibility",
+                                "element_uuid": "{e15af1b6-7f2f-4b8e-ad04-bad2499220b7}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        }, {
+                            "type": "CActionStringMix",
+                            "id": 18,
+                            "wc_spec_type": [{
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                }, {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }, {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MPlayGame_GameVisType&"
+                            },
+                            "%1s": {
+                                "src_node": 28,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 4335.0,
+                                "y": 1395.0
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 13,
+                            "Next": 20,
+                            "meta": {
+                                "x": 3600.0,
+                                "y": 1815.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/group2/btn_options_",
+                                "element_uuid": "{86bae6bb-86cb-43b6-82ce-916b538e8052}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 8,
+                            "Next": 19,
+                            "meta": {
+                                "x": 3015.0,
+                                "y": 1815.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_advanced_",
+                                "element_uuid": "{67ad92c8-aebf-453d-a669-17be23eb24be}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 1,
+                            "Next": 62,
+                            "meta": {
+                                "x": 2280.0,
+                                "y": 1860.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_play_",
+                                "element_uuid": "{be0ff989-f909-4b67-81ec-4ccf46c1711f}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionOnButtonPress",
+                            "id": 55,
+                            "Next": 2,
+                            "meta": {
+                                "x": 2295.0,
+                                "y": 2325.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_back_",
+                                "element_uuid": "{7a1383fc-d1df-4f2f-b1a4-d71415557ba3}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 54,
+                            "meta": {
+                                "x": 4900.0,
+                                "y": 1274.242431640625
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "show advanced options btn",
+                            "group_moves": true,
+                            "size": "544.325378 295.757538"
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 52,
+                            "Next": 4,
+                            "meta": {
+                                "x": 4987.0390625,
+                                "y": 1339.242431640625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowAdvancedOptions"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 51,
+                            "meta": {
+                                "x": 4920.0,
+                                "y": 1485.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowAdvancedOptions"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 50,
+                            "meta": {
+                                "x": 4275.0,
+                                "y": 1125.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "show game visibility text",
+                            "group_moves": true,
+                            "size": "507.000000 415.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 49,
+                            "meta": {
+                                "x": 3651.0,
+                                "y": 1328.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "show online options btn",
+                            "group_moves": true,
+                            "size": "503.000000 250.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 46,
+                            "meta": {
+                                "x": 4290.0,
+                                "y": 1965.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "set submenu data ctx",
+                            "group_moves": true,
+                            "size": "594.000000 250.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 42,
+                            "meta": {
+                                "x": 4288.0,
+                                "y": 1693.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "pass submenu button presses to the screen",
+                            "group_moves": true,
+                            "size": "966.000000 257.000000"
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 40,
+                            "Value": {
+                                "src_node": 36,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3315.0,
+                                "y": 2610.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2",
+                                "element_uuid": "{83328432-6c12-4a3a-a44d-4a1e9e9d71a2}",
+                                "component_class": "gui::IInputBlockerComponent",
+                                "field": "ComponentEnabled"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 39,
+                            "meta": {
+                                "x": 2967.0,
+                                "y": 2524.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "when submenu hides",
+                            "group_moves": true,
+                            "size": "870.000000 265.000000"
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 37,
+                            "Next": 40,
+                            "meta": {
+                                "x": 2987.0,
+                                "y": 2589.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "datasource_path": "m_Submenu",
+                                "field": "m_SubmenuVisible"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 36,
+                            "meta": {
+                                "x": 2987.0,
+                                "y": 2689.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "datasource_path": "m_Submenu",
+                                "field": "m_SubmenuVisible"
+                            }
+                        }, {
+                            "type": "CActionSetRawPtr",
+                            "id": 35,
+                            "Value": {
+                                "src_node": 33,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4624.0,
+                                "y": 2065.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "PlayGameSubmenu",
+                                "element_uuid": "{e9c719ff-3d78-46ee-994f-60713890f8aa}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            },
+                            "ptr_class": "gui::CDataSource"
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 34,
+                            "Next": 35,
+                            "meta": {
+                                "x": 4310.0,
+                                "y": 2030.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_Submenu"
+                            }
+                        }, {
+                            "type": "CActionGetRawPtr",
+                            "id": 33,
+                            "meta": {
+                                "x": 4310.0,
+                                "y": 2130.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_Submenu"
+                            },
+                            "ptr_class": "MenuPlayGameSubmenuData"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 32,
+                            "m_Button": {
+                                "src_node": 31,
+                                "src_prop": "OutputPtr",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4965.0,
+                                "y": 1770.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "datasource_path": "m_Submenu"
+                            },
+                            "msg_rtti": "MenuPlayGameSubmenuEvent"
+                        }, {
+                            "type": "CActionCastTo",
+                            "id": 31,
+                            "Success": 32,
+                            "InputPtr": {
+                                "src_node": 30,
+                                "src_prop": "m_DataContext",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4560.0,
+                                "y": 1785.0
+                            },
+                            "ptr_class": "MenuPlayGameSubmenuBtnData"
+                        }, {
+                            "type": "CActionGameDataEvent",
+                            "id": 30,
+                            "Next": 31,
+                            "meta": {
+                                "x": 4308.0,
+                                "y": 1758.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CButtonPressEvent"
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 29,
+                            "Next": 56,
+                            "meta": {
+                                "x": 4295.0,
+                                "y": 1190.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_GameVisibilityText"
+                            }
+                        }, {
+                            "type": "CActionGetString",
+                            "id": 28,
+                            "meta": {
+                                "x": 4295.0,
+                                "y": 1290.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_GameVisibilityText"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 26,
+                            "Value": {
+                                "src_node": 24,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3993.0,
+                                "y": 1442.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/group2",
+                                "element_uuid": "{22eb4bb4-31e4-48b8-8644-b400f3aad014}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 25,
+                            "Next": 26,
+                            "meta": {
+                                "x": 3671.0,
+                                "y": 1393.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowOnlineOptions"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 24,
+                            "meta": {
+                                "x": 3671.0,
+                                "y": 1493.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ShowOnlineOptions"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 22,
+                            "meta": {
+                                "x": 3580.0,
+                                "y": 1765.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "btn_options",
+                            "group_moves": true,
+                            "size": "526.000000 226.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 21,
+                            "meta": {
+                                "x": 2995.0,
+                                "y": 1750.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "btn_advanced",
+                            "group_moves": true,
+                            "size": "484.000000 242.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 17,
+                            "meta": {
+                                "x": 2415.0,
+                                "y": 750.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "selected slot changes",
+                            "group_moves": true,
+                            "size": "1247.000000 495.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 16,
+                            "meta": {
+                                "x": 2982.0,
+                                "y": 2230.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "OnShowScreen",
+                            "group_moves": true,
+                            "size": "832.000000 235.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 15,
+                            "meta": {
+                                "x": 2275.0,
+                                "y": 2260.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "btn_back",
+                            "group_moves": true,
+                            "size": "456.000000 203.000000"
+                        }, {
+                            "type": "CActionComment",
+                            "id": 14,
+                            "meta": {
+                                "x": 2250.0,
+                                "y": 1785.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "btn_play",
+                            "group_moves": true,
+                            "size": "679.000000 296.000000"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 9,
+                            "m_Action": {
+                                "value": "Play"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2670.0,
+                                "y": 1875.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionGameDataEvent",
+                            "id": 3,
+                            "meta": {
+                                "x": 3002.0,
+                                "y": 2319.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CScreenAboutToShow"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 2,
+                            "meta": {
+                                "x": 2490.0,
+                                "y": 2355.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "gui::CBackButtonAction"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 19,
+                            "m_Action": {
+                                "value": "Advanced"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3183.0,
+                                "y": 1861.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 20,
+                            "m_Action": {
+                                "value": "OnlineOptions"
+                            },
+                            "m_Index": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3810.0,
+                                "y": 1860.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 23,
+                            "Next": 7,
+                            "m_Action": {
+                                "value": "SelectedSlotChanged"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3195.0,
+                                "y": 1065.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionSetInt",
+                            "id": 58,
+                            "Value": {
+                                "src_node": 27,
+                                "src_prop": "m_SlotIdx",
+                                "value": "-1"
+                            },
+                            "meta": {
+                                "x": 2568.17919921875,
+                                "y": 1476.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "slot_idx"
+                            }
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 5,
+                            "m_Action": {
+                                "value": "DeleteSave"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3225.0,
+                                "y": 3270.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionSetInt",
+                            "id": 6,
+                            "Value": {
+                                "value": "-1"
+                            },
+                            "Next": 12,
+                            "meta": {
+                                "x": 2145.0,
+                                "y": 1335.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{bcb5b0fc-f133-47d7-97fd-bbdbdc60182b}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "slot_idx"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 53,
+                            "Next": 69,
+                            "meta": {
+                                "x": 3005.0,
+                                "y": 3590.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameControllerFromInvite",
+                                "field": "m_ShowRollbackButton"
+                            }
+                        }, {
+                            "type": "CActionComment",
+                            "id": 59,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 3525.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "Rollback button setup",
+                            "group_moves": true,
+                            "size": "577.000000 675.000000"
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 66,
+                            "meta": {
+                                "x": 3005.0,
+                                "y": 3680.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameControllerFromInvite",
+                                "field": "m_ShowRollbackButton"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 67,
+                            "Next": 68,
+                            "meta": {
+                                "x": 3005.0,
+                                "y": 3785.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameControllerFromInvite",
+                                "field": "m_RollbackButtonName"
+                            }
+                        }, {
+                            "type": "CActionSetString",
+                            "id": 68,
+                            "Value": {
+                                "src_node": 70,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3320.0,
+                                "y": 3785.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_rollback",
+                                "element_uuid": "{aac48b9e-3bc6-4f58-88c4-b422b5ce81e1}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "button_text"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 69,
+                            "Value": {
+                                "src_node": 66,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3320.0,
+                                "y": 3590.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2/btn_rollback",
+                                "element_uuid": "{aac48b9e-3bc6-4f58-88c4-b422b5ce81e1}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionGetString",
+                            "id": 70,
+                            "meta": {
+                                "x": 3005.0,
+                                "y": 3875.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameControllerFromInvite",
+                                "field": "m_RollbackButtonName"
+                            }
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 72,
+                            "m_Action": {
+                                "value": "Rollback"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3240.0,
+                                "y": 4020.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 79,
+                            "m_Action": {
+                                "value": "PlayFromChapter"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3405.0,
+                                "y": 4470.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 84,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 85,
+                            "meta": {
+                                "x": 3545.07177734375,
+                                "y": 5850.22509765625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots",
+                                "element_uuid": "{5ed0567f-d1e8-4763-b619-00f7be5fde8d}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 85,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 86,
+                            "meta": {
+                                "x": 3740.07177734375,
+                                "y": 5850.22509765625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/play_from_chapter",
+                                "element_uuid": "{d3e1e40f-b328-4805-a001-c3267ecb4f1a}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 86,
+                            "Value": {
+                                "src_node": 103,
+                                "src_prop": "Value",
+                                "value": "1"
+                            },
+                            "Next": 87,
+                            "meta": {
+                                "x": 3975.0,
+                                "y": 5850.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group3/btn_show_play_from_chapter",
+                                "element_uuid": "{445b75d9-0a61-4c6e-b340-2f444736bf89}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 87,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 88,
+                            "meta": {
+                                "x": 4265.07177734375,
+                                "y": 5850.22509765625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_play_from_chapter_start",
+                                "element_uuid": "{4a0c1ee9-2adb-40e2-a983-e1bcb7fb6bfd}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 88,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 89,
+                            "meta": {
+                                "x": 4550.07177734375,
+                                "y": 5850.22509765625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_hide_play_from_chapter",
+                                "element_uuid": "{820401c7-98f0-412b-ae8f-2faa81dd31a4}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 89,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 91,
+                            "meta": {
+                                "x": 4820.07177734375,
+                                "y": 5850.22509765625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_back_",
+                                "element_uuid": "{7a1383fc-d1df-4f2f-b1a4-d71415557ba3}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 91,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 108,
+                            "meta": {
+                                "x": 5010.0,
+                                "y": 5850.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/text1",
+                                "element_uuid": "{8da1d65a-9600-4269-80bb-a8137a14c4d5}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 103,
+                            "meta": {
+                                "x": 3660.0,
+                                "y": 5985.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_ModsEnabled"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 106,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3570.0,
+                                "y": 5130.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 107,
+                            "m_Action": {
+                                "value": "NewGamePlus"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 4005.0,
+                                "y": 3855.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 112,
+                            "m_Action": {
+                                "value": "MyGamePlus"
+                            },
+                            "m_Index": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3405.0,
+                                "y": 4620.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionGetBool",
+                            "id": 120,
+                            "meta": {
+                                "x": 3045.0,
+                                "y": 5250.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_PlayFromChapterMode"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 121,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3570.0,
+                                "y": 5235.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_MyGamePlusMode"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 109,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5205.0,
+                                "y": 5595.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/group1/btn_show_my_game_plus",
+                                "element_uuid": "{65869096-9ef2-4448-a461-e2bc78fe391b}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 128,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 1470.0,
+                                "y": 3945.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group2",
+                                "element_uuid": "{f38109b7-4c15-4781-ab29-9a7a9daec38d}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionOnFieldChanged",
+                            "id": 129,
+                            "Next": 132,
+                            "meta": {
+                                "x": 750.0,
+                                "y": 4185.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_SelectedSlot"
+                            }
+                        }, {
+                            "type": "CActionGetInt",
+                            "id": 130,
+                            "meta": {
+                                "x": 750.0,
+                                "y": 4290.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController",
+                                "field": "m_SelectedSlot"
+                            }
+                        }, {
+                            "type": "CActionSetBool",
+                            "id": 135,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 1665.0,
+                                "y": 3945.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group2/slots/group3/group3",
+                                "element_uuid": "{9756b796-d9c5-40f7-a895-013dcb737ff9}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 143,
+                            "m_Action": {
+                                "value": "ModsOrder"
+                            },
+                            "m_Index": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5599.0,
+                                "y": 2455.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }, {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 145,
+                            "m_Action": {
+                                "value": "ToggleMods"
+                            },
+                            "m_Index": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5597.0,
+                                "y": 2698.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuPlayGameController"
+                            },
+                            "msg_rtti": "MenuPlayGameEvent"
+                        }
+                    ]
+                }
+            ],
+            "dyn_fields": [{
+                    "name": "slot_idx",
+                    "type": "int",
+                    "value": "-1"
+                }
+            ]
+        }
+    ],
+    "objects": [{
+            "class": "gui::IGroup",
+            "uuid": "{8ac8156c-81d4-4ce3-9bf1-f8336cf36996}",
+            "Id": "bottom_guide",
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{0f4f6348-3f04-4d75-9318-016543651e9b}",
+                    "Visible": "0",
+                    "Opacity": "0.100000"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{d1534012-29e8-42bd-aa1c-ce21c55147d2}",
+                    "Height": "99.440582",
+                    "Width": "491.707031",
+                    "MarginLeft": "49.704391"
+                }, {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{6dd1ca5f-d695-42e4-ab4f-449ee23211fb}"
+                }
+            ]
+        }, {
+								   
+															 
+									   
+							
+													  
+																	 
+								  
+					
+													 
+																	 
+										   
+										  
+											 
+											  
+					
+													
+																	 
+												   
+				 
+			 
+			
+            "class": "gui::CSymbolRoot",
+            "uuid": "{e9c719ff-3d78-46ee-994f-60713890f8aa}",
+            "Id": "PlayGameSubmenu",
+            "sub_symbol": "PlayGameSubmenu",
+            "components": [{
+                    "target_component_uuid": "{317146bc-11e7-4ea3-b62a-6dca989ad025}",
+                    "class": "gui::IElementComponent",
+                    "Visible": "0"
+                }
+            ]
+        }, {
+            "class": "gui::IGroup",
+            "uuid": "{83328432-6c12-4a3a-a44d-4a1e9e9d71a2}",
+            "Id": "group2",
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{8e26f1c0-b2dc-4e96-b155-0b8aca9c8ea5}"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{c784e28a-6daa-430c-871c-436fc9b9c3ac}",
+                    "Height": "1080.000000",
+                    "Width": "1920.000000"
+                }, {
+                    "class": "gui::IInputBlockerComponent",
+                    "uuid": "{033b11d3-6703-4c0b-8c2e-b98c99799d0d}"
+                }
+            ],
+            "objects": [{
+                    "class": "gui::IGroup",
+                    "uuid": "{d3e1e40f-b328-4805-a001-c3267ecb4f1a}",
+                    "Id": "play_from_chapter",
+                    "components": [{
+                            "class": "gui::IElementComponent",
+                            "uuid": "{95947eba-7d48-4efb-86ee-da93678ed27b}",
+                            "Visible": "0"
+                        }, {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{910c7b3e-49b7-4f1e-aaf9-86ed627249dd}",
+                            "Height": "896.023987",
+                            "Width": "901.050964",
+                            "MarginTop": "-17.958954",
+                            "MarginLeft": "-397.442291",
+                            "MarginAnchorY": "Center",
+                            "MarginAnchorX": "Center"
+                        }
+                    ],
+                    "objects": [{
+                            "class": "gui::IGroup",
+                            "uuid": "{9cfebc77-e926-47c3-829a-4049db7dafa1}",
+                            "Id": "text1",
+                            "components": [{
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{aa5cca54-2fbb-4e94-8ca7-f388b2c23319}",
+                                    "RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+                                }, {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{ee928204-e5de-4993-bf29-c1cac8d65c2b}",
+                                    "Width": "655.485229",
+                                    "MarginTop": "-6.000000"
+                                }, {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{8d9e1998-6de7-49c4-8095-7ee6c56ac82f}",
+                                    "ShadowColor": "000000C0",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "m_light_grey2",
+                                    "CharacterSpacingAdjust": "2.000000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "36.000000",
+                                    "FontStyle": "Cond Bold",
+                                    "TextValue": "&MPlayGame_PlayFromChapter&"
+                                }, {
+                                    "class": "gui::IMaskComponent",
+                                    "uuid": "{af0a32e5-f04a-4762-98c2-dcb083eecd9d}",
+                                    "ClipEdge": "0",
+                                    "MaskSource": "{75e484ca-4a03-47b6-8934-70a09f1b2169};group2/play_from_chapter/text1/text_mask_titles;0",
+                                    "MaskTexture": "text_mask_main_menu"
+                                }, {
+                                    "class": "gui::IMaterialEffectComponent",
+                                    "uuid": "{0045cb0b-9bc9-4585-8b84-e7c5d1a0fc4c}",
+                                    "mask_mul_value": "0.150000",
+                                    "Effect": "mask_mul"
+                                }
+                            ],
+                            "objects": [{
+                                    "class": "gui::IGroup",
+                                    "uuid": "{75e484ca-4a03-47b6-8934-70a09f1b2169}",
+                                    "Id": "text_mask_titles",
+                                    "components": [{
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{4853e228-48bb-452c-ad1a-3aa8ceb5ea5b}",
+                                            "Visible": "0"
+                                        }, {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{d347b266-d8ab-4c5d-b1e4-d1fa32f7c5f2}",
+                                            "Height": "64.000000",
+                                            "Width": "512.000000"
+                                        }, {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{8a7cd54c-0b89-4bad-8ce4-72513bbbf2ca}",
+                                            "Texture": "text_mask_main_menu"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{b83c14f2-b9c2-411d-b2aa-fd8a2ed18f81}",
+                            "Id": "menu_control_listbox_play_from_chapter",
+                            "sub_symbol": "menu_control_listbox",
+                            "components": [{
+                                    "target_component_uuid": "{d0ad7700-8396-4025-a8a2-81aca7fcc0a2}",
+                                    "class": "gui::IElementComponent",
+                                    "RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+                                }, {
+                                    "target_component_uuid": "{c8b908d0-74fc-4e02-8a8a-114fa33521f3}",
+                                    "class": "gui::ILayoutComponent",
+                                    "Height": "650.422485",
+                                    "SizeModeY": "Stretch",
+                                    "SizeModeX": "Stretch",
+                                    "MarginTop": "100.000000"
+                                }, {
+                                    "target_component_uuid": "{45180dc1-591a-4c11-8071-5376e887338e}",
+                                    "class": "gui::IListboxComponent",
+                                    "FieldPath": "m_PlayFromChapterHolder.m_GameDataVector"
+                                }, {
+                                    "target_component_uuid": "{d195814f-0828-4ac2-b1fc-3463b267a474}",
+                                    "class": "gui::IFocusComponent",
+                                    "Focus": "1"
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "class": "gui::IGroup",
+                    "uuid": "{8da1d65a-9600-4269-80bb-a8137a14c4d5}",
+                    "Id": "text1",
+                    "components": [{
+                            "class": "gui::IElementComponent",
+                            "uuid": "{ec09e3c0-cff3-4b13-9b77-3dd23a617a12}",
+                            "RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+                        }, {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{c554d00c-8c5a-48fc-9bc6-8334e4efbf94}",
+                            "Width": "655.485229",
+                            "MarginTop": "68.000000",
+                            "MarginLeft": "112.000000"
+                        }, {
+                            "class": "gui::ITextComponent",
+                            "uuid": "{35d3b6d7-bfac-4278-b317-6a79282b5304}",
+                            "ShadowColor": "000000C0",
+                            "ShadowOffset": "1.000000 1.000000",
+                            "DropShadow": "1",
+                            "TextColorMul": "m_light_grey2",
+                            "CharacterSpacingAdjust": "2.000000",
+                            "Uppercase": "1",
+                            "Multiline": "0",
+                            "FontSize": "36.000000",
+                            "FontStyle": "Cond Bold",
+                            "TextValue": "&MMain_Play&"
+                        }, {
+                            "class": "gui::IMaskComponent",
+                            "uuid": "{1f30f8ad-c3f6-42db-9d56-da5d852b23f2}",
+                            "ClipEdge": "0",
+                            "MaskSource": "{0f3c7458-fd21-4c31-82e0-a419fc9f9f44};group2/text1/text_mask_titles;0",
+                            "MaskTexture": "text_mask_main_menu"
+                        }, {
+                            "class": "gui::IMaterialEffectComponent",
+                            "uuid": "{4cb7525b-2769-493c-ae87-da8c3ce0cdb4}",
+                            "mask_mul_value": "0.150000",
+                            "Effect": "mask_mul"
+                        }
+                    ],
+                    "objects": [{
+                            "class": "gui::IGroup",
+                            "uuid": "{0f3c7458-fd21-4c31-82e0-a419fc9f9f44}",
+                            "Id": "text_mask_titles",
+                            "components": [{
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{dab4a8db-e390-4fb1-a4bf-103cff08411c}",
+                                    "Visible": "0"
+                                }, {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{d840fd92-03fb-4e22-b543-cbe67dcc102f}",
+                                    "Height": "64.000000",
+                                    "Width": "512.000000"
+                                }, {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{9716708f-c0a1-4abd-bae1-40a5de971f34}",
+                                    "Texture": "text_mask_main_menu"
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "class": "gui::IGroup",
+                    "uuid": "{5ed0567f-d1e8-4763-b619-00f7be5fde8d}",
+                    "Id": "slots",
+                    "components": [{
+                            "class": "gui::IElementComponent",
+                            "uuid": "{548d8623-69f0-4cb0-ad19-d9400e6e665f}",
+                            "RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+                        }, {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{6f5c7bfd-4eb1-43b1-a7b3-002d394fa9b8}",
+                            "Height": "851.960632",
+                            "Width": "1569.541260",
+                            "MarginTop": "-259.000000",
+                            "MarginLeft": "4.000000"
+                        }
+                    ],
+                    "objects": [{
+                            "class": "gui::IGroup",
+                            "uuid": "{3382384c-bb12-4f73-9b6d-096c4725810a}",
+                            "Id": "group3",
+                            "components": [{
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{c996c3bd-eeae-4bda-9cc8-3af984f8fb63}"
+                                }, {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{150a9324-082b-4c90-aa31-41089828efab}",
+                                    "Height": "100.000031",
+                                    "Width": "23.032471",
+                                    "MarginUp": "-2.437406",
+                                    "MarginTop": "411.606812",
+                                    "MarginLeft": "760.405151"
+                                }
+                            ],
+                            "objects": [{
+                                    "class": "gui::IGroup",
+                                    "uuid": "{f38109b7-4c15-4781-ab29-9a7a9daec38d}",
+                                    "Id": "group2",
+                                    "components": [{
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{09b8b3ff-a99f-4dbd-9535-78fda3878a2d}"
+                                        }, {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{313e22ed-0452-48f3-95c2-ccfe27b0207e}",
+                                            "Height": "140.000000",
+                                            "Width": "23.032495",
+                                            "MarginUp": "-3.656109",
+                                            "MarginTop": "4.000000",
+                                            "MarginLeft": "-29.776388"
+                                        }, {
+                                            "class": "gui::IWrapPanelComponent",
+                                            "uuid": "{d21da904-53ae-4ad0-8d12-0819cbd884a4}",
+                                            "AlignmentY": "Center",
+                                            "Wrap": "0",
+                                            "Orientation": "Vertical"
+                                        }
+                                    ],
+                                    "objects": [{
+                                            "class": "gui::CSymbolRoot",
+                                            "uuid": "{ffdb6395-a344-4180-b7a5-9d7b6a87552a}",
+                                            "Id": "btn_new_game_plus",
+                                            "sub_symbol": "legend_button",
+                                            "components": [{
+                                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                                    "class": "gui::ILayoutComponent",
+                                                    "MarginBottom": "10.000000",
+                                                    "MarginLeft": "16.000000"
+                                                }, {
+                                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                                    "class": "gui::ILogicComponent",
+                                                    "dyn_fields": [{
+                                                            "name": "show_bg",
+                                                            "type": "bool",
+                                                            "value": "1"
+                                                        }, {
+                                                            "name": "button_text",
+                                                            "type": "string",
+                                                            "value": "&MPlayGame_NewGamePlus&"
+                                                        }
+                                                    ]
+                                                }, {
+                                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                                    "class": "gui::IButtonComponent",
+                                                    "DisableCanHover": "1",
+                                                    "DisableCanFocus": "1",
+                                                    "PressAction": "_ACTION_GUI_PAD_X"
+                                                }
+                                            ]
+                                        }, {
+                                            "class": "gui::CSymbolRoot",
+                                            "uuid": "{aac48b9e-3bc6-4f58-88c4-b422b5ce81e1}",
+                                            "Id": "btn_rollback",
+                                            "sub_symbol": "legend_button",
+                                            "components": [{
+                                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                                    "class": "gui::ILayoutComponent",
+                                                    "Width": "104.418755",
+                                                    "MarginBottom": "10.000000",
+                                                    "MarginLeft": "16.000000"
+                                                }, {
+                                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                                    "class": "gui::ILogicComponent",
+                                                    "dyn_fields": [{
+                                                            "name": "show_bg",
+                                                            "type": "bool",
+                                                            "value": "1"
+                                                        }, {
+                                                            "name": "button_text",
+                                                            "type": "string",
+                                                            "value": "&MPlayGame_RollbackButton&"
+                                                        }
+                                                    ]
+                                                }, {
+                                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                                    "class": "gui::IButtonComponent",
+                                                    "DisableCanHover": "1",
+                                                    "DisableCanFocus": "1",
+                                                    "PressAction": "_ACTION_GUI_PAD_R3"
+                                                }
+                                            ]
+                                        }, {
+                                            "class": "gui::CSymbolRoot",
+                                            "uuid": "{8656ec2a-2489-4951-b90a-6739882f42e0}",
+                                            "Id": "btn_delete",
+                                            "sub_symbol": "legend_button",
+                                            "components": [{
+                                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                                    "class": "gui::ILayoutComponent",
+                                                    "MarginBottom": "10.000000",
+                                                    "MarginLeft": "16.000000"
+                                                }, {
+                                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                                    "class": "gui::ILogicComponent",
+                                                    "dyn_fields": [{
+                                                            "name": "show_bg",
+                                                            "type": "bool",
+                                                            "value": "1"
+                                                        }, {
+                                                            "name": "button_text",
+                                                            "type": "string",
+                                                            "value": "&MPlayGame_Delete&"
+                                                        }
+                                                    ]
+                                                }, {
+                                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                                    "class": "gui::IButtonComponent",
+                                                    "DisableCanHover": "1",
+                                                    "DisableCanFocus": "1",
+                                                    "PressAction": "_ACTION_GUI_PAD_Y"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }, {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{9756b796-d9c5-40f7-a895-013dcb737ff9}",
+                                    "Id": "group3",
+                                    "components": [{
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{8ddd8e6c-fed2-43dd-8ecc-2e7e0858b15e}"
+                                        }, {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{83a95470-f4b2-411d-9f12-73361d37484e}",
+                                            "Height": "140.000000",
+                                            "Width": "23.032495",
+                                            "MarginUp": "-3.656109",
+                                            "MarginTop": "4.000000",
+                                            "MarginLeft": "-29.776388"
+                                        }, {
+                                            "class": "gui::IWrapPanelComponent",
+                                            "uuid": "{3617b504-6288-461b-84ac-0525be973be2}",
+                                            "AlignmentY": "Center",
+                                            "Wrap": "0",
+                                            "Orientation": "Vertical"
+                                        }
+                                    ],
+                                    "objects": [{
+                                            "class": "gui::CSymbolRoot",
+                                            "uuid": "{445b75d9-0a61-4c6e-b340-2f444736bf89}",
+                                            "Id": "btn_show_play_from_chapter",
+                                            "sub_symbol": "legend_button",
+                                            "components": [{
+                                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                                    "class": "gui::ILayoutComponent",
+                                                    "MarginLeft": "16.000000"
+                                                }, {
+                                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                                    "class": "gui::ILogicComponent",
+                                                    "dyn_fields": [{
+                                                            "name": "show_bg",
+                                                            "type": "bool",
+                                                            "value": "1"
+                                                        }, {
+                                                            "name": "button_text",
+                                                            "type": "string",
+                                                            "value": "&MPlayGame_PlayFromChapter&"
+                                                        }
+                                                    ]
+                                                }, {
+                                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                                    "class": "gui::IButtonComponent",
+                                                    "DisableCanHover": "1",
+                                                    "DisableCanFocus": "1",
+                                                    "PressAction": "_ACTION_GUI_PAD_L3"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, {
+                            "class": "gui::IGroup",
+                            "uuid": "{9cb3b71b-98aa-4cbc-8a56-24fbea4f1739}",
+                            "Id": "group",
+                            "components": [{
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3ad0b829-edee-48b6-bc86-fb6b0dbc4266}"
+                                }, {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{79ffa240-a282-4f31-8d5f-8e8ee16c3fb2}",
+                                    "Height": "808.299744",
+                                    "Width": "653.000244",
+                                    "MarginTop": "409.000000",
+                                    "MarginLeft": "102.000000"
+                                }, {
+                                    "class": "gui::IScrollAreaComponent",
+                                    "uuid": "{3cd6e617-8d79-4867-96c3-30663f5a2d28}",
+                                    "RightStickScroll": "1",
+                                    "m_Viewport": "{3f8d35db-9c0b-44bc-8aa3-a4e0cfb1f378};gui::ILayoutComponent;0;viewport",
+                                    "m_ContentArea": "{32936a8d-43b5-4bc0-a0b9-06210a49927d};gui::ILayoutComponent;0;viewport/content",
+                                    "m_VerticalScrollBar": "{eebfb49b-74df-4efd-9814-45d2665a1e1d};gui::IScrollBarComponent;0;quest_scrolbar",
+                                    "m_HorizontalScrollBar": "{00000000-0000-0000-0000-000000000000};gui::IScrollBarComponent;0;"
+                                }
+                            ],
+                            "objects": [{
+                                    "class": "gui::IGroup",
+                                    "uuid": "{3f8d35db-9c0b-44bc-8aa3-a4e0cfb1f378}",
+                                    "Id": "viewport",
+                                    "components": [{
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{ed0bf7c6-bd7f-4637-b38e-a0cec0ace8f2}"
+                                        }, {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{3b702503-ae1e-4e89-8e54-6612ff0deb4b}",
+                                            "Height": "814.450134",
+                                            "Width": "653.000122"
+                                        }, {
+                                            "class": "gui::IMaskComponent",
+                                            "uuid": "{7543ce1a-75f2-42d6-b7d2-3af1b14e8e25}"
+                                        }, {
+                                            "class": "gui::IMouseMaskComponent",
+                                            "uuid": "{0a8b557e-6a1c-4b26-87c9-ec6ecc650099}"
+                                        }, {
+                                            "class": "gui::IMouseReceiverComponent",
+                                            "uuid": "{9f46fd78-1b91-4082-9494-29eafd31b128}"
+                                        }
+                                    ],
+                                    "objects": [{
+                                            "class": "gui::IGroup",
+                                            "uuid": "{32936a8d-43b5-4bc0-a0b9-06210a49927d}",
+                                            "Id": "content",
+                                            "components": [{
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{637fe4ad-2122-4c7b-a454-3856e3735aaf}"
+                                                }, {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{51acf91f-e6cb-4578-a494-6d2de287a390}",
+                                                    "Height": "136.501770",
+                                                    "Width": "652.000122",
+                                                    "SizeModeY": "AutoSizeToElements"
+                                                }, {
+                                                    "class": "gui::IElementGeneratorComponent",
+                                                    "uuid": "{eee0e709-cbd4-4fc9-b4b4-350e79575776}",
+                                                    "DefaultSymbol": "SaveGameSlot",
+                                                    "FieldPath": "m_Slots"
+                                                }, {
+                                                    "class": "gui::IWrapPanelComponent",
+                                                    "uuid": "{70571780-dc38-4fa7-b051-8f247e781147}"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }, {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{eebfb49b-74df-4efd-9814-45d2665a1e1d}",
+                                    "Id": "quest_scrolbar",
+                                    "sub_symbol": "quest_scrolbar",
+                                    "components": [{
+                                            "target_component_uuid": "{160dc6ce-892c-42ba-8965-fb43cf5d595d}",
+                                            "class": "gui::ILayoutComponent",
+                                            "Height": "827.916382",
+                                            "Width": "16.000019",
+                                            "MarginTop": "-0.921936",
+                                            "MarginLeft": "651.978821"
+                                        }, {
+                                            "target_component_uuid": "{fd46b064-1a0d-42b7-b250-218a71130b70}",
+                                            "class": "gui::IScrollBarComponent",
+                                            "m_WheelReceiver": "{3f8d35db-9c0b-44bc-8aa3-a4e0cfb1f378};gui::IMouseReceiverComponent;0;../viewport"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    "class": "gui::IGroup",
+                    "uuid": "{227a541e-2842-4643-bfb1-a3bc199a0533}",
+                    "Id": "group1",
+                    "components": [{
+                            "class": "gui::IElementComponent",
+                            "uuid": "{d8733217-5813-4b77-b1fd-b80ac0eb9b42}"
+                        }, {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{c0a5f156-26c3-47bd-9cfb-d59abf1b5853}",
+                            "Height": "39.507935",
+                            "Width": "1782.035278",
+                            "MarginTop": "995.435608",
+                            "MarginLeft": "69.819397"
+                        }, {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{a9b30aae-f5dc-4455-aa12-0bf5a49454be}",
+                            "Wrap": "0"
+                        }
+                    ],
+                    "objects": [{
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{7a1383fc-d1df-4f2f-b1a4-d71415557ba3}",
+                            "Id": "btn_back_",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginRight": "16.000000"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MenuBack&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_CANCEL"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{820401c7-98f0-412b-ae8f-2faa81dd31a4}",
+                            "Id": "btn_hide_play_from_chapter",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                                    "class": "gui::IElementComponent",
+                                    "Visible": "0"
+                                }, {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginRight": "16.000000"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MenuBack&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_CANCEL"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::IGroup",
+                            "uuid": "{22eb4bb4-31e4-48b8-8644-b400f3aad014}",
+                            "Id": "group2",
+                            "components": [{
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{16bdede4-e0f9-4eea-bf0d-e71d8b297b06}"
+                                }, {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{941c6cb8-c1f5-4aba-8f49-d5e3d34d72d2}",
+                                    "Height": "35.100708",
+                                    "Width": "1782.035278",
+                                    "SizeModeX": "Stretch"
+                                }, {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{e9dec428-d754-450b-b87d-02caa2cd0371}",
+                                    "Wrap": "0"
+                                }
+                            ],
+                            "objects": [{
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{86bae6bb-86cb-43b6-82ce-916b538e8052}",
+                                    "Id": "btn_options_",
+                                    "sub_symbol": "legend_button",
+                                    "components": [{
+                                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                            "class": "gui::ILayoutComponent",
+                                            "MarginRight": "146.000000"
+                                        }, {
+                                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                            "class": "gui::ILogicComponent",
+                                            "dyn_fields": [{
+                                                    "name": "button_text",
+                                                    "type": "string",
+                                                    "value": "&MPlayGame_Options&"
+                                                }
+                                            ]
+                                        }, {
+                                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                            "class": "gui::IButtonComponent",
+                                            "DisableCanHover": "1",
+                                            "DisableCanFocus": "1",
+                                            "PressAction": "_ACTION_GUI_PAD_DPAD_UP"
+                                        }
+                                    ]
+                                }, {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{e15af1b6-7f2f-4b8e-ad04-bad2499220b7}",
+                                    "Id": "game_visibility",
+                                    "components": [{
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{a10f4d00-f22b-45e4-848c-37b273947a52}"
+                                        }, {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{8be3e5ed-1f7b-4eaf-b3b5-9b5633502852}",
+                                            "Height": "38.996223",
+                                            "Width": "343.502380"
+                                        }, {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{53278194-8d6f-4926-8acd-923a2e7efbd0}",
+                                            "AlignmentY": "Center",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "m_light_grey2",
+                                            "CharacterSpacingAdjust": "-0.980000",
+                                            "Multiline": "0",
+                                            "FontSize": "14.000000",
+                                            "TextValue": "&MPlayGame_GameVisType&"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{67ad92c8-aebf-453d-a669-17be23eb24be}",
+                            "Id": "btn_advanced_",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                                    "class": "gui::IElementComponent",
+                                    "Opacity": "0.000000"
+                                }, {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MPlayGameSubmenuAdvanced_Title&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "PressAction": "_ACTION_GUI_PAD_Y"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{74980580-5932-443b-bd14-b6cca5d10eec}",
+                            "Id": "btn_mods_order",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MModIo_BtnModsOrder&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_PAD_LT"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{c5800d99-8deb-417d-98dd-1de31e46ef84}",
+                            "Id": "btn_toggle_mods",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MModIo_BtnModsOrder&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_PAD_L3"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{33abadb0-a622-41cf-8c37-1b396c8df323}",
+                            "Id": "btn_import_saves_",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MenuSaveTransfer_Transfer&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_PAD_RT"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{65869096-9ef2-4448-a461-e2bc78fe391b}",
+                            "Id": "btn_show_my_game_plus",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                                    "class": "gui::IElementComponent",
+                                    "Visible": "0"
+                                }, {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MPlayGame_MyGamePlus&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_PAD_LT"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{be0ff989-f909-4b67-81ec-4ccf46c1711f}",
+                            "Id": "btn_play_",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MPlayGame_Play&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction2": "_ACTION_GUI_MOUSE_LMB",
+                                    "PressAction": "_ACTION_GUI_PAD_A"
+                                }
+                            ]
+                        }, {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{4a0c1ee9-2adb-40e2-a983-e1bcb7fb6bfd}",
+                            "Id": "btn_play_from_chapter_start",
+                            "sub_symbol": "legend_button",
+                            "components": [{
+                                    "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                                    "class": "gui::IElementComponent",
+                                    "Visible": "0"
+                                }, {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginLeft": "16.000000",
+                                    "MarginAnchorX": "Right"
+                                }, {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [{
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MPlayGame_Play&"
+                                        }
+                                    ]
+                                }, {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "HoldTime": "2.100000",
+                                    "DisableCanHover": "1",
+                                    "DisableCanFocus": "1",
+                                    "PressAction": "_ACTION_GUI_PAD_X"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "class": "gui::IGroup",
+            "uuid": "{d37b30e1-f3ba-499d-a733-065e44b1d6b2}",
+            "Id": "manuplaygame_template_load_game",
+            "design_time": true,
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{5e364926-45e5-4ecb-9ebc-2b3775f0a296}",
+                    "DesignTimeOnly": "1",
+                    "Visible": "0",
+                    "Opacity": "0.300000"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{ded731cf-d5c4-4b0c-a590-9eb2548c2407}",
+                    "Height": "1080.000000",
+                    "Width": "1920.000000",
+                    "MarginTop": "0.070740",
+                    "MarginLeft": "-0.533630"
+                }, {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{9db63e14-37d7-4f1c-94d7-35665272bcae}",
+                    "Texture": "manuplaygame_template_load_game"
+                }
+            ]
+        }, {
+            "class": "gui::IGroup",
+            "uuid": "{0f1a052e-af3d-476d-a8bc-5621820e8115}",
+            "Id": "inv_grad_bg1",
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{37a0356f-121f-4f66-b592-3792bf2efc3d}",
+                    "RenderRotation": "0.000000 0.000000 -0.707107 0.707107",
+                    "Opacity": "0.600000"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{4a42093c-5683-429f-af30-6c5b453929a0}",
+                    "Height": "1934.492065",
+                    "Width": "137.153244",
+                    "MarginTop": "1089.561279",
+                    "MarginLeft": "-3.504798"
+                }, {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{4fbb4f6a-3ae1-46c2-bd81-1189275cdcf1}",
+                    "ImageColorMul": "FFFFFF78",
+                    "Texture": "inv_grad_bg"
+                }
+            ]
+        }, {
+            "class": "gui::IGroup",
+            "uuid": "{b436f54f-0e77-4c54-851e-75a86e6646d2}",
+            "Id": "ui_vignette",
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{6fc0ba29-de74-4c25-b215-83388b36333e}",
+                    "Visible": "0"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{9e46eb65-e40e-4f4c-a51b-7e08e5cd7030}",
+                    "Height": "1080.000000",
+                    "Width": "1920.000000"
+                }, {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{c75c924c-eddc-48e7-8628-c869e9166882}",
+                    "ImageColorMul": "FFFFFF80",
+                    "Texture": "ui_vignette"
+                }
+            ]
+        }, {
+            "class": "gui::CSymbolRoot",
+            "uuid": "{57eb7935-562d-4d8e-8dcf-1a99228f5fac}",
+            "Id": "dark_edges",
+            "sub_symbol": "dark_edges"
+        }, {
+            "class": "gui::IGroup",
+            "uuid": "{924daa8c-5abc-4b16-a9d0-cddb5d21456e}",
+            "Id": "grid_shadow",
+            "components": [{
+                    "class": "gui::IElementComponent",
+                    "uuid": "{031ae39a-831a-4b64-a45e-d80325f63d5c}",
+                    "RenderPivot": "0.500000 0.500000 0.000000"
+                }, {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{93d746bd-a4f2-4fc6-a08c-ce67e1bfd593}",
+                    "Height": "905.613098",
+                    "Width": "1035.508545",
+                    "MarginLeft": "-228.000000"
+                }, {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{8ce3789f-2f63-4776-98c7-f1252617f44c}",
+                    "Texture": "grid_shadow"
+                }
+            ]
+        }
+    ]
+}

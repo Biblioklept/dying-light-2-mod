@@ -1,0 +1,6193 @@
+{
+	"version": 1,
+	"symbol_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+	"symbol_size": "1920.000000 1080.000000",
+	"data_context_class": "MenuShopController",
+	"class": "gui::ISymbolRoot",
+	"uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+	"Id": "MenuShop",
+	"components": [
+		{
+			"class": "gui::IElementComponent",
+			"uuid": "{bd369206-8473-4be3-9c09-0c3991a35709}"
+		},
+		{
+			"class": "gui::ILayoutComponent",
+			"uuid": "{ed6c5cdd-a345-4752-ada0-7315eb212fbf}",
+			"Height": "1080.000000",
+			"Width": "1920.000000"
+		},
+		{
+			"class": "gui::CScreenComponent",
+			"uuid": "{d7a83622-7ef1-4fce-a01a-7e26c77435e3}",
+			"HideScreenSound": "hud_vendor_out",
+			"ShowScreenSound": "hud_vendor_in",
+			"DependencyScreen0": "TooltipScreen",
+			"UsePadCursor": "1",
+			"DataClassName": "MenuShopController"
+		},
+		{
+			"class": "gui::IResolutionScalerComponent",
+			"uuid": "{663bae9d-17be-479f-9748-55e7fe11eccd}"
+		},
+		{
+			"class": "gui::ILogicComponent",
+			"uuid": "{e84975ea-6b84-4a2c-be2e-54718624f760}",
+			"data": [
+				{
+					"type": "CVariablesComponentSymbolData",
+					"dyn_fields": [
+						{
+							"name": "curr_item",
+							"type": "raw ptr",
+							"value": "0000000000000000",
+							"sub_type": "GuiShopItemData"
+						},
+						{
+							"name": "outcome",
+							"type": "enum",
+							"value": "NothingToTrade",
+							"sub_type": "ETradeOutcome"
+						},
+						{
+							"name": "result",
+							"type": "bool",
+							"value": "0"
+						}
+					]
+				},
+				{
+					"type": "CActionGraphSymbolData",
+					"uuid": "{45effcc8-2e03-4456-8f44-800d6316b7fa}",
+					"hash": "",
+					"nodes": [
+						{
+							"type": "CActionEnumToString",
+							"id": 154,
+							"wc_spec_type": [
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "EShopSortMode",
+									"wc_subtype": "EShopSortMode"
+								}
+							],
+							"Enum": {
+								"src_node": 155,
+								"src_prop": "Value",
+								"value": "Default"
+							},
+							"meta": {
+								"x": 2880.0,
+								"y": 4785.0
+							}
+						},
+						{
+							"type": "CActionCompareEnum",
+							"id": 217,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "EShopSortMode",
+									"wc_subtype": "EShopSortMode"
+								}
+							],
+							"Comparator": {
+								"value": "Equal"
+							},
+							"Value": {
+								"src_node": 155,
+								"src_prop": "Value",
+								"value": "Default"
+							},
+							"Other Value": {
+								"value": "Default"
+							},
+							"meta": {
+								"x": 3345.0,
+								"y": 4890.0
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 216,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 217,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "&MShop_SortDefault&"
+							},
+							"Value on False": {
+								"src_node": 215,
+								"src_prop": "Result",
+								"value": "&MShop_SortDefault&"
+							},
+							"meta": {
+								"x": 3465.0,
+								"y": 4620.0
+							}
+						},
+						{
+							"type": "CActionStringMix",
+							"id": 215,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector",
+									"wc_subtype": "EShopSortMode"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Unknown",
+									"wc_type_nvec": "Unknown"
+								},
+								{
+									"wc_id": 2,
+									"wc_type_vec": "Unknown",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"StringToMix": {
+								"value": "&EGuiItemSortMode_%1s&"
+							},
+							"%1s": {
+								"src_node": 154,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"%2s": {
+								"value": "0;"
+							},
+							"%3s": {
+								"value": "0;"
+							},
+							"meta": {
+								"x": 3060.0,
+								"y": 4755.0
+							}
+						},
+						{
+							"type": "CActionSetFloat",
+							"id": 212,
+							"Value": {
+								"value": "0.000000"
+							},
+							"meta": {
+								"x": 4425.0,
+								"y": 2535.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/btn_repair",
+								"element_uuid": "{fdf414e8-9c05-4062-a36f-360d09baa511}",
+								"component_class": "gui::IButtonComponent",
+								"field": "BtnPressElapsedTime"
+							}
+						},
+						{
+							"type": "CActionComment",
+							"id": 211,
+							"meta": {
+								"x": 2560.0,
+								"y": 2115.8115234375
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "prevent tooltips and features during an onboarding",
+							"group_moves": true,
+							"size": "1567.431152 281.637573"
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 202,
+							"meta": {
+								"x": 2580.0,
+								"y": 2295.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "CGuiGameDataRoot",
+								"field": "m_IsOnboardingActive"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 201,
+							"Condition": {
+								"src_node": 202,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 203,
+							"False": 118,
+							"meta": {
+								"x": 2803.016845703125,
+								"y": 2180.8115234375
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 200,
+							"Next": 204,
+							"meta": {
+								"x": 4545.0,
+								"y": -2.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PurrfectCondition"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 199,
+							"meta": {
+								"x": 4545.0,
+								"y": 98.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PurrfectCondition"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 208,
+							"Value": {
+								"src_node": 199,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5239.0,
+								"y": 225.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 207,
+							"Value": {
+								"src_node": 208,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 5640.0,
+								"y": 15.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/craftparts_txt1",
+								"element_uuid": "{6cf5b18f-6617-4562-9170-8d84d5182de6}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 206,
+							"Value": {
+								"src_node": 208,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 207,
+							"meta": {
+								"x": 5235.0,
+								"y": 15.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/craftparts",
+								"element_uuid": "{6ab82d75-a8eb-4529-85ad-1224c0743f67}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 204,
+							"Value": {
+								"src_node": 199,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 206,
+							"meta": {
+								"x": 5010.0,
+								"y": 15.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/full",
+								"element_uuid": "{da9590f6-ea13-4664-8ffe-ef78f0af89a5}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 198,
+							"Condition": {
+								"src_node": 189,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 197,
+							"meta": {
+								"x": 4918.41015625,
+								"y": -316.42919921875
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 197,
+							"m_Action": {
+								"value": "RepairWeapon"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 5205.0,
+								"y": -360.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionOnButtonPress",
+							"id": 196,
+							"Next": 198,
+							"meta": {
+								"x": 4672.0,
+								"y": -423.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/btn_repair",
+								"element_uuid": "{fdf414e8-9c05-4062-a36f-360d09baa511}",
+								"component_class": "gui::IButtonComponent"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 195,
+							"Value": {
+								"src_node": 192,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4155.0,
+								"y": -165.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 194,
+							"Value": {
+								"src_node": 195,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4305.0,
+								"y": -255.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair/group1/btn_repair",
+								"element_uuid": "{fdf414e8-9c05-4062-a36f-360d09baa511}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 193,
+							"Next": 194,
+							"meta": {
+								"x": 3907.15869140625,
+								"y": -288.059814453125
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_EnableRepairBtn"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 192,
+							"meta": {
+								"x": 3907.15869140625,
+								"y": -176.8397979736328
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_EnableRepairBtn"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 191,
+							"Value": {
+								"src_node": 189,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 4248.60400390625,
+								"y": -582.7927856445313
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/wpn_repair",
+								"element_uuid": "{c2ee13a5-5f1c-4e91-ba5f-c0fc92bb2956}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 190,
+							"Next": 191,
+							"meta": {
+								"x": 3918.02978515625,
+								"y": -654.8977661132813
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShowRepairWindow"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 189,
+							"meta": {
+								"x": 3918.02978515625,
+								"y": -465.6209411621094
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShowRepairWindow"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 188,
+							"Value": {
+								"src_node": 34,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3270.0,
+								"y": -495.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group3/title_group/title/subtitle",
+								"element_uuid": "{5c45dd3a-fe60-42a3-8c27-722e207aa129}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 186,
+							"Value": {
+								"src_node": 187,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 188,
+							"meta": {
+								"x": 2970.0,
+								"y": -645.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group3/title_group/title/subtitle",
+								"element_uuid": "{5c45dd3a-fe60-42a3-8c27-722e207aa129}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 185,
+							"Next": 180,
+							"meta": {
+								"x": -2385.0,
+								"y": 5190.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_AllWeaponBlueprintsCount"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 184,
+							"meta": {
+								"x": -2535.0,
+								"y": 5475.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_AllWeaponBlueprintsCount"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 183,
+							"Next": 180,
+							"meta": {
+								"x": -2401.0,
+								"y": 5282.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_WeaponBlueprintsCount"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 182,
+							"meta": {
+								"x": -2521.0,
+								"y": 5397.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_WeaponBlueprintsCount"
+							}
+						},
+						{
+							"type": "CActionSetWString",
+							"id": 180,
+							"Value": {
+								"src_node": 181,
+								"src_prop": "LocalizedResult",
+								"value": ""
+							},
+							"meta": {
+								"x": -1500.0,
+								"y": 5190.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/group/weapon_blueprint_text",
+								"element_uuid": "{5f780718-3472-4ba3-b214-63d836ff6890}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValueExplicit"
+							}
+						},
+						{
+							"type": "CActionStringMixFixed",
+							"id": 181,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Int",
+									"wc_type_nvec": "IntVector"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Int",
+									"wc_type_nvec": "IntVector"
+								},
+								{
+									"wc_id": 2,
+									"wc_type_vec": "Unknown",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"StringToMix": {
+								"value": "&MShop_WeaponBlueprintsCollected& %1s/%2s"
+							},
+							"%1s": {
+								"src_node": 182,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"%2s": {
+								"src_node": 184,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"%3s": {
+								"value": "0;"
+							},
+							"meta": {
+								"x": -1920.0,
+								"y": 5415.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 172,
+							"Value": {
+								"src_node": 169,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": -1845.0,
+								"y": 4965.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/group/weapon_blueprint_text",
+								"element_uuid": "{5f780718-3472-4ba3-b214-63d836ff6890}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 170,
+							"Next": 172,
+							"meta": {
+								"x": -2190.0,
+								"y": 4965.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShowWeaponBlueprintStats"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 169,
+							"meta": {
+								"x": -2190.0,
+								"y": 5070.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShowWeaponBlueprintStats"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 163,
+							"Value": {
+								"src_node": 157,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": -105.0,
+								"y": 3090.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 162,
+							"Value": {
+								"src_node": 163,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 480.0,
+								"y": 3015.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_sell_all_valuables",
+								"element_uuid": "{21e2334e-3972-4814-8c0e-77c20e1219f8}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 161,
+							"Next": 139,
+							"meta": {
+								"x": -2313.0,
+								"y": 3020.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_LegendTooltip"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 160,
+							"meta": {
+								"x": -2313.0,
+								"y": 3120.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_LegendTooltip"
+							},
+							"ptr_class": "GuiPlayerLegendTooltip"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 150,
+							"Value": {
+								"src_node": 143,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": -1643.0,
+								"y": 3603.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/legend_xp_symbol",
+								"element_uuid": "{cb9f0736-9b67-4137-a63b-cefa52cde0ba}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 149,
+							"Value": {
+								"src_node": 143,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 150,
+							"meta": {
+								"x": -1918.0,
+								"y": 3603.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/player_rank_symbol",
+								"element_uuid": "{c7fdd873-920a-4a7d-9764-f9a0525684d2}",
+								"component_class": "gui::IElementComponent",
+								"field": "Collapsed"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 144,
+							"Next": 149,
+							"meta": {
+								"x": -2243.0,
+								"y": 3554.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_IsLegendEnabled"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 143,
+							"meta": {
+								"x": -2243.0,
+								"y": 3654.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_IsLegendEnabled"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 142,
+							"Value": {
+								"src_node": 140,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": -1890.0,
+								"y": 3300.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/legend_xp_symbol",
+								"element_uuid": "{cb9f0736-9b67-4137-a63b-cefa52cde0ba}",
+								"component_class": "gui::ILogicComponent",
+								"field": "ngp"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 141,
+							"Next": 142,
+							"meta": {
+								"x": -2155.0,
+								"y": 3270.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_IsGamePlus"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 140,
+							"meta": {
+								"x": -2155.0,
+								"y": 3370.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_PlayerData",
+								"field": "m_IsGamePlus"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 139,
+							"Value": {
+								"src_node": 160,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": -1710.0,
+								"y": 3135.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/legend_xp_symbol",
+								"element_uuid": "{cb9f0736-9b67-4137-a63b-cefa52cde0ba}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionNot",
+							"id": 136,
+							"Value": {
+								"src_node": 135,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3684.0,
+								"y": 3195.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 135,
+							"Value1": {
+								"src_node": 128,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 95,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3450.0,
+								"y": 3209.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 134,
+							"Next": 89,
+							"meta": {
+								"x": 3100.0,
+								"y": 3133.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanSellAllValuables"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 128,
+							"meta": {
+								"x": 3100.0,
+								"y": 3233.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanSellAllValuables"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 116,
+							"Next": 27,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 3105.0,
+								"y": 2445.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedResource"
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 115,
+							"Value1": {
+								"src_node": 93,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Value2": {
+								"value": " %ICON(money_icon))"
+							},
+							"meta": {
+								"x": 3420.0,
+								"y": 3450.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 112,
+							"Value": {
+								"src_node": 111,
+								"src_prop": "NotEmpty",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3442.0,
+								"y": 4030.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/header",
+								"element_uuid": "{ca8fb9d0-a90f-4a02-bc0c-abf2314ad1d6}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionVectorIsNotEmpty",
+							"id": 111,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "RawPtr",
+									"wc_type_nvec": "RawPtrVector",
+									"wc_subtype": "GuiInventoryItemData"
+								}
+							],
+							"Vector": {
+								"src_node": 107,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 3225.0,
+								"y": 4065.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 108,
+							"Next": 112,
+							"meta": {
+								"x": 2967.0,
+								"y": 3973.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CraftParts"
+							}
+						},
+						{
+							"type": "CActionGetRawPtrVector",
+							"id": 107,
+							"meta": {
+								"x": 2967.0,
+								"y": 4073.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CraftParts"
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionCompareInt",
+							"id": 95,
+							"Value1": {
+								"src_node": 90,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value2": {
+								"value": "0"
+							},
+							"Comparator": {
+								"value": "Greater"
+							},
+							"meta": {
+								"x": 3255.0,
+								"y": 3525.0
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 89,
+							"Value": {
+								"src_node": 136,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3555.0,
+								"y": 3300.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_sell_all_valuables",
+								"element_uuid": "{21e2334e-3972-4814-8c0e-77c20e1219f8}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Disabled"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 94,
+							"Value": {
+								"src_node": 115,
+								"src_prop": "Result",
+								"value": "&MShop_SellAllValuables& "
+							},
+							"Next": 89,
+							"meta": {
+								"x": 3255.0,
+								"y": 3330.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_sell_all_valuables",
+								"element_uuid": "{21e2334e-3972-4814-8c0e-77c20e1219f8}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 93,
+							"Value": {
+								"src_node": 90,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "&MShop_SellAllValuables& (%d"
+							},
+							"meta": {
+								"x": 3120.0,
+								"y": 3450.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 92,
+							"Next": 94,
+							"meta": {
+								"x": 2925.0,
+								"y": 3360.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ValuablesPrice"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 90,
+							"meta": {
+								"x": 2904.0,
+								"y": 3468.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ValuablesPrice"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 51,
+							"Value": {
+								"src_node": 99,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 2760.0,
+								"y": 3180.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/group2",
+								"element_uuid": "{13035c65-8298-48cd-b8c6-7c87aadc5b53}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 88,
+							"Value": {
+								"src_node": 72,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 101,
+							"meta": {
+								"x": -435.0,
+								"y": 3675.0,
+								"comment_bubble_text": "Show the markup only in 'Buy' tab"
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group1",
+								"element_uuid": "{f0f9c0a0-9daf-43e7-b464-66700973bcf8}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 74,
+							"Value1": {
+								"src_node": 87,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 73,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": -780.0,
+								"y": 3435.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 72,
+							"Value1": {
+								"src_node": 74,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 52,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": -600.0,
+								"y": 3765.0
+							}
+						},
+						{
+							"type": "CActionCompareEnum",
+							"id": 71,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "EMenuShopMode",
+									"wc_subtype": "EMenuShopMode"
+								}
+							],
+							"Comparator": {
+								"value": "Different"
+							},
+							"Value": {
+								"src_node": 35,
+								"src_prop": "Value",
+								"value": "Buy"
+							},
+							"Other Value": {
+								"value": "Sell"
+							},
+							"meta": {
+								"x": -1350.0,
+								"y": 3345.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 49,
+							"Next": 9,
+							"meta": {
+								"x": -1275.0,
+								"y": 3570.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShopMode"
+							}
+						},
+						{
+							"type": "CActionGetEnumEMenuShopMode",
+							"id": 35,
+							"meta": {
+								"x": -1620.0,
+								"y": 3360.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ShopMode"
+							}
+						},
+						{
+							"type": "CActionSelectUsingEnum",
+							"id": 77,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "Bop::EZoneFaction",
+									"wc_subtype": "Bop::EZoneFaction"
+								}
+							],
+							"Selector": {
+								"src_node": 75,
+								"src_prop": "Value",
+								"value": "None"
+							},
+							"Peacekeepers": {
+								"value": "factions_icon"
+							},
+							"Survivors": {
+								"value": "survivors_icon"
+							},
+							"Opera": {
+								"value": "opera_icon"
+							},
+							"Default": {
+								"value": "survivors_icon"
+							},
+							"meta": {
+								"x": 1800.0,
+								"y": -540.0
+							},
+							"switch_val": [
+								{
+									"switch_name": "Opera",
+									"switch_val_keyword": "Opera"
+								},
+								{
+									"switch_name": "Peacekeepers",
+									"switch_val_keyword": "Peacekeepers"
+								},
+								{
+									"switch_name": "Survivors",
+									"switch_val_keyword": "Survivors"
+								}
+							],
+							"enum_data_name": "Bop::EZoneFaction"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 76,
+							"Next": 50,
+							"meta": {
+								"x": 1590.0,
+								"y": -780.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_ShopInfo",
+								"field": "m_Allegiance"
+							}
+						},
+						{
+							"type": "CActionGetEnumBop__EZoneFaction",
+							"id": 75,
+							"meta": {
+								"x": 1305.0,
+								"y": -450.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_ShopInfo",
+								"field": "m_Allegiance"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 70,
+							"Value": {
+								"src_node": 34,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Next": 186,
+							"meta": {
+								"x": 2580.0,
+								"y": -645.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group3/cloth",
+								"element_uuid": "{32b9d09c-dc64-4ef5-8bf4-1518591ae3e3}",
+								"component_class": "gui::IImageComponent",
+								"field": "ComponentEnabled"
+							}
+						},
+						{
+							"type": "CActionNot",
+							"id": 52,
+							"Value": {
+								"src_node": 122,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": -750.0,
+								"y": 3900.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 50,
+							"Value": {
+								"src_node": 77,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 70,
+							"meta": {
+								"x": 2280.0,
+								"y": -810.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group3/cloth",
+								"element_uuid": "{32b9d09c-dc64-4ef5-8bf4-1518591ae3e3}",
+								"component_class": "gui::IImageComponent",
+								"field": "Texture"
+							}
+						},
+						{
+							"type": "CActionBranch",
+							"id": 31,
+							"Condition": {
+								"src_node": 21,
+								"src_prop": "Value",
+								"value": "1"
+							},
+							"True": 69,
+							"False": 32,
+							"meta": {
+								"x": -990.0,
+								"y": 1335.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 30,
+							"Next": 31,
+							"meta": {
+								"x": -1599.286865234375,
+								"y": 1208.1749267578126
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_compare",
+								"element_uuid": "{79498f54-d697-49b2-9feb-5fbaeb19a438}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 21,
+							"meta": {
+								"x": -1599.286865234375,
+								"y": 1378.3572998046876
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_compare",
+								"element_uuid": "{79498f54-d697-49b2-9feb-5fbaeb19a438}",
+								"component_class": "gui::IButtonComponent",
+								"field": "Pressed"
+							}
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 16,
+							"Next": 177,
+							"meta": {
+								"x": 3465.0,
+								"y": 75.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "gui::CScreenManagerData",
+								"datasource_path": "m_ScreenManagerData"
+							},
+							"msg_rtti": "gui::COnScreenHiddenEvent"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 15,
+							"Value": {
+								"value": "1"
+							},
+							"meta": {
+								"x": -195.0,
+								"y": 1215.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "GuiItemTooltipWithCompare",
+								"datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare",
+								"field": "m_ShowCompare"
+							}
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 4,
+							"Next": 11,
+							"meta": {
+								"x": -420.0,
+								"y": 2250.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "CGuiGameDataRoot"
+							},
+							"msg_rtti": "GuiTooltipButtonPressedEvent"
+						},
+						{
+							"type": "CActionCastTo",
+							"id": 27,
+							"Success": 23,
+							"Failed": 23,
+							"InputPtr": {
+								"src_node": 29,
+								"src_prop": "DataContext",
+								"value": ""
+							},
+							"meta": {
+								"x": 3195.0,
+								"y": 2550.0
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 179,
+							"Next": 177,
+							"meta": {
+								"x": 3465.0,
+								"y": 285.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "gui::CScreenManagerData",
+								"datasource_path": "m_ScreenManagerData"
+							},
+							"msg_rtti": "gui::COnScreenShownEvent"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 178,
+							"Value": {
+								"value": "1"
+							},
+							"meta": {
+								"x": 4410.0,
+								"y": 285.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "GuiItemTooltipWithCompare",
+								"datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare",
+								"field": "m_UseFixedPos"
+							}
+						},
+						{
+							"type": "CActionSetVec2",
+							"id": 177,
+							"Value": {
+								"value": "684.000000 141.000000"
+							},
+							"Next": 178,
+							"meta": {
+								"x": 3989.0,
+								"y": 285.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "GuiItemTooltipWithCompare",
+								"datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare",
+								"field": "m_FixedScreenPos"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 156,
+							"Next": 151,
+							"meta": {
+								"x": 3285.0,
+								"y": 4500.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_SortMode"
+							}
+						},
+						{
+							"type": "CActionGetEnumEShopSortMode",
+							"id": 155,
+							"meta": {
+								"x": 3000.0,
+								"y": 4605.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_SortMode"
+							}
+						},
+						{
+							"type": "CActionStringMix",
+							"id": 152,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Unknown",
+									"wc_type_nvec": "Unknown"
+								},
+								{
+									"wc_id": 2,
+									"wc_type_vec": "Unknown",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"StringToMix": {
+								"value": "&MShop_SortBegin& %1s"
+							},
+							"%1s": {
+								"src_node": 216,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"%2s": {
+								"value": "0;"
+							},
+							"%3s": {
+								"value": "0;"
+							},
+							"meta": {
+								"x": 3780.0,
+								"y": 4590.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 151,
+							"Value": {
+								"src_node": 152,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 4170.0,
+								"y": 4500.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btn_change_sort",
+								"element_uuid": "{2ae2ec43-2cc7-44f2-bad8-b276c8a3ae2d}",
+								"component_class": "gui::ILogicComponent",
+								"field": "button_text"
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 148,
+							"m_Action": {
+								"value": "NextSortMode"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 825.0,
+								"y": 1335.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 147,
+							"Next": 145,
+							"meta": {
+								"x": 3405.0,
+								"y": 4230.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanCycleSort"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 146,
+							"meta": {
+								"x": 3360.0,
+								"y": 4320.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanCycleSort"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 145,
+							"Value": {
+								"src_node": 146,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": 3735.0,
+								"y": 4230.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btn_change_sort",
+								"element_uuid": "{2ae2ec43-2cc7-44f2-bad8-b276c8a3ae2d}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 133,
+							"Value": {
+								"src_node": 83,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"meta": {
+								"x": -360.0,
+								"y": 2085.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_compare",
+								"element_uuid": "{79498f54-d697-49b2-9feb-5fbaeb19a438}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 132,
+							"Next": 131,
+							"meta": {
+								"x": -15.0,
+								"y": 750.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::CScreenComponent"
+							},
+							"msg_rtti": "gui::CScreenAboutToShow"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 131,
+							"Value": {
+								"value": "1"
+							},
+							"meta": {
+								"x": 285.0,
+								"y": 855.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/group/group2/item_list_widget",
+								"element_uuid": "{cd55fef8-fcee-40b9-a561-2bbab1172fe3}",
+								"component_class": "gui::ILogicComponent",
+								"field": "reset_scroll"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 130,
+							"Next": 131,
+							"meta": {
+								"x": -15.0,
+								"y": 900.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CurrentShopFilter"
+							}
+						},
+						{
+							"type": "CActionSetInt",
+							"id": 5,
+							"Value": {
+								"value": "-1"
+							},
+							"Next": 27,
+							"meta": {
+								"x": 2445.0,
+								"y": 2910.0,
+								"comment_bubble_text": "to make sure the tabs will force their positions on screen show"
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/tabs_group_symbol",
+								"element_uuid": "{554e333f-059d-4195-8a64-f5b24d837daf}",
+								"component_class": "gui::ILogicComponent",
+								"field": "prev_sel_idx"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 126,
+							"Next": 139,
+							"Value": {
+								"src_node": 124,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": -1695.0,
+								"y": 2835.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/player_rank_symbol",
+								"element_uuid": "{c7fdd873-920a-4a7d-9764-f9a0525684d2}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 125,
+							"Next": 126,
+							"meta": {
+								"x": -2025.0,
+								"y": 2895.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerData"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 124,
+							"meta": {
+								"x": -2055.0,
+								"y": 2985.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerData"
+							},
+							"ptr_class": "PlayerDataForStripes"
+						},
+						{
+							"type": "CActionSubtractFloat",
+							"id": 121,
+							"Value1": {
+								"src_node": 120,
+								"src_prop": "Result",
+								"value": "0.000000"
+							},
+							"Value2": {
+								"value": "100.000000"
+							},
+							"meta": {
+								"x": -1575.0,
+								"y": 3855.0
+							}
+						},
+						{
+							"type": "CActionMultiplyFloat",
+							"id": 120,
+							"Value1": {
+								"src_node": 7,
+								"src_prop": "Value",
+								"value": "0.000000"
+							},
+							"Value2": {
+								"value": "100.000000"
+							},
+							"meta": {
+								"x": -1785.0,
+								"y": 3855.0
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 118,
+							"Next": 116,
+							"Value": {
+								"src_node": 22,
+								"src_prop": "OutputPtr",
+								"value": ""
+							},
+							"meta": {
+								"x": 2850.0,
+								"y": 2475.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedItem"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionAppendString",
+							"id": 106,
+							"Value1": {
+								"value": "+"
+							},
+							"Value2": {
+								"src_node": 84,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": -1125.0,
+								"y": 3780.0
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 105,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 103,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"src_node": 84,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Value on False": {
+								"src_node": 106,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": -945.0,
+								"y": 3825.0
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 104,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Color",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"Selector": {
+								"src_node": 103,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "menu_green"
+							},
+							"Value on False": {
+								"value": "menu_red"
+							},
+							"meta": {
+								"x": -810.0,
+								"y": 4005.0
+							}
+						},
+						{
+							"type": "CActionCompareFloat",
+							"id": 103,
+							"Value1": {
+								"src_node": 121,
+								"src_prop": "Result",
+								"value": "0.000000"
+							},
+							"Value2": {
+								"value": "0.000000"
+							},
+							"Comparator": {
+								"value": "Less"
+							},
+							"meta": {
+								"x": -1335.0,
+								"y": 3930.0
+							}
+						},
+						{
+							"type": "CActionSetColor",
+							"id": 102,
+							"Value": {
+								"src_node": 123,
+								"src_prop": "Result",
+								"value": "FFFFFFFF"
+							},
+							"meta": {
+								"x": 75.0,
+								"y": 3675.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/group1/white",
+								"element_uuid": "{7400c134-1f88-445e-9513-f04d2a6b693d}",
+								"component_class": "gui::IImageComponent",
+								"field": "ImageColorMul"
+							}
+						},
+						{
+							"type": "CActionSetColor",
+							"id": 101,
+							"Value": {
+								"src_node": 123,
+								"src_prop": "Result",
+								"value": "FFFFFFFF"
+							},
+							"Next": 102,
+							"meta": {
+								"x": -255.0,
+								"y": 3675.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group1/text",
+								"element_uuid": "{ada04540-75e3-4185-87b8-444e126f48ed}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextColorMul"
+							}
+						},
+						{
+							"type": "CActionFloatToString",
+							"id": 84,
+							"Value": {
+								"src_node": 121,
+								"src_prop": "Result",
+								"value": "0.000000"
+							},
+							"Format": {
+								"value": "%.0f%%"
+							},
+							"meta": {
+								"x": -1320.0,
+								"y": 3795.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 9,
+							"Value": {
+								"src_node": 105,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 88,
+							"meta": {
+								"x": -855.0,
+								"y": 3675.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group1/text",
+								"element_uuid": "{ada04540-75e3-4185-87b8-444e126f48ed}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 8,
+							"Next": 9,
+							"meta": {
+								"x": -1275.0,
+								"y": 3660.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_ShopInfo",
+								"field": "m_ShopPriceMultiplier"
+							}
+						},
+						{
+							"type": "CActionGetFloat",
+							"id": 7,
+							"meta": {
+								"x": -2070.0,
+								"y": 3825.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"datasource_path": "m_ShopInfo",
+								"field": "m_ShopPriceMultiplier"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 6,
+							"Value": {
+								"src_node": 166,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"Next": 162,
+							"meta": {
+								"x": 240.0,
+								"y": 2970.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/details/group3/title_group/title",
+								"element_uuid": "{fa44aa0d-720d-4093-9f22-113258a4a7d0}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 109,
+							"Next": 110,
+							"meta": {
+								"x": -1350.0,
+								"y": 2700.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ItemList"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 96,
+							"meta": {
+								"x": -1485.0,
+								"y": 3060.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ItemList"
+							},
+							"ptr_class": "GuiCategorizedItemList"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 110,
+							"Value": {
+								"src_node": 96,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": -1155.0,
+								"y": 2895.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/group/group2/item_list_widget",
+								"element_uuid": "{cd55fef8-fcee-40b9-a561-2bbab1172fe3}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 81,
+							"Value": {
+								"src_node": 157,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 6,
+							"meta": {
+								"x": -75.0,
+								"y": 2970.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/money/coin1",
+								"element_uuid": "{abb81a1c-6742-40ac-92ca-f5e122508b3a}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionStopAnim",
+							"id": 47,
+							"AnimState": {
+								"src_node": 43,
+								"src_prop": "AnimState"
+							},
+							"RestoreValues": {
+								"value": "1"
+							},
+							"SendStopEvents": {
+								"value": "1"
+							},
+							"meta": {
+								"x": 4155.0,
+								"y": 3390.0
+							}
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 45,
+							"Next": 47,
+							"meta": {
+								"x": 3817.609375,
+								"y": 3356.39501953125
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::CScreenComponent"
+							},
+							"msg_rtti": "gui::CScreenFullyHidden"
+						},
+						{
+							"type": "CActionGetAnimation",
+							"id": 44,
+							"meta": {
+								"x": 3495.0,
+								"y": 3735.0
+							},
+							"anim_uuid": "{0d617d7f-4b23-425e-9678-cdc665386130}"
+						},
+						{
+							"type": "CActionPlayAnim",
+							"id": 43,
+							"Target": {
+								"value": ""
+							},
+							"Animation": {
+								"src_node": 44,
+								"src_prop": "Animation",
+								"value": "{00000000-0000-0000-0000-000000000000}"
+							},
+							"Forward": {
+								"value": "1"
+							},
+							"Start Frame": {
+								"value": "0.000000"
+							},
+							"Speed": {
+								"value": "1.000000"
+							},
+							"Stop Previous": {
+								"value": "1"
+							},
+							"If Not Already Playing": {
+								"value": "0"
+							},
+							"SendStopEvents": {
+								"value": "1"
+							},
+							"meta": {
+								"x": 3706.2802734375,
+								"y": 3679.873779296875
+							}
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 42,
+							"Next": 43,
+							"meta": {
+								"x": 3195.0,
+								"y": 3645.0
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "gui::CScreenManagerData",
+								"datasource_path": "m_ScreenManagerData"
+							},
+							"msg_rtti": "gui::COnScreenShownEvent"
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 41,
+							"Value": {
+								"src_node": 79,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 1365.0,
+								"y": 435.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 40,
+							"Value": {
+								"src_node": 41,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 1530.0,
+								"y": 255.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/money/tokens",
+								"element_uuid": "{d24597ef-3173-46e7-b541-8823e97d1136}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 37,
+							"Value": {
+								"src_node": 25,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 4425.0,
+								"y": 2160.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/tabs_group_symbol",
+								"element_uuid": "{554e333f-059d-4195-8a64-f5b24d837daf}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 36,
+							"Next": 37,
+							"meta": {
+								"x": 4211.0,
+								"y": 2118.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_Tabs"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 25,
+							"meta": {
+								"x": 4211.0,
+								"y": 2218.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_Tabs"
+							},
+							"ptr_class": "GuiGameplayTabs"
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 24,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 12,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "&MShop_CrafMasterScreenTitle&"
+							},
+							"Value on False": {
+								"value": "&MShop_CrafMasterScreenTitle&"
+							},
+							"meta": {
+								"x": -705.0,
+								"y": 3210.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 13,
+							"Next": 153,
+							"meta": {
+								"x": -765.0,
+								"y": 2700.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_IsSurvivor"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 12,
+							"meta": {
+								"x": -1065.0,
+								"y": 3150.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_IsSurvivor"
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 176,
+							"Value": {
+								"src_node": 175,
+								"src_prop": "m_ItemName",
+								"value": ""
+							},
+							"meta": {
+								"x": 3885.0,
+								"y": 2700.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/craft_part_hint/white/text",
+								"element_uuid": "{674135c2-15df-471d-a386-e5725d005014}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionGetFieldFromPtr",
+							"id": 175,
+							"GuiInventoryItemData": {
+								"src_node": 171,
+								"src_prop": "OutputPtr",
+								"value": ""
+							},
+							"meta": {
+								"x": 3585.0,
+								"y": 2835.0
+							},
+							"rtti": "GuiInventoryItemData",
+							"field": "m_ItemName",
+							"type": "string",
+							"subtype": ""
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 173,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 212,
+							"meta": {
+								"x": 4170.0,
+								"y": 2535.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/craft_part_hint",
+								"element_uuid": "{fd0861c4-e331-4108-b155-bd0171793858}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionCastTo",
+							"id": 171,
+							"Success": 117,
+							"Failed": 127,
+							"InputPtr": {
+								"src_node": 29,
+								"src_prop": "DataContext",
+								"value": ""
+							},
+							"meta": {
+								"x": 3165.0,
+								"y": 2670.0
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 166,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								}
+							],
+							"Selector": {
+								"src_node": 157,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Value on True": {
+								"src_node": 24,
+								"src_prop": "Result",
+								"value": "&MShop_CrafMasterScreenTitle&"
+							},
+							"Value on False": {
+								"value": "&MShop_ShopScreenTitle&"
+							},
+							"meta": {
+								"x": -240.0,
+								"y": 3225.0
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 159,
+							"Next": 153,
+							"meta": {
+								"x": -765.0,
+								"y": 2835.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_IsCraftMaster"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 157,
+							"meta": {
+								"x": -810.0,
+								"y": 3015.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_IsCraftMaster"
+							}
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 153,
+							"Value": {
+								"src_node": 157,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Next": 81,
+							"meta": {
+								"x": -345.0,
+								"y": 2940.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/money/tokens",
+								"element_uuid": "{d24597ef-3173-46e7-b541-8823e97d1136}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 100,
+							"Next": 51,
+							"meta": {
+								"x": 2412.0,
+								"y": 3191.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanSellAllValuables"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 99,
+							"meta": {
+								"x": 2412.0,
+								"y": 3291.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanSellAllValuables"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 80,
+							"Next": 40,
+							"meta": {
+								"x": 1080.0,
+								"y": 270.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerTokens"
+							}
+						},
+						{
+							"type": "CActionComment",
+							"id": 91,
+							"meta": {
+								"x": -705.0,
+								"y": 1155.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "Compare actions",
+							"group_moves": true,
+							"size": "1041.000000 460.000000"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 85,
+							"Next": 133,
+							"meta": {
+								"x": -900.0,
+								"y": 2085.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanCompare"
+							}
+						},
+						{
+							"type": "CActionGetBool",
+							"id": 83,
+							"meta": {
+								"x": -900.0,
+								"y": 2175.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_CanCompare"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 68,
+							"Value": {
+								"src_node": 66,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 3675.0,
+								"y": 1905.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/group1/others_inventory_capacity_widget3",
+								"element_uuid": "{a3953426-196e-47b2-9186-f2952ee48b58}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 67,
+							"Next": 68,
+							"meta": {
+								"x": 3390.0,
+								"y": 1905.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_OtherInvInfo"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 66,
+							"meta": {
+								"x": 3393.0,
+								"y": 1998.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_OtherInvInfo"
+							},
+							"ptr_class": "GuiPlayerInventorySizeInfo"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 65,
+							"Value": {
+								"src_node": 63,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 3750.0,
+								"y": 1710.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/group1/useitems_inventory_capacity_widget2",
+								"element_uuid": "{e584b26c-25f4-40ce-b2f5-9c2de0d6f7d1}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 64,
+							"Next": 65,
+							"meta": {
+								"x": 3397.0,
+								"y": 1710.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_UseItemsInvInfo"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 63,
+							"meta": {
+								"x": 3397.0,
+								"y": 1810.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_UseItemsInvInfo"
+							},
+							"ptr_class": "GuiPlayerInventorySizeInfo"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 60,
+							"Value": {
+								"src_node": 57,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 3720.0,
+								"y": 1470.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/group1/consumables_inventory_capacity_widget1",
+								"element_uuid": "{93ec09c7-d850-4800-acd7-7d3692e7e399}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 59,
+							"Next": 60,
+							"meta": {
+								"x": 3395.0,
+								"y": 1475.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ConsumablesInvInfo"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 57,
+							"meta": {
+								"x": 3395.0,
+								"y": 1575.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_ConsumablesInvInfo"
+							},
+							"ptr_class": "GuiPlayerInventorySizeInfo"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 56,
+							"Value": {
+								"src_node": 54,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 3675.0,
+								"y": 1215.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/group1/weapon_inventory_capacity_widget",
+								"element_uuid": "{644c46b1-529b-4810-821a-0fbec17a013e}",
+								"component_class": "gui::IElementComponent",
+								"field": "DataContext"
+							},
+							"ptr_class": "gui::CDataSource"
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 55,
+							"Next": 56,
+							"meta": {
+								"x": 3414.0,
+								"y": 1213.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_WeaponInvInfo"
+							}
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 54,
+							"meta": {
+								"x": 3414.0,
+								"y": 1313.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_WeaponInvInfo"
+							},
+							"ptr_class": "GuiPlayerInventorySizeInfo"
+						},
+						{
+							"type": "CActionComment",
+							"id": 48,
+							"meta": {
+								"x": 1455.0,
+								"y": 2235.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "Sell all valuables",
+							"group_moves": true,
+							"size": "426.000000 265.000000"
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 14,
+							"Next": 5,
+							"meta": {
+								"x": 2220.0,
+								"y": 2910.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::CScreenComponent"
+							},
+							"msg_rtti": "gui::CScreenAboutToShow"
+						},
+						{
+							"type": "CActionComment",
+							"id": 62,
+							"meta": {
+								"x": 1455.0,
+								"y": 2910.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "btn_trade",
+							"group_moves": true,
+							"size": "424.000000 257.000000"
+						},
+						{
+							"type": "CActionComment",
+							"id": 58,
+							"meta": {
+								"x": 2235.0,
+								"y": 2400.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "on hover changed - set curr_item and update hint data",
+							"group_moves": true,
+							"size": "2626.000000 428.000000"
+						},
+						{
+							"type": "CActionComment",
+							"id": 53,
+							"meta": {
+								"x": -455.0,
+								"y": 2515.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "on button press",
+							"group_moves": true,
+							"size": "962.000000 377.000000"
+						},
+						{
+							"type": "CActionGetCurrentHover",
+							"id": 29,
+							"meta": {
+								"x": 2291.0,
+								"y": 2615.0
+							}
+						},
+						{
+							"type": "CActionDecomposeClass",
+							"id": 28,
+							"Pointer": {
+								"src_node": 26,
+								"src_prop": "Value",
+								"value": ""
+							},
+							"meta": {
+								"x": 735.0,
+								"y": 2805.0
+							},
+							"rtti": "GuiShopItemData"
+						},
+						{
+							"type": "CActionGetRawPtr",
+							"id": 26,
+							"meta": {
+								"x": 525.0,
+								"y": 2790.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::ILogicComponent",
+								"field": "curr_item"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 23,
+							"Next": 173,
+							"Value": {
+								"src_node": 22,
+								"src_prop": "OutputPtr",
+								"value": ""
+							},
+							"meta": {
+								"x": 3975.0,
+								"y": 2550.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::ILogicComponent",
+								"field": "curr_item"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionCastTo",
+							"id": 22,
+							"Success": 201,
+							"Failed": 119,
+							"InputPtr": {
+								"src_node": 29,
+								"src_prop": "DataContext",
+								"value": ""
+							},
+							"meta": {
+								"x": 2565.0,
+								"y": 2490.0
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionSwitchString",
+							"id": 19,
+							"Value": {
+								"src_node": 18,
+								"src_prop": "m_BtnElementName",
+								"value": ""
+							},
+							"btn_change_sort": 148,
+							"btn_next_category": 129,
+							"btn_next_filter": 17,
+							"btn_prev_filter": 20,
+							"btn_previous_category": 158,
+							"btn_sell_all_valuables": 46,
+							"meta": {
+								"x": 30.0,
+								"y": 2580.0
+							},
+							"switch_val": [
+								{
+									"switch_name": "btn_change_sort",
+									"switch_val_keyword": "btn_change_sort"
+								},
+								{
+									"switch_name": "btn_compare",
+									"switch_val_keyword": "btn_compare"
+								},
+								{
+									"switch_name": "btn_next_category",
+									"switch_val_keyword": "btn_next_category"
+								},
+								{
+									"switch_name": "btn_next_filter",
+									"switch_val_keyword": "btn_next_filter"
+								},
+								{
+									"switch_name": "btn_prev_filter",
+									"switch_val_keyword": "btn_prev_filter"
+								},
+								{
+									"switch_name": "btn_previous_category",
+									"switch_val_keyword": "btn_previous_category"
+								},
+								{
+									"switch_name": "btn_sell_all_valuables",
+									"switch_val_keyword": "btn_sell_all_valuables"
+								}
+							]
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 18,
+							"Next": 19,
+							"meta": {
+								"x": -420.0,
+								"y": 2580.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::CScreenComponent"
+							},
+							"msg_rtti": "gui::CButtonPressEvent"
+						},
+						{
+							"type": "CActionGameDataEvent",
+							"id": 10,
+							"Next": 22,
+							"meta": {
+								"x": 2265.0,
+								"y": 2460.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::CScreenComponent"
+							},
+							"msg_rtti": "gui::CHoverChangedEvent"
+						},
+						{
+							"type": "CActionComment",
+							"id": 3,
+							"meta": {
+								"x": 2062.0,
+								"y": 2153.0
+							},
+							"color": "0.588000 0.588000 0.588000 0.500000",
+							"text": "btn_back",
+							"group_moves": true,
+							"size": "473.000000 218.000000"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 2,
+							"meta": {
+								"x": 2325.0,
+								"y": 2265.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "ResumeGameEvent"
+						},
+						{
+							"type": "CActionOnButtonPress",
+							"id": 1,
+							"Next": 2,
+							"meta": {
+								"x": 2082.0,
+								"y": 2218.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/footer/btns/btn_back",
+								"element_uuid": "{aaa3e6d5-7c12-4bf7-bafa-f8278286e358}",
+								"component_class": "gui::IButtonComponent"
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 61,
+							"Next": 27,
+							"m_Action": {
+								"value": "TradeItem"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1470.0,
+								"y": 2970.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 17,
+							"m_Action": {
+								"value": "NextFilter"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 830.0,
+								"y": 1745.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 46,
+							"m_Action": {
+								"value": "SellAllValuables"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1475.0,
+								"y": 2300.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 69,
+							"Next": 15,
+							"m_Action": {
+								"value": "CompareItems"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": -690.0,
+								"y": 1215.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 82,
+							"Next": 27,
+							"m_Action": {
+								"value": "BuyItemAlternate"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1455.0,
+								"y": 3180.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 167,
+							"Next": 27,
+							"m_Action": {
+								"value": "BuyItemTokens"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1455.0,
+								"y": 3420.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSequence",
+							"id": 78,
+							"Action0": 27,
+							"Action1": 61,
+							"meta": {
+								"x": 1140.0,
+								"y": 2925.0
+							},
+							"sequence": [
+								"Action1"
+							]
+						},
+						{
+							"type": "CActionSequence",
+							"id": 97,
+							"Action0": 27,
+							"Action1": 82,
+							"meta": {
+								"x": 1035.0,
+								"y": 2745.0
+							},
+							"sequence": [
+								"Action1"
+							]
+						},
+						{
+							"type": "CActionSequence",
+							"id": 168,
+							"Action0": 27,
+							"Action1": 167,
+							"meta": {
+								"x": 1155.0,
+								"y": 3105.0
+							},
+							"sequence": [
+								"Action1"
+							]
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 174,
+							"Value": {
+								"value": "0"
+							},
+							"Next": 176,
+							"meta": {
+								"x": 3615.0,
+								"y": 2700.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/craft_part_hint",
+								"element_uuid": "{fd0861c4-e331-4108-b155-bd0171793858}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 79,
+							"meta": {
+								"x": 1065.0,
+								"y": 390.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerTokens"
+							}
+						},
+						{
+							"type": "CActionOnFieldChanged",
+							"id": 38,
+							"Next": 114,
+							"meta": {
+								"x": 720.0,
+								"y": 945.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerCash"
+							}
+						},
+						{
+							"type": "CActionGetInt",
+							"id": 39,
+							"meta": {
+								"x": 690.0,
+								"y": 1065.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_PlayerCash"
+							}
+						},
+						{
+							"type": "CActionIntToString",
+							"id": 113,
+							"Value": {
+								"src_node": 39,
+								"src_prop": "Value",
+								"value": "0"
+							},
+							"Format": {
+								"value": "%d"
+							},
+							"meta": {
+								"x": 1035.0,
+								"y": 1080.0
+							}
+						},
+						{
+							"type": "CActionSetString",
+							"id": 114,
+							"Value": {
+								"src_node": 113,
+								"src_prop": "Result",
+								"value": ""
+							},
+							"meta": {
+								"x": 1245.0,
+								"y": 945.0
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "header/second_bar/money/cash",
+								"element_uuid": "{43912046-ca67-4d06-aee3-ef171042e852}",
+								"component_class": "gui::ITextComponent",
+								"field": "TextValue"
+							}
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 119,
+							"Next": 171,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 2865.0,
+								"y": 2730.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedItem"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionCompareFloat",
+							"id": 122,
+							"Value1": {
+								"src_node": 121,
+								"src_prop": "Result",
+								"value": "0.000000"
+							},
+							"Value2": {
+								"value": "0.000000"
+							},
+							"Comparator": {
+								"value": "Equal"
+							},
+							"meta": {
+								"x": -1320.0,
+								"y": 4065.0
+							}
+						},
+						{
+							"type": "CActionSelectUsingBool",
+							"id": 123,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Color",
+									"wc_type_nvec": "Unknown"
+								}
+							],
+							"Selector": {
+								"src_node": 122,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value on True": {
+								"value": "m_light_grey"
+							},
+							"Value on False": {
+								"src_node": 104,
+								"src_prop": "Result",
+								"value": "menu_red"
+							},
+							"meta": {
+								"x": -285.0,
+								"y": 3885.0
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 20,
+							"m_Action": {
+								"value": "PrevoiusFilter"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 825.0,
+								"y": 1530.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 129,
+							"m_Action": {
+								"value": "NextFilter"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1475.960693359375,
+								"y": 1411.6025390625
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 158,
+							"m_Action": {
+								"value": "PrevoiusFilter"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1470.0,
+								"y": 1620.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSwitchString",
+							"id": 11,
+							"Value": {
+								"src_node": 4,
+								"src_prop": "m_BtnElementName",
+								"value": ""
+							},
+							"btn_alt_trade": 97,
+							"btn_craft_singular": 164,
+							"btn_exchange": 214,
+							"btn_exchange_all": 213,
+							"btn_redeem": 98,
+							"btn_trade": 78,
+							"btn_trade_all": 137,
+							"btn_trade_tokens": 168,
+							"btn_upgrade_blueprint": 165,
+							"meta": {
+								"x": -105.0,
+								"y": 2265.0
+							},
+							"switch_val": [
+								{
+									"switch_name": "btn_alt_trade",
+									"switch_val_keyword": "btn_alt_trade"
+								},
+								{
+									"switch_name": "btn_craft_singular",
+									"switch_val_keyword": "btn_craft_singular"
+								},
+								{
+									"switch_name": "btn_exchange",
+									"switch_val_keyword": "btn_exchange"
+								},
+								{
+									"switch_name": "btn_exchange_all",
+									"switch_val_keyword": "btn_exchange_all"
+								},
+								{
+									"switch_name": "btn_redeem",
+									"switch_val_keyword": "btn_redeem"
+								},
+								{
+									"switch_name": "btn_trade",
+									"switch_val_keyword": "btn_trade"
+								},
+								{
+									"switch_name": "btn_trade_all",
+									"switch_val_keyword": "btn_trade_all"
+								},
+								{
+									"switch_name": "btn_trade_tokens",
+									"switch_val_keyword": "btn_trade_tokens"
+								},
+								{
+									"switch_name": "btn_upgrade_blueprint",
+									"switch_val_keyword": "btn_upgrade_blueprint"
+								}
+							]
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 32,
+							"Next": 33,
+							"m_Action": {
+								"value": "CompareItems"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": -675.5075073242188,
+								"y": 1422.5555419921876
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 33,
+							"Value": {
+								"value": "0"
+							},
+							"meta": {
+								"x": -180.50750732421876,
+								"y": 1422.5555419921876
+							},
+							"field_path": {
+								"type": "GameData",
+								"class": "GuiItemTooltipWithCompare",
+								"datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare",
+								"field": "m_ShowCompare"
+							}
+						},
+						{
+							"type": "CActionSelectUsingEnum",
+							"id": 34,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Bool",
+									"wc_type_nvec": "BoolVector"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "Bop::EZoneFaction",
+									"wc_subtype": "Bop::EZoneFaction"
+								}
+							],
+							"Selector": {
+								"src_node": 75,
+								"src_prop": "Value",
+								"value": "None"
+							},
+							"Peacekeepers": {
+								"value": "1"
+							},
+							"Survivors": {
+								"value": "1"
+							},
+							"Opera": {
+								"value": "1"
+							},
+							"Default": {
+								"value": "0"
+							},
+							"meta": {
+								"x": 2250.0,
+								"y": -330.0
+							},
+							"switch_val": [
+								{
+									"switch_name": "Opera",
+									"switch_val_keyword": "Opera"
+								},
+								{
+									"switch_name": "Peacekeepers",
+									"switch_val_keyword": "Peacekeepers"
+								},
+								{
+									"switch_name": "Survivors",
+									"switch_val_keyword": "Survivors"
+								}
+							],
+							"enum_data_name": "Bop::EZoneFaction"
+						},
+						{
+							"type": "CActionCompareEnum",
+							"id": 73,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "EMenuShopMode",
+									"wc_subtype": "EMenuShopMode"
+								}
+							],
+							"Comparator": {
+								"value": "Different"
+							},
+							"Value": {
+								"src_node": 35,
+								"src_prop": "Value",
+								"value": "Buy"
+							},
+							"Other Value": {
+								"value": "Buyback"
+							},
+							"meta": {
+								"x": -1350.0,
+								"y": 3450.0
+							}
+						},
+						{
+							"type": "CActionCompareEnum",
+							"id": 86,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "EMenuShopMode",
+									"wc_subtype": "EMenuShopMode"
+								}
+							],
+							"Comparator": {
+								"value": "Different"
+							},
+							"Value": {
+								"src_node": 35,
+								"src_prop": "Value",
+								"value": "Buy"
+							},
+							"Other Value": {
+								"value": "CraftMaster_BlueprintUpgrades"
+							},
+							"meta": {
+								"x": -1350.0,
+								"y": 3240.0
+							}
+						},
+						{
+							"type": "CActionAnd",
+							"id": 87,
+							"Value1": {
+								"src_node": 86,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"Value2": {
+								"src_node": 71,
+								"src_prop": "Result",
+								"value": "0"
+							},
+							"meta": {
+								"x": -945.0,
+								"y": 3315.0
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 98,
+							"m_Action": {
+								"value": "RedeemVoucher"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1455.0,
+								"y": 3645.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 117,
+							"Next": 174,
+							"Value": {
+								"src_node": 171,
+								"src_prop": "OutputPtr",
+								"value": ""
+							},
+							"meta": {
+								"x": 3480.0,
+								"y": 2595.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedResource"
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 127,
+							"Next": 23,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 3300.0,
+								"y": 2850.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedResource"
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 164,
+							"m_Action": {
+								"value": "CraftWeapon"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1470.0,
+								"y": 1830.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 165,
+							"m_Action": {
+								"value": "UpgradeWeaponBlueprint"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1470.0,
+								"y": 2040.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSelectUsingEnum",
+							"id": 187,
+							"wc_spec_type": [
+								{
+									"wc_id": 0,
+									"wc_type_vec": "String",
+									"wc_type_nvec": "StringVector"
+								},
+								{
+									"wc_id": 1,
+									"wc_type_vec": "Enum",
+									"wc_type_nvec": "Unknown",
+									"wc_subtype": "Bop::EZoneFaction",
+									"wc_subtype": "Bop::EZoneFaction"
+								}
+							],
+							"Selector": {
+								"src_node": 75,
+								"src_prop": "Value",
+								"value": "None"
+							},
+							"Peacekeepers": {
+								"value": "&PeaceKeepers&"
+							},
+							"Survivors": {
+								"value": "&Hud_Survivors&"
+							},
+							"Opera": {
+								"value": "&MShop_CarnageHall&"
+							},
+							"Default": {
+								"value": "&MShop_ShopTitle&"
+							},
+							"meta": {
+								"x": 2220.0,
+								"y": -120.0
+							},
+							"switch_val": [
+								{
+									"switch_name": "Opera",
+									"switch_val_keyword": "Opera"
+								},
+								{
+									"switch_name": "Peacekeepers",
+									"switch_val_keyword": "Peacekeepers"
+								},
+								{
+									"switch_name": "Survivors",
+									"switch_val_keyword": "Survivors"
+								}
+							],
+							"enum_data_name": "Bop::EZoneFaction"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 203,
+							"Next": 205,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 3110.823486328125,
+								"y": 2264.439208984375
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedItem"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 205,
+							"Next": 209,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 3415.56640625,
+								"y": 2275.561279296875
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController",
+								"field": "m_FocusedResource"
+							},
+							"ptr_class": "GuiInventoryItemData"
+						},
+						{
+							"type": "CActionSetRawPtr",
+							"id": 209,
+							"Next": 210,
+							"Value": {
+								"value": ""
+							},
+							"meta": {
+								"x": 3731.43115234375,
+								"y": 2289.448974609375
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": ".",
+								"element_uuid": "{e84fefac-68a9-4ba3-bb12-3df11e0c7198}",
+								"component_class": "gui::ILogicComponent",
+								"field": "curr_item"
+							},
+							"ptr_class": "GuiShopItemData"
+						},
+						{
+							"type": "CActionSetBool",
+							"id": 210,
+							"Value": {
+								"value": "0"
+							},
+							"meta": {
+								"x": 3926.43115234375,
+								"y": 2274.448974609375
+							},
+							"field_path": {
+								"type": "GuiComponent",
+								"element": "screen/craft_part_hint",
+								"element_uuid": "{fd0861c4-e331-4108-b155-bd0171793858}",
+								"component_class": "gui::IElementComponent",
+								"field": "Visible"
+							}
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 213,
+							"m_Action": {
+								"value": "ExchangeAllTrophies"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 825.0,
+								"y": 2175.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 214,
+							"m_Action": {
+								"value": "ExchangeTrophy"
+							},
+							"m_Index": {
+								"value": "0"
+							},
+							"m_SlotType": {
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "0"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 825.0,
+								"y": 1965.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						},
+						{
+							"type": "CActionSequence",
+							"id": 137,
+							"Action0": 27,
+							"Action1": 138,
+							"meta": {
+								"x": 1094.0198974609376,
+								"y": 2562.807861328125
+							},
+							"sequence": [
+								"Action1"
+							]
+						},
+						{
+							"type": "CActionEmitGameDataEvent",
+							"id": 138,
+							"Next": 27,
+							"m_Action": {
+								"value": "BuyAllItems"
+							},
+							"m_Index": {
+								"src_node": 28,
+								"src_prop": "m_Index",
+								"value": "0"
+							},
+							"m_SlotType": {
+								"src_node": 28,
+								"src_prop": "m_SlotType",
+								"value": "Unknown"
+							},
+							"m_Count": {
+								"value": "1"
+							},
+							"m_NewFilterType": {
+								"value": "All"
+							},
+							"meta": {
+								"x": 1470.0,
+								"y": 2625.0
+							},
+							"field_path": {
+								"type": "DataContext",
+								"class": "MenuShopController"
+							},
+							"msg_rtti": "MenuShopActionEvent"
+						}
+					]
+				}
+			],
+			"dyn_fields": [
+				{
+					"name": "result",
+					"type": "bool",
+					"value": "0"
+				},
+				{
+					"name": "outcome",
+					"type": "enum",
+					"value": "NothingToTrade"
+				},
+				{
+					"name": "curr_item",
+					"type": "raw ptr",
+					"value": "0000000000000000"
+				}
+			]
+		},
+		{
+			"class": "gui::IInputReceiverComponent",
+			"uuid": "{84d2d8c1-c728-4ebf-be24-997252d98337}"
+		}
+	],
+	"objects": [
+		{
+			"class": "gui::IGroup",
+			"uuid": "{d55c1423-f29b-4c68-96b3-baeba8c4da28}",
+			"Id": "Craft_Master_Resources_v4",
+			"design_time": true,
+			"components": [
+				{
+					"class": "gui::IElementComponent",
+					"uuid": "{dd35be74-7ae8-4b3d-aed9-c34373c50100}",
+					"DesignTimeOnly": "1",
+					"Visible": "0",
+					"Opacity": "0.600000"
+				},
+				{
+					"class": "gui::ILayoutComponent",
+					"uuid": "{372cbb42-ef75-43de-baf8-23afcaa18df6}",
+					"Height": "1080.000000",
+					"Width": "1920.000000",
+					"MarginTop": "2.000000"
+				},
+				{
+					"class": "gui::IImageComponent",
+					"uuid": "{afbfd6da-b042-43c2-ab68-deeee7c2ea02}",
+					"Texture": "Craft_Master_Resources_v4"
+				}
+			]
+		},
+		{
+			"class": "gui::CSymbolRoot",
+			"uuid": "{4e9b5795-6003-4819-8e65-16e2a7f9e360}",
+			"Id": "onboarding_mask_injection",
+			"sub_symbol": "onboarding_mask_injection"
+		},
+		{
+			"class": "gui::IGroup",
+			"uuid": "{6c614ecb-3cfc-4326-9dc4-ed0f7b3330c7}",
+			"Id": "header",
+			"components": [
+				{
+					"class": "gui::IElementComponent",
+					"uuid": "{b9b63bf7-43c7-47bf-b2aa-4a55b6d5cda0}"
+				},
+				{
+					"class": "gui::ILayoutComponent",
+					"uuid": "{45a1c941-c6dc-4539-b1e6-d386262f410e}",
+					"Height": "80.000000",
+					"Width": "1920.000000"
+				}
+			],
+			"objects": [
+				{
+					"class": "gui::CSymbolRoot",
+					"uuid": "{8fabf216-7ec9-44e1-8ad3-4885380964c0}",
+					"Id": "pause_game_symbol",
+					"sub_symbol": "pause_game_symbol",
+					"components": [
+						{
+							"target_component_uuid": "{c9d2b117-08da-46ec-9379-607be8c2fb3d}",
+							"class": "gui::ILayoutComponent",
+							"MarginTop": "19.000000",
+							"MarginAnchorX": "Right"
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{cabd206c-2525-4b79-8d0c-440239fa4f2d}",
+					"Id": "second_bar",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{3eb4f0b6-042c-469c-8d45-522b70a023ad}"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{46426d85-e8bd-48f5-b3d7-9624f1ef2369}",
+							"Height": "80.000000",
+							"Width": "1921.000000",
+							"MarginTop": "80.000000"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::CSymbolRoot",
+							"uuid": "{c7fdd873-920a-4a7d-9764-f9a0525684d2}",
+							"Id": "player_rank_symbol",
+							"sub_symbol": "menu_player_rank_symbol",
+							"components": [
+								{
+									"target_component_uuid": "{646d3262-d818-4447-9047-7c4e9c1dd3c0}",
+									"class": "gui::ILayoutComponent",
+									"Height": "84.734207",
+									"Width": "62.199570",
+									"MarginRight": "64.000000",
+									"MarginTop": "18.000000",
+									"MarginAnchorY": "Center",
+									"MarginAnchorX": "Right"
+								}
+							]
+						},
+						{
+							"class": "gui::CSymbolRoot",
+							"uuid": "{cb9f0736-9b67-4137-a63b-cefa52cde0ba}",
+							"Id": "legend_xp_symbol",
+							"sub_symbol": "legend_xp_symbol",
+							"components": [
+								{
+									"target_component_uuid": "{06c2153b-825e-4351-a23b-447dbefbffa7}",
+									"class": "gui::ILayoutComponent",
+									"MarginRight": "62.000000",
+									"MarginTop": "4.000000",
+									"MarginAnchorX": "Right"
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{a751db75-916e-43b9-8ef2-a87cc1db7bf7}",
+							"Id": "money",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{13879163-1551-47a4-8750-4986d3e9eb54}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{b2ea50b7-9a6c-4b65-9120-92e52b8413ac}",
+									"Height": "48.000000",
+									"Width": "310.000000",
+									"MarginTop": "-1.000000",
+									"MarginLeft": "64.000000",
+									"MarginAnchorY": "Center"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{43912046-ca67-4d06-aee3-ef171042e852}",
+									"Id": "cash",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{9687d56d-0495-495e-8af9-1bec5df08984}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{0554abcc-a0ea-4aac-aa99-161a816e46f3}",
+											"Height": "24.000000",
+											"Width": "108.000000",
+											"MarginLeft": "44.000000",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{387996ec-fbd8-4e9d-9266-5b7113cab124}",
+											"_preset_": "H2_HeaderSubtitle",
+											"AlignmentY": "Center",
+											"ShadowColor": "000000C0",
+											"ShadowOffset": "1.000000 1.000000",
+											"DropShadow": "1",
+											"TextColorMul": "rarity_legendary",
+											"Multiline": "0",
+											"_StylePreset_": "H2_HeaderSubtitle",
+											"TextValue": "2583"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{d24597ef-3173-46e7-b541-8823e97d1136}",
+									"Id": "tokens",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{f503da21-1a3b-4f58-871a-f2381145e91b}",
+											"Visible": "0",
+											"Opacity": "0.000000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{d5c5ec78-41a6-42c3-a501-8b308a35559b}",
+											"Height": "24.000000",
+											"MarginLeft": "192.000000",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{bf0b3805-496b-47c4-8c15-30bc31aebc81}",
+											"_preset_": "H2_HeaderSubtitle",
+											"AlignmentY": "Center",
+											"ShadowColor": "000000C0",
+											"ShadowOffset": "1.000000 1.000000",
+											"DropShadow": "1",
+											"Multiline": "0",
+											"_StylePreset_": "H2_HeaderSubtitle",
+											"TextValue": "2"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{1b4ac849-1ab6-4603-b690-21d2eaf40f08}",
+									"Id": "coin",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{8a7d2eb1-6768-48bd-8a72-e2487e8593d9}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{c97010e9-575a-4cba-8e92-b9ce841aef56}",
+											"Height": "36.000000",
+											"Width": "36.000000",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::IImageComponent",
+											"uuid": "{216b4815-d7e8-4182-a492-11534d989276}",
+											"Texture": "money_icon"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{abb81a1c-6742-40ac-92ca-f5e122508b3a}",
+									"Id": "coin1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{a097acd3-3929-4ac8-b31b-def79c614c8d}",
+											"Visible": "0",
+											"Opacity": "0.000000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{9b283d53-b418-488f-bc88-c8d154b6a2fa}",
+											"Height": "36.000000",
+											"Width": "36.000000",
+											"MarginLeft": "140.000000",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::IImageComponent",
+											"uuid": "{380a055a-7099-4352-9ffa-708c6600909f}",
+											"ImageColorMul": "FFFFFF00",
+											"Texture": "icon_token"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{cd746560-a277-4d48-aacc-c3f23bf6b78c}",
+							"Id": "parts",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{f94a7c6b-f246-4931-b85b-f38fab316423}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{852f45a0-6247-4187-ac85-1224a7994633}",
+									"Height": "60.000000",
+									"Width": "626.522095",
+									"SizeModeY": "AutoSizeToElements",
+									"MarginTop": "11.000000",
+									"MarginLeft": "204.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{082dad4e-1a25-45c7-ba8b-290114a6e41a}",
+									"Wrap": "0"
+								},
+								{
+									"class": "gui::IElementGeneratorComponent",
+									"uuid": "{092760db-ab58-4b21-bbad-768352025739}",
+									"DefaultSymbol": "craftmaster_resource_symbol",
+									"FieldPath": "m_CraftParts"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{311d19bb-d58b-43f4-a40e-062d066b8251}",
+									"Id": "craftmaster_resource_symbol",
+									"sub_symbol": "craftmaster_resource_symbol"
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{ca8fb9d0-a90f-4a02-bc0c-abf2314ad1d6}",
+							"Id": "header",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{f9550d62-c8ac-4ded-a126-214a59ef68dd}",
+									"Opacity": "0.000000"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{63c1db58-dc86-41ee-b0c0-ad3829988e61}",
+									"Height": "32.000000",
+									"MarginBottom": "14.000000",
+									"MarginTop": "7.000000",
+									"MarginLeft": "382.000000"
+								},
+								{
+									"class": "gui::ITextComponent",
+									"uuid": "{a1c0f987-eaeb-451a-802d-70cab3a3dde8}",
+									"_preset_": "H3",
+									"AlignmentX": "Right",
+									"OutlineColor": "0000000D",
+									"OutlineSize": "1.000000",
+									"Outline": "1",
+									"ShadowOffset": "1.000000 1.000000",
+									"DropShadow": "1",
+									"TextColorMul": "m_golden",
+									"CharacterSpacingAdjust": "1.770000",
+									"Uppercase": "1",
+									"Multiline": "0",
+									"FontSize": "15.000000",
+									"_StylePreset_": "H3",
+									"TextValue": "&CategoryType_CraftmasterResource&"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{f4433392-3e28-466f-9511-3b0a280ae4f3}",
+									"Id": "line",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{79aa3f45-fcd9-40c1-852b-b09c55e9595b}",
+											"RenderScale": "-1.000000 1.000000 1.000000",
+											"RenderPivot": "0.500000 0.500000 0.000000",
+											"Opacity": "0.800000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{097929b2-818d-42d5-bc57-74bf533dfd90}",
+											"Height": "12.000000",
+											"Width": "310.805664",
+											"SizeModeX": "Stretch",
+											"MarginBottom": "3.000000",
+											"MarginRight": "-2.956177",
+											"MarginTop": "20.759056",
+											"MarginLeft": "-166.575684"
+										},
+										{
+											"class": "gui::IImageComponent",
+											"uuid": "{f6dd0524-48b3-4036-a3a7-dd756c866f17}",
+											"ImageColorMul": "B7B7B7FF",
+											"Texture": "tooltip_spacer"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{5035588d-7876-440e-98c5-f5084bf94df2}",
+							"Id": "craft_parts",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{ffe2a9bd-f183-41ca-8305-409da27fbd7e}",
+									"Visible": "0"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{fef9513c-8451-4613-8931-b7f06dca63ad}",
+									"Height": "50.000000",
+									"Width": "140.000000",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginTop": "-3.000000",
+									"MarginLeft": "24.000000",
+									"MarginAnchorY": "Center",
+									"MarginAnchorX": "Center"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{44ef08bd-fecf-4078-b371-d1b4f83bf1e0}",
+									"Wrap": "0"
+								},
+								{
+									"class": "gui::IElementGeneratorComponent",
+									"uuid": "{d8aa320b-7b99-4d91-850e-c805b15e3290}",
+									"DefaultSymbol": "craftpart_count",
+									"FieldPath": "m_CraftParts"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{ba933d94-2e87-482c-94e7-8798bf3e694d}",
+									"Id": "craftpart_count",
+									"sub_symbol": "craftpart_count",
+									"components": [
+										{
+											"target_component_uuid": "{326da692-991c-427c-8fc6-0b71381c72f3}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "60.000000"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{9c474543-6a9f-4f92-9953-d7bb397fb9d6}",
+									"Id": "craftpart_count1",
+									"sub_symbol": "craftpart_count",
+									"components": [
+										{
+											"target_component_uuid": "{326da692-991c-427c-8fc6-0b71381c72f3}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "60.000000"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{aead2ebf-8d1c-4295-a5b4-029f276b1031}",
+									"Id": "craftpart_count2",
+									"sub_symbol": "craftpart_count",
+									"components": [
+										{
+											"target_component_uuid": "{326da692-991c-427c-8fc6-0b71381c72f3}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "60.000000"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{51d46b87-d895-44c5-8c44-fd402d36b5a1}",
+							"Id": "group1",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{4f3cff3e-f45e-430a-ba0b-b8c678865cff}",
+									"Visible": "0"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{bf72c13b-8b51-4d6b-8d29-42f5467bd967}",
+									"Height": "27.264000",
+									"Width": "170.025009",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginAnchorY": "Center",
+									"MarginAnchorX": "Center"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{1c341f80-ffb0-41e9-8f70-0ff523845a06}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{644c46b1-529b-4810-821a-0fbec17a013e}",
+									"Id": "weapon_inventory_capacity_widget",
+									"sub_symbol": "inventory_capacity_widget",
+									"components": [
+										{
+											"target_component_uuid": "{fee0fc52-40c1-4fd2-8c4b-85df45228b37}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "10.000000"
+										},
+										{
+											"target_component_uuid": "{61544848-f117-4248-9a88-c84f982a32c5}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "icon_name",
+													"type": "string",
+													"value": "combat_mastery"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{93ec09c7-d850-4800-acd7-7d3692e7e399}",
+									"Id": "consumables_inventory_capacity_widget1",
+									"sub_symbol": "inventory_capacity_widget",
+									"components": [
+										{
+											"target_component_uuid": "{fee0fc52-40c1-4fd2-8c4b-85df45228b37}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "10.000000"
+										},
+										{
+											"target_component_uuid": "{61544848-f117-4248-9a88-c84f982a32c5}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "icon_name",
+													"type": "string",
+													"value": "craft_honey"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{e584b26c-25f4-40ce-b2f5-9c2de0d6f7d1}",
+									"Id": "useitems_inventory_capacity_widget2",
+									"sub_symbol": "inventory_capacity_widget",
+									"components": [
+										{
+											"target_component_uuid": "{fee0fc52-40c1-4fd2-8c4b-85df45228b37}",
+											"class": "gui::ILayoutComponent",
+											"MarginRight": "10.000000"
+										},
+										{
+											"target_component_uuid": "{61544848-f117-4248-9a88-c84f982a32c5}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "icon_name",
+													"type": "string",
+													"value": "craft_scraps"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{a3953426-196e-47b2-9186-f2952ee48b58}",
+									"Id": "others_inventory_capacity_widget3",
+									"sub_symbol": "inventory_capacity_widget",
+									"components": [
+										{
+											"target_component_uuid": "{aedd3e15-b62a-45fc-9337-843a845587bd}",
+											"class": "gui::IElementComponent",
+											"Visible": "0"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::CSymbolRoot",
+					"uuid": "{554e333f-059d-4195-8a64-f5b24d837daf}",
+					"Id": "tabs_group_symbol",
+					"sub_symbol": "tabs_group_symbol",
+					"components": [
+						{
+							"target_component_uuid": "{5e42de47-821b-4a8b-a93b-c8dc8f1afd5b}",
+							"class": "gui::ILayoutComponent",
+							"MarginAnchorX": "Center"
+						}
+					]
+				}
+			]
+		},
+		{
+			"class": "gui::IGroup",
+			"uuid": "{9f52a0d9-8444-4435-9d64-8eb51b286c13}",
+			"Id": "screen",
+			"components": [
+				{
+					"class": "gui::IElementComponent",
+					"uuid": "{12441167-fe98-4d14-9931-a98011a55840}"
+				},
+				{
+					"class": "gui::ILayoutComponent",
+					"uuid": "{dbb2bba4-0cb5-47f9-bed7-3fb92b04bd7c}",
+					"Height": "1080.000000",
+					"Width": "1920.000000"
+				}
+			],
+			"objects": [
+				{
+					"class": "gui::IGroup",
+					"uuid": "{81500720-e4d4-49d7-8323-7d5954743e49}",
+					"Id": "details",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{39dec5a0-e29d-4f5c-9a17-adafe77c01af}"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{05f63fd7-6726-4c81-bbad-c2afeb38ac97}",
+							"MarginTop": "864.044067",
+							"MarginLeft": "1692.962158"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::IGroup",
+							"uuid": "{f0f9c0a0-9daf-43e7-b464-66700973bcf8}",
+							"Id": "group1",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{1b930063-659c-4ef6-9fc6-b005011d7601}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{8886efd9-5c31-40e2-880b-dea7930e5d00}",
+									"Height": "30.671999",
+									"Width": "259.724976",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginTop": "-43.000000",
+									"MarginAnchorX": "Right"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{460bcf35-79a9-4199-93ac-fd96ec268c7b}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{5afba783-ab76-4484-afc3-831f4f8fd6f2}",
+									"Id": "text1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{7333bd65-0442-42e8-ad48-ddb489db6b2e}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{1f9bd929-d76e-4bff-9211-5d3b08e18557}",
+											"Height": "30.671999",
+											"Width": "56.637497",
+											"SizeModeY": "AutoSizeToComponents",
+											"SizeModeX": "AutoSizeToComponents",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{dd914081-3ad0-4c45-97ae-91aa0e40a37b}",
+											"ShadowOffset": "1.000000 1.000000",
+											"DropShadow": "1",
+											"Multiline": "0",
+											"FontSize": "18.000000",
+											"FontStyle": "Bold",
+											"TextValue": "Buy prices modified by: "
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{ada04540-75e3-4185-87b8-444e126f48ed}",
+									"Id": "text",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{a481ffc2-a7ff-4f9d-845e-ef2e87039bd9}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{0c3db27f-a89c-4560-a0e3-5923cf7dc557}",
+											"Height": "30.671999",
+											"Width": "56.637497",
+											"SizeModeY": "AutoSizeToComponents",
+											"SizeModeX": "AutoSizeToComponents",
+											"MarginAnchorY": "Center",
+											"MarginAnchorX": "Right"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{540aa7d2-1398-4c81-ae04-c2fd867eb22a}",
+											"ShadowOffset": "1.000000 1.000000",
+											"DropShadow": "1",
+											"Multiline": "0",
+											"FontSize": "18.000000",
+											"FontStyle": "Bold",
+											"TextValue": "-30%\n"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{f0ed4601-0f4d-4516-81dc-1fc34f552f5e}",
+							"Id": "group3",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{80cf46ec-fb38-4a59-a20e-7cc8105e6f47}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{8b8ab4e7-3f2e-48ff-945c-1724f21ed83c}",
+									"Height": "30.671999",
+									"Width": "259.724976",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginLeft": "-225.000000",
+									"MarginAnchorX": "Right"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{eafd4bc7-4909-4b69-b227-c2947ef5a4ec}",
+									"Wrap": "0"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{9cb97d9d-ad85-496f-967b-3786a4aad98c}",
+									"Id": "title_group",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{3cd243dc-3913-45c1-b162-9c2dd52826e1}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{5b045528-8470-4b45-ba73-f438c01ba2d8}",
+											"Height": "114.833824",
+											"Width": "461.000000",
+											"SizeModeX": "AutoSizeToComponents",
+											"MarginAnchorX": "Right"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{fa44aa0d-720d-4093-9f22-113258a4a7d0}",
+											"Id": "title",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{15a72124-e210-4773-9795-6b8a88731836}"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{909b72f1-c391-41ff-b68e-b253f94e7250}",
+													"Height": "57.935997",
+													"Width": "435.754242",
+													"MarginRight": "20.000000",
+													"MarginTop": "-16.000000",
+													"MarginAnchorY": "Center",
+													"MarginAnchorX": "Right"
+												},
+												{
+													"class": "gui::ITextComponent",
+													"uuid": "{3ef7bea6-23d1-4bea-b339-fbf40913d09e}",
+													"_preset_": "D2_DisplaySubtitle",
+													"MinFontSize": "20.000000",
+													"ScaleToFit": "1",
+													"AlignmentY": "Center",
+													"AlignmentX": "Right",
+													"ShadowColor": "000000C0",
+													"ShadowOffset": "1.000000 1.000000",
+													"DropShadow": "1",
+													"TextColorMul": "white_color",
+													"Multiline": "0",
+													"_StylePreset_": "D2_DisplaySubtitle",
+													"TextValue": "&MShop_CrafMasterScreenTitle&"
+												},
+												{
+													"class": "gui::IMaskComponent",
+													"uuid": "{5f88112b-85cb-4280-8e96-884ce67453ee}",
+													"ClipEdge": "0",
+													"MaskSource": "{d2f868ff-8d6e-42a2-812e-67468e2bb1b5};screen/details/group3/title_group/title/title_mask;0",
+													"MaskTexture": "text_mask_main_menu"
+												},
+												{
+													"class": "gui::IMaterialEffectComponent",
+													"uuid": "{a1083bcf-01c6-4283-b414-9ebf264ccbef}",
+													"mask_overlay_value": "0.750000",
+													"mask_mul_value": "0.150000",
+													"Effect": "mask_mul"
+												}
+											],
+											"objects": [
+												{
+													"class": "gui::IGroup",
+													"uuid": "{d2f868ff-8d6e-42a2-812e-67468e2bb1b5}",
+													"Id": "title_mask",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{53681944-31b5-4fb9-98bc-0c179fbd905b}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{9a1c1d6d-a8e6-4575-ac7d-58613f5c184f}",
+															"Height": "32.000000",
+															"Width": "256.000000",
+															"MarginTop": "2.000000",
+															"MarginAnchorY": "Center",
+															"MarginAnchorX": "Right"
+														}
+													]
+												},
+												{
+													"class": "gui::IGroup",
+													"uuid": "{5c45dd3a-fe60-42a3-8c27-722e207aa129}",
+													"Id": "subtitle",
+													"components": [
+														{
+															"class": "gui::IElementComponent",
+															"uuid": "{8b2f2290-ecdc-412c-9ade-745fed5853e3}"
+														},
+														{
+															"class": "gui::ILayoutComponent",
+															"uuid": "{e5144a23-0e61-4813-8e6c-c903e716ee48}",
+															"Height": "30.000000",
+															"Width": "114.142502",
+															"SizeModeX": "AutoSizeToComponents",
+															"MarginBottom": "-24.000000",
+															"MarginAnchorY": "Bottom",
+															"MarginAnchorX": "Right"
+														},
+														{
+															"class": "gui::ITextComponent",
+															"uuid": "{20a6532a-4038-427d-91c1-80f2a9e910eb}",
+															"_preset_": "H2_HeaderSubtitle",
+															"AlignmentX": "Right",
+															"ShadowColor": "000000C0",
+															"ShadowOffset": "1.000000 1.000000",
+															"DropShadow": "1",
+															"Multiline": "0",
+															"_StylePreset_": "H2_HeaderSubtitle",
+															"TextValue": "&Hud_Survivors&"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{32b9d09c-dc64-4ef5-8bf4-1518591ae3e3}",
+									"Id": "cloth",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{98383ccc-f412-4f10-bd5e-70149cef810a}",
+											"RenderChildFirst": "1",
+											"RenderScale": "0.700000 0.700000 1.000000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{0fd22f07-5405-446c-8eee-4f4203d5545b}",
+											"LayoutScale": "1.300000 1.300000 1.000000",
+											"Height": "111.000000",
+											"Width": "89.000000",
+											"SizeModeY": "AutoSizeToComponents",
+											"SizeModeX": "AutoSizeToComponents",
+											"MarginRight": "-31.000000",
+											"MarginTop": "6.166130",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"class": "gui::IImageComponent",
+											"uuid": "{eb6a74c8-50e8-4905-a345-bec6f215041b}",
+											"Texture": "survivors_icon"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{11af8922-155b-4889-888a-96812ed0c430}",
+							"Id": "pattern_bg_discovered_dark",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{8007b38d-358c-4da3-9fc5-0327f7cfd9c4}",
+									"Opacity": "0.000000"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{c02b2832-d891-4641-b5da-5dd59e7f90e6}",
+									"Height": "38.916466",
+									"Width": "243.588257",
+									"MarginTop": "-45.597069",
+									"MarginLeft": "-118.264038"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{a8cf7cdd-4357-4518-9a4d-a2f3ccac675c}",
+									"Texture": "pattern_bg_discovered_dark"
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{d87b9c33-48fc-4cc6-8110-df420592d852}",
+							"Id": "zone_bg",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{5f650b9b-b9cc-42a9-9cae-870dbb861fa0}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{3edf0353-7596-4f6f-9c91-3a48afba895d}",
+									"Height": "111.000000",
+									"Width": "440.000000",
+									"MarginTop": "1.777466",
+									"MarginLeft": "-240.002563"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{02a84c4a-73df-4893-a2fc-d04ca9638d89}",
+									"Texture": "zone_bg"
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{fd0861c4-e331-4108-b155-bd0171793858}",
+					"Id": "craft_part_hint",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{35b37542-a7b9-475d-a411-c8456abfebf3}",
+							"Visible": "0"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{4a4fa316-ad9e-4d29-9210-f8316c4985a2}",
+							"Width": "171.176376",
+							"SizeModeY": "AutoSizeToElements",
+							"SizeModeX": "AutoSizeToElements",
+							"MarginTop": "1255.082764",
+							"MarginLeft": "984.547607"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::IGroup",
+							"uuid": "{8de459cd-55e9-4109-8446-b8efbc316795}",
+							"Id": "white",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{85bf6ac6-b41d-4e4d-8c12-3129ada5dfc3}",
+									"RenderChildFirst": "1",
+									"Visible": "0"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{c3e84540-00bb-4325-aeaf-ff934d362a0c}",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{8e0ccf5d-6f82-42e7-ad12-56bd9a1460a0}",
+									"ImageColorMul": "000000BC"
+								},
+								{
+									"class": "gui::CHintPositionComponent",
+									"uuid": "{52f313a6-482d-4501-a3fa-00beed3e6528}"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{674135c2-15df-471d-a386-e5725d005014}",
+									"Id": "text",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{a1eeaa37-fa3a-472d-8d7a-879076454a39}",
+											"Visible": "0"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{9a27aadd-0b5f-4657-ad64-dbd1cb337cfb}",
+											"SizeModeY": "AutoSizeToComponents",
+											"SizeModeX": "AutoSizeToComponents",
+											"MarginBottom": "5.000000",
+											"MarginRight": "5.000000",
+											"MarginTop": "5.000000"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{af8b46b1-288c-4d37-808e-c2c23577190c}",
+											"Multiline": "0",
+											"FontStyle": "Bold",
+											"TextValue": "Sample Text"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{9f39aca8-fae4-4355-8020-5e9bce7e993c}",
+							"Id": "white1",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{ec0db2bc-8f63-4304-930e-712ac8a50db1}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{a00e764d-ba98-4ec2-9ccd-748be112ae44}"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{ddf3f1e2-6123-4120-b9fc-94f8d94ffe51}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{0068f326-97e3-4e9a-9fa5-16ad8dbdf949}",
+					"Id": "footer",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{1f778c87-6b7d-4df8-a407-d432ff96e5c8}"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{eef00f2c-1489-47c9-b349-8bdd4c1ac334}",
+							"Height": "64.000000",
+							"Width": "1920.000000",
+							"MarginAnchorY": "Bottom"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::CSymbolRoot",
+							"uuid": "{2ae2ec43-2cc7-44f2-bad8-b276c8a3ae2d}",
+							"Id": "btn_change_sort",
+							"sub_symbol": "legend_button",
+							"components": [
+								{
+									"target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+									"class": "gui::IElementComponent",
+									"RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+								},
+								{
+									"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+									"class": "gui::ILayoutComponent",
+									"Width": "119.664841",
+									"MarginBottom": "10.000000",
+									"MarginRight": "1246.938965",
+									"MarginTop": "-88.579041",
+									"MarginLeft": "496.958008",
+									"MarginAnchorX": "Right"
+								},
+								{
+									"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+									"class": "gui::ILogicComponent",
+									"dyn_fields": [
+										{
+											"name": "button_icon",
+											"type": "string",
+											"value": "%KEY(_ACTION_GUI_PAD_R3)"
+										},
+										{
+											"name": "button_text",
+											"type": "string",
+											"value": "&MTrade_Compare&"
+										}
+									]
+								},
+								{
+									"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+									"class": "gui::IButtonComponent",
+									"DisableCanHover": "1",
+									"PressAction": "_ACTION_GUI_PAD_R3"
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{11a7efc8-7551-43c8-8c62-18a1706f1ee3}",
+							"Id": "btns",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{edbe78bb-7715-430a-be6f-c970c7da00df}",
+									"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{585397a5-650f-43fe-8c28-509d1da1e978}",
+									"Height": "40.000000",
+									"Width": "1779.500000",
+									"MarginBottom": "44.000000",
+									"MarginLeft": "67.500000",
+									"MarginAnchorY": "Bottom"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{b2bc0e5a-aaad-4305-b0ff-cb12f67fa7c0}",
+									"AlignmentX": "Right"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{aaa3e6d5-7c12-4bf7-bafa-f8278286e358}",
+									"Id": "btn_back",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "button_icon",
+													"type": "string",
+													"value": "%KEY(_ACTION_GUI_CANCEL)"
+												},
+												{
+													"name": "button_text",
+													"type": "string",
+													"value": "&MenuBack&"
+												}
+											]
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"PressSound": "menu_back",
+											"DisableCanHover": "1",
+											"PressAction": "_ACTION_GUI_CANCEL"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{336782c9-0be9-4110-a831-cf9999f68007}",
+									"Id": "callforhelp_symbol",
+									"sub_symbol": "callforhelp_symbol",
+									"components": [
+										{
+											"target_component_uuid": "{54660936-0f66-46fb-ba3a-0d00e9fa4863}",
+											"class": "gui::ILayoutComponent",
+											"MarginLeft": "16.000000"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{1f081285-36e4-4dac-a58d-bdd976a4e586}",
+									"Id": "group",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{9ff92544-8d5a-462b-ac50-31aee76fb391}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{ea08673f-57b0-4dc0-a88f-fbaca6c473b9}",
+											"SizeModeY": "Stretch",
+											"SizeModeX": "Stretch"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{79498f54-d697-49b2-9feb-5fbaeb19a438}",
+									"Id": "btn_compare",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+											"class": "gui::ILayoutComponent",
+											"Width": "104.418755",
+											"MarginAnchorX": "Right"
+										},
+										{
+											"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "show_bg",
+													"type": "bool",
+													"value": "1"
+												},
+												{
+													"name": "button_icon",
+													"type": "string",
+													"value": "%KEY(_ACTION_GUI_COMPARE)"
+												},
+												{
+													"name": "button_text",
+													"type": "string",
+													"value": "&MTrade_Compare&"
+												}
+											]
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"DisableCanHover": "1",
+											"PressAction": "_ACTION_GUI_COMPARE"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{21e2334e-3972-4814-8c0e-77c20e1219f8}",
+									"Id": "btn_sell_all_valuables",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+											"class": "gui::ILayoutComponent",
+											"MarginAnchorX": "Right"
+										},
+										{
+											"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "button_icon",
+													"type": "string",
+													"value": "%KEY(_ACTION_GUI_PAD_Y)"
+												},
+												{
+													"name": "button_text",
+													"type": "string",
+													"value": "&MShop_SellAllValuables&"
+												}
+											]
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"HoldTime": "0.001000",
+											"DisableCanHover": "1",
+											"PressAction": "_ACTION_GUI_PAD_Y"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{90da6482-692e-42f1-b227-b8ae2057f741}",
+							"Id": "bar",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{2a2975a8-3be1-4bbc-bd90-415ba0ce7384}",
+									"Visible": "0"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{4c4421f7-6641-4640-9e5f-61dd7d4c56e2}",
+									"Height": "2.000000",
+									"SizeModeX": "Stretch"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{73f189c2-bdf6-4037-9ba1-4b6346718858}",
+									"ImageColorMul": "808080FF"
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{c3153d31-31da-4441-82aa-9e70b8a8dce9}",
+							"Id": "bg",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{5eea306e-218f-49ed-b94c-d1e87d89e3d4}",
+									"Visible": "0",
+									"Opacity": "0.700000"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{61d26409-5187-431f-8cc1-f5caabfe0734}",
+									"SizeModeY": "Stretch",
+									"SizeModeX": "Stretch"
+								},
+								{
+									"class": "gui::IImageComponent",
+									"uuid": "{adff529f-7a06-42d5-a3c0-ca7fae323a90}",
+									"ImageColorMul": "000000FF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{c5ef6227-ef53-4b12-82f5-c0a69283484d}",
+					"Id": "group",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{52e6bc31-f994-417d-8c76-b228179ec8e1}",
+							"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{59e921dd-2dbd-43ad-9622-665208871ae7}",
+							"Height": "804.000000",
+							"Width": "1688.000000",
+							"MarginTop": "156.000000"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::IGroup",
+							"uuid": "{4bc03c4f-76d9-4d0b-b9b0-f0129695e950}",
+							"Id": "group3",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{ad12e92c-0c3a-4c6e-963f-1cad37eef402}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{2349b6a9-a1f7-4e93-af1d-b92526216606}",
+									"Height": "666.000000",
+									"Width": "156.663681",
+									"SizeModeY": "AutoSizeToElements",
+									"SizeModeX": "AutoSizeToElements",
+									"MarginTop": "61.000000",
+									"MarginLeft": "66.000000"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{c496c022-0955-4098-97ff-b0b06729f248}",
+									"SkipInvisible": "0",
+									"Wrap": "0",
+									"Orientation": "Vertical"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{46b7c1d1-193c-4a23-bc37-12c6f3ce9aed}",
+									"Id": "btn_previous_category",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+											"class": "gui::IElementComponent",
+											"Visible": "0"
+										},
+										{
+											"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+											"class": "gui::ILayoutComponent",
+											"Width": "119.664841",
+											"MarginRight": "10.000000",
+											"MarginTop": "-30.520630",
+											"MarginLeft": "26.998840",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"PressAction": "_ACTION_GUI_PAD_DPAD_UP"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{5a3362d4-d06c-4f4f-b72d-d16dad1fdb18}",
+									"Id": "group1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{19ec716e-31e1-4a93-ae32-49dc7d5839a6}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{e59a4ded-28c8-43f9-abcc-060db295b2a5}",
+											"Height": "170.000000",
+											"Width": "96.000000",
+											"SizeModeY": "AutoSizeToElements",
+											"SizeModeX": "AutoSizeToElements",
+											"MarginBottom": "5.000000",
+											"MarginTop": "-11.000000"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{8e477948-6aa3-4508-ad51-12230f339167}",
+											"AlignmentX": "Center",
+											"Wrap": "0",
+											"Orientation": "Vertical"
+										},
+										{
+											"class": "gui::IElementGeneratorComponent",
+											"uuid": "{5de45be3-3d98-4cb0-af38-181086ef54e0}",
+											"DefaultSymbol": "quest_category_symbol",
+											"FieldPath": "m_Filters"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{66840025-4a5f-462c-9137-b856e4df8a9c}",
+											"Id": "quest_category_symbol",
+											"sub_symbol": "quest_category_symbol",
+											"components": [
+												{
+													"target_component_uuid": "{68a4e32a-7c65-4745-9a19-8ee08e9e6651}",
+													"class": "gui::IElementComponent",
+													"RenderPivot": "0.402122 1.438545 0.000000"
+												}
+											]
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{8f2595f3-4ba3-469b-a6e7-8ef756c49452}",
+											"Id": "quest_category_symbol1",
+											"sub_symbol": "quest_category_symbol"
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{6c5d40bd-c5c4-44ce-baf5-0844f1947cfd}",
+											"Id": "quest_category_symbol2",
+											"sub_symbol": "quest_category_symbol"
+										},
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{a87fbcc2-7c25-4e79-abf6-f0f1a8b3f68f}",
+											"Id": "quest_category_symbol3",
+											"sub_symbol": "quest_category_symbol"
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{5eec796b-1548-461c-9059-84425e011f29}",
+									"Id": "btn_next_category",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+											"class": "gui::IElementComponent",
+											"Visible": "0"
+										},
+										{
+											"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+											"class": "gui::ILayoutComponent",
+											"Width": "119.664841",
+											"MarginLeft": "26.998840",
+											"MarginAnchorY": "Center"
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"PressAction": "_ACTION_GUI_PAD_DPAD_DOWN"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{3f8403f7-56ef-43dd-b3bb-ff9a6e3f75eb}",
+							"Id": "group2",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{235f305c-d8cb-4d09-ad54-7f86726f020e}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{98f6c204-643a-4925-8c3c-8b6fce1a8cac}",
+									"Height": "701.000000",
+									"Width": "550.962769",
+									"MarginTop": "36.000000",
+									"MarginLeft": "241.000000"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{cd55fef8-fcee-40b9-a561-2bbab1172fe3}",
+									"Id": "item_list_widget",
+									"sub_symbol": "item_list_widget",
+									"components": [
+										{
+											"target_component_uuid": "{0b647e20-54b2-4fef-9f82-5866b45f670c}",
+											"class": "gui::IElementComponent",
+											"RenderRotation": "0.000000 0.061049 0.000000 0.998135"
+										},
+										{
+											"target_component_uuid": "{37d72385-8137-4cc3-9a5d-c43611227c69}",
+											"class": "gui::ILayoutComponent",
+											"Height": "701.000000",
+											"MarginLeft": "-17.000000"
+										},
+										{
+											"target_component_uuid": "{f8a7e206-bc55-4688-86fc-e7ae686a1356}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "show_bg",
+													"type": "bool",
+													"value": "1"
+												},
+												{
+													"name": "scroll_rot",
+													"type": "float",
+													"value": "-12.000000"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::IGroup",
+							"uuid": "{5f780718-3472-4ba3-b214-63d836ff6890}",
+							"Id": "weapon_blueprint_text",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{8e4f0c45-91e2-4e17-8fae-6c80df85b6c7}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{78ffebff-4ab3-42b8-98be-7eb158c3d5ea}",
+									"Height": "27.264000",
+									"Width": "345.385071",
+									"SizeModeY": "AutoSizeToComponents",
+									"SizeModeX": "AutoSizeToComponents",
+									"MarginBottom": "-70.000000",
+									"MarginRight": "-150.000000",
+									"MarginAnchorY": "Bottom",
+									"MarginAnchorX": "Right"
+								},
+								{
+									"class": "gui::ITextComponent",
+									"uuid": "{86706934-b6b5-4a8b-9f8c-ff704a34e2f7}",
+									"_preset_": "Display Subtitle",
+									"AlignmentX": "Right",
+									"ShadowColor": "000000C0",
+									"ShadowOffset": "1.000000 1.000000",
+									"DropShadow": "1",
+									"TextColorMul": "m_golden",
+									"Uppercase": "1",
+									"Multiline": "0",
+									"_StylePreset_": "Display Subtitle",
+									"TextValue": "&MShop_WeaponBlueprintsCollected&"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{c1e62a6d-0438-46d0-b54b-15b90419b101}",
+									"Id": "pattern_bg",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{25b05445-40c9-4562-af9e-5e82936ad376}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{4b2dd999-acb5-400d-9533-e36ae34f7d10}",
+											"Height": "143.000000",
+											"Width": "585.000000",
+											"SizeModeY": "Stretch",
+											"SizeModeX": "Stretch",
+											"MarginBottom": "-8.000000",
+											"MarginRight": "-32.000000",
+											"MarginTop": "-8.000000",
+											"MarginLeft": "-32.000000"
+										},
+										{
+											"class": "gui::IImageComponent",
+											"uuid": "{ea0fd4ea-d33e-498c-99cb-a6010290fd06}",
+											"Texture": "pattern_bg"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{9394e0eb-a9a9-4733-ad7a-6c5bf078a52e}",
+					"Id": "inv_grad_bg",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{cb19dacc-e4b4-4005-b56d-617e6feb3491}",
+							"Visible": "0",
+							"Opacity": "0.900000"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{24565885-c80b-4f5e-bfa2-63ac0d34ce17}",
+							"Height": "4.000000",
+							"Width": "1294.000000",
+							"SizeModeY": "Stretch"
+						},
+						{
+							"class": "gui::IImageComponent",
+							"uuid": "{ab3c6680-82d0-4aef-b7ad-bc63105e1456}",
+							"Texture": "inv_grad_bg"
+						}
+					]
+				},
+				{
+					"class": "gui::IGroup",
+					"uuid": "{c2ee13a5-5f1c-4e91-ba5f-c0fc92bb2956}",
+					"Id": "wpn_repair",
+					"components": [
+						{
+							"class": "gui::IElementComponent",
+							"uuid": "{f025fa30-f9e9-45cf-9b0b-78b41e8d0530}"
+						},
+						{
+							"class": "gui::ILayoutComponent",
+							"uuid": "{c5598254-32e0-4214-8a02-1bcb7e3cc621}",
+							"Height": "276.015991",
+							"Width": "480.000000",
+							"SizeModeY": "AutoSizeToElements",
+							"MarginTop": "190.009369",
+							"MarginLeft": "1227.034912"
+						}
+					],
+					"objects": [
+						{
+							"class": "gui::IGroup",
+							"uuid": "{a13501f6-1dad-452a-88b7-77e6095065ee}",
+							"Id": "group1",
+							"components": [
+								{
+									"class": "gui::IElementComponent",
+									"uuid": "{23ce1918-38f9-4f28-90fa-d88bed6c3886}"
+								},
+								{
+									"class": "gui::ILayoutComponent",
+									"uuid": "{03f34c0a-75a6-4293-8cce-5cc073a4a766}",
+									"Height": "146.345703",
+									"Width": "400.000000",
+									"SizeModeY": "AutoSizeToElements",
+									"MarginBottom": "24.000000",
+									"MarginTop": "24.000000",
+									"MarginAnchorX": "Center"
+								},
+								{
+									"class": "gui::IWrapPanelComponent",
+									"uuid": "{71141345-b63f-40d9-b5c2-76af4bcd9c4c}",
+									"Wrap": "0",
+									"Orientation": "Vertical"
+								}
+							],
+							"objects": [
+								{
+									"class": "gui::IGroup",
+									"uuid": "{6cf5b18f-6617-4562-9170-8d84d5182de6}",
+									"Id": "craftparts_txt1",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{fcf4042b-82c7-4fd7-a0bb-4bfd745014f8}",
+											"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{0e5c2a16-32ed-450b-b420-4d71d0ba6396}",
+											"Height": "24.000000",
+											"Width": "400.000000",
+											"MarginBottom": "14.000000",
+											"MarginTop": "8.000000"
+										},
+										{
+											"class": "gui::ITextComponent",
+											"uuid": "{4acc63ef-0a51-43d6-b219-cd91e7160e09}",
+											"_preset_": "H2_HeaderSubtitle",
+											"TrimmingMode": "Ellipsis",
+											"ShadowColor": "000000C0",
+											"ShadowOffset": "1.000000 1.000000",
+											"DropShadow": "1",
+											"TextColorMul": "text_gray",
+											"Multiline": "0",
+											"_StylePreset_": "H2_HeaderSubtitle",
+											"TextValue": "&MCrafting_Components&"
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{6ab82d75-a8eb-4529-85ad-1224c0743f67}",
+									"Id": "craftparts",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{5904b51c-1362-4548-af7d-af15f60dd20a}"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{1298767f-e990-4be0-ac9f-c1f7bb2f4713}",
+											"Height": "48.000000",
+											"Width": "400.000000",
+											"SizeModeY": "AutoSizeToElements",
+											"MarginBottom": "16.000000",
+											"MarginRight": "42.765961",
+											"MarginTop": "4.000000"
+										},
+										{
+											"class": "gui::IWrapPanelComponent",
+											"uuid": "{08442614-80cb-4c8f-b9ca-968330a567c8}",
+											"Wrap": "0",
+											"Orientation": "Vertical"
+										},
+										{
+											"class": "gui::IElementGeneratorComponent",
+											"uuid": "{1b38f78e-2ae6-41ca-9193-a119b4d791b6}",
+											"DefaultSymbol": "item_craftpart",
+											"FieldPath": "m_RepairCost"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::CSymbolRoot",
+											"uuid": "{92a15925-4ddb-4de8-8baf-3fcb2b0ec5fd}",
+											"Id": "item_craftpart",
+											"sub_symbol": "item_craftpart"
+										},
+										{
+											"class": "gui::IGroup",
+											"uuid": "{c323ab7f-4697-47cd-a9d5-595175a80060}",
+											"Id": "tooltip_spacer",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{a4db8387-22ca-4f2f-be26-e652bdfccf88}",
+													"Opacity": "0.800000"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{f3158a9d-2ec7-4628-80bd-9630eaf11774}",
+													"ForceDefaultLayout": "1",
+													"Height": "16.000000",
+													"Width": "423.943054",
+													"SizeModeY": "AutoSizeToComponents",
+													"SizeModeX": "AutoSizeToComponents",
+													"MarginRight": "-16.709015",
+													"MarginTop": "-22.000000"
+												},
+												{
+													"class": "gui::IImageComponent",
+													"uuid": "{6b010869-1be3-4161-8dce-9869dbc65644}",
+													"ImageColorMul": "m_light_grey",
+													"Texture": "tooltip_spacer"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::IGroup",
+									"uuid": "{da9590f6-ea13-4664-8ffe-ef78f0af89a5}",
+									"Id": "full",
+									"components": [
+										{
+											"class": "gui::IElementComponent",
+											"uuid": "{a24e0062-c023-4f5c-a478-29f21c70a613}",
+											"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+										},
+										{
+											"class": "gui::ILayoutComponent",
+											"uuid": "{915979d9-ebca-44bd-8638-59626709e2f0}",
+											"Height": "23.855999",
+											"Width": "417.000000",
+											"SizeModeY": "AutoSizeToElements",
+											"SizeModeX": "Stretch",
+											"MarginBottom": "12.000000",
+											"MarginTop": "12.000000"
+										}
+									],
+									"objects": [
+										{
+											"class": "gui::IGroup",
+											"uuid": "{caa07e74-8e37-421f-9b79-37e41da090fa}",
+											"Id": "flavor_text",
+											"components": [
+												{
+													"class": "gui::IElementComponent",
+													"uuid": "{8836f90b-660b-43bd-b8d4-6fef532fba1a}",
+													"RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+												},
+												{
+													"class": "gui::ILayoutComponent",
+													"uuid": "{95a2ba15-c990-4449-9c6e-6cc0cd0f49d2}",
+													"Height": "20.000000",
+													"Width": "400.000000",
+													"SizeModeY": "AutoSizeToComponents"
+												},
+												{
+													"class": "gui::ITextComponent",
+													"uuid": "{7314fbd0-a037-4542-b011-d10cc6c69ba5}",
+													"_preset_": "B2M_BodyTextMedium",
+													"CanColorImageGlyphs": "1",
+													"ShadowOffset": "1.000000 1.000000",
+													"DropShadow": "1",
+													"TextColorMul": "shop_money_increase",
+													"LineSpacingAdjust": "-1.000000",
+													"ExactAutoSizeX": "0",
+													"_StylePreset_": "B2M_BodyTextMedium",
+													"TextValue": "%ICON(check_tick) &MCrafting_RepairNotNeeded&\n"
+												}
+											]
+										}
+									]
+								},
+								{
+									"class": "gui::CSymbolRoot",
+									"uuid": "{fdf414e8-9c05-4062-a36f-360d09baa511}",
+									"Id": "btn_repair",
+									"sub_symbol": "legend_button",
+									"components": [
+										{
+											"target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+											"class": "gui::ILayoutComponent",
+											"Width": "104.418755",
+											"MarginBottom": "16.000000",
+											"MarginTop": "16.000000"
+										},
+										{
+											"target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+											"class": "gui::ILogicComponent",
+											"dyn_fields": [
+												{
+													"name": "button_icon",
+													"type": "string",
+													"value": "%KEY(_ACTION_GUI_PAD_A_OR_LMB)"
+												},
+												{
+													"name": "button_text",
+													"type": "string",
+													"value": "&MShop_RepairWeapon&"
+												}
+											]
+										},
+										{
+											"target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+											"class": "gui::IButtonComponent",
+											"HoldTime": "0.500000",
+											"DisableCanHover": "1",
+											"PressAction": "_ACTION_GUI_PAD_A_OR_LMB"
+										}
+									]
+								}
+							]
+						},
+						{
+							"class": "gui::CSymbolRoot",
+							"uuid": "{ffcf1bbc-1fab-4de3-92c2-8485e9812969}",
+							"Id": "tooltip_background_noheader",
+							"sub_symbol": "tooltip_background_noheader",
+							"components": [
+								{
+									"target_component_uuid": "{a8e8aeaf-7938-49d5-8100-8e5d5ceb1991}",
+									"class": "gui::ILayoutComponent",
+									"SizeModeY": "Stretch"
+								},
+								{
+									"target_component_uuid": "{dfaf7568-12b2-45a0-b626-3eb101d87fe4}",
+									"class": "gui::ILogicComponent",
+									"dyn_fields": [
+										{
+											"name": "no_blur",
+											"type": "bool",
+											"value": "1"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"class": "gui::IGroup",
+			"uuid": "{49de832c-3f9f-48ba-ac6a-6baaa3615b97}",
+			"Id": "grid_menu_template",
+			"design_time": true,
+			"components": [
+				{
+					"class": "gui::IElementComponent",
+					"uuid": "{c1452623-d61d-4f80-8382-98edc4b6e661}",
+					"DesignTimeOnly": "1",
+					"Visible": "0"
+				},
+				{
+					"class": "gui::ILayoutComponent",
+					"uuid": "{0947e8d7-3867-4406-980b-dc94aa0b30a7}",
+					"Height": "1080.000000",
+					"Width": "1920.000000"
+				},
+				{
+					"class": "gui::IImageComponent",
+					"uuid": "{0b0ba8a8-67a4-45fb-88c7-9c327a6cb3ef}",
+					"ImageColorMul": "FFFFFF32",
+					"Texture": "grid_menu_template"
+				}
+			]
+		},
+		{
+			"class": "gui::CSymbolRoot",
+			"uuid": "{7607ad0c-3a1d-4c2d-a8f5-f77c187cbcc3}",
+			"Id": "dark_edges",
+			"sub_symbol": "dark_edges"
+		}
+	],
+	"anims": [
+		{
+			"uuid": "{0d617d7f-4b23-425e-9678-cdc665386130}",
+			"name": "flag_loop",
+			"frames": 300,
+			"wrap_mode": "Loop"
+		}
+	],
+	"anims_order": [
+		"{0d617d7f-4b23-425e-9678-cdc665386130}"
+	]
+}

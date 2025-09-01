@@ -1,0 +1,2279 @@
+{
+    "version": 1,
+    "symbol_uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+    "symbol_size": "480.000000 415.107971",
+    "data_context_class": "GuiSkillData",
+    "class": "gui::ISymbolRoot",
+    "uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+    "Id": "inhibitor_skill_popup",
+    "components": [
+        {
+            "class": "gui::IElementComponent",
+            "uuid": "{4a211a16-0af8-4cf8-9cfd-cd87ce865dab}",
+            "InheritDataContextFromParent": "0"
+        },
+        {
+            "class": "gui::ILayoutComponent",
+            "uuid": "{a243e32f-12d4-4a93-a87f-c4ce25a054e6}",
+            "Height": "328.000000",
+            "Width": "480.000000",
+            "SizeModeY": "AutoSizeToElements"
+        },
+        {
+            "class": "gui::ILogicComponent",
+            "uuid": "{a64195be-c046-4d8c-90d6-e912b0aa38a4}",
+            "data": [
+                {
+                    "type": "CVariablesComponentSymbolData"
+                },
+                {
+                    "type": "CActionGraphSymbolData",
+                    "uuid": "{0eab9d82-b018-45d8-a88f-6d83a945207a}",
+                    "hash": "",
+                    "nodes": [
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 81,
+                            "Value": {
+                                "src_node": 76,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "meta": {
+                                "x": 3456.882568359375,
+                                "y": 1208.294677734375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/header/title_header_text/title_header_text",
+                                "element_uuid": "{139962c9-5b7e-4eca-8918-52199b5c4eb7}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 80,
+                            "Value": {
+                                "src_node": 77,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Next": 81,
+                            "meta": {
+                                "x": 3252.663818359375,
+                                "y": 1199.7855224609376
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/hint/text",
+                                "element_uuid": "{ed2ab82f-d8cf-4300-86de-03091f6dcfca}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 79,
+                            "Value": {
+                                "src_node": 77,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Next": 80,
+                            "meta": {
+                                "x": 3030.94775390625,
+                                "y": 1198.083740234375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text/flavor_text",
+                                "element_uuid": "{0ee6a707-66d1-4a23-9ac1-66dfe2f3a13e}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 78,
+                            "Value": {
+                                "src_node": 75,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Next": 79,
+                            "meta": {
+                                "x": 2713.60498046875,
+                                "y": 1222.17578125
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/header/title_header_text/title_sub_text1",
+                                "element_uuid": "{5f738f37-ac52-477b-a337-6505ca6a8c0b}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "FontSize"
+                            }
+                        },
+                        {
+                            "type": "CActionAddInt",
+                            "id": 70,
+                            "Value1": {
+                                "src_node": 58,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2880.0,
+                                "y": 3450.0
+                            }
+                        },
+                        {
+                            "type": "CActionIntToString",
+                            "id": 69,
+                            "Value": {
+                                "src_node": 67,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Format": {
+                                "value": "%d"
+                            },
+                            "meta": {
+                                "x": 4080.0,
+                                "y": 3270.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 68,
+                            "Next": 66,
+                            "meta": {
+                                "x": 3894.83056640625,
+                                "y": 3167.04345703125
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Value"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 67,
+                            "meta": {
+                                "x": 3894.83056640625,
+                                "y": 3304.621337890625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Value"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 66,
+                            "Value": {
+                                "src_node": 69,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4265.0068359375,
+                                "y": 3145.07421875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/header/title_header_text/title_header_text1",
+                                "element_uuid": "{8b746a06-7d56-4572-9240-f8d0fe38f04d}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 61,
+                            "Next": 57,
+                            "meta": {
+                                "x": 2427.96240234375,
+                                "y": 3675.892822265625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_MaxSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 60,
+                            "meta": {
+                                "x": 2430.0,
+                                "y": 3795.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_MaxSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 59,
+                            "Next": 57,
+                            "meta": {
+                                "x": 2430.3037109375,
+                                "y": 3291.9140625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CurrentSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 58,
+                            "meta": {
+                                "x": 2430.0,
+                                "y": 3420.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CurrentSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionSetWString",
+                            "id": 57,
+                            "Value": {
+                                "src_node": 65,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3795.0,
+                                "y": 3495.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/header/title_header_text/title_sub_text1",
+                                "element_uuid": "{5f738f37-ac52-477b-a337-6505ca6a8c0b}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingBool",
+                            "id": 56,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 55,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Value on True": {
+                                "value": "%COLOR(menu_yellow)&MSkills_Maximum&%COLOR_END"
+                            },
+                            "Value on False": {
+                                "value": "&MSkill_NotEnoughInh&"
+                            },
+                            "meta": {
+                                "x": 2490.05859375,
+                                "y": 2250.082763671875
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 55,
+                            "Value1": {
+                                "src_node": 54,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 53,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "GreaterEqual"
+                            },
+                            "meta": {
+                                "x": 1980.0,
+                                "y": 2175.0
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 54,
+                            "meta": {
+                                "x": 1740.0,
+                                "y": 2130.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CurrentSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 53,
+                            "meta": {
+                                "x": 1761.47216796875,
+                                "y": 2203.0771484375
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_MaxSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingBool",
+                            "id": 52,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 8,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value on True": {
+                                "value": "&MSkill_ApplyInhibitors&"
+                            },
+                            "Value on False": {
+                                "src_node": 56,
+                                "src_prop": "Result",
+                                "value": "&MSkill_NotEnoughInh&"
+                            },
+                            "meta": {
+                                "x": 2325.0,
+                                "y": 2100.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 4,
+                            "Value": {
+                                "src_node": 52,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2610.0,
+                                "y": 1950.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/buttons/btn_buy",
+                                "element_uuid": "{2117c8f8-9560-432f-ac90-82ccaf74d6df}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "button_text"
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 51,
+                            "Value": {
+                                "src_node": 8,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2130.0,
+                                "y": 2025.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 50,
+                            "Value": {
+                                "src_node": 51,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 4,
+                            "meta": {
+                                "x": 2352.0,
+                                "y": 1941.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/buttons/btn_buy",
+                                "element_uuid": "{2117c8f8-9560-432f-ac90-82ccaf74d6df}",
+                                "component_class": "gui::IButtonComponent",
+                                "field": "Disabled"
+                            }
+                        },
+                        {
+                            "type": "CActionCastTo",
+                            "id": 49,
+                            "Success": 13,
+                            "Failed": 11,
+                            "InputPtr": {
+                                "src_node": 12,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3105.0,
+                                "y": 1575.0
+                            },
+                            "ptr_class": "GuiSkillData"
+                        },
+                        {
+                            "type": "CActionFloatToVec3",
+                            "id": 48,
+                            "x": {
+                                "src_node": 47,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "y": {
+                                "value": "1.000000"
+                            },
+                            "z": {
+                                "value": "1.000000"
+                            },
+                            "meta": {
+                                "x": 2686.326416015625,
+                                "y": 2748.21484375
+                            }
+                        },
+                        {
+                            "type": "CActionDivideIntToFloat",
+                            "id": 47,
+                            "Value1": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 20,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2454.62548828125,
+                                "y": 2820.539306640625
+                            }
+                        },
+                        {
+                            "type": "CActionSetVec3",
+                            "id": 46,
+                            "Value": {
+                                "src_node": 48,
+                                "src_prop": "Result",
+                                "value": "0.000000 0.000000 0.000000"
+                            },
+                            "Next": 17,
+                            "meta": {
+                                "x": 2918.02734375,
+                                "y": 2675.890380859375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/bar/group1/bar",
+                                "element_uuid": "{186fae02-432c-475a-9ca1-9e86b4998133}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "RenderScale"
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 45,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MSkills_ReqInhibitors&"
+                            },
+                            "%1s": {
+                                "src_node": 42,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 3870.0,
+                                "y": 2820.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetWString",
+                            "id": 44,
+                            "Value": {
+                                "src_node": 45,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4290.0,
+                                "y": 2670.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/requirements/grp/skillpointcost",
+                                "element_uuid": "{866d323c-c99b-41e1-9f54-cbaaa58e0fe8}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 43,
+                            "Next": 44,
+                            "meta": {
+                                "x": 3590.181640625,
+                                "y": 2615.89453125
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_SkillpointCost"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 42,
+                            "meta": {
+                                "x": 3570.0,
+                                "y": 2745.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_SkillpointCost"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 41,
+                            "Value": {
+                                "src_node": 29,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3990.0,
+                                "y": 2295.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/requirements/grp1",
+                                "element_uuid": "{c82b92c6-7eeb-474b-9a2b-85e4e77f896a}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOr",
+                            "id": 30,
+                            "Value1": {
+                                "src_node": 34,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 29,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3433.0,
+                                "y": 2400.0
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 40,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&SkillHint_%s&"
+                            },
+                            "%1s": {
+                                "src_node": 38,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 2073.0,
+                                "y": 1182.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 39,
+                            "Next": 35,
+                            "meta": {
+                                "x": 1824.0,
+                                "y": 977.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_IdName"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 38,
+                            "meta": {
+                                "x": 1824.0,
+                                "y": 1077.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_IdName"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 35,
+                            "Value": {
+                                "src_node": 40,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2415.0,
+                                "y": 1050.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/hint/text",
+                                "element_uuid": "{ed2ab82f-d8cf-4300-86de-03091f6dcfca}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetWString",
+                            "id": 37,
+                            "Value": {
+                                "src_node": 36,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "Next": 25,
+                            "meta": {
+                                "x": 2220.0,
+                                "y": 2265.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/bar/text",
+                                "element_uuid": "{08dac3d2-6a40-43c8-9505-3fdb9102023c}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 36,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MSkill_TierValue&"
+                            },
+                            "%1s": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 1830.0,
+                                "y": 2325.0
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 34,
+                            "Value": {
+                                "src_node": 31,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3015.0,
+                                "y": 2220.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 33,
+                            "Value": {
+                                "src_node": 34,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 17,
+                            "meta": {
+                                "x": 3225.0,
+                                "y": 2100.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/requirements/grp",
+                                "element_uuid": "{3f5da0bc-fa26-40ad-825f-4198ed783f81}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 32,
+                            "Next": 33,
+                            "meta": {
+                                "x": 2725.0,
+                                "y": 2089.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_HasEnoughSkillpoints"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 31,
+                            "meta": {
+                                "x": 2725.0,
+                                "y": 2189.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_HasEnoughSkillpoints"
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 29,
+                            "Value1": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 20,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "GreaterEqual"
+                            },
+                            "meta": {
+                                "x": 2805.0,
+                                "y": 2415.0
+                            }
+                        },
+                        {
+                            "type": "CActionIntToString",
+                            "id": 28,
+                            "Value": {
+                                "src_node": 20,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Format": {
+                                "value": "%d"
+                            },
+                            "meta": {
+                                "x": 2067.0,
+                                "y": 2651.0
+                            }
+                        },
+                        {
+                            "type": "CActionIntToString",
+                            "id": 27,
+                            "Value": {
+                                "src_node": 18,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Format": {
+                                "value": "%d / "
+                            },
+                            "meta": {
+                                "x": 2067.0,
+                                "y": 2546.5
+                            }
+                        },
+                        {
+                            "type": "CActionAppendString",
+                            "id": 26,
+                            "Value1": {
+                                "src_node": 27,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "Value2": {
+                                "src_node": 28,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2325.0,
+                                "y": 2610.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 25,
+                            "Value": {
+                                "src_node": 26,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "Next": 46,
+                            "meta": {
+                                "x": 2562.0,
+                                "y": 2558.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/bar/text1",
+                                "element_uuid": "{a5063cce-759a-4fa1-b72e-af6d654ffc5d}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 21,
+                            "Next": 25,
+                            "meta": {
+                                "x": 1809.0,
+                                "y": 2592.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_MaxSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 20,
+                            "meta": {
+                                "x": 1809.0,
+                                "y": 2692.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_MaxSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 19,
+                            "Next": 37,
+                            "meta": {
+                                "x": 1569.0,
+                                "y": 2338.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CurrentSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 18,
+                            "meta": {
+                                "x": 1569.0,
+                                "y": 2438.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CurrentSkillLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 17,
+                            "Value": {
+                                "src_node": 30,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 41,
+                            "meta": {
+                                "x": 3600.0,
+                                "y": 2190.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/requirements",
+                                "element_uuid": "{a5a3d770-3a23-4e24-b275-95b940c8bbd1}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 24,
+                            "Value": {
+                                "src_node": 23,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3940.0,
+                                "y": 1600.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/header/title_header_text/title_header_text",
+                                "element_uuid": "{139962c9-5b7e-4eca-8918-52199b5c4eb7}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 23,
+                            "meta": {
+                                "x": 3690.0,
+                                "y": 1665.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Name"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 22,
+                            "Next": 24,
+                            "meta": {
+                                "x": 3726.431884765625,
+                                "y": 1527.926025390625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Name"
+                            }
+                        },
+                        {
+                            "type": "CActionComment",
+                            "id": 16,
+                            "meta": {
+                                "x": 1815.0,
+                                "y": 1830.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "display buy button",
+                            "group_moves": true,
+                            "size": "481.230225 282.000000"
+                        },
+                        {
+                            "type": "CActionComment",
+                            "id": 15,
+                            "meta": {
+                                "x": 1799.0,
+                                "y": 1412.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "displa description",
+                            "group_moves": true,
+                            "size": "922.000000 387.000000"
+                        },
+                        {
+                            "type": "CActionComment",
+                            "id": 14,
+                            "meta": {
+                                "x": 2820.0,
+                                "y": 1395.0
+                            },
+                            "color": "0.588000 0.588000 0.588000 0.500000",
+                            "text": "hide when no data context is set",
+                            "group_moves": true,
+                            "size": "741.000000 405.000000"
+                        },
+                        {
+                            "type": "CActionGetRawPtr",
+                            "id": 12,
+                            "meta": {
+                                "x": 2840.0,
+                                "y": 1715.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            },
+                            "ptr_class": "gui::CDataSource"
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 11,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3360.0,
+                                "y": 1635.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnInitialize",
+                            "id": 10,
+                            "Next": 49,
+                            "meta": {
+                                "x": 2835.0,
+                                "y": 1530.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 9,
+                            "Next": 49,
+                            "meta": {
+                                "x": 2835.0,
+                                "y": 1590.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 8,
+                            "meta": {
+                                "x": 1835.0,
+                                "y": 2027.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CanBuy"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 5,
+                            "Next": 50,
+                            "meta": {
+                                "x": 1848.0,
+                                "y": 1895.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_CanBuy"
+                            }
+                        },
+                        {
+                            "type": "CActionStringNotEmpty",
+                            "id": 7,
+                            "Value": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2268.0,
+                                "y": 1729.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 6,
+                            "Value": {
+                                "src_node": 7,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 78,
+                            "meta": {
+                                "x": 2536.0,
+                                "y": 1555.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text",
+                                "element_uuid": "{885ff756-6ac2-4496-ac82-02378f80e9fb}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 3,
+                            "meta": {
+                                "x": 1830.0,
+                                "y": 1605.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 2,
+                            "Next": 1,
+                            "meta": {
+                                "x": 1830.0,
+                                "y": 1515.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "GuiSkillData",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 1,
+                            "Value": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "Next": 6,
+                            "meta": {
+                                "x": 2250.0,
+                                "y": 1500.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "info_popup_contents/flavour_text/flavor_text",
+                                "element_uuid": "{0ee6a707-66d1-4a23-9ac1-66dfe2f3a13e}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 13,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 3360.0,
+                                "y": 1515.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef59b6f0-15db-4b44-89cb-bc5105aa84ad}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 62,
+                            "Value1": {
+                                "src_node": 58,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "Less"
+                            },
+                            "meta": {
+                                "x": 2884.31689453125,
+                                "y": 3694.939208984375
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 63,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MSkill_LevelMixMax&"
+                            },
+                            "%1s": {
+                                "src_node": 71,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 3126.39697265625,
+                                "y": 3903.460693359375
+                            }
+                        },
+                        {
+                            "type": "CActionStringMix",
+                            "id": 64,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Int",
+                                    "wc_type_nvec": "IntVector"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&MSkill_LevelMixNew&"
+                            },
+                            "%1s": {
+                                "src_node": 70,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "%2s": {
+                                "src_node": 60,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 3086.2841796875,
+                                "y": 3448.939208984375
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingBool",
+                            "id": 65,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "WString",
+                                    "wc_type_nvec": "WStringVector"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 62,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Value on True": {
+                                "src_node": 64,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "Value on False": {
+                                "src_node": 63,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3571.392578125,
+                                "y": 3647.531005859375
+                            }
+                        },
+                        {
+                            "type": "CActionAddInt",
+                            "id": 71,
+                            "Value1": {
+                                "src_node": 58,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2940.0,
+                                "y": 3930.0
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 72,
+                            "meta": {
+                                "x": 3084.3603515625,
+                                "y": 826.768310546875
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Subheader"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 73,
+                            "meta": {
+                                "x": 2816.62353515625,
+                                "y": 931.7530517578124
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Header"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 74,
+                            "meta": {
+                                "x": 3434.7724609375,
+                                "y": 758.5918579101563
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiGameDataRoot",
+                                "field": "m_TooltipScale_Fluff"
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 75,
+                            "Value1": {
+                                "src_node": 72,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "15.250000"
+                            },
+                            "meta": {
+                                "x": 3460.228515625,
+                                "y": 946.9419555664064
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 76,
+                            "Value1": {
+                                "src_node": 73,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "21.000000"
+                            },
+                            "meta": {
+                                "x": 3167.447265625,
+                                "y": 990.9115600585938
+                            }
+                        },
+                        {
+                            "type": "CActionMultiplyFloat",
+                            "id": 77,
+                            "Value1": {
+                                "src_node": 74,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "value": "15.250000"
+                            },
+                            "meta": {
+                                "x": 3747.7724609375,
+                                "y": 863.5918579101563
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IMouseReceiverComponent",
+            "uuid": "{f7a75109-2384-43f7-8987-5d74963b5fcd}",
+            "TrackMouseOutside": "1"
+        },
+        {
+            "class": "gui::CHintPositionComponent",
+            "uuid": "{68d92e2d-50b7-4ab8-b701-ac04e4ab4f33}",
+            "ComponentEnabled": "0"
+        }
+    ],
+    "objects": [
+        {
+            "class": "gui::IGroup",
+            "uuid": "{a901b6ca-734f-48ef-8c2b-80a3bd5342b9}",
+            "Id": "info_popup_contents",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{18fa4552-332e-4604-9156-121da4e3993d}",
+                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{9d44a23a-4d67-416d-b229-9c36a0bad3e9}",
+                    "Height": "140.984009",
+                    "Width": "400.000000",
+                    "SizeModeY": "AutoSizeToElements",
+                    "MarginBottom": "24.000000",
+                    "MarginTop": "24.000000",
+                    "MarginAnchorX": "Center"
+                },
+                {
+                    "class": "gui::IWrapPanelComponent",
+                    "uuid": "{f0bff28d-c43b-4fb9-bc87-28eca3127602}",
+                    "Wrap": "0",
+                    "Orientation": "Vertical"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{4c9ef737-f9bf-49bf-a662-4955e66a4575}",
+                    "Id": "header",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{8adc42e2-7150-4a50-a3e2-2818a80dc220}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{1c0fcea6-9611-4708-872e-35fba741f70d}",
+                            "Height": "65.000031",
+                            "Width": "400.000000",
+                            "SizeModeY": "AutoSizeToElements"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{156b1e71-923d-441e-ac56-223cdbdad385}",
+                            "Id": "title_header_text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{819c5c3b-e95e-4f77-a83c-d0c6e7885d06}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{0b070bea-097a-4cd6-8f72-be3fa51c2554}",
+                                    "Height": "96.000000",
+                                    "Width": "400.000000",
+                                    "SizeModeY": "AutoSizeToElements"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{8b746a06-7d56-4572-9240-f8d0fe38f04d}",
+                                    "Id": "title_header_text1",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{d849b401-41b1-4bc8-b9f2-a9b69310d092}",
+                                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{50948893-b562-4b2f-8f05-2d61cf8967c1}",
+                                            "Height": "64.000000",
+                                            "Width": "62.616676",
+                                            "SizeModeX": "AutoSizeToComponents",
+                                            "MarginTop": "-8.000000",
+                                            "MarginLeft": "44.000000",
+                                            "MarginAnchorX": "Right"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{6d3c03c9-2b3f-45b0-b9b2-9fd315846b5f}",
+                                            "_preset_": "D1_DisplayTitle",
+                                            "AlignmentY": "Center",
+                                            "AlignmentX": "Right",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "text_white",
+                                            "Multiline": "0",
+                                            "_StylePreset_": "D1_DisplayTitle",
+                                            "TextValue": "300"
+                                        },
+                                        {
+                                            "class": "gui::IMaskComponent",
+                                            "uuid": "{3542de17-4b10-464f-81b8-7d6ed3778611}",
+                                            "ClipEdge": "0",
+                                            "MaskChildren": "0",
+                                            "MaskSource": "{78310ff8-9ddc-44b6-bd7f-1a0a42a2bd50};info_popup_contents/header/title_header_text/title_header_text1/text_mask_headers_large;0",
+                                            "MaskTexture": "text_mask_headers_large"
+                                        },
+                                        {
+                                            "class": "gui::IMaterialEffectComponent",
+                                            "uuid": "{b33173cf-9a5d-4f47-94bf-148284e25ca9}",
+                                            "mask_mul_value": "0.150000",
+                                            "Effect": "mask_mul"
+                                        }
+                                    ],
+                                    "objects": [
+                                        {
+                                            "class": "gui::IGroup",
+                                            "uuid": "{7284c30c-9d73-4d72-802b-e52eca3666bb}",
+                                            "Id": "stat_health",
+                                            "components": [
+                                                {
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{6a3b1c2d-681d-4863-9b52-2c1c6d88f44a}",
+                                                    "Collapsed": "1"
+                                                },
+                                                {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{0a7546d0-2250-439d-a2a7-337fd3178d64}",
+                                                    "Height": "48.000000",
+                                                    "Width": "48.000000",
+                                                    "MarginTop": "2.000000",
+                                                    "MarginLeft": "-48.000000",
+                                                    "MarginAnchorY": "Center"
+                                                },
+                                                {
+                                                    "class": "gui::IImageComponent",
+                                                    "uuid": "{4c860a0e-16b8-466b-bd45-a81628e7b0c2}",
+                                                    "Texture": "stat_health"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "class": "gui::IGroup",
+                                            "uuid": "{78310ff8-9ddc-44b6-bd7f-1a0a42a2bd50}",
+                                            "Id": "text_mask_headers_large",
+                                            "components": [
+                                                {
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{a8479ab7-190f-480a-abca-2fb692200e2e}"
+                                                },
+                                                {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{46174549-7510-4cfa-b580-ebb37c589152}",
+                                                    "Height": "48.000000",
+                                                    "Width": "640.000000",
+                                                    "MarginAnchorY": "Center"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{139962c9-5b7e-4eca-8918-52199b5c4eb7}",
+                                    "Id": "title_header_text",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{290fff09-f534-4240-96c2-85743c44c751}",
+                                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{447b810b-858c-4a13-9c3d-c103044c1ef9}",
+                                            "Height": "36.000000",
+                                            "Width": "290.000000"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{b5e96b07-bef1-465e-a18e-5089338a50f0}",
+                                            "_preset_": "H1_HeaderTitle",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "TextColorMul": "text_white",
+                                            "Multiline": "0",
+                                            "_StylePreset_": "H1_HeaderTitle",
+                                            "TextValue": "health"
+                                        },
+                                        {
+                                            "class": "gui::IMaskComponent",
+                                            "uuid": "{7f7745d8-f062-4155-8fa6-b0052aeb768c}",
+                                            "ClipEdge": "0",
+                                            "MaskChildren": "0",
+                                            "MaskSource": "{6b5bc479-d930-4261-860d-f9a152c38fe9};info_popup_contents/header/title_header_text/title_header_text/text_mask_headers_title;0",
+                                            "MaskTexture": "text_mask_headers"
+                                        },
+                                        {
+                                            "class": "gui::IMaterialEffectComponent",
+                                            "uuid": "{92947faa-96ad-4bf9-befe-787e9ca5fc14}",
+                                            "mask_mul_value": "0.150000",
+                                            "Effect": "mask_mul"
+                                        }
+                                    ],
+                                    "objects": [
+                                        {
+                                            "class": "gui::IGroup",
+                                            "uuid": "{6b5bc479-d930-4261-860d-f9a152c38fe9}",
+                                            "Id": "text_mask_headers_title",
+                                            "components": [
+                                                {
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{d271b7ac-5740-478f-842c-dceb9a5839d8}"
+                                                },
+                                                {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{e5c0bda2-1f89-4d9c-8990-08c9c93004dc}",
+                                                    "Height": "32.000000",
+                                                    "Width": "256.000000",
+                                                    "MarginTop": "2.000000"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{5f738f37-ac52-477b-a337-6505ca6a8c0b}",
+                                    "Id": "title_sub_text1",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{f39baa69-c4cc-4bde-9fd4-f117fef32a33}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{7d74e04a-a2b9-406d-9a7e-f78480dc4878}",
+                                            "Height": "24.000000",
+                                            "Width": "290.000000",
+                                            "MarginTop": "36.000000"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{77cf6690-b5c9-4714-bcbd-451a6ce212a8}",
+                                            "_preset_": "H2_HeaderSubtitle",
+                                            "MinFontSize": "10.000000",
+                                            "ScaleToFit": "1",
+                                            "TrimmingMode": "Animate",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "TextColorMul": "text_gray",
+                                            "Multiline": "0",
+                                            "_StylePreset_": "H2_HeaderSubtitle",
+                                            "TextValue": "&MSkill_LevelMixNew&"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{885ff756-6ac2-4496-ac82-02378f80e9fb}",
+                    "Id": "flavour_text",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{71e879c2-031e-4f61-b09e-351b379c74a9}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{a6884569-8fd3-4e21-a2ea-c3f000a834b6}",
+                            "Height": "31.746185",
+                            "Width": "792.103149",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "Stretch",
+                            "MarginTop": "8.000000"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{0ee6a707-66d1-4a23-9ac1-66dfe2f3a13e}",
+                            "Id": "flavor_text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3cbe1ad3-c980-4814-bb9b-96d53b70eef8}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{12e067f1-b6c2-4234-8220-d35a51924ebd}",
+                                    "Height": "69.941338",
+                                    "Width": "406.758911",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "SizeModeX": "Stretch"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{de1f99f7-df9f-471b-ad11-d8baabe296d9}",
+                                    "_preset_": "B2M_BodyTextMedium",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_white",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "B2M_BodyTextMedium",
+                                    "TextValue": "Increase the length of time you can wield a melee weapon... www www www wwwwww wwwwwwwww wwwwww www wwwwww www\n"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{2035bdeb-f514-46fe-aa6d-f7c99200ccd7}",
+                    "Id": "hint",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{11161b37-608c-41c8-a57f-0d56028ddc53}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{912a8ac8-8445-4281-b6e5-fb54fdf1c3a3}",
+                            "Height": "31.746185",
+                            "Width": "400.000000",
+                            "SizeModeY": "AutoSizeToElements",
+                            "MarginTop": "24.000000"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{ed2ab82f-d8cf-4300-86de-03091f6dcfca}",
+                            "Id": "text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{c714bc97-4efc-4dbd-843c-877e9f3ac8db}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{69c0ef89-e057-4ee2-9b08-599544664672}",
+                                    "Height": "69.941338",
+                                    "Width": "400.000000",
+                                    "SizeModeY": "AutoSizeToComponents"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{aefeb912-9049-487c-98fd-e8cda17323d7}",
+                                    "_preset_": "B2M_BodyTextMedium",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_gray",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "B2M_BodyTextMedium",
+                                    "TextValue": "Increase the length of time you can wield a melee weapon... www www www wwwwww wwwwwwwww wwwwww www wwwwww www\n"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{4aa0d234-c63a-430f-b92c-825b20b4fe1c}",
+                            "Id": "line",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{15a95a59-e4d3-45ba-82e7-b1752ea7131e}",
+                                    "RenderPivot": "0.500000 0.500000 0.000000",
+                                    "Opacity": "0.500000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{f7e0b381-23f5-4149-9b43-9a8d824876b1}",
+                                    "Height": "12.000000",
+                                    "Width": "461.928833",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginTop": "-16.000000"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{5cf3ef8c-1bf2-49db-884e-5bd204d288d6}",
+                                    "ImageColorMul": "text_white",
+                                    "Texture": "tooltip_spacer"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{a5a3d770-3a23-4e24-b275-95b940c8bbd1}",
+                    "Id": "requirements",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{96327ff1-55e2-4f10-8228-5547cfa0e379}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000",
+                            "Collapsed": "1"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{60cff5a1-9d2e-4133-bdd1-d5f1ac2cb09f}",
+                            "Height": "21.875000",
+                            "Width": "360.000000",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "Stretch",
+                            "MarginBottom": "24.000000"
+                        },
+                        {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{f906e3fc-3f13-423b-81aa-b31365627557}",
+                            "Wrap": "0",
+                            "Orientation": "Vertical"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{3f5da0bc-fa26-40ad-825f-4198ed783f81}",
+                            "Id": "grp",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{a1a5ee36-0b3d-4d49-b018-4bb385beae94}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{130d2e12-c09f-447e-bb61-9bfbc2586c6f}",
+                                    "Height": "22.000000",
+                                    "Width": "304.007385",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "MarginLeft": "24.000000"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{866d323c-c99b-41e1-9f54-cbaaa58e0fe8}",
+                                    "Id": "skillpointcost",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{01d8a750-eaee-4f0e-89d8-2c962bc05a3b}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{1dbe5afd-dd1f-49e4-b2ec-3aad5c9ebfd6}",
+                                            "Height": "28.995895",
+                                            "Width": "277.331818",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "SizeModeX": "Stretch"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{dfd897d9-7cb2-4f64-a43a-6e6917e61a85}",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "menu_red",
+                                            "Multiline": "0",
+                                            "FontSize": "14.000000",
+                                            "TextValue": "&MSkills_ReqInhibitors&\n"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{c82b92c6-7eeb-474b-9a2b-85e4e77f896a}",
+                            "Id": "grp1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3564d02a-319d-4271-a23b-e34e75bab0de}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{150dc4f4-5032-4d9f-b846-5a77b3c8b1e5}",
+                                    "Height": "22.000000",
+                                    "Width": "304.007385",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "MarginLeft": "24.000000"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{4cdbd0b8-b024-4c33-a960-8144cbf60973}",
+                                    "Id": "skillpointcost",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{b76bdd8a-7e67-473e-bfbb-5c3ceae256da}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{1d93261e-f349-422b-af62-7cf2b80459a1}",
+                                            "Height": "28.995895",
+                                            "Width": "277.331818",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "SizeModeX": "Stretch"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{5e0b708d-71fe-4a8d-83bc-475fdbb51ee4}",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "menu_green",
+                                            "Multiline": "0",
+                                            "FontSize": "14.000000",
+                                            "TextValue": "&MSkill_MaxLevel&\n"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{4814e97e-0326-4897-979b-0a523f0863bb}",
+                    "Id": "bar",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{33c2422e-4af9-4495-9e57-09e2feb05952}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000",
+                            "Visible": "0"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{fdf54594-0799-4e52-8df2-e30f91ae8a7a}",
+                            "Height": "58.201660",
+                            "Width": "400.000000",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "Stretch"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{08dac3d2-6a40-43c8-9505-3fdb9102023c}",
+                            "Id": "text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{d1284c70-c232-4830-a590-f2e47119a9b5}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{77dacd92-9566-40b0-b824-89c2facbb78c}",
+                                    "Height": "18.160000",
+                                    "Width": "76.481247",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginRight": "-3.000000",
+                                    "MarginTop": "3.000000",
+                                    "MarginLeft": "24.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{1654e72d-9895-4bb3-934c-36d2f9cb1034}",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "m_light_grey",
+                                    "CharacterSpacingAdjust": "2.650000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "13.000000",
+                                    "FontStyle": "Cond Bold",
+                                    "TextValue": "&MSkill_TierValue&"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{a5063cce-759a-4fa1-b72e-af6d654ffc5d}",
+                            "Id": "text1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{459d2b93-4af6-48dd-a23d-178e18b97d36}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{82490190-8ab8-40d9-bd69-44f6e420abc8}",
+                                    "Height": "18.160000",
+                                    "Width": "93.386726",
+                                    "MarginRight": "24.000000",
+                                    "MarginTop": "-4.000000",
+                                    "MarginLeft": "24.000000",
+                                    "MarginAnchorX": "Right"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{70f08dea-6ef3-4151-8a25-ba8008078217}",
+                                    "AlignmentX": "Right",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "CharacterSpacingAdjust": "-0.500000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "18.000000",
+                                    "FontStyle": "Bold",
+                                    "TextValue": "270 / 3500"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{94bb6e63-5ec2-425a-936d-077b8b8a1d9c}",
+                            "Id": "group1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{35c8ea60-0b8b-4a1b-8157-15edfda5d340}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{aa09104b-0382-42fc-848f-43f2e6373c5f}",
+                                    "Height": "8.000000",
+                                    "Width": "352.000000",
+                                    "MarginBottom": "24.000000",
+                                    "MarginTop": "36.000000",
+                                    "MarginLeft": "24.000000"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{186fae02-432c-475a-9ca1-9e86b4998133}",
+                                    "Id": "bar",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{45d4f6c3-5345-41dc-86da-bbd118b41a19}",
+                                            "RenderScale": "0.200000 1.000000 1.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{efc97d3f-6550-4610-9269-94008ff83a46}",
+                                            "Height": "8.000000",
+                                            "Width": "352.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{afe42779-8c97-415f-b7bd-9e4211ad9505}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{1d264f25-34f2-41b3-b77e-9dfa744e90b8}",
+                                    "Id": "white",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{2492d13a-eb64-470b-89a2-0e80f0489679}",
+                                            "Opacity": "0.500000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{612c41f5-813b-4d32-936d-a753db9b44f9}",
+                                            "Height": "8.000000",
+                                            "Width": "352.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{7c91a0d7-1b56-48ac-a221-e09eec8ced8f}",
+                                            "ImageColorMul": "919191FF"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{3980e5f3-2f41-4463-b8ce-f1a8f926854f}",
+                    "Id": "buttons",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{8ce55c7c-cfb9-412b-878c-755f1c127fd2}",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{4f258e83-f79e-4bb1-b6d5-7c14fcbf5536}",
+                            "Height": "56.000000",
+                            "Width": "115.813805",
+                            "SizeModeX": "Stretch",
+                            "MarginTop": "16.000000"
+                        },
+                        {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{304f85b0-d8e7-417b-9729-91e751d606dd}",
+                            "AlignmentY": "Center",
+                            "Wrap": "0"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{2117c8f8-9560-432f-ac90-82ccaf74d6df}",
+                            "Id": "btn_buy",
+                            "sub_symbol": "legend_button",
+                            "components": [
+                                {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "Width": "104.418755"
+                                },
+                                {
+                                    "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [
+                                        {
+                                            "name": "button_icon",
+                                            "type": "string",
+                                            "value": "%KEY(_ACTION_GUI_PAD_A_OR_LMB,NOBRACKETS)"
+                                        },
+                                        {
+                                            "name": "button_text",
+                                            "type": "string",
+                                            "value": "&MSkills_PurchaseSkill&"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "HoldTime": "0.2500000",
+                                    "CanPressWhenDisabled": "0",
+                                    "PressAction": "_ACTION_GUI_PAD_A_OR_LMB"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::CSymbolRoot",
+            "uuid": "{83de85c6-0b04-4a00-a2d0-9b0f205dbd45}",
+            "Id": "tooltip_background_noheader",
+            "sub_symbol": "tooltip_background_noheader",
+            "components": [
+                {
+                    "target_component_uuid": "{a8e8aeaf-7938-49d5-8100-8e5d5ceb1991}",
+                    "class": "gui::ILayoutComponent",
+                    "SizeModeY": "Stretch",
+                    "SizeModeX": "Stretch"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+// List of elements to be removed from player's state when converting the save into New Game Plus
+sub RestrictedElements()
+{
+    //////////////////////////////////////
+    // Grappling hook [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Skill("GrappleHook");
+    //Skill("GrappleHook_2");
+    //Skill("GrappleHook_3");
+    //Collectable("Craftplan_GrappleHook");
+    //Collectable("Craftplan_GrappleHook_2");
+    //Collectable("Craftplan_GrappleHook_3");
+    //ItemSlot("RopeHook");
+    //////////////////////////////////////
+    // Paraglider [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Skill("Paraglider");
+    //Skill("Paraglider_2");
+    //Skill("Paraglider_3");
+    //Collectable("Craftplan_Paraglider");
+    //Collectable("Craftplan_Paraglider_2");
+    //Collectable("Craftplan_Paraglider_3");
+    //////////////////////////////////////
+    // GRE Keyfinder [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Skill("GRE_Keyfinder");
+    //Skill("GRE_Keyfinder_2");
+    //Collectable("Craftplan_GRE_Keyfinder");
+    //Collectable("Craftplan_GRE_Keyfinder_2");
+    //////////////////////////////////////
+    // UV Flashlight [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Skill("UV_Flashlight");
+    //Skill("UV_Flashlight_2");
+    //Skill("UV_Flashlight_3");
+    //Skill("UV_Flashlight_4");
+    //Skill("UV_Flashlight_5");
+    //Collectable("Craftplan_UV_Flashlight");
+    //Collectable("Craftplan_UV_Flashlight_2");
+    //Collectable("Craftplan_UV_Flashlight_3");
+    //ItemSlot("UV_Flashlight_1");
+    //ItemSlot("UV_Flashlight_2");
+    //ItemSlot("UV_Flashlight_3");
+    //ItemSlot("UV_Flashlight_4");
+    //ItemSlot("UV_Flashlight_5");
+    //////////////////////////////////////
+    // Zone Level Rewards [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Item("wpn_2hr_crossbow_b_fpp");
+    //Collectable("Craftplan_PKCrossbow");
+    //Collectable("Craftplan_Bolt");
+    //Collectable("Craftplan_Bolts_Freeze");
+    //Collectable("Craftplan_Bolts_Toxic");
+    //Collectable("Craftplan_Bolts_Stunning");
+    //Collectable("Craftplan_Bolts_Impact");
+    //Collectable("Craftplan_Bolts_Bleeding");
+    //////////////////////////////////////
+    // Quest Items [BYPASS-UNLOCKED]
+    //////////////////////////////////////
+    //Item("Quest_SentimentalValue_MusicBox");
+} 

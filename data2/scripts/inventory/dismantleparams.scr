@@ -1,0 +1,20 @@
+sub main()
+{
+	//how long user has to hold to dismantle
+	RarityHoldTime("White", 0.25);
+    RarityHoldTime("Green", 0.25);
+    RarityHoldTime("Blue", 0.25);
+    RarityHoldTime("Violet", 0.25);
+    RarityHoldTime("Orange", 0.25);
+    RarityHoldTime("Platinum", 0.25);
+	RarityHoldTime("Exotic", 0.25);
+	
+	//How dismantling works:
+	//each item by default returns a "loot set" based on the item type displayed in the gui tooltip: eg &Axe_Blue_15h&
+	//	see default.loot file for the loot sets
+	//  if there is no set with that name then the item cant be dismantled
+	
+	//you can also override the set in item definition script:
+	//DismantleResult("loot_set_name") - this will override the default set
+	//NoDismantle() or DismantleResult("") - will turn off dismantling of that item
+}

@@ -1,0 +1,2224 @@
+{
+    "version": 1,
+    "symbol_uuid": "{a0fd9340-1501-4346-b265-aa6463987a65}",
+    "symbol_size": "0.000000 0.000000",
+    "data_context_class": "hud::CDynamicChallengeProposedBigMessage",
+    "class": "gui::ISymbolRoot",
+    "uuid": "{a0fd9340-1501-4346-b265-aa6463987a65}",
+    "Id": "dynamic_challenge_proposed_bigmsg",
+    "components": [
+        {
+            "class": "gui::IElementComponent",
+            "uuid": "{6f112a90-dc86-4bfa-bf94-c4fd1983dfa2}"
+        },
+        {
+            "class": "gui::ILayoutComponent",
+            "uuid": "{b8d85a03-7675-493c-b77d-3d5a71a193a9}",
+            "Height": "0.000000",
+            "Width": "0.000000",
+            "MarginTop": "131.000000",
+            "MarginAnchorX": "Center"
+        },
+        {
+            "class": "gui::ILogicComponent",
+            "uuid": "{3a0e4e0c-73eb-4819-b661-83ec3e949be1}",
+            "data": [
+                {
+                    "type": "CVariablesComponentSymbolData",
+                    "dyn_fields": [
+                        {
+                            "name": "message_time",
+                            "type": "float",
+                            "value": "4.500000"
+                        },
+                        {
+                            "name": "message_time_elapsed",
+                            "type": "float",
+                            "value": "0.000000"
+                        },
+                        {
+                            "name": "blocked",
+                            "type": "bool",
+                            "value": "0"
+                        },
+                        {
+                            "name": "is_blocked",
+                            "type": "bool",
+                            "value": "0"
+                        },
+                        {
+                            "name": "finishing",
+                            "type": "bool",
+                            "value": "0"
+                        },
+                        {
+                            "name": "enable_flag",
+                            "type": "bool",
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "type": "CActionGraphSymbolData",
+                    "uuid": "{d5c9c970-a90b-4694-be87-fa3b5f3227b3}",
+                    "hash": "",
+                    "nodes": [
+                        {
+                            "type": "CActionSetColor",
+                            "id": 50,
+                            "Value": {
+                                "src_node": 49,
+                                "src_prop": "Result",
+                                "value": "FFFFFFFF"
+                            },
+                            "meta": {
+                                "x": -4950.0,
+                                "y": -3705.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "header/group3/group1/challenge_title/darken_bg",
+                                "element_uuid": "{20d8fa32-c6a3-488a-90e3-24ccec461b09}",
+                                "component_class": "gui::IImageComponent",
+                                "field": "ImageColorMul"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingEnum",
+                            "id": 49,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Color",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "gui::EDynamicChallengeType",
+                                    "wc_subtype": "gui::EDynamicChallengeType"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 47,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Race": {
+                                "value": "text_bg_pk"
+                            },
+                            "Slaughter": {
+                                "value": "text_bg_fail"
+                            },
+                            "Default": {
+                                "value": "text_bg_fail"
+                            },
+                            "meta": {
+                                "x": -5565.0,
+                                "y": -3255.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ],
+                            "enum_data_name": "gui::EDynamicChallengeType"
+                        },
+                        {
+                            "type": "CActionGetEnumgui__EDynamicChallengeType",
+                            "id": 47,
+                            "meta": {
+                                "x": -5895.0,
+                                "y": -3270.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 46,
+                            "Value": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": -4470.0,
+                                "y": -3180.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "header/group3/group2/challenge_objective",
+                                "element_uuid": "{e534fb3b-410f-4ac0-a548-edf53ac0b935}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 45,
+                            "Next": 46,
+                            "meta": {
+                                "x": -4740.0,
+                                "y": -3180.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 44,
+                            "meta": {
+                                "x": -4770.0,
+                                "y": -3090.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingEnum",
+                            "id": 43,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "gui::EDynamicChallengeType",
+                                    "wc_subtype": "gui::EDynamicChallengeType"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 41,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Race": {
+                                "value": "&Challenge_Msg_Header_Race&"
+                            },
+                            "Slaughter": {
+                                "value": "&Challenge_TypeSlaughter&"
+                            },
+                            "Default": {
+                                "value": "&Challenge_TypeSlaughter&"
+                            },
+                            "meta": {
+                                "x": -3345.0,
+                                "y": -3345.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ],
+                            "enum_data_name": "gui::EDynamicChallengeType"
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 42,
+                            "Next": 40,
+                            "meta": {
+                                "x": -3630.0,
+                                "y": -3465.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionGetEnumgui__EDynamicChallengeType",
+                            "id": 41,
+                            "meta": {
+                                "x": -3690.0,
+                                "y": -3360.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 40,
+                            "Value": {
+                                "src_node": 43,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": -3030.0,
+                                "y": -3465.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "header/group3/group1/challenge_title",
+                                "element_uuid": "{01fa1a24-a893-427b-b491-b8268c7d59be}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 39,
+                            "Value": {
+                                "src_node": 38,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 50,
+                            "meta": {
+                                "x": -5265.0,
+                                "y": -3675.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "slaughter_challnege_blood",
+                                "element_uuid": "{8304ca07-a728-4206-a54b-22f4a7243b50}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingEnum",
+                            "id": 37,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Bool",
+                                    "wc_type_nvec": "BoolVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "gui::EDynamicChallengeType",
+                                    "wc_subtype": "gui::EDynamicChallengeType"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 1,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Race": {
+                                "value": "1"
+                            },
+                            "Slaughter": {
+                                "value": "0"
+                            },
+                            "Default": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": -5970.0,
+                                "y": -3450.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ],
+                            "enum_data_name": "gui::EDynamicChallengeType"
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 4,
+                            "Value": {
+                                "src_node": 38,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 39,
+                            "meta": {
+                                "x": -5530.0,
+                                "y": -3703.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "background_image/slaughter_challnege_icon",
+                                "element_uuid": "{32ef2c4a-6617-4ec2-b40c-e37ec6c3be36}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 3,
+                            "Value": {
+                                "src_node": 37,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 4,
+                            "meta": {
+                                "x": -5807.0,
+                                "y": -3705.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "background_image/race_icon",
+                                "element_uuid": "{276a3d1e-26cb-42a8-a1f9-014111ecbc90}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 2,
+                            "Next": 3,
+                            "meta": {
+                                "x": -6135.0,
+                                "y": -3705.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionGetEnumgui__EDynamicChallengeType",
+                            "id": 1,
+                            "meta": {
+                                "x": -6330.0,
+                                "y": -3555.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionComment",
+                            "id": 36,
+                            "meta": {
+                                "x": -3617.908203125,
+                                "y": -2855.0
+                            },
+                            "color": "0.917647 0.388647 0.388647 1.000000",
+                            "text": "Tu implementuj specyficzne animacje dla typow challenge'y",
+                            "group_moves": true,
+                            "size": "560.000000 604.384277"
+                        },
+                        {
+                            "type": "CActionSwitchEnumgui__EDynamicChallengeType",
+                            "id": 32,
+                            "Value": {
+                                "src_node": 29,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Default": 7,
+                            "Race": 33,
+                            "Slaughter": 35,
+                            "meta": {
+                                "x": -4320.0,
+                                "y": -2775.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "CActionSelectUsingEnum",
+                            "id": 31,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "String",
+                                    "wc_type_nvec": "StringVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "gui::EDynamicChallengeType",
+                                    "wc_subtype": "gui::EDynamicChallengeType"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 29,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Race": {
+                                "value": "hud_dynamic_challenge_race"
+                            },
+                            "Slaughter": {
+                                "value": "hud_dynamic_challenge_slaughter"
+                            },
+                            "Default": {
+                                "value": "hud_dynamic_challenge_created"
+                            },
+                            "meta": {
+                                "x": -3360.0,
+                                "y": -2250.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ],
+                            "enum_data_name": "gui::EDynamicChallengeType"
+                        },
+                        {
+                            "type": "CActionGetEnumgui__EDynamicChallengeType",
+                            "id": 29,
+                            "meta": {
+                                "x": -4740.0,
+                                "y": -2265.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_DynamicChallengeType"
+                            }
+                        },
+                        {
+                            "type": "CActionSoundEvent",
+                            "id": 18,
+                            "EventName": {
+                                "src_node": 31,
+                                "src_prop": "Result",
+                                "value": "hud_dynamic_challenge_created"
+                            },
+                            "meta": {
+                                "x": -2760.0,
+                                "y": -2775.0
+                            }
+                        },
+                        {
+                            "type": "CActionBranch",
+                            "id": 10,
+                            "Condition": {
+                                "src_node": 8,
+                                "src_prop": "Value",
+                                "value": "1"
+                            },
+                            "True": 27,
+                            "meta": {
+                                "x": -1710.0,
+                                "y": -2775.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 9,
+                            "Next": 10,
+                            "meta": {
+                                "x": -1950.0,
+                                "y": -2805.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_ShouldHide"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 8,
+                            "meta": {
+                                "x": -1965.0,
+                                "y": -2715.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_ShouldHide"
+                            }
+                        },
+                        {
+                            "type": "CActionFloatToVec3",
+                            "id": 26,
+                            "x": {
+                                "src_node": 24,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "y": {
+                                "value": "1.000000"
+                            },
+                            "z": {
+                                "value": "1.000000"
+                            },
+                            "meta": {
+                                "x": -2040.0,
+                                "y": -1710.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetVec3",
+                            "id": 25,
+                            "Value": {
+                                "src_node": 26,
+                                "src_prop": "Result",
+                                "value": "0.000000 0.000000 0.000000"
+                            },
+                            "meta": {
+                                "x": -1785.0,
+                                "y": -1860.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "bar/progress_bar_empty2/mask",
+                                "element_uuid": "{0062318c-67f6-4a96-b7af-cf064f0fbbc9}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "RenderScale"
+                            }
+                        },
+                        {
+                            "type": "CActionDivideFloat",
+                            "id": 24,
+                            "Value1": {
+                                "src_node": 23,
+                                "src_prop": "Result",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "src_node": 21,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "AllowZeroDivision": {
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": -2295.0,
+                                "y": -1710.0
+                            }
+                        },
+                        {
+                            "type": "CActionSubtractFloat",
+                            "id": 23,
+                            "Value1": {
+                                "src_node": 21,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "Value2": {
+                                "src_node": 19,
+                                "src_prop": "Value",
+                                "value": "0.000000"
+                            },
+                            "meta": {
+                                "x": -2565.0,
+                                "y": -1710.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 22,
+                            "Next": 25,
+                            "meta": {
+                                "x": -2460.0,
+                                "y": -1815.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_ProposingTime"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 21,
+                            "meta": {
+                                "x": -2955.0,
+                                "y": -1680.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_ProposingTime"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 20,
+                            "Next": 25,
+                            "meta": {
+                                "x": -2490.0,
+                                "y": -1905.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_CurrentChallengeTime"
+                            }
+                        },
+                        {
+                            "type": "CActionGetFloat",
+                            "id": 19,
+                            "meta": {
+                                "x": -2955.0,
+                                "y": -1590.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage",
+                                "field": "m_CurrentChallengeTime"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 17,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 11,
+                            "meta": {
+                                "x": -1170.0,
+                                "y": -2715.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "bar/progress_bar_empty2/legend_button",
+                                "element_uuid": "{7fb01321-e467-4d63-ac77-824657ada98e}",
+                                "component_class": "gui::IButtonComponent",
+                                "field": "Disabled"
+                            }
+                        },
+                        {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 16,
+                            "Next": 28,
+                            "meta": {
+                                "x": -1860.0,
+                                "y": -2580.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "hud::CDynamicChallengeProposedBigMessage"
+                            },
+                            "msg_rtti": "ApproveDynamicChallengeEvent"
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 15,
+                            "Next": 16,
+                            "meta": {
+                                "x": -2040.0,
+                                "y": -2640.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "bar/progress_bar_empty2/legend_button",
+                                "element_uuid": "{7fb01321-e467-4d63-ac77-824657ada98e}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionGetAnimation",
+                            "id": 12,
+                            "meta": {
+                                "x": -1140.0,
+                                "y": -2580.0
+                            },
+                            "anim_uuid": "{753b9e3a-f9a3-4d94-b299-da0b2d1fb165}"
+                        },
+                        {
+                            "type": "CActionGetAnimation",
+                            "id": 6,
+                            "meta": {
+                                "x": -3585.0,
+                                "y": -2965.0
+                            },
+                            "anim_uuid": "{fa8028d5-653f-43c8-8a2e-2cb7a046b5c6}"
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 14,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -345.0,
+                                "y": -2670.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "CGuiDifficultAreaBigMessage",
+                                "field": "m_MessageFinished"
+                            }
+                        },
+                        {
+                            "type": "CActionOnAnimStopSpecific",
+                            "id": 13,
+                            "Next": 14,
+                            "AnimState": {
+                                "src_node": 11,
+                                "src_prop": "AnimState"
+                            },
+                            "meta": {
+                                "x": -605.0,
+                                "y": -2655.0
+                            }
+                        },
+                        {
+                            "type": "CActionPlayAnim",
+                            "id": 11,
+                            "Target": {
+                                "value": ""
+                            },
+                            "Animation": {
+                                "src_node": 12,
+                                "src_prop": "Animation",
+                                "value": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Forward": {
+                                "value": "1"
+                            },
+                            "Start Frame": {
+                                "value": "0.000000"
+                            },
+                            "Speed": {
+                                "value": "1.000000"
+                            },
+                            "Stop Previous": {
+                                "value": "1"
+                            },
+                            "If Not Already Playing": {
+                                "value": "0"
+                            },
+                            "SendStopEvents": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -930.0,
+                                "y": -2685.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnInitialize",
+                            "id": 5,
+                            "Next": 32,
+                            "meta": {
+                                "x": -4575.0,
+                                "y": -2775.0
+                            }
+                        },
+                        {
+                            "type": "CActionPlayAnim",
+                            "id": 7,
+                            "Target": {
+                                "value": ""
+                            },
+                            "Animation": {
+                                "src_node": 6,
+                                "src_prop": "Animation",
+                                "value": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Forward": {
+                                "value": "1"
+                            },
+                            "Start Frame": {
+                                "value": "0.000000"
+                            },
+                            "Speed": {
+                                "value": "1.000000"
+                            },
+                            "Next": 18,
+                            "Stop Previous": {
+                                "value": "1"
+                            },
+                            "If Not Already Playing": {
+                                "value": "0"
+                            },
+                            "SendStopEvents": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -3345.0,
+                                "y": -3105.0
+                            }
+                        },
+                        {
+                            "type": "CActionSoundEvent",
+                            "id": 28,
+                            "Next": 17,
+                            "EventName": {
+                                "value": "hud_dynamic_challenge_player_joined"
+                            },
+                            "meta": {
+                                "x": -1530.0,
+                                "y": -2565.0
+                            }
+                        },
+                        {
+                            "type": "CActionSoundEvent",
+                            "id": 27,
+                            "Next": 17,
+                            "EventName": {
+                                "value": "hud_dynamic_challenge_prompt_fade_away"
+                            },
+                            "meta": {
+                                "x": -1545.0,
+                                "y": -2775.0
+                            }
+                        },
+                        {
+                            "type": "CActionGetAnimation",
+                            "id": 30,
+                            "meta": {
+                                "x": -3555.0,
+                                "y": -2655.0
+                            },
+                            "anim_uuid": "{fa8028d5-653f-43c8-8a2e-2cb7a046b5c6}"
+                        },
+                        {
+                            "type": "CActionPlayAnim",
+                            "id": 33,
+                            "Target": {
+                                "value": ""
+                            },
+                            "Animation": {
+                                "src_node": 30,
+                                "src_prop": "Animation",
+                                "value": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Forward": {
+                                "value": "1"
+                            },
+                            "Start Frame": {
+                                "value": "0.000000"
+                            },
+                            "Speed": {
+                                "value": "1.000000"
+                            },
+                            "Next": 18,
+                            "Stop Previous": {
+                                "value": "1"
+                            },
+                            "If Not Already Playing": {
+                                "value": "0"
+                            },
+                            "SendStopEvents": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -3360.0,
+                                "y": -2790.0
+                            }
+                        },
+                        {
+                            "type": "CActionGetAnimation",
+                            "id": 34,
+                            "meta": {
+                                "x": -3597.908203125,
+                                "y": -2364.61572265625
+                            },
+                            "anim_uuid": "{fa8028d5-653f-43c8-8a2e-2cb7a046b5c6}"
+                        },
+                        {
+                            "type": "CActionPlayAnim",
+                            "id": 35,
+                            "Target": {
+                                "value": ""
+                            },
+                            "Animation": {
+                                "src_node": 34,
+                                "src_prop": "Animation",
+                                "value": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Forward": {
+                                "value": "1"
+                            },
+                            "Start Frame": {
+                                "value": "0.000000"
+                            },
+                            "Speed": {
+                                "value": "1.000000"
+                            },
+                            "Next": 18,
+                            "Stop Previous": {
+                                "value": "1"
+                            },
+                            "If Not Already Playing": {
+                                "value": "0"
+                            },
+                            "SendStopEvents": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -3357.908203125,
+                                "y": -2504.61572265625
+                            }
+                        },
+                        {
+                            "type": "CActionSelectUsingEnum",
+                            "id": 38,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Bool",
+                                    "wc_type_nvec": "BoolVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "gui::EDynamicChallengeType",
+                                    "wc_subtype": "gui::EDynamicChallengeType"
+                                }
+                            ],
+                            "Selector": {
+                                "src_node": 1,
+                                "src_prop": "Value",
+                                "value": "Default"
+                            },
+                            "Race": {
+                                "value": "0"
+                            },
+                            "Slaughter": {
+                                "value": "1"
+                            },
+                            "Default": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": -5655.0,
+                                "y": -3450.0
+                            },
+                            "switch_val": [
+                                {
+                                    "switch_name": "Race",
+                                    "switch_val_keyword": "Race"
+                                },
+                                {
+                                    "switch_name": "Slaughter",
+                                    "switch_val_keyword": "Slaughter"
+                                }
+                            ],
+                            "enum_data_name": "gui::EDynamicChallengeType"
+                        }
+                    ]
+                }
+            ],
+            "dyn_fields": [
+                {
+                    "name": "enable_flag",
+                    "type": "bool",
+                    "value": "0"
+                },
+                {
+                    "name": "finishing",
+                    "type": "bool",
+                    "value": "0"
+                },
+                {
+                    "name": "is_blocked",
+                    "type": "bool",
+                    "value": "0"
+                },
+                {
+                    "name": "blocked",
+                    "type": "bool",
+                    "value": "0"
+                },
+                {
+                    "name": "message_time_elapsed",
+                    "type": "float",
+                    "value": "0.000000"
+                },
+                {
+                    "name": "message_time",
+                    "type": "float",
+                    "value": "4.500000"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "class": "gui::IGroup",
+            "uuid": "{80d2471d-e229-461c-96e6-46ac0a3de073}",
+            "Id": "bar",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{2af99e1b-646d-487d-86ca-982e63e61903}"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{ac188c66-7fd3-4c64-b7c5-1215a0d16f39}",
+                    "Height": "30.000000",
+                    "Width": "400.000000",
+                    "MarginTop": "169.309998",
+                    "MarginAnchorX": "Center"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{f12c8ec0-fd54-4ccf-be6d-ff34cedea330}",
+                    "Id": "progress_bar_empty2",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{3504a4e2-5a69-479e-8fe4-0f4b4077fc22}",
+                            "RenderChildFirst": "1"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{71fac3ef-2c6e-4624-ad04-15acd329d69b}",
+                            "Height": "10.000000",
+                            "Width": "400.000000",
+                            "SizeModeX": "Stretch",
+                            "MarginAnchorX": "Center"
+                        },
+                        {
+                            "class": "gui::IImageComponent",
+                            "uuid": "{a74ab76e-6067-4b57-8740-3c49caca0e0b}",
+                            "Texture": "long_progress_bar_bg"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{7fb01321-e467-4d63-ac77-824657ada98e}",
+                            "Id": "legend_button",
+                            "sub_symbol": "legend_button",
+                            "components": [
+                                {
+                                    "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                                    "class": "gui::IElementComponent",
+                                    "RenderPivot": "0.500000 0.500000 0.500000"
+                                },
+                                {
+                                    "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginAnchorY": "Center",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                    "class": "gui::IButtonComponent",
+                                    "HoldTime": "0.500000",
+                                    "PressAction": "_ACTION_GUI_DYNAMIC_CHALLENGE_START"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{82016422-a604-4edb-99c4-d8a8d4059da5}",
+                            "Id": "progress_bar_fill2",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{da2907e0-8a0b-4932-8454-efe2f28f5e23}",
+                                    "RenderScale": "1.000000 1.000000 0.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{522e4849-1cf1-4815-bacf-604755ecdf68}",
+                                    "Height": "0.000000",
+                                    "Width": "404.000000",
+                                    "SizeModeY": "Stretch",
+                                    "SizeModeX": "Stretch",
+                                    "MarginBottom": "2.680000",
+                                    "MarginRight": "2.730000",
+                                    "MarginTop": "2.740000",
+                                    "MarginLeft": "3.100000"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{b6ef6815-2d11-4142-b4d8-cd772707984d}",
+                                    "ImageColorMul": "FFE201FF",
+                                    "Texture": "long_progress_bar_fill"
+                                },
+                                {
+                                    "class": "gui::IMaskComponent",
+                                    "uuid": "{59e47dc8-0c41-4e3b-a9ce-e543a0701f75}",
+                                    "MaskSource": "{0062318c-67f6-4a96-b7af-cf064f0fbbc9};bar/group;0"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{0062318c-67f6-4a96-b7af-cf064f0fbbc9}",
+                            "Id": "mask",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{f8e23d09-f8c2-47d2-ae8b-afc9dfb5d814}",
+                                    "RenderPivot": "0.500000 0.000000 0.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{22043943-206f-4f75-91ab-fcd95896dd4b}",
+                                    "Height": "25.000000",
+                                    "Width": "233.000488",
+                                    "SizeModeY": "Stretch",
+                                    "SizeModeX": "Stretch",
+                                    "MarginBottom": "-2.199430",
+                                    "MarginRight": "-7.669850",
+                                    "MarginTop": "-2.000000",
+                                    "MarginLeft": "-9.499540"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IGroup",
+            "uuid": "{1e40ebef-f082-49f0-9d44-43defe07befd}",
+            "Id": "header",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{f60d6e4e-172c-417a-a99f-b010d936446e}"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{325d3815-d65f-4c71-866c-5eeff91af7fc}",
+                    "Height": "106.776901",
+                    "Width": "365.197083",
+                    "MarginBottom": "11.000000",
+                    "MarginTop": "63.331482",
+                    "MarginAnchorX": "Center"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{c49f2c14-4123-440d-bcca-5bd0070626d6}",
+                    "Id": "group3",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{4cb3f57e-64c8-4ba6-8e9a-c04a8ed27ce5}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{8a2e49a6-f14b-42b0-a0c1-2b87bcc96e04}",
+                            "Height": "91.673805",
+                            "Width": "407.712555",
+                            "MarginAnchorX": "Center"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{1d6610ae-7897-46e0-8630-e0c2aa7064d3}",
+                            "Id": "group1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{dedac48e-fdd7-4571-800c-c4278af443f2}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{1a0c4f8f-7e52-4fb1-b068-1429183b934c}",
+                                    "Height": "46.008011",
+                                    "Width": "154.856323",
+                                    "SizeModeX": "AutoSizeToElements",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{59347963-c26b-48f9-8fd2-4ed9b26d0258}",
+                                    "Wrap": "0"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{01fa1a24-a893-427b-b491-b8268c7d59be}",
+                                    "Id": "challenge_title",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{4d26b668-0eb4-473c-b481-777019d55db0}",
+                                            "RenderScale": "1.000000 1.000000 -9.000000",
+                                            "RenderPivot": "0.500000 0.500000 0.500000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{dc3c6960-1ff8-4862-b9a9-847740dd4abf}",
+                                            "Height": "40.896000",
+                                            "Width": "162.983353",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "SizeModeX": "AutoSizeToComponents",
+                                            "MarginAnchorX": "Center"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{c34a82a0-2929-4bf4-a319-95986c5d0e92}",
+                                            "OutlineColor": "00000066",
+                                            "OutlineSize": "1.000000",
+                                            "ShadowColor": "000000C0",
+                                            "ShadowOffset": "1.500000 1.500000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "white_color",
+                                            "CharacterSpacingAdjust": "1.400000",
+                                            "Uppercase": "1",
+                                            "Multiline": "0",
+                                            "FontSize": "27.000000",
+                                            "FontStyle": "Cond Bold",
+                                            "TextValue": "slaughter"
+                                        },
+                                        {
+                                            "class": "gui::IMaskComponent",
+                                            "uuid": "{c40beb2a-0970-4544-9ad2-83c6b0a5735c}",
+                                            "ClipEdge": "0",
+                                            "MaskChildren": "0",
+                                            "MaskSource": "{b8c1d92f-2884-43cd-ba16-9372a49022f5};header/group3/group1/challenge_title/text_mask_headers;0",
+                                            "MaskTexture": "text_mask_headers_large"
+                                        },
+                                        {
+                                            "class": "gui::IMaterialEffectComponent",
+                                            "uuid": "{4453eee9-19cd-4c31-93d3-2e167ed57543}",
+                                            "mask_mul_value": "0.150000",
+                                            "Effect": "mask_mul"
+                                        }
+                                    ],
+                                    "objects": [
+                                        {
+                                            "class": "gui::IGroup",
+                                            "uuid": "{20d8fa32-c6a3-488a-90e3-24ccec461b09}",
+                                            "Id": "darken_bg",
+                                            "components": [
+                                                {
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{0c8a0da9-8a11-4e6c-bc7c-7d0f5089eea7}",
+                                                    "RenderChildFirst": "1"
+                                                },
+                                                {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{3dd088d8-9367-4431-b832-f338bfaa1f44}",
+                                                    "Height": "171.000000",
+                                                    "Width": "222.983353",
+                                                    "SizeModeY": "Stretch",
+                                                    "SizeModeX": "Stretch",
+                                                    "MarginBottom": "-10.000000",
+                                                    "MarginRight": "-30.000000",
+                                                    "MarginTop": "-10.000000",
+                                                    "MarginLeft": "-30.000000",
+                                                    "MarginAnchorX": "Center"
+                                                },
+                                                {
+                                                    "class": "gui::IImageComponent",
+                                                    "uuid": "{b1aa6f23-9578-4d13-9af9-d9253faaaf32}",
+                                                    "ImageColorMul": "text_bg_fail",
+                                                    "Texture": "dark_message_bg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "class": "gui::IGroup",
+                                            "uuid": "{b8c1d92f-2884-43cd-ba16-9372a49022f5}",
+                                            "Id": "text_mask_headers",
+                                            "components": [
+                                                {
+                                                    "class": "gui::IElementComponent",
+                                                    "uuid": "{f8ad5988-acbf-47cf-a75a-5a88c7547e0b}"
+                                                },
+                                                {
+                                                    "class": "gui::ILayoutComponent",
+                                                    "uuid": "{6148b4ea-6af8-4200-b75d-47b3abe5ee47}",
+                                                    "Height": "36.000000",
+                                                    "Width": "480.000000",
+                                                    "MarginTop": "2.000000",
+                                                    "MarginAnchorY": "Center",
+                                                    "MarginAnchorX": "Center"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{b87a1a73-0f34-4f35-a04e-58f200d1e5e8}",
+                            "Id": "group2",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{eab1d850-d433-49a4-9ab5-f55f804e82bb}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{69f0c009-a61b-4223-a16a-ca915ab81439}",
+                                    "Height": "46.007996",
+                                    "Width": "153.054688",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "SizeModeX": "AutoSizeToElements",
+                                    "MarginTop": "47.529999",
+                                    "MarginAnchorX": "Center"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{e534fb3b-410f-4ac0-a548-edf53ac0b935}",
+                                    "Id": "challenge_objective",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{0b718ee3-b606-4448-9a53-3a56f9a203b7}",
+                                            "RenderScale": "1.000000 1.000000 -9.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{5aa3ea49-0815-47ba-a7b9-65bd033d5f68}",
+                                            "Height": "28.967999",
+                                            "Width": "352.626068",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "SizeModeX": "AutoSizeToComponents",
+                                            "PaddingRight": "-52.000000",
+                                            "PaddingLeft": "-52.000000",
+                                            "MarginAnchorX": "Center"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{2e99065a-8b2a-40d5-81a4-8c1ad217968c}",
+                                            "OutlineColor": "00000066",
+                                            "OutlineSize": "1.000000",
+                                            "ShadowColor": "000000C0",
+                                            "ShadowOffset": "1.500000 1.500000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "white_color",
+                                            "CharacterSpacingAdjust": "-0.250000",
+                                            "Multiline": "0",
+                                            "FontSize": "15.250000",
+                                            "FontStyle": "Bold",
+                                            "TextValue": "Deal greater damage to the infected"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{2f338f61-4cc5-410f-8f9b-b98ef4526737}",
+                                    "Id": "white",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{70f8ecbe-d079-4631-8f96-f7b038afcf54}",
+                                            "Opacity": "0.800000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{953d5e5d-2eeb-4b28-a186-b3a4bae2ada4}",
+                                            "SizeModeY": "Stretch",
+                                            "SizeModeX": "Stretch",
+                                            "MarginBottom": "-8.000000",
+                                            "MarginRight": "-30.000000",
+                                            "MarginTop": "-4.000000",
+                                            "MarginLeft": "-30.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{29816590-f9ac-4ee5-9fb9-d3647c58b068}",
+                                            "ImageColorMul": "hud_white",
+                                            "Texture": "BG_Line_bigmsg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IGroup",
+            "uuid": "{5f4ff313-a0cf-44b9-8928-4b565bc7b757}",
+            "Id": "1__ChallengeStart_Combat_v4",
+            "design_time": true,
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{fb351ca9-f95a-4cc2-a2ab-4a42f91dabb8}",
+                    "DesignTimeOnly": "1",
+                    "Visible": "0"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{b75065a0-e0a9-485e-b893-7947bbcefa11}",
+                    "Height": "1080.000000",
+                    "Width": "1920.000000",
+                    "MarginTop": "-131.232605",
+                    "MarginLeft": "-960.192505"
+                },
+                {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{33f6b6d5-2081-45b3-86b4-5b67fd7e59c8}",
+                    "Texture": "ChallengeStart_Combat_v4"
+                }
+            ]
+        }
+    ],
+    "anims": [
+        {
+            "uuid": "{753b9e3a-f9a3-4d94-b299-da0b2d1fb165}",
+            "name": "out_anim",
+            "frames": 30,
+            "targets": [
+                {
+                    "path": ".",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "0.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::ILogicComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "bool",
+                                    "name": "enable_flag",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1"
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "uuid": "{fa8028d5-653f-43c8-8a2e-2cb7a046b5c6}",
+            "name": "in_anim",
+            "frames": 60,
+            "fps": 30,
+            "targets": [
+                {
+                    "path": ".",
+                    "components": [
+                        {
+                            "class": "gui::ILogicComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "bool",
+                                    "name": "enable_flag",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0"
+                                        },
+                                        {
+                                            "t": 1.0,
+                                            "v": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./bar",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 18.0,
+                                            "v": "0.000000"
+                                        },
+                                        {
+                                            "t": 23.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./bar/progress_bar_empty2",
+                    "components": [
+                        {
+                            "class": "gui::IImageComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "gui color",
+                                    "name": "ImageColorMul",
+                                    "keyframes": [
+                                        {
+                                            "t": 59.51998901367188,
+                                            "v": "FFFFFFFF",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "string",
+                                    "name": "Texture",
+                                    "keyframes": [
+                                        {
+                                            "t": 59.51998901367188,
+                                            "v": "long_progress_bar_bg",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./bar/progress_bar_empty2/legend_button",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "0.000000"
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 16.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 28.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 33.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 35.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 39.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 28.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 33.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 35.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 39.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_z",
+                                    "keyframes": [
+                                        {
+                                            "t": 28.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 33.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 35.0,
+                                            "v": "1.200000"
+                                        },
+                                        {
+                                            "t": 39.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./bar/progress_bar_empty2/progress_bar_fill2",
+                    "components": [
+                        {
+                            "class": "gui::IImageComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "string",
+                                    "name": "Texture",
+                                    "keyframes": [
+                                        {
+                                            "t": 59.51998901367188,
+                                            "v": "long_progress_bar_fill",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "LayoutScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "LayoutScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3/group1/challenge_title",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000"
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_z",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.000000 1.000000",
+                                                "ease_out": "1.000000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3/group1/challenge_title/darken_bg",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 6.0,
+                                            "v": "0.000000"
+                                        },
+                                        {
+                                            "t": 16.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "enum",
+                                    "name": "SizeModeX",
+                                    "keyframes": [
+                                        {
+                                            "t": 33.0,
+                                            "v": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3/group2",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 5.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 59.489990234375,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 59.489990234375,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_z",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "2.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 59.489990234375,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "-171.128906",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3/group2/challenge_objective",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 12.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_z",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000"
+                                        },
+                                        {
+                                            "t": 6.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.000000 1.000000",
+                                                "ease_out": "1.000000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "PaddingLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "PaddingRight",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./header/group3/group2/white",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "anims_order": [
+        "{fa8028d5-653f-43c8-8a2e-2cb7a046b5c6}",
+        "{753b9e3a-f9a3-4d94-b299-da0b2d1fb165}"
+    ]
+}

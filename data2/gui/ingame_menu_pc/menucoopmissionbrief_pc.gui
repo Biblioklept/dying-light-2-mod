@@ -1,0 +1,3512 @@
+{
+    "version": 1,
+    "symbol_uuid": "{ef7eb5a4-de78-4ee4-85ba-9b7c4fc4c3c4}",
+    "symbol_size": "1920.000000 1080.000000",
+    "data_context_class": "MenuCoopMissionBriefController",
+    "class": "gui::ISymbolRoot",
+    "uuid": "{ef7eb5a4-de78-4ee4-85ba-9b7c4fc4c3c4}",
+    "Id": "MenuCoopMissionBrief",
+    "components": [
+        {
+            "class": "gui::IElementComponent",
+            "uuid": "{69da0cd7-6783-4c2d-9185-1bcd3bc966a6}"
+        },
+        {
+            "class": "gui::ILayoutComponent",
+            "uuid": "{40a67bd3-f687-4eff-8f15-ede8597f7967}",
+            "Height": "1080.000000",
+            "Width": "1920.000000",
+            "MarginAnchorY": "Center",
+            "MarginAnchorX": "Center"
+        },
+        {
+            "class": "gui::IResolutionScalerComponent",
+            "uuid": "{c7945ae4-43f7-4130-b6df-bd06581b2749}"
+        },
+        {
+            "class": "gui::CScreenComponent",
+            "uuid": "{64705800-d7ff-4612-b75f-4ef5c46fc2d8}",
+            "DependencyScreen0": "TooltipScreen",
+            "UsePadCursor": "1",
+            "DataClassName": "MenuCoopMissionBriefController"
+        },
+        {
+            "class": "gui::ILogicComponent",
+            "uuid": "{f9e4fbea-be25-4dd9-a503-c3eea9b49cf2}",
+            "data": [
+                {
+                    "type": "CVariablesComponentSymbolData",
+                    "dyn_fields": [
+                        {
+                            "name": "curr_image",
+                            "type": "int",
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "type": "CActionGraphSymbolData",
+                    "uuid": "{0ddfe356-1666-47ca-9ce0-c3f98b4af739}",
+                    "hash": "",
+                    "nodes": [
+                        {
+                            "type": "CActionGetAnimation",
+                            "id": 88,
+                            "meta": {
+                                "x": 1575.0,
+                                "y": 1920.0
+                            },
+                            "anim_uuid": "{0cab6b74-e03d-496c-9d5e-cba5e815ba68}"
+                        },
+                        {
+                            "type": "CActionPlayAnim",
+                            "id": 87,
+                            "Target": {
+                                "value": ""
+                            },
+                            "Animation": {
+                                "src_node": 88,
+                                "src_prop": "Animation",
+                                "value": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Forward": {
+                                "value": "1"
+                            },
+                            "Start Frame": {
+                                "value": "0.000000"
+                            },
+                            "Speed": {
+                                "value": "1.000000"
+                            },
+                            "Stop Previous": {
+                                "value": "1"
+                            },
+                            "If Not Already Playing": {
+                                "value": "0"
+                            },
+                            "SendStopEvents": {
+                                "value": "1"
+                            },
+                            "meta": {
+                                "x": 1806.037109375,
+                                "y": 1752.4219970703126
+                            }
+                        },
+                        {
+                            "type": "CActionSetWString",
+                            "id": 86,
+                            "Value": {
+                                "src_node": 85,
+                                "src_prop": "LocalizedResult",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4755.0,
+                                "y": 780.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/msg_not_all_players_ready",
+                                "element_uuid": "{6534985c-86ad-4f3f-861b-9c5b5981b497}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValueExplicit"
+                            }
+                        },
+                        {
+                            "type": "CActionStringMixFixed",
+                            "id": 85,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "WString",
+                                    "wc_type_nvec": "WStringVector"
+                                },
+                                {
+                                    "wc_id": 1,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                },
+                                {
+                                    "wc_id": 2,
+                                    "wc_type_vec": "Unknown",
+                                    "wc_type_nvec": "Unknown"
+                                }
+                            ],
+                            "StringToMix": {
+                                "value": "&BoardQuests_NotAllPlayersReadyMsg&"
+                            },
+                            "%1s": {
+                                "src_node": 83,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "%2s": {
+                                "value": "0;"
+                            },
+                            "%3s": {
+                                "value": "0;"
+                            },
+                            "meta": {
+                                "x": 4245.0,
+                                "y": 1020.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 84,
+                            "Next": 86,
+                            "meta": {
+                                "x": 3947.71044921875,
+                                "y": 776.0010986328125
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Decliners"
+                            }
+                        },
+                        {
+                            "type": "CActionGetWString",
+                            "id": 83,
+                            "meta": {
+                                "x": 3947.71044921875,
+                                "y": 1036.4041748046876
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Decliners"
+                            }
+                        },
+                        {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 82,
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 1905.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController"
+                            },
+                            "msg_rtti": "StartBoardQuestEvent"
+                        },
+                        {
+                            "type": "CActionAnd",
+                            "id": 77,
+                            "Value1": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 78,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5490.0,
+                                "y": 1875.0
+                            }
+                        },
+                        {
+                            "type": "CActionBranch",
+                            "id": 71,
+                            "Condition": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "1"
+                            },
+                            "True": 72,
+                            "False": 43,
+                            "meta": {
+                                "x": 4845.0,
+                                "y": 1635.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 43,
+                            "Value": {
+                                "value": "0.000000"
+                            },
+                            "Next": 73,
+                            "meta": {
+                                "x": 5145.0,
+                                "y": 1605.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/btn_cancel3",
+                                "element_uuid": "{2f452136-6d88-429c-8bea-d2c960679aba}",
+                                "component_class": "gui::IButtonComponent",
+                                "field": "HoldTime"
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 78,
+                            "Value": {
+                                "src_node": 75,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5190.0,
+                                "y": 1980.0
+                            }
+                        },
+                        {
+                            "type": "CActionAnd",
+                            "id": 76,
+                            "Value1": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 75,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5595.0,
+                                "y": 2055.0
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 74,
+                            "Value": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 5115.0,
+                                "y": 1785.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 46,
+                            "Next": 79,
+                            "meta": {
+                                "x": 3990.0,
+                                "y": 1380.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_IsHost"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 69,
+                            "Next": 48,
+                            "meta": {
+                                "x": 22.0,
+                                "y": 2965.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_QuestRewards"
+                            }
+                        },
+                        {
+                            "type": "CActionGetRawPtrVector",
+                            "id": 68,
+                            "meta": {
+                                "x": 22.0,
+                                "y": 3065.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_QuestRewards"
+                            },
+                            "ptr_class": "GuiQuestRewardData"
+                        },
+                        {
+                            "type": "CActionGameDataEvent",
+                            "id": 67,
+                            "Next": 58,
+                            "meta": {
+                                "x": 2685.0,
+                                "y": 4185.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef7eb5a4-de78-4ee4-85ba-9b7c4fc4c3c4}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CScreenAboutToShow"
+                        },
+                        {
+                            "type": "CActionSetRawPtr",
+                            "id": 66,
+                            "Value": {
+                                "src_node": 58,
+                                "src_prop": "OutputPtr",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4755.0,
+                                "y": 3915.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/tooltips/reward_popup",
+                                "element_uuid": "{37535218-599d-4a49-9ae2-39bc9b73e39f}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "DataContext"
+                            },
+                            "ptr_class": "gui::CDataSource"
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 60,
+                            "Value": {
+                                "value": "1"
+                            },
+                            "Next": 65,
+                            "meta": {
+                                "x": 3430.669921875,
+                                "y": 3813.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/tooltips/reward_popup",
+                                "element_uuid": "{37535218-599d-4a49-9ae2-39bc9b73e39f}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionCastTo",
+                            "id": 58,
+                            "Success": 60,
+                            "Failed": 61,
+                            "InputPtr": {
+                                "src_node": 57,
+                                "src_prop": "DataContext",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3060.0,
+                                "y": 3885.0
+                            },
+                            "ptr_class": "GuiQuestRewardData"
+                        },
+                        {
+                            "type": "CActionGetCurrentHover",
+                            "id": 57,
+                            "meta": {
+                                "x": 2745.0,
+                                "y": 4020.0
+                            }
+                        },
+                        {
+                            "type": "CActionGameDataEvent",
+                            "id": 56,
+                            "Next": 58,
+                            "meta": {
+                                "x": 2676.81201171875,
+                                "y": 3809.5322265625
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef7eb5a4-de78-4ee4-85ba-9b7c4fc4c3c4}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CHoverChangedEvent"
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 55,
+                            "Value": {
+                                "src_node": 53,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3655.669921875,
+                                "y": 3518.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 54,
+                            "Value": {
+                                "src_node": 55,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3735.0,
+                                "y": 3315.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/rank_crest_symbol",
+                                "element_uuid": "{01d6dcf9-6626-40dd-beb2-62b0a2649c72}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "hard"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 51,
+                            "Next": 54,
+                            "meta": {
+                                "x": 2863.71484375,
+                                "y": 3242.954345703125
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiPlayerData",
+                                "datasource_path": "m_PlayerData",
+                                "field": "m_DifficultyLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 50,
+                            "meta": {
+                                "x": 2863.71484375,
+                                "y": 3477.087646484375
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "CGuiPlayerData",
+                                "datasource_path": "m_PlayerData",
+                                "field": "m_DifficultyLevel"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 49,
+                            "Value": {
+                                "src_node": 47,
+                                "src_prop": "NotEmpty",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 795.2230224609375,
+                                "y": 3026.29638671875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/rewards",
+                                "element_uuid": "{5e0ff7d6-36e3-4229-98ab-20b158262272}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 48,
+                            "Value": {
+                                "src_node": 47,
+                                "src_prop": "NotEmpty",
+                                "value": "0"
+                            },
+                            "Next": 49,
+                            "meta": {
+                                "x": 562.773193359375,
+                                "y": 3021.847412109375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/rewards_txt",
+                                "element_uuid": "{1fe10bd9-80f9-46a2-8fb8-5d14313e46fb}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionVectorIsNotEmpty",
+                            "id": 47,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "RawPtr",
+                                    "wc_type_nvec": "RawPtrVector",
+                                    "wc_subtype": "GuiQuestRewardData"
+                                }
+                            ],
+                            "Vector": {
+                                "src_node": 68,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 330.0,
+                                "y": 3120.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 42,
+                            "Value": {
+                                "src_node": 40,
+                                "src_prop": "NotEmpty",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 819.69140625,
+                                "y": 2624.7919921875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/goals",
+                                "element_uuid": "{88d22ce1-8cc3-44b8-8d8f-7b3f5d321484}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 41,
+                            "Value": {
+                                "src_node": 40,
+                                "src_prop": "NotEmpty",
+                                "value": "0"
+                            },
+                            "Next": 42,
+                            "meta": {
+                                "x": 555.0,
+                                "y": 2610.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/goals_txt",
+                                "element_uuid": "{ba8aa355-d628-4c74-9ff7-8e23f09a072e}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionVectorIsNotEmpty",
+                            "id": 40,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "RawPtr",
+                                    "wc_type_nvec": "RawPtrVector",
+                                    "wc_subtype": "gui::CQuestLogObjectiveData"
+                                }
+                            ],
+                            "Vector": {
+                                "src_node": 38,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 309.1916198730469,
+                                "y": 2758.256103515625
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 39,
+                            "Next": 41,
+                            "meta": {
+                                "x": 81.9466552734375,
+                                "y": 2589.51416015625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Goals"
+                            }
+                        },
+                        {
+                            "type": "CActionGetRawPtrVector",
+                            "id": 38,
+                            "meta": {
+                                "x": 75.0,
+                                "y": 2730.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Goals"
+                            },
+                            "ptr_class": "gui::CQuestLogObjectiveData"
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 37,
+                            "Value": {
+                                "src_node": 16,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2410.137451171875,
+                                "y": 2672.61669921875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/desc",
+                                "element_uuid": "{a8e370a4-d161-4606-afd8-b2a126c1a36c}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 36,
+                            "Value": {
+                                "src_node": 9,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2519.746337890625,
+                                "y": 3365.8466796875
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/name",
+                                "element_uuid": "{e5f0288a-9c0a-4b4f-9f01-c16eff0cbafe}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetInt",
+                            "id": 35,
+                            "Value": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Next": 54,
+                            "meta": {
+                                "x": 2884.0,
+                                "y": 2900.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/rank_crest_symbol",
+                                "element_uuid": "{01d6dcf9-6626-40dd-beb2-62b0a2649c72}",
+                                "component_class": "gui::ILogicComponent",
+                                "field": "rank"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 34,
+                            "Value": {
+                                "src_node": 76,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 6555.0,
+                                "y": 1575.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/btn_accept3",
+                                "element_uuid": "{3a014363-d0aa-4887-afd0-24be7f0b7df6}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 33,
+                            "Next": 81,
+                            "meta": {
+                                "x": 2745.0,
+                                "y": 2505.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/btn_cancel3",
+                                "element_uuid": "{2f452136-6d88-429c-8bea-d2c960679aba}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 32,
+                            "Next": 82,
+                            "meta": {
+                                "x": 2730.0,
+                                "y": 1845.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/btn_accept3",
+                                "element_uuid": "{3a014363-d0aa-4887-afd0-24be7f0b7df6}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 31,
+                            "Value": {
+                                "src_node": 29,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2760.0,
+                                "y": 1335.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest",
+                                "element_uuid": "{9539dedf-839f-47b3-b615-fe6460f5eee4}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionNot",
+                            "id": 30,
+                            "Value": {
+                                "src_node": 29,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 2190.0,
+                                "y": 1455.0
+                            }
+                        },
+                        {
+                            "type": "CActionCompareEnum",
+                            "id": 29,
+                            "wc_spec_type": [
+                                {
+                                    "wc_id": 0,
+                                    "wc_type_vec": "Enum",
+                                    "wc_type_nvec": "Unknown",
+                                    "wc_subtype": "EActivityType",
+                                    "wc_subtype": "EActivityType"
+                                }
+                            ],
+                            "Comparator": {
+                                "value": "Equal"
+                            },
+                            "Value": {
+                                "src_node": 26,
+                                "src_prop": "Value",
+                                "value": "Unknown"
+                            },
+                            "Other Value": {
+                                "value": "BoardQuest"
+                            },
+                            "meta": {
+                                "x": 1815.0,
+                                "y": 1530.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 28,
+                            "Value": {
+                                "src_node": 30,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 31,
+                            "meta": {
+                                "x": 2370.0,
+                                "y": 1335.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group",
+                                "element_uuid": "{d12f5290-40b0-448c-ad86-c38aa2bcf4b8}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 27,
+                            "Next": 28,
+                            "meta": {
+                                "x": 1515.0,
+                                "y": 1320.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_ActivityType"
+                            }
+                        },
+                        {
+                            "type": "CActionGetEnumEActivityType",
+                            "id": 26,
+                            "meta": {
+                                "x": 1500.0,
+                                "y": 1530.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_ActivityType"
+                            }
+                        },
+                        {
+                            "type": "CActionSoundEvent",
+                            "id": 24,
+                            "Next": 25,
+                            "EventName": {
+                                "value": "hud_mission_begin_window"
+                            },
+                            "meta": {
+                                "x": 1005.0,
+                                "y": 1770.0
+                            }
+                        },
+                        {
+                            "type": "CActionGameDataEvent",
+                            "id": 23,
+                            "Next": 24,
+                            "meta": {
+                                "x": 615.0,
+                                "y": 1740.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": ".",
+                                "element_uuid": "{ef7eb5a4-de78-4ee4-85ba-9b7c4fc4c3c4}",
+                                "component_class": "gui::CScreenComponent"
+                            },
+                            "msg_rtti": "gui::CScreenAboutToShow"
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 20,
+                            "Next": 18,
+                            "meta": {
+                                "x": 1850.0,
+                                "y": 2062.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Icon"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 19,
+                            "meta": {
+                                "x": 1850.0,
+                                "y": 2162.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Icon"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 18,
+                            "Value": {
+                                "src_node": 19,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2178.0,
+                                "y": 2088.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/group2/coop_mission_difficulty_icon",
+                                "element_uuid": "{ab38b8ba-fef5-40b4-a755-d4542210ffd8}",
+                                "component_class": "gui::IImageComponent",
+                                "field": "Texture"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 22,
+                            "Next": 1,
+                            "meta": {
+                                "x": 1862.0,
+                                "y": 2300.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Image"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 21,
+                            "meta": {
+                                "x": 1862.0,
+                                "y": 2400.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Image"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 17,
+                            "Next": 15,
+                            "meta": {
+                                "x": 1899.0,
+                                "y": 2530.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 16,
+                            "meta": {
+                                "x": 1899.0,
+                                "y": 2630.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Description"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 15,
+                            "Value": {
+                                "src_node": 16,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "Next": 37,
+                            "meta": {
+                                "x": 2340.0,
+                                "y": 2551.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/group1/desc",
+                                "element_uuid": "{371772df-2172-4885-8c82-62eb1fffe0c0}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 14,
+                            "Next": 11,
+                            "meta": {
+                                "x": 1867.3837890625,
+                                "y": 3577.947509765625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_SubHeader"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 13,
+                            "meta": {
+                                "x": 1867.3837890625,
+                                "y": 3689.16748046875
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_SubHeader"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 11,
+                            "Value": {
+                                "src_node": 13,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2208.829345703125,
+                                "y": 3601.3037109375
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/title_sub_text",
+                                "element_uuid": "{4d240f5e-5456-4234-812c-7c5079f5b6a8}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 10,
+                            "Next": 8,
+                            "meta": {
+                                "x": 1944.1256103515626,
+                                "y": 3303.234130859375
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Header"
+                            }
+                        },
+                        {
+                            "type": "CActionGetString",
+                            "id": 9,
+                            "meta": {
+                                "x": 1944.1256103515626,
+                                "y": 3414.4541015625
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Header"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 8,
+                            "Value": {
+                                "src_node": 9,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "Next": 36,
+                            "meta": {
+                                "x": 2218.705322265625,
+                                "y": 3328.057861328125
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/title_header_text",
+                                "element_uuid": "{63ef08a5-9986-4614-8d5d-650ed8cba066}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionCompareInt",
+                            "id": 7,
+                            "Value1": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "value": "0"
+                            },
+                            "Comparator": {
+                                "value": "Greater"
+                            },
+                            "meta": {
+                                "x": 2325.0,
+                                "y": 3000.0
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 6,
+                            "Value": {
+                                "src_node": 7,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 35,
+                            "meta": {
+                                "x": 2644.0,
+                                "y": 2853.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/diff",
+                                "element_uuid": "{102dd6f5-42d5-4b7b-9bee-05610f7777f1}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionIntToString",
+                            "id": 5,
+                            "Value": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Format": {
+                                "value": "%d"
+                            },
+                            "meta": {
+                                "x": 2145.0,
+                                "y": 2910.0
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 4,
+                            "Next": 2,
+                            "meta": {
+                                "x": 1935.0,
+                                "y": 2760.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Difficulty"
+                            }
+                        },
+                        {
+                            "type": "CActionGetInt",
+                            "id": 3,
+                            "meta": {
+                                "x": 1935.0,
+                                "y": 2880.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_Difficulty"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 2,
+                            "Value": {
+                                "src_node": 5,
+                                "src_prop": "Result",
+                                "value": ""
+                            },
+                            "Next": 6,
+                            "meta": {
+                                "x": 2370.0,
+                                "y": 2850.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/diff",
+                                "element_uuid": "{102dd6f5-42d5-4b7b-9bee-05610f7777f1}",
+                                "component_class": "gui::ITextComponent",
+                                "field": "TextValue"
+                            }
+                        },
+                        {
+                            "type": "CActionSetString",
+                            "id": 1,
+                            "Value": {
+                                "src_node": 21,
+                                "src_prop": "Value",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 2160.0,
+                                "y": 2325.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/img",
+                                "element_uuid": "{27bd5eb0-8749-415f-a569-0f0d3a7c7b21}",
+                                "component_class": "gui::IImageComponent",
+                                "field": "Texture"
+                            }
+                        },
+                        {
+                            "type": "CActionOnFieldChanged",
+                            "id": 45,
+                            "Next": 79,
+                            "meta": {
+                                "x": 3990.0,
+                                "y": 1560.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_CanSkip"
+                            }
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 44,
+                            "meta": {
+                                "x": 4005.0,
+                                "y": 2040.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_CanSkip"
+                            }
+                        },
+                        {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 80,
+                            "m_Action": {
+                                "value": "Accept"
+                            },
+                            "meta": {
+                                "x": 2985.0,
+                                "y": 2130.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController"
+                            },
+                            "msg_rtti": "PerformMCoopMissionBriefAction"
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 79,
+                            "Value": {
+                                "src_node": 44,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "Next": 71,
+                            "meta": {
+                                "x": 4440.0,
+                                "y": 1560.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/btn_accept2",
+                                "element_uuid": "{c82686b9-f505-4ecb-8d6a-f4797fb93cec}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 12,
+                            "Next": 81,
+                            "meta": {
+                                "x": 2745.0,
+                                "y": 2310.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/btn_cancel2",
+                                "element_uuid": "{68a9ca06-79c1-43b9-b82b-f9c0cf355b49}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionOnButtonPress",
+                            "id": 59,
+                            "Next": 80,
+                            "meta": {
+                                "x": 2745.0,
+                                "y": 2100.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "group/btn_accept2",
+                                "element_uuid": "{c82686b9-f505-4ecb-8d6a-f4797fb93cec}",
+                                "component_class": "gui::IButtonComponent"
+                            }
+                        },
+                        {
+                            "type": "CActionEmitGameDataEvent",
+                            "id": 81,
+                            "m_Action": {
+                                "value": "Reject"
+                            },
+                            "meta": {
+                                "x": 2970.0,
+                                "y": 2445.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController"
+                            },
+                            "msg_rtti": "PerformMCoopMissionBriefAction"
+                        },
+                        {
+                            "type": "CActionSoundEvent",
+                            "id": 25,
+                            "Next": 87,
+                            "EventName": {
+                                "value": "menu_click "
+                            },
+                            "meta": {
+                                "x": 1425.0,
+                                "y": 1770.0,
+                                "comment_bubble_text": "not sure if trigger takes care of it by themselves might not be needed here."
+                            }
+                        },
+                        {
+                            "type": "CActionDifficultyRange",
+                            "id": 52,
+                            "Value": {
+                                "src_node": 50,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "DiffMin": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "DiffMax": {
+                                "src_node": 3,
+                                "src_prop": "Value",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3245.35205078125,
+                                "y": 3357.6796875
+                            }
+                        },
+                        {
+                            "type": "CActionOr",
+                            "id": 53,
+                            "Value1": {
+                                "src_node": 52,
+                                "src_prop": "IsEasy",
+                                "value": "0"
+                            },
+                            "Value2": {
+                                "src_node": 52,
+                                "src_prop": "IsNormal",
+                                "value": "0"
+                            },
+                            "meta": {
+                                "x": 3515.35205078125,
+                                "y": 3372.6796875
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 61,
+                            "Value": {
+                                "value": "0"
+                            },
+                            "Next": 62,
+                            "meta": {
+                                "x": 3434.669921875,
+                                "y": 3953.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/tooltips/reward_popup",
+                                "element_uuid": "{37535218-599d-4a49-9ae2-39bc9b73e39f}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetRawPtr",
+                            "id": 62,
+                            "Next": 66,
+                            "Value": {
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3675.0,
+                                "y": 4020.0
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "GuiItemTooltip",
+                                "datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare.m_HoveredItem",
+                                "field": "m_ItemToDisplay"
+                            },
+                            "ptr_class": "GuiInventoryItemData"
+                        },
+                        {
+                            "type": "CActionSetRawPtr",
+                            "id": 63,
+                            "Next": 66,
+                            "Value": {
+                                "src_node": 64,
+                                "src_prop": "m_Item",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 4215.0,
+                                "y": 3810.0
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "GuiItemTooltip",
+                                "datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare.m_HoveredItem",
+                                "field": "m_ItemToDisplay"
+                            },
+                            "ptr_class": "GuiInventoryItemData"
+                        },
+                        {
+                            "type": "CActionGetFieldFromPtr",
+                            "id": 64,
+                            "GuiQuestRewardData": {
+                                "src_node": 58,
+                                "src_prop": "OutputPtr",
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3945.0,
+                                "y": 3930.0
+                            },
+                            "rtti": "GuiQuestRewardData",
+                            "field": "m_Item",
+                            "type": "raw ptr",
+                            "subtype": "GuiInventoryItemData"
+                        },
+                        {
+                            "type": "CActionSetRawPtr",
+                            "id": 65,
+                            "Next": 63,
+                            "Value": {
+                                "value": ""
+                            },
+                            "meta": {
+                                "x": 3660.0,
+                                "y": 3810.0
+                            },
+                            "field_path": {
+                                "type": "GameData",
+                                "class": "GuiItemTooltip",
+                                "datasource_path": "m_TooltipDataContainer.m_ItemTooltipWithCompare.m_HoveredItem",
+                                "field": "m_ItemToDisplay"
+                            },
+                            "ptr_class": "GuiInventoryItemData"
+                        },
+                        {
+                            "type": "CActionGetBool",
+                            "id": 75,
+                            "meta": {
+                                "x": 4860.0,
+                                "y": 2250.0
+                            },
+                            "field_path": {
+                                "type": "DataContext",
+                                "class": "MenuCoopMissionBriefController",
+                                "field": "m_IsHost"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 73,
+                            "Value": {
+                                "src_node": 74,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 70,
+                            "meta": {
+                                "x": 5565.0,
+                                "y": 1575.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/msg_not_all_players_ready",
+                                "element_uuid": "{6534985c-86ad-4f3f-861b-9c5b5981b497}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetBool",
+                            "id": 70,
+                            "Value": {
+                                "src_node": 77,
+                                "src_prop": "Result",
+                                "value": "0"
+                            },
+                            "Next": 34,
+                            "meta": {
+                                "x": 6030.0,
+                                "y": 1575.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/msg_waiting_for_host",
+                                "element_uuid": "{41f417ba-a87e-4146-9045-fe4b91e9f482}",
+                                "component_class": "gui::IElementComponent",
+                                "field": "Visible"
+                            }
+                        },
+                        {
+                            "type": "CActionSetFloat",
+                            "id": 72,
+                            "Value": {
+                                "value": "0.000000"
+                            },
+                            "Next": 73,
+                            "meta": {
+                                "x": 5145.0,
+                                "y": 1380.0
+                            },
+                            "field_path": {
+                                "type": "GuiComponent",
+                                "element": "board_quest/group1/btns/btn_cancel3",
+                                "element_uuid": "{2f452136-6d88-429c-8bea-d2c960679aba}",
+                                "component_class": "gui::IButtonComponent",
+                                "field": "HoldTime"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "dyn_fields": [
+                {
+                    "name": "curr_image",
+                    "type": "int",
+                    "value": "0"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "class": "gui::IGroup",
+            "uuid": "{d12f5290-40b0-448c-ad86-c38aa2bcf4b8}",
+            "Id": "group",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{027d0b6a-95bb-4947-a35d-4b783cb6d49d}",
+                    "Visible": "0"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{313811a2-8121-40dc-a67b-f4d8e2652ab3}",
+                    "Height": "630.954956",
+                    "Width": "624.043823",
+                    "SizeModeY": "Stretch",
+                    "SizeModeX": "Stretch",
+                    "MarginAnchorY": "Center",
+                    "MarginAnchorX": "Center"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{39ad74de-efa5-4a18-bb0f-463f87b9f16a}",
+                    "Id": "group1",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{f81caf02-4829-4cd2-82d1-c9e9e58dc2cb}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{b111ba86-7f65-4a5f-91af-5c1fad38210f}",
+                            "Height": "160.669983",
+                            "Width": "557.351685",
+                            "SizeModeY": "AutoSizeToElements",
+                            "SizeModeX": "AutoSizeToElements",
+                            "MarginTop": "273.001678",
+                            "MarginLeft": "1008.748047"
+                        },
+                        {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{e33e8f57-b327-4096-b8bc-46dee1cc4c77}",
+                            "Wrap": "0",
+                            "Orientation": "Vertical"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{3a4feda6-c7d6-422e-b374-8832ef4a88b5}",
+                            "Id": "goals",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{59274831-23a0-40a3-8eb4-9e83947acc49}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{63aa0b75-705b-4615-b3d8-49d4d66cfece}",
+                                    "Height": "56.000000",
+                                    "Width": "525.585693",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "SizeModeX": "Stretch",
+                                    "MarginBottom": "16.000000",
+                                    "MarginRight": "31.765961",
+                                    "MarginTop": "8.000000"
+                                },
+                                {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{6f3c866c-4095-413a-8289-0772e6727567}",
+                                    "Wrap": "0",
+                                    "Orientation": "Vertical"
+                                },
+                                {
+                                    "class": "gui::IElementGeneratorComponent",
+                                    "uuid": "{6a42743a-6a18-4878-91da-14066fb203f6}",
+                                    "DefaultSymbol": "coop_mission_menu_obj",
+                                    "FieldPath": "m_Goals"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{e22f6a21-403c-4172-bf5f-1da830ca38b6}",
+                                    "Id": "coop_mission_menu_obj",
+                                    "sub_symbol": "coop_mission_menu_obj"
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{2f4486c0-e3d2-4aed-b122-82caa6f8e43e}",
+                                    "Id": "tooltip_spacer1",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{c9466be2-caf0-4292-a11d-5896e144cee4}",
+                                            "Opacity": "0.600000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{d28cc238-8eee-42f9-b760-3e3769fbd694}",
+                                            "Height": "16.000000",
+                                            "Width": "404.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{fe277965-c83f-41b6-918d-edc050e33e73}",
+                                            "Texture": "tooltip_spacer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{371772df-2172-4885-8c82-62eb1fffe0c0}",
+                            "Id": "desc",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{20e70aa2-6b06-4718-bd5e-ef2d78092184}",
+                                    "RenderPivot": "0.535926 1.834592 0.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{99cf2a99-fa53-4c0e-917e-9a55be92048b}",
+                                    "MaxAutoSizeHeight": "200.000000",
+                                    "Height": "200.000000",
+                                    "Width": "512.000000",
+                                    "SizeModeY": "AutoSizeToComponents"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{6f289e38-c692-457d-b85c-f29b6380807d}",
+                                    "_preset_": "B2M_BodyTextMedium",
+                                    "TrimmingMode": "Animate",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "text_gray",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "B2M_BodyTextMedium",
+                                    "TextValue": "&ITEM_card_rampage_D&\n"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{8d9fae3f-5f9c-483c-9fd3-e6f559142179}",
+                            "Id": "desc1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{8cb09a76-ab87-45f9-9555-d50a7f7f3c1d}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{8c48bdd1-a68f-455b-a5f2-28d4c696ea4a}",
+                                    "Height": "160.669983",
+                                    "Width": "557.351685",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "MarginTop": "21.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{3615be48-0ef3-49b4-9891-1a130fcc4cff}",
+                                    "_preset_": "H2_HeaderSubtitle",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "activity_replayable_missions",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "H2_HeaderSubtitle",
+                                    "TextValue": "&CoopGameplayRecommended&\n"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{2ad68215-625b-4167-83b6-e97e1d108487}",
+                            "Id": "goals_txt",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{7367dcc0-713b-49fd-9850-23a5edf42045}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000",
+                                    "Collapsed": "1",
+                                    "Visible": "0"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{654b7f66-bb5e-428a-a0df-0d522f18e0de}",
+                                    "Height": "18.160000",
+                                    "Width": "210.825424",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginBottom": "14.000000",
+                                    "MarginRight": "-3.000000",
+                                    "MarginTop": "24.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{a5ad2753-955c-4485-a9b7-d50db9dfd644}",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "m_light_grey",
+                                    "CharacterSpacingAdjust": "2.650000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "14.750000",
+                                    "FontStyle": "Cond Bold",
+                                    "TextValue": "&Hud_Challenge_Goals&"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{ea3f8227-9a7e-48f9-9915-e989b61c6721}",
+                            "Id": "rewards_txt",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3c2ee9d6-e33b-4b14-9bac-510fdcd94571}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{8fbd0b44-e62d-4b98-a9df-005474a132b3}",
+                                    "Height": "18.160000",
+                                    "Width": "210.825424",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginBottom": "14.000000",
+                                    "MarginRight": "-3.000000",
+                                    "MarginTop": "24.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{413d1871-365a-49c4-ba01-e1ff47fc604f}",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "m_light_grey",
+                                    "CharacterSpacingAdjust": "2.650000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "14.750000",
+                                    "FontStyle": "Cond Bold",
+                                    "TextValue": "&MQuestLog_Rewards&"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{42541640-a06b-4a3a-9dae-c281975d68fd}",
+                                    "Id": "tooltip_spacer1",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{5aa54302-90fb-44d7-83a1-01092a460a06}",
+                                            "Opacity": "0.600000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{0447325a-ad70-424a-b784-49bff8d2252f}",
+                                            "Height": "16.000000",
+                                            "Width": "404.000000",
+                                            "MarginTop": "24.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{c0104141-8efd-4314-905a-cd10611ad787}",
+                                            "Texture": "tooltip_spacer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{aafabefd-7d0a-4e6e-b0a0-338f96db109f}",
+                            "Id": "rewards",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{bc4e0b4f-dee9-4bcc-8295-09690a12c05e}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{7a5cce49-d7e7-46dd-9a6c-fe29812117fa}",
+                                    "Height": "52.000000",
+                                    "Width": "525.585693",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "SizeModeX": "Stretch",
+                                    "MarginBottom": "4.000000",
+                                    "MarginRight": "29.765961",
+                                    "MarginTop": "16.000000",
+                                    "MarginLeft": "2.000000"
+                                },
+                                {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{caa7b6de-055b-4912-bcd5-24233d31a868}",
+                                    "Wrap": "0",
+                                    "Orientation": "Vertical"
+                                },
+                                {
+                                    "class": "gui::IElementGeneratorComponent",
+                                    "uuid": "{1fc7a58f-c352-43f7-8816-be9007bbf342}",
+                                    "DefaultSymbol": "item_craftpart",
+                                    "FieldPath": "m_Rewards"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{975c2514-39f6-4d80-953c-f94ec51c5dfa}",
+                                    "Id": "item_craftpart",
+                                    "sub_symbol": "item_craftpart",
+                                    "components": [
+                                        {
+                                            "target_component_uuid": "{881e4918-c4df-47e3-bcfc-96014938d8f2}",
+                                            "class": "gui::IElementComponent",
+                                            "RenderPivot": "-0.067831 -11.839932 0.000000"
+                                        },
+                                        {
+                                            "target_component_uuid": "{bb91a161-5d67-4c3f-a6a6-50e6e84c9c15}",
+                                            "class": "gui::ILayoutComponent",
+                                            "Width": "525.585693"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::CSymbolRoot",
+                    "uuid": "{c82686b9-f505-4ecb-8d6a-f4797fb93cec}",
+                    "Id": "btn_accept2",
+                    "sub_symbol": "legend_button",
+                    "components": [
+                        {
+                            "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                            "class": "gui::IElementComponent",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                            "class": "gui::ILayoutComponent",
+                            "Width": "104.418755",
+                            "MarginRight": "389.949219",
+                            "MarginTop": "877.513367",
+                            "MarginLeft": "1428.567139",
+                            "MarginAnchorX": "Right"
+                        },
+                        {
+                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                            "class": "gui::ILogicComponent",
+                            "dyn_fields": [
+                                {
+                                    "name": "button_text",
+                                    "type": "string",
+                                    "value": "&ChallengeStart&"
+                                }
+                            ]
+                        },
+                        {
+                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                            "class": "gui::IButtonComponent",
+                            "HoldTime": "0.001000"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::CSymbolRoot",
+                    "uuid": "{68a9ca06-79c1-43b9-b82b-f9c0cf355b49}",
+                    "Id": "btn_cancel2",
+                    "sub_symbol": "legend_button",
+                    "components": [
+                        {
+                            "target_component_uuid": "{0ab0f2b6-e853-415f-84e6-80cfea8a82c5}",
+                            "class": "gui::IElementComponent",
+                            "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                        },
+                        {
+                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                            "class": "gui::ILayoutComponent",
+                            "Width": "104.418755",
+                            "MarginRight": "1453.224976",
+                            "MarginTop": "877.513367",
+                            "MarginLeft": "373.322235"
+                        },
+                        {
+                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                            "class": "gui::ILogicComponent",
+                            "dyn_fields": [
+                                {
+                                    "name": "button_text",
+                                    "type": "string",
+                                    "value": "&Menu_Back&"
+                                }
+                            ]
+                        },
+                        {
+                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                            "class": "gui::IButtonComponent",
+                            "PressAction": "_ACTION_GUI_CANCEL"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{30c43a00-5dd2-4b6b-b469-09ac6a4a742f}",
+                    "Id": "Coop_mission_Start",
+                    "design_time": true,
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{748ae4c9-44ca-494d-8cfc-b57dc4ad333f}",
+                            "DesignTimeOnly": "1",
+                            "Visible": "0",
+                            "Opacity": "0.220000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{4050d0c8-b9eb-431d-83e1-1e9a083bece5}",
+                            "Height": "1080.000000",
+                            "Width": "1920.000000",
+                            "MarginAnchorY": "Center",
+                            "MarginAnchorX": "Center"
+                        },
+                        {
+                            "class": "gui::IImageComponent",
+                            "uuid": "{a044008b-86ba-42aa-8a3e-ad179cc800c9}",
+                            "Texture": "Coop_mission_Start"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{63ef08a5-9986-4614-8d5d-650ed8cba066}",
+                    "Id": "title_header_text",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{e0e9efad-694c-4e6f-8b0f-80d0d0de4dde}",
+                            "RenderPivot": "0.000000 0.500000 0.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{18e98c06-4210-43f9-8822-108294aa646d}",
+                            "Height": "72.073349",
+                            "Width": "660.294922",
+                            "MarginRight": "150.000000",
+                            "MarginTop": "144.559143",
+                            "MarginLeft": "1049.780273"
+                        },
+                        {
+                            "class": "gui::ITextComponent",
+                            "uuid": "{52e61c55-09cb-46b0-af7a-5fbd1b05bb22}",
+                            "TrimmingMode": "Animate",
+                            "ShadowOffset": "1.000000 1.000000",
+                            "DropShadow": "1",
+                            "TrimmAnimSpeed": "50",
+                            "CharacterSpacingAdjust": "1.110000",
+                            "Uppercase": "1",
+                            "UseControlSequence": "0",
+                            "Multiline": "0",
+                            "FontSize": "37.000000",
+                            "FontStyle": "Cond Bold",
+                            "TextValue": "Silent Guard Lorem ipsum"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{4d240f5e-5456-4234-812c-7c5079f5b6a8}",
+                    "Id": "title_sub_text",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{701d49fa-037a-4939-91ce-4766b039d45a}",
+                            "RenderPivot": "0.000000 0.500000 0.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{fc93081d-b6fd-4cf0-9563-c9d24824c65b}",
+                            "Height": "42.456795",
+                            "Width": "288.798401",
+                            "MarginRight": "-3.000000",
+                            "MarginTop": "212.512665",
+                            "MarginLeft": "1049.867188"
+                        },
+                        {
+                            "class": "gui::ITextComponent",
+                            "uuid": "{877e070d-2d5d-4ffc-88a2-09c2ca45111a}",
+                            "MinFontSize": "10.000000",
+                            "ScaleToFit": "1",
+                            "TrimmingMode": "Animate",
+                            "ShadowOffset": "1.000000 1.000000",
+                            "DropShadow": "1",
+                            "TextColorMul": "activity_replayable_missions",
+                            "CharacterSpacingAdjust": "0.940000",
+                            "Uppercase": "1",
+                            "Multiline": "0",
+                            "FontSize": "20.750000",
+                            "FontStyle": "Cond Bold",
+                            "TextValue": "pilgrim's patrol"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{102dd6f5-42d5-4b7b-9bee-05610f7777f1}",
+                    "Id": "diff",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{427361f3-5f90-4fa6-ac0f-28c10e281c92}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{3ba2de53-614d-4625-af49-dd2869829b9d}",
+                            "MarginTop": "148.844254",
+                            "MarginLeft": "888.310364"
+                        },
+                        {
+                            "class": "gui::ITextComponent",
+                            "uuid": "{68f9d915-e318-40a3-ae96-c64dd414fb1a}",
+                            "AlignmentY": "Center",
+                            "AlignmentX": "Center",
+                            "Multiline": "0",
+                            "FontSize": "37.000000",
+                            "FontStyle": "Cond Bold",
+                            "TextValue": "5"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{d92e7683-7144-4e25-abb4-0d4e28d6056c}",
+                    "Id": "group2",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{39a002f5-713d-4a04-b00f-887e28bf89e5}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{5ab4d3ef-04b2-4205-b586-78c715e452cf}",
+                            "Height": "167.000000",
+                            "Width": "171.000000",
+                            "MarginTop": "115.000000",
+                            "MarginLeft": "876.000000"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{ab38b8ba-fef5-40b4-a755-d4542210ffd8}",
+                            "Id": "coop_mission_difficulty_icon",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{e09564d9-4092-4bf3-9f73-fb853c9c4b2e}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{b4b68cd8-9f8b-4379-966c-3a12bf3f3ba6}",
+                                    "Height": "167.000000",
+                                    "Width": "171.000000",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginAnchorY": "Center",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{7e3ece29-ff23-4bda-9b5e-79fc2a46cb36}",
+                                    "Texture": "coop_mission_difficulty_icon"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{27bd5eb0-8749-415f-a569-0f0d3a7c7b21}",
+                    "Id": "img",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{6e6ed52b-ac52-456a-8c6f-caae8585fa1f}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{d78ec34d-5d80-4445-924f-1ab06a70511c}",
+                            "Height": "630.000000",
+                            "Width": "626.000000",
+                            "MarginTop": "172.018402",
+                            "MarginLeft": "304.047302"
+                        },
+                        {
+                            "class": "gui::IImageComponent",
+                            "uuid": "{737b027c-0e98-44cd-ac8a-a998f48a26ac}",
+                            "Texture": "replayable_mission_starting_image"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{793d1638-a633-45ba-8a55-b1298ed7c830}",
+                    "Id": "bg",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{75a763ae-4fb8-4d86-a4ca-53849e2a97dc}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{ffa69661-c499-4430-b037-981375ee5c87}",
+                            "Height": "987.000000",
+                            "Width": "1646.000000",
+                            "MarginAnchorY": "Center",
+                            "MarginAnchorX": "Center"
+                        },
+                        {
+                            "class": "gui::IImageComponent",
+                            "uuid": "{6d7cde60-377c-42d0-8303-2fa351e48cb7}",
+                            "Texture": "replayable_mission_starting_bg"
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{0f5b2aaf-5353-4ed5-9845-c2c21f68bf1f}",
+                    "Id": "white",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{40571f8e-2f70-4df8-b150-062d72ec05b9}",
+                            "Opacity": "0.200000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{0ac624c8-2c93-4b8e-9342-7803d9f0c1f5}",
+                            "Height": "3090.671875",
+                            "Width": "11718.558594",
+                            "MarginTop": "-957.080017",
+                            "MarginLeft": "-4864.479980"
+                        },
+                        {
+                            "class": "gui::IImageComponent",
+                            "uuid": "{27e2e9c9-66c1-4111-9a55-84f6e444417a}",
+                            "ImageColorMul": "000000FF"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IGroup",
+            "uuid": "{9539dedf-839f-47b3-b615-fe6460f5eee4}",
+            "Id": "board_quest",
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{69ef048e-7fea-4255-8918-53d45dfab8fd}"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{284263ab-b3d0-4ee2-8a8c-695074cf0a1b}",
+                    "Height": "630.954956",
+                    "Width": "624.043823",
+                    "SizeModeY": "Stretch",
+                    "SizeModeX": "Stretch"
+                }
+            ],
+            "objects": [
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{037796be-77f7-4f90-8ac4-bfae154dc279}",
+                    "Id": "tooltips",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{3875cdcc-ac24-4d0f-a1b6-9f1263bc9c98}"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{939a133d-47d2-436d-9240-f810653c7a03}",
+                            "Height": "993.941528",
+                            "Width": "1908.076416",
+                            "MarginTop": "6.118591",
+                            "MarginLeft": "7.168030"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{37535218-599d-4a49-9ae2-39bc9b73e39f}",
+                            "Id": "reward_popup",
+                            "sub_symbol": "reward_popup",
+                            "components": [
+                                {
+                                    "target_component_uuid": "{0227c69c-3bc5-439e-982a-9dbc45d5dd2e}",
+                                    "class": "gui::ILayoutComponent",
+                                    "Height": "236.984009",
+                                    "MarginTop": "1132.395752",
+                                    "MarginLeft": "740.724304"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "class": "gui::IGroup",
+                    "uuid": "{0a7d6ddb-1747-4ac1-b29c-10c92813ccb4}",
+                    "Id": "group1",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "uuid": "{39e2feec-b2c5-4de8-b434-25ab5ece8378}",
+                            "RenderPivot": "0.500000 0.500000 0.000000"
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "uuid": "{e7a60c8c-f7ba-49b4-a555-3fb5982f9c29}",
+                            "Height": "231.239975",
+                            "Width": "560.000000",
+                            "SizeModeY": "AutoSizeToElements",
+                            "MarginLeft": "1080.000000",
+                            "MarginAnchorY": "Center"
+                        },
+                        {
+                            "class": "gui::IWrapPanelComponent",
+                            "uuid": "{22555921-b642-4aa1-96ca-9eaec24ed04e}",
+                            "Wrap": "0",
+                            "Orientation": "Vertical"
+                        }
+                    ],
+                    "objects": [
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{7c7e25bf-385f-4893-9d29-52cdee4c4836}",
+                            "Id": "white1",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{f67a0685-892a-4185-96c8-7f1f2553b09e}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{037937ca-bdce-49d0-813b-b26610be180c}",
+                                    "Height": "4.000000",
+                                    "Width": "558.375000"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{39d9e526-1adb-43d2-b6ab-ac56405873ff}",
+                                    "ImageColorMul": "E29090FF",
+                                    "ComponentEnabled": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::CSymbolRoot",
+                            "uuid": "{01d6dcf9-6626-40dd-beb2-62b0a2649c72}",
+                            "Id": "rank_crest_symbol",
+                            "sub_symbol": "rank_crest_symbol",
+                            "components": [
+                                {
+                                    "target_component_uuid": "{87960122-dbee-44aa-9ec8-e3b7b65a3526}",
+                                    "class": "gui::IElementComponent",
+                                    "RenderPivot": "0.500000 0.500000 0.000000"
+                                },
+                                {
+                                    "target_component_uuid": "{cdccaf0c-0ae5-45e6-9a84-7733896494d3}",
+                                    "class": "gui::ILayoutComponent",
+                                    "MarginTop": "8.000000",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "target_component_uuid": "{0147fa24-581e-45e3-a993-6faead7bf1ee}",
+                                    "class": "gui::ILogicComponent",
+                                    "dyn_fields": [
+                                        {
+                                            "name": "qcategory",
+                                            "type": "enum",
+                                            "value": "SideQuest"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{e5f0288a-9c0a-4b4f-9f01-c16eff0cbafe}",
+                            "Id": "name",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{8de80916-329f-4b1f-8101-171109145934}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{3f44a991-fa6d-4d1b-8fbe-d4b4211aa271}",
+                                    "Height": "36.000000",
+                                    "Width": "405.000000",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{a5f951c1-63b5-4b3c-a2e8-00ff4fa54eb8}",
+                                    "_preset_": "D2_DisplaySubtitle",
+                                    "AlignmentX": "Center",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_white",
+                                    "LineSpacingAdjust": "-6.000000",
+                                    "_StylePreset_": "D2_DisplaySubtitle",
+                                    "TextValue": "Geting Stronger"
+                                },
+                                {
+                                    "class": "gui::IMaskComponent",
+                                    "uuid": "{fd0319be-ab41-45ab-882a-4c280f97a36a}",
+                                    "ClipEdge": "0",
+                                    "MaskChildren": "0",
+                                    "MaskSource": "{540ccfe2-4d12-4e46-aa52-6dacf33cf885};board_quest/name/text_mask_headers_title;0",
+                                    "MaskTexture": "text_mask_headers"
+                                },
+                                {
+                                    "class": "gui::IMaterialEffectComponent",
+                                    "uuid": "{e34ee07f-128a-4a7b-8d38-505a2b8050ba}",
+                                    "mask_mul_value": "0.150000",
+                                    "Effect": "mask_mul"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{540ccfe2-4d12-4e46-aa52-6dacf33cf885}",
+                                    "Id": "text_mask_headers_title",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{75e1d40e-c387-4fe5-a41f-1762011bdf03}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{661ac040-a18e-4775-b618-7c9f364e3a40}",
+                                            "Height": "32.000000",
+                                            "Width": "256.000000",
+                                            "MarginTop": "2.000000",
+                                            "MarginAnchorX": "Center"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{f7c45970-5cc5-4c5c-9f1c-a3ac281e8b19}",
+                                            "Texture": "text_mask_headers",
+                                            "ComponentEnabled": "0"
+                                        },
+                                        {
+                                            "class": "gui::IMaterialEffectComponent",
+                                            "uuid": "{44eb4c53-72e4-47b6-88bb-6e23734ed30f}",
+                                            "mask_mul_value": "0.150000",
+                                            "Effect": "mask_mul"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{657f5be9-0fdc-422a-90dd-3b0908e50670}",
+                            "Id": "text",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{0f703878-aa9f-4986-8e68-0c55daad13fe}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{8074fdaa-8346-411e-817d-eab0e9c83c26}",
+                                    "Height": "24.000000",
+                                    "Width": "130.669952",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{8e6dfa23-d93d-4938-ab84-01e4cd2ed1b4}",
+                                    "_preset_": "H2_HeaderSubtitle",
+                                    "AlignmentY": "Center",
+                                    "AlignmentX": "Center",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "TextColorMul": "text_highlight",
+                                    "Multiline": "0",
+                                    "_StylePreset_": "H2_HeaderSubtitle",
+                                    "TextValue": "&Mquestlog_qtype_sidequest&"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{e0abcd89-87e9-4436-bc48-94c9522dc0d4}",
+                            "Id": "tooltip_spacer",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{d14f0b90-dfb0-4987-9cbe-e1cbe2792820}",
+                                    "Opacity": "0.800000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{87ceaa36-158b-4c41-baf9-b649d817a26a}",
+                                    "Height": "16.000000",
+                                    "Width": "404.000000",
+                                    "MarginBottom": "4.000000",
+                                    "MarginTop": "4.000000",
+                                    "MarginLeft": "72.000000"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{b55770ab-6160-4037-aeb8-252176b402f2}",
+                                    "ImageColorMul": "m_light_grey",
+                                    "Texture": "tooltip_spacer"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{a8e370a4-d161-4606-afd8-b2a126c1a36c}",
+                            "Id": "desc",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{e1b27d90-2a45-4a7e-8789-9ea220ca2b4f}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{ffe90cf7-f555-4809-abac-b8b5a1da23c1}",
+                                    "MaxAutoSizeHeight": "300.000000",
+                                    "Height": "185.154648",
+                                    "Width": "404.000000",
+                                    "SizeModeY": "AutoSizeToComponents",
+                                    "MarginLeft": "72.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{a2d32602-9d2e-43be-8d07-150fbf3600b1}",
+                                    "_preset_": "B2M_BodyTextMedium",
+                                    "TrimmingMode": "Animate",
+                                    "ShadowColor": "000000C0",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TrimmAnimSpeed": "15",
+                                    "TextColorMul": "m_light_grey2",
+                                    "LineSpacingAdjust": "-1.000000",
+                                    "ExactAutoSizeX": "0",
+                                    "_StylePreset_": "B2M_BodyTextMedium",
+                                    "TextValue": "&ITEM_card_rampage_D&\n"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{ba8aa355-d628-4c74-9ff7-8e23f09a072e}",
+                            "Id": "goals_txt",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{eba56138-c9d8-4eb5-a9c8-d638de92ab96}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000",
+                                    "Visible": "0"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{112f1ca7-e1f7-4d2e-a049-49f2ff94a4ae}",
+                                    "Height": "18.160000",
+                                    "Width": "210.825424",
+                                    "SizeModeX": "AutoSizeToComponents",
+                                    "MarginBottom": "14.000000",
+                                    "MarginRight": "-3.000000",
+                                    "MarginTop": "24.000000",
+                                    "MarginLeft": "60.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{d987247d-5307-4db7-b55a-37015959fc6c}",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "m_light_grey",
+                                    "CharacterSpacingAdjust": "2.650000",
+                                    "Uppercase": "1",
+                                    "Multiline": "0",
+                                    "FontSize": "14.750000",
+                                    "FontStyle": "Cond Bold",
+                                    "TextValue": "&Hud_Challenge_Goals&"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{88d22ce1-8cc3-44b8-8d8f-7b3f5d321484}",
+                            "Id": "goals",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{e558abdf-f1a0-4eaa-8efb-2dcad4cf817d}",
+                                    "Visible": "0"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{0c5cc3e8-47d8-4ddb-a93e-a58cedab0ebd}",
+                                    "Height": "44.599983",
+                                    "Width": "458.234039",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "SizeModeX": "Stretch",
+                                    "MarginBottom": "4.000000",
+                                    "MarginRight": "41.765961",
+                                    "MarginTop": "8.000000",
+                                    "MarginLeft": "60.000000"
+                                },
+                                {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{dabf86da-8e34-4cc1-9341-1534a8bd25c9}",
+                                    "Wrap": "0",
+                                    "Orientation": "Vertical"
+                                },
+                                {
+                                    "class": "gui::IElementGeneratorComponent",
+                                    "uuid": "{b6c61512-6cb1-48f0-8adb-f2eb2b31dd85}",
+                                    "DefaultSymbol": "coop_mission_menu_obj",
+                                    "FieldPath": "m_Goals"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{de6594ea-2c37-4c7b-9274-62bb439e2683}",
+                                    "Id": "coop_mission_menu_obj",
+                                    "sub_symbol": "coop_mission_menu_obj"
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{fb66eb60-292b-4fc8-88fa-3b2d03b827ca}",
+                                    "Id": "tooltip_spacer",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{49e90277-b07d-453d-94a1-0369ff8459ec}",
+                                            "Opacity": "0.800000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{4159a7d7-12c4-43f9-b833-9912f2d26993}",
+                                            "ForceDefaultLayout": "1",
+                                            "Height": "16.000000",
+                                            "Width": "404.000000",
+                                            "MarginRight": "-7.709015",
+                                            "MarginTop": "-22.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{d2ea9cca-5169-4b4f-bb29-366b1958925a}",
+                                            "ImageColorMul": "m_light_grey",
+                                            "Texture": "tooltip_spacer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{1fe10bd9-80f9-46a2-8fb8-5d14313e46fb}",
+                            "Id": "rewards_txt",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{0fc23758-1e7e-40d4-a113-70efe138d4ac}",
+                                    "RenderRotation": "0.000000 0.000000 0.000000 -1.000000"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{68165494-d4f4-4157-aaf5-951c12aae4d7}",
+                                    "Height": "24.000000",
+                                    "Width": "440.000000",
+                                    "MarginBottom": "14.000000",
+                                    "MarginRight": "-3.000000",
+                                    "MarginTop": "24.000000",
+                                    "MarginLeft": "72.000000"
+                                },
+                                {
+                                    "class": "gui::ITextComponent",
+                                    "uuid": "{878e2a01-02dc-4102-a458-5a495806555a}",
+                                    "_preset_": "H2_HeaderSubtitle",
+                                    "TrimmingMode": "Ellipsis",
+                                    "AlignmentY": "Center",
+                                    "ShadowColor": "000000C0",
+                                    "ShadowOffset": "1.000000 1.000000",
+                                    "DropShadow": "1",
+                                    "TextColorMul": "text_gray",
+                                    "Multiline": "0",
+                                    "_StylePreset_": "H2_HeaderSubtitle",
+                                    "TextValue": "&MQuestLog_Rewards&"
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{5e0ff7d6-36e3-4229-98ab-20b158262272}",
+                            "Id": "rewards",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{3d0c6d77-4ccd-41b5-a254-0ff2955f0313}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{843cd418-7ac9-4d75-8544-710de883e552}",
+                                    "Height": "96.000000",
+                                    "Width": "384.000000",
+                                    "SizeModeY": "AutoSizeToElements",
+                                    "MarginBottom": "4.000000",
+                                    "MarginTop": "4.000000",
+                                    "MarginLeft": "72.000000"
+                                },
+                                {
+                                    "class": "gui::IWrapPanelComponent",
+                                    "uuid": "{103b81c5-455f-4fb1-99c9-5b8bbd320cd7}",
+                                    "Wrap": "0",
+                                    "Orientation": "Vertical"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{04c1d952-34e6-44e9-9978-e9470f75cb8b}",
+                                    "Id": "tooltip_spacer",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{727e71a7-c4ad-4ff8-a9d7-e227c2e06ddd}",
+                                            "Opacity": "0.800000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{adaf6055-f27f-4f70-8ad6-5d4953a2da33}",
+                                            "ForceDefaultLayout": "1",
+                                            "Height": "16.000000",
+                                            "Width": "400.000000",
+                                            "MarginTop": "-20.000000"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{e2141689-b459-4aed-9a35-01f7e8014dbd}",
+                                            "ImageColorMul": "m_light_grey",
+                                            "Texture": "tooltip_spacer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{7a97fb4f-3c96-493f-9111-8868881a6da1}",
+                                    "Id": "guaranteed",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{1c81218b-3346-44c3-9edf-444435769b22}"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{c061de27-d331-44dd-b982-8905242d15a3}",
+                                            "Height": "96.000000",
+                                            "Width": "400.000000",
+                                            "SizeModeY": "AutoSizeToElements"
+                                        },
+                                        {
+                                            "class": "gui::IWrapPanelComponent",
+                                            "uuid": "{1426dd07-6ab8-4b0f-a377-4e3009950a75}"
+                                        },
+                                        {
+                                            "class": "gui::IElementGeneratorComponent",
+                                            "uuid": "{f911e9bd-722e-4273-831e-f52f99d22538}",
+                                            "DefaultSymbol": "quest_reward_item_symbol",
+                                            "FieldPath": "m_QuestRewards"
+                                        }
+                                    ],
+                                    "objects": [
+                                        {
+                                            "class": "gui::CSymbolRoot",
+                                            "uuid": "{17be6d7f-b009-4b0a-b86e-e6c2136d912b}",
+                                            "Id": "quest_reward_item_symbol",
+                                            "sub_symbol": "quest_reward_item_symbol"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{7d75b6a1-41cd-4685-ab1c-c5a10435f96f}",
+                            "Id": "btns",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{67759a21-6788-48f3-8833-1097ea24823d}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{4d372f6e-7785-401c-940f-8abb4d44b160}",
+                                    "Height": "40.000000",
+                                    "Width": "404.000000",
+                                    "MarginTop": "24.000000",
+                                    "MarginLeft": "68.000000"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{3a014363-d0aa-4887-afd0-24be7f0b7df6}",
+                                    "Id": "btn_accept3",
+                                    "sub_symbol": "legend_button",
+                                    "components": [
+                                        {
+                                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                            "class": "gui::ILayoutComponent",
+                                            "Width": "104.418755",
+                                            "MarginAnchorX": "Right"
+                                        },
+                                        {
+                                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                            "class": "gui::ILogicComponent",
+                                            "dyn_fields": [
+                                                {
+                                                    "name": "button_text",
+                                                    "type": "string",
+                                                    "value": "&ChallengeStart&"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                            "class": "gui::IButtonComponent",
+                                            "HoldTime": "0.001000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::CSymbolRoot",
+                                    "uuid": "{2f452136-6d88-429c-8bea-d2c960679aba}",
+                                    "Id": "btn_cancel3",
+                                    "sub_symbol": "legend_button",
+                                    "components": [
+                                        {
+                                            "target_component_uuid": "{0c9f72bc-a68f-445d-b86d-0f3cbc33b23c}",
+                                            "class": "gui::ILayoutComponent",
+                                            "Width": "107.014061",
+                                            "MarginTop": "-1.000000"
+                                        },
+                                        {
+                                            "target_component_uuid": "{1c2b8b2c-5e96-476d-8fa2-02fcd8c24729}",
+                                            "class": "gui::ILogicComponent",
+                                            "dyn_fields": [
+                                                {
+                                                    "name": "button_text",
+                                                    "type": "string",
+                                                    "value": "&Menu_Back&"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "target_component_uuid": "{8c8a073d-8e44-4a43-98c0-d781154253ff}",
+                                            "class": "gui::IButtonComponent",
+                                            "HoldTime": "0.001000",
+                                            "PressAction": "_ACTION_GUI_CANCEL"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{6534985c-86ad-4f3f-861b-9c5b5981b497}",
+                                    "Id": "msg_not_all_players_ready",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{ff3ecf89-f596-4c5d-abf4-4a1f91f4f01a}",
+                                            "RenderPivot": "0.535926 1.834592 0.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{1472df05-24b5-4935-961d-7405e8433bed}",
+                                            "Height": "46.898666",
+                                            "Width": "235.382202",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "MarginAnchorY": "Center",
+                                            "MarginAnchorX": "Right"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{e4e3c67d-62ec-4eed-b582-464d039ee7dd}",
+                                            "_preset_": "B2B_BodyTextBold",
+                                            "ShadowColor": "000000C0",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "text_white",
+                                            "LineSpacingAdjust": "-1.000000",
+                                            "ExactAutoSizeX": "0",
+                                            "_StylePreset_": "B2B_BodyTextBold",
+                                            "TextValue": "&BoardQuests_NotAllPlayersReadyMsg&"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{41f417ba-a87e-4146-9045-fe4b91e9f482}",
+                                    "Id": "msg_waiting_for_host",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{b9b4cfd6-36e2-49c8-83d9-640f476c8c35}",
+                                            "RenderPivot": "0.535926 1.834592 0.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{34aa90b8-e5f7-4144-8093-c3b43e01ce4a}",
+                                            "Height": "46.898666",
+                                            "Width": "235.382202",
+                                            "SizeModeY": "AutoSizeToComponents",
+                                            "MarginAnchorY": "Center",
+                                            "MarginAnchorX": "Right"
+                                        },
+                                        {
+                                            "class": "gui::ITextComponent",
+                                            "uuid": "{9fdec09b-b12a-4e21-b6af-40c464840305}",
+                                            "_preset_": "B2B_BodyTextBold",
+                                            "ShadowColor": "000000C0",
+                                            "ShadowOffset": "1.000000 1.000000",
+                                            "DropShadow": "1",
+                                            "TextColorMul": "text_white",
+                                            "LineSpacingAdjust": "-1.000000",
+                                            "ExactAutoSizeX": "0",
+                                            "_StylePreset_": "B2B_BodyTextBold",
+                                            "TextValue": "&BoardQuests_WaitForHostMsg&"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::IGroup",
+                            "uuid": "{bcbd3923-f688-4f35-9248-0e362f10c9ad}",
+                            "Id": "Board_panel_bg_texture",
+                            "components": [
+                                {
+                                    "class": "gui::IElementComponent",
+                                    "uuid": "{4b955fa7-06a2-4e56-838c-d575f3e92bc4}"
+                                },
+                                {
+                                    "class": "gui::ILayoutComponent",
+                                    "uuid": "{c4f7ea57-65a3-426d-a5f5-11b107b2b131}",
+                                    "ForceDefaultLayout": "1",
+                                    "Height": "976.943909",
+                                    "Width": "496.000000",
+                                    "SizeModeY": "Stretch",
+                                    "MarginBottom": "-64.000000",
+                                    "MarginAnchorX": "Center"
+                                },
+                                {
+                                    "class": "gui::IImageComponent",
+                                    "uuid": "{e2d34771-2e66-4f40-9d22-406b84130363}",
+                                    "Texture": "Board_panel_bg_texture"
+                                },
+                                {
+                                    "class": "gui::IMaterialEffectComponent",
+                                    "uuid": "{f9c9f76e-87fd-47d0-b787-f0e146afe5f2}",
+                                    "dissolve_out_step": "0.330000",
+                                    "dissolve_out_msk": "alpha_gradient",
+                                    "Effect": "dissolve"
+                                }
+                            ],
+                            "objects": [
+                                {
+                                    "class": "gui::IGroup",
+                                    "uuid": "{fe5716fd-1f74-46bf-a8bc-677352b06078}",
+                                    "Id": "grid_shadow",
+                                    "components": [
+                                        {
+                                            "class": "gui::IElementComponent",
+                                            "uuid": "{e52fe498-0f5e-4e37-89e8-623fe4d550ef}",
+                                            "RenderScale": "1.500000 1.250000 1.000000",
+                                            "RenderPivot": "0.500000 0.500000 0.000000"
+                                        },
+                                        {
+                                            "class": "gui::ILayoutComponent",
+                                            "uuid": "{ae4443ce-ef55-439e-ae85-42d14983c094}",
+                                            "Height": "265.000000",
+                                            "Width": "189.000000",
+                                            "SizeModeY": "Stretch",
+                                            "SizeModeX": "Stretch",
+                                            "MarginAnchorY": "Center",
+                                            "MarginAnchorX": "Center"
+                                        },
+                                        {
+                                            "class": "gui::IImageComponent",
+                                            "uuid": "{cd75f07a-c15d-4ea3-b7ed-5d9f307c824c}",
+                                            "Texture": "grid_shadow"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "gui::IGroup",
+            "uuid": "{806aef47-4e2b-4e0c-a396-452eca466234}",
+            "Id": "Board_quest_starting_tooltip",
+            "design_time": true,
+            "components": [
+                {
+                    "class": "gui::IElementComponent",
+                    "uuid": "{603bc9f3-2798-4193-8cd7-7bb3048543df}",
+                    "DesignTimeOnly": "1",
+                    "Visible": "0",
+                    "Opacity": "0.330000"
+                },
+                {
+                    "class": "gui::ILayoutComponent",
+                    "uuid": "{49dd1f99-aa35-4d0c-b471-710d7f49ed68}",
+                    "Height": "1084.000000",
+                    "Width": "1920.000000"
+                },
+                {
+                    "class": "gui::IImageComponent",
+                    "uuid": "{54ae4ce7-da19-497c-b7c4-01502f6a48d2}",
+                    "Texture": "Board_quest_starting_tooltip"
+                }
+            ]
+        }
+    ],
+    "anims": [
+        {
+            "uuid": "{0cab6b74-e03d-496c-9d5e-cba5e815ba68}",
+            "name": "popup_appear",
+            "frames": 60,
+            "targets": [
+                {
+                    "path": "./board_quest",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./board_quest/group1",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_x",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.120000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.670000 0.000000",
+                                                "ease_out": "0.330000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.670000 0.000000",
+                                                "ease_out": "0.330000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "float",
+                                    "name": "RenderScale_y",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.120000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.670000 0.000000",
+                                                "ease_out": "0.330000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.670000 0.000000",
+                                                "ease_out": "0.330000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./board_quest/group1/Board_panel_bg_texture",
+                    "components": [
+                        {
+                            "class": "gui::IMaterialEffectComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "dissolve_out_value",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.330000 0.000000",
+                                                "ease_out": "0.670000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "uuid": "{d94a6a24-0e4e-43c1-a342-8d206b1fb83b}",
+            "name": "MenuCoopMissionBriefAnimation",
+            "frames": 60,
+            "targets": [
+                {
+                    "path": "./group",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 30.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/diff",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 20.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/group1",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "988.747986",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "1008.748047",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/group1/goals/tooltip_spacer1",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Width",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "300.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 20.0,
+                                            "v": "404.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/group2",
+                    "components": [
+                        {
+                            "class": "gui::IElementComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "Opacity",
+                                    "keyframes": [
+                                        {
+                                            "t": 20.0,
+                                            "v": "0.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.560000 0.586667",
+                                                "ease_out": "0.573333 0.593333"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "1.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginTop",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "122.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "115.000000",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/img",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "271.047302",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 20.0,
+                                            "v": "304.047302",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.533262 0.000000",
+                                                "ease_out": "0.439560 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/title_header_text",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1009.780029",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "1049.780273",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "./group/title_sub_text",
+                    "components": [
+                        {
+                            "class": "gui::ILayoutComponent",
+                            "index": 0,
+                            "tracks": [
+                                {
+                                    "type": "float",
+                                    "name": "MarginLeft",
+                                    "keyframes": [
+                                        {
+                                            "t": 0.0,
+                                            "v": "1019.869995",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        },
+                                        {
+                                            "t": 40.0,
+                                            "v": "1049.867188",
+                                            "ease": {
+                                                "mode": "Bezier",
+                                                "ease_in": "0.500000 0.000000",
+                                                "ease_out": "0.500000 1.000000"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "anims_order": [
+        "{d94a6a24-0e4e-43c1-a342-8d206b1fb83b}",
+        "{0cab6b74-e03d-496c-9d5e-cba5e815ba68}"
+    ]
+}

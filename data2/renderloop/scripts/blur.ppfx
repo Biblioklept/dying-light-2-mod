@@ -1,0 +1,268 @@
+import "EngineDefs.mth"
+import "common.ppfx"
+import "screen_drops.ppfx"
+import "depth_of_field.ppfx"
+import "motion_blur.ppfx"
+import "blur_game.ppfx"
+
+extern int UPSCALER;
+
+sub blur_resolve(string s_mask = "", string s_blr = "", string s_dst = "", bool resolve_on = true)
+{
+    SetRenderTargets(s_dst, "read_only_ds");
+        SetBuffer(USERMAP_TMP_0, s_mask);
+        SetBuffer(USERMAP_TMP_1, s_blr);
+            string s_variant = resolve_on ? "$resolve" : "";
+            Mesh("tri_screen.msh","dof_composite" + s_variant + ".mat", "std");
+}
+
+sub previous_screen()
+{
+	If("f_pp_prv_lrp")
+	{
+		PushMarker("Previous Blend");
+			SetRenderTargets(S_PP_HDR_A, "");
+				Mesh("tri_screen.msh", "prv.mat", "std");
+		PopMarker();
+	}
+
+    PushMarker("Copy Upscaled Buffer 2 PRV");
+        //IMPORTANT!!!!!!!!!!!!!
+        //Needs to be after previous blend effect 
+        //Needs to be after upscalers(so reflection reflect upscaled, antialiased screen)
+        //Needs to before blurs
+        use copy_buffer(s_src = S_PP_HDR_A, s_dst = S_HDR_PRV, variant = COPY_FILTER);//Anti aliased screen copy to PRV buffer(needs to be after upscalers) //#To DO: ASYNC Copied together with other PRV COPIES at the end of the frame
+	PopMarker();
+}
+
+sub screen_shakes(string s_inout = "")
+{
+    If("f_pp_aberration_on")
+    {
+        PushMarker("Screen Shake Abberation"); 
+            string s_shake_abr_blr_tmp = "BLR_ABR_2_RG11B10F_A";
+            BufferScreenFormat(s_shake_abr_blr_tmp, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+
+            use copy_buffer(s_src = s_inout, s_dst = s_shake_abr_blr_tmp, variant = COPY_FILTER);  
+
+            SetRenderTargets(s_inout, "");
+                SetBuffer(USERMAP_TMP_0, s_shake_abr_blr_tmp);
+                    Mesh("tri_screen.msh", "screen_shake$aberration.mat", "std");
+            Release(s_shake_abr_blr_tmp);
+        PopMarker();
+    }
+
+    If("f_pp_shake_on")
+    {
+        PushMarker("Screen Shake"); 
+            string s_shake_blr_tmp = "BLR_SHK_2_RG11B10F_A";
+            BufferScreenFormat(s_shake_blr_tmp, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+            
+            use copy_buffer(s_src = s_inout, s_dst = s_shake_blr_tmp, variant = COPY_FILTER);         
+
+            SetRenderTargets(s_inout, "");
+                SetBuffer(USERMAP_TMP_0, s_shake_blr_tmp);
+                    Mesh("tri_screen.msh", "screen_shake.mat", "std");
+
+            Release(s_shake_blr_tmp);
+        PopMarker();
+    }
+}
+
+sub radial_blur_mask(string s_mask = "")
+{
+    If("f_pp_blur_mask_radial_opacity")
+    {
+        PushMarker("Radial Blur Mask"); 
+            Mesh("tri_screen.msh", "stencil_clear_mask.mat", "std");
+        PopMarker();
+    }
+}
+
+sub radial_blur(string s_inout = "", string s_mask = "")
+{
+    If("f_pp_blur_radial_on")
+    {
+        PushMarker("Radial Blur"); 
+            string s_radial_blr_tmp = "BLR_RAD_2_RG11B10F_A";
+            BufferScreenFormat(s_radial_blr_tmp, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+
+            use copy_buffer(s_src = s_inout, s_dst = s_radial_blr_tmp, variant = COPY_FILTER);  
+
+            SetRenderTargets(s_inout + " " + s_mask, "read_only_ds");
+                SetBuffer(USERMAP_TMP_0, s_radial_blr_tmp);
+                    Mesh("tri_screen.msh", "stencil_clear_mask.mat", "std");
+            Release(s_radial_blr_tmp);
+        PopMarker();
+    }
+}
+
+sub blur_near_msks(string s_msk_near_2 = "")
+{
+    string s_msk_near_2_tmp = "BLR_NEAR_MSK_2_R8_TMP";
+    BufferScreenFormat(s_msk_near_2_tmp, 2, "R8_UNORM", S_BUFFER_FLAGS);
+
+    use dof_near_mask(s_msk_near_2 = s_msk_near_2_tmp);
+
+    SetRenderTargets(s_msk_near_2_tmp, "read_only_ds");
+
+    use radial_blur_mask();
+        
+    use screen_drops_blur_mask();
+
+    use blur_mask_game(s_msk_near_2 = s_msk_near_2_tmp);
+
+    BufferScreenFormat(s_msk_near_2, 2, "R8_UNORM", S_BUFFER_FLAGS);
+
+    PushMarker("Blur Near: Blur Mask");
+        SetRenderTargets("2_SCENE_R11G11B10", "");//Must be there to give RT_PARAMS Proper values to compute
+        use blur_box_compute(s_src = s_msk_near_2_tmp, s_dst = s_msk_near_2);
+
+        Release(s_msk_near_2_tmp);
+    PopMarker();
+}
+
+sub blur_near_apply(string s_scene_2 = "", string s_msk_near_2 = "", string s_scene_2_blured = "")
+{
+    If("i_pp_blurs_bokeh_on", "==", "1.0")
+    {
+        PushMarker("Blur Near: Bokeh");
+            string s_bokehs_tmp_2 = "BOKEHS_TMP_2_RG11B10F";
+            BufferScreenFormat(s_bokehs_tmp_2, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+            use bokeh_blur(s_out = s_bokehs_tmp_2, s_blr_msk = s_msk_near_2, s_clr = s_scene_2);
+
+            //Smooth out bokeh borders
+            use copy_buffer(s_src = s_bokehs_tmp_2, s_dst = s_scene_2, variant = COPY_4_SMOOTH);
+            Release(s_bokehs_tmp_2);
+        PopMarker();
+    }
+    Else()
+    {
+        use blur_resolve(s_mask = s_msk_near_2, s_blr = s_scene_2_blured, s_dst = s_scene_2, resolve_on = false);
+    }
+}
+
+sub blur_near(string s_scene_2 = "", string s_scene_2_blured = "", string s_out_buf = "")
+{
+    If("i_pp_blurs_near_on")
+    {
+        PushMarker("Blur Near");
+            string s_msk_near_2 = "BLUR_NEAR_MSK_2_R8";
+            use blur_near_msks(s_msk_near_2 = s_msk_near_2);
+
+            use blur_near_apply(s_scene_2 = s_scene_2, s_scene_2_blured = s_scene_2_blured, s_msk_near_2 = s_msk_near_2);
+
+            use screen_shakes(s_inout = s_scene_2);
+
+            use radial_blur(s_inout = s_scene_2, s_mask = s_msk_near_2);
+
+            use screen_drops_apply_color(s_out = s_scene_2);
+
+            use blur_resolve(s_mask = s_msk_near_2, s_blr = s_scene_2, s_dst = s_out_buf);
+
+            Release(s_msk_near_2);
+        PopMarker();
+    }
+}
+
+sub dof_far_blurs(string s_msk_far = "", string s_scene_2 = "", string s_out_buf = "")
+{
+    string s_msk_far_2 = "DOF_FAR_2_R8_A";
+    string s_clr_far_2_tmp = "DOF_FAR_2_RG11B10F_TMP";
+
+    PushMarker("DOF Far: Downsample Msk");
+        BufferScreenFormat(s_msk_far_2, 2, "R8_UNORM", S_BUFFER_FLAGS);
+        use copy_buffer(s_src = s_msk_far, s_dst = s_msk_far_2, variant = COPY_FILTER);
+    PopMarker(); 
+
+    PushMarker("DOF Far: Compute Bokehs");   
+        BufferScreenFormat(s_clr_far_2_tmp, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+
+        //Bokehs Still used for FAR DOF on low end, we need to find a cheaper alternative that doesnt produce undesired halo
+        use bokeh_blur(s_out = s_clr_far_2_tmp, s_blr_msk = s_msk_far_2, s_clr = s_scene_2, far_on = true);
+        Release(s_msk_far_2);
+    PopMarker();
+
+    PushMarker("DOF Far: Resolve");   
+        use blur_resolve(s_mask = s_msk_far, s_blr = s_clr_far_2_tmp, s_dst = s_out_buf);
+
+        Release(s_clr_far_2_tmp);
+    PopMarker();
+}
+
+sub dof_far(string s_scene_2 = "", string s_out_buf = "")
+{
+    string s_msk_far = "DOF_FAR_1_R8";
+    If("f_pp_blur_far")
+    {
+        PushMarker("DOF Far");
+            BufferScreenFormat(s_msk_far, 1, "R8_UNORM", S_BUFFER_FLAGS);
+
+            use dof_far_mask(s_msk_far = s_msk_far);
+            
+            use dof_far_blurs(s_msk_far = s_msk_far, s_scene_2 = s_scene_2, s_out_buf = s_out_buf);
+
+            Release(s_msk_far);
+        PopMarker();
+    }
+}
+
+sub blur_downsample_scene_release(string s_scene_2 = "", string s_scene_2_blured = "")
+{
+    Release(s_scene_2);
+
+    If("i_pp_blurs_bokeh_on", "==", "0.0")
+    {
+        Release(s_scene_2_blured);
+    }
+}
+
+sub blur_downsample_scene(string s_in_buf = "", string s_scene_2 = "", string s_scene_2_blured = "")
+{
+    PushMarker("Scene Downsample");
+        BufferScreenFormat(s_scene_2, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+        use copy_buffer(s_src = s_in_buf, s_dst = s_scene_2, variant = COPY_4_SMOOTH);
+        
+        If("i_pp_blurs_bokeh_on", "==", "0.0")
+        {
+            //Budget scene bluring (no bokehs)
+            string s_scene_4_a = "4_SCENE_R11G11B10_A";
+            string s_scene_4_b = "4_SCENE_R11G11B10_B";   
+
+            BufferScreenFormat(s_scene_4_a, 4, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+                use copy_buffer(s_src = s_scene_2, s_dst = s_scene_4_a, variant = COPY_4_SMOOTH);
+
+            //Gausian filter to eliminate aliasing and enhance blur quality
+            BufferScreenFormat(s_scene_4_b, 4, "R11G11B10_FLOAT", S_BUFFER_FLAGS);    
+                use blur_gauss_vh(s_temp = s_scene_4_b, s_dst = s_scene_4_a);
+            Release(s_scene_4_b);
+
+            BufferScreenFormat(s_scene_2_blured, 2, "R11G11B10_FLOAT", S_BUFFER_FLAGS);
+                use copy_buffer(s_src = s_scene_4_a, s_dst = s_scene_2_blured, variant = COPY_4);
+            Release(s_scene_4_a);
+        }
+    PopMarker();
+}
+
+sub blurs()
+{
+    use previous_screen();//Needs to before blurs
+
+    If("f_pp_blurs_on")
+    {
+        PushMarker("Blurs");
+            string s_scene_2 = "2_SCENE_R11G11B10";
+            string s_scene_2_blured = "2_SCENE_BLURED_R11G11B10";
+
+            use blur_downsample_scene(s_in_buf = S_PP_HDR_A, s_scene_2 = s_scene_2, s_scene_2_blured = s_scene_2_blured);
+
+            use dof_far(s_scene_2 = s_scene_2, s_out_buf = S_PP_HDR_A);
+            
+            use blur_near(s_scene_2 = s_scene_2, s_scene_2_blured = s_scene_2_blured, s_out_buf = S_PP_HDR_A);
+
+            use blur_downsample_scene_release(s_scene_2 = s_scene_2, s_scene_2_blured = s_scene_2_blured);
+        PopMarker();
+    }
+
+	use motion_blur(s_out = S_PP_HDR_A);
+}

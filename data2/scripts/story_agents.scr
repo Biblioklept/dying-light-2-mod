@@ -1,0 +1,5475 @@
+/// AgentType(s) - "Fame" or "Agent"
+
+sub main()
+{	
+	//ReplaceCategoryText("EGuiShopSubCategory", "&text&");   // replaces default &CategoryType_[EGuiShopSubCategory]& text with custom one
+	ReplaceCategoryText("Weapons", "&CategoryType_Weapons& / &CategoryType_Outfit&");
+	ReplaceCategoryText("Accessories", "&CategoryType_Consumables& / &CategoryType_Equipment&");
+	ReplaceCategoryText("Appearance", "&Categorytype_Appearance& / &Mod_CharmCat&");
+	
+	Agent(StoryAgent_DLC1)
+    {	
+		MenuInfo("&MMap_OperaVendor&", "&hall_vendor_desc&", "icon_opera_token_grey"); //name, desc, icon
+		
+		NoBounties();
+		NoInfoPanel();
+        NoDetailsPanel();
+		ChapterColor("e1ba6d");
+		
+		ReplaceCategoryText("CustomAgent_6", "&golden_gladiator_appearance_n&"); 
+		ReplaceCategoryText("CustomAgent_1", "&CategoryType_Weapon&"); 
+		ReplaceCategoryText("CustomAgent_2", "&CategoryType_Appearance&"); 
+		ReplaceCategoryText("CustomAgent_3", "&CategoryType_Outfit&"); 
+		ReplaceCategoryText("CustomAgent_4", "&CategoryType_Craftplan&"); 
+		ReplaceCategoryText("CustomAgent_5", "&Mod_CharmCat&"); 
+		
+		
+		
+		//resources to show in menu
+		Resource("Cash");
+		Resource("Token_OperaToken");
+		Resource("Token_MutationSamples");
+		
+		AgentType("Fame");
+						
+		Level(45)
+		{
+		
+			Item("golden_gladiator_shoes", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_01_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}
+		
+		Level(44)
+		{
+			Item("outfit_opera_mask_paint_a", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Epic_Weapons_Opera", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Epic_Weapons_Opera");
+				SortIndex(0);
+			}
+		}		
+		
+		Level(43)
+		{
+			Item("outfit_ren_mask_wrestler_paint_a", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+
+		Level(42)
+		{
+			Item("outfit_face_bandana_wrestler_c", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+
+		Level(41)
+		{
+			Item("outfit_ren_mask_wrestler_paint_n", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+
+		Level(40)
+		{
+			Item("golden_gladiator_bracelets", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Opera", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Opera");
+				SortIndex(0);
+			}
+		}	
+
+		Level(39)
+		{
+			Item("outfit_opera_mask_paint_b", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_01_C", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+
+		Level(38)
+		{
+			Item("outfit_ren_mask_wrestler_paint_b", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Epic_Weapons_Babel", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Epic_Weapons_Babel");
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Sinner_01_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}		
+
+		Level(37)
+		{
+			Item("outfit_opera_guard_mask_tier_1", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+
+		Level(36)
+		{	
+			Outfit("Opera_Wrestler_01_D", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}		
+
+		Level(35)
+		{
+			Item("golden_gladiator_pants", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+
+		}				
+		
+		Level(34)
+		{
+			Item("outfit_opera_mask_paint_c", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}		
+
+		Level(33)
+		{
+			Item("outfit_ren_mask_wrestler_paint_d", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+
+		Level(32)
+		{
+			Item("outfit_ren_mask_wrestler_paint_o", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Babel", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Babel");
+				SortIndex(0);
+			}
+		}
+		Level(31)
+		{
+			Item("outfit_ren_mask_wrestler_paint_e", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("sinners_mask_a", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("sinners_mask_b", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_02_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}
+		Level(30)
+		{
+			Item("golden_gladiator_gloves", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("Epic_Weapons_Prince", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Epic_Weapons_Prince");
+				SortIndex(0);
+			}
+			Item("outfit_ren_mask_wrestler_wooden_a", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(29)
+		{
+			Item("outfit_opera_mask_paint_d", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}
+		Level(28)
+		{
+			Item("outfit_ren_mask_wrestler_paint_f", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(27)
+		{
+			Item("outfit_opera_guard_mask_tier_2", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_02_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Item("outfit_ren_mask_wrestler_paint_w", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}		
+		Level(26)
+		{
+			Item("outfit_face_bandana_wrestler_d", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(25)
+		{
+			Item("outfit_ren_mask_wrestler_paint_g", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}
+		Level(24)
+		{
+			Item("outfit_opera_mask_paint_e", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Prince", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Prince");
+				SortIndex(0);
+			}
+			Item("outfit_ren_mask_wrestler_paint_v", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("vendor_mask_2", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}
+		Level(23)
+		{
+			Item("golden_gladiator_mask", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_03_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(22)
+		{
+			Item("outfit_ren_mask_wrestler_paint_h", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Epic_Weapons_Harran", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Epic_Weapons_Harran");
+				SortIndex(0);
+			}
+			Item("rais_mask", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}		
+		Level(21)
+		{
+			Item("outfit_face_bandana_wrestler_h", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}		
+		Level(20)
+		{
+			Item("outfit_face_bandana_wrestler_e", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Premium_04_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(19)
+		{
+			Outfit("Opera_Wrestler_03_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(18)
+		{
+			Item("golden_gladiator_jacket", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("vendor_mask_3", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(17)
+		{
+			Item("outfit_opera_guard_mask_tier_3", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Premium_01_D", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(16)
+		{
+			Item("outfit_ren_mask_wrestler_paint_j", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Harran", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Harran");
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Premium_04_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Wrestler_Premium_03_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Wrestler_Premium_02_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Wrestler_Premium_01_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Wrestler_Premium_01_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(15)
+		{
+			Item("outfit_face_bandana_wrestler_i", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_03_C", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Item("outfit_ren_mask_wrestler_paint_r_b", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(14)
+		{
+			Item("outfit_face_bandana_wrestler_f", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Epic_Weapons_Forge", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Epic_Weapons_Forge");
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Forge_01_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Item("outfit_face_bandana_wrestler_forge", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+		}	
+		Level(13)
+		{
+			Item("outfit_ren_mask_wrestler_paint_k", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_Premium_01_C", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(12)
+		{
+			Item("outfit_ren_mask_wrestler_paint_r", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("vendor_mask_4", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}	
+		}	
+
+		Level(11)
+		{
+			Outfit("Opera_Wrestler_04_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		Level(10)
+		{
+			Item("outfit_ren_mask_wrestler_paint_l", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Guard_Tier1_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Guard_Tier1_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Guard_Tier2_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Guard_Tier3_A", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+			Outfit("Opera_Guard_Tier3_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+				Unique();
+			}
+		}	
+		
+		Level(9)
+		{
+			Item("outfit_ren_mask_wrestler_paint_s", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}	
+		}	
+		
+			
+		Level(8)
+		{
+			Item("outfit_face_bandana_wrestler_g", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Forge", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Forge");
+				SortIndex(0);
+			}
+		}	
+		Level(7)
+		{
+			Item("outfit_ren_mask_wrestler_paint_m", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Wrestler_04_B", "CustomAgent_2")
+			{
+				Cost("Token_OperaToken", 4);
+				SortIndex(0);
+			}
+		}	
+		Level(6)
+		{
+			Item("outfit_opera_mask_paint_player", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}
+			Outfit("Opera_Golden_Gladiator", "CustomAgent_6")
+			{
+				Cost("Token_OperaToken", 8);
+				SortIndex(0);
+				Unique();
+			}
+			Item("vendor_mask_5", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 2);
+				SortIndex(0);
+			}	
+		}	
+		Level(5)
+		{
+			Item("severus_mask", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 6);
+				SortIndex(0);
+			}
+			Item("vendor_mask", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}	
+		}	
+		Level(2)
+		{
+			Item("freak_champion_mask_1", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("freak_champion_mask_2", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("freak_champion_mask_3", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+			Item("freak_champion_mask_4", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 3);
+				SortIndex(0);
+			}
+		}
+		
+		Level(1)
+		{
+			Item("outfit_skullface_helmet_normal", "CustomAgent_3")
+			{
+				Cost("Token_OperaToken", 6);
+				SortIndex(0);
+			}
+			Item("Platinum_Weapons_Guards", "CustomAgent_1")
+			{
+				Cost("Token_MutationSamples", 1000);
+				
+				UseLoot("Platinum_Weapons_Guards");
+				SortIndex(0);
+			}
+			Item("Craftplan_PlayerShield_FreezeMod_Random", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_FreezeMod_SpecialAttack", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_FreezeMod_Throw", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_ShockMod_Random", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_ShockMod_SpecialAttack", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_HeatMod_SpecialAttack", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_HeatMod_Throw", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_ToxicMod_Random", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+			Item("Craftplan_PlayerShield_ToxicMod_Throw", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_OperaToken", 6);
+				SortIndex(4);
+			}
+		}
+    }
+	
+	Agent(StoryAgent_Nightrunner)
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Token_NightrunnerToken", 1);
+        }
+		
+		MenuInfo("&Agent_Nightrunner&", "&Agent_Nightrunner_desc&"); //name, desc
+		ChaptersMenuInfo("&Bounties_tile1_header&", "&MAgent_Nightrunner_TooltipHeader&", "&magent_nightrunner_chaptersscreen&"); //header, subheader, fluff, movie, movie_still_image
+		ChapterColor("D1CFFF");
+		MapCoords([1178.594604, 37.869213, -148.930145]);
+		
+		DailyBountiesLimit(5, "Coop", 1);
+		
+		//resources to show in menu
+		//Resource("Cash");
+		Resource("Token_NightrunnerToken");
+		Resource("Token_MutationSamples");
+		
+		TutorialName("Tutorial_Chapter1");
+
+		BackgroundTexture("menu_background_ch1");
+
+		// Agent rank.
+		AgentIconRegular("icon_nightrunner_token_grey");
+
+		// Rank icons
+		RankRegularTexture("agent_rank_regular");
+		RankPrestigeTexture("agent_rank_prestige");
+		RankLevelRequiredForPrestigeTexture(10);
+		RankPrestigeProgressbarColor("e5cb6a");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_ch1");
+		BountiesDailyDefaultForegroundIcon("bounty_Mission_Ch1");
+		BountiesIconForegroundColorTracked("ebdc8f");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bigmsg_reward_agentxp_chapter1");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_ch1");
+		HudBigmsgXpIcon("bigmsg_reward_agentxp_chapter1");
+		HudRankRegularTextureLevelUp("RankUp_agent_bigmsg_icon");
+		HudRankPrestigeTextureLevelUp("RankUp_agent_elite_bigmsg_icon");
+
+		//Icon shown next to objective in chapters menu
+		AgentBountyIcon("map_agent_chapter1");
+		
+		Level(1)
+		{
+			//WEEKLY BOUNTY 1 UNLOCK
+			
+			//WARNING: there are some replacements from what it displays
+			//Weapons -> "&CategoryType_Weapons& / &CategoryType_Outfit&"
+			//Accessories -> "&CategoryType_Consumables& / &CategoryType_Equipment&"
+			//Appearance -> "&Categorytype_Appearance& / &Mod_CharmCat&"
+			
+			//Item("item_id", "EGuiShopSubCategory")
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{			
+				//Price(1000);
+						
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 150);				
+				SortIndex(1);
+			}
+			
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 400);
+				SortIndex(2);
+			}
+			
+			Item("Nightrunners_Craft_Bundle", "Resources")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 300);
+				SortIndex(0);
+			}
+		}
+
+		Level(2)
+		{
+			Item("Chapter1_Regular_Mission_Ticket", "Resources")
+			{
+				Cost("Token_MutationSamples", 300);
+				Featured("Chapter1_Regular_Mission_Ticket"); //show in the bounties tab also with count
+			}
+			
+			Item("Epic_Bruiser_Gear", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 500);
+				
+				UseLoot("Chapter1_OutfitsViolet_Bruiser");				
+				SortIndex(6);
+			}
+			
+			Item("Craftplan_Mine_Electric", "Accessories")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 2000);
+				SortIndex(4);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Craftplan_charm_rubberduck", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 1000);
+				SortIndex(1);				
+			}
+			
+			Item("Epic_Weapon_1hBladed", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 500);
+				
+				UseLoot("Chapter1_1hBladed_Epic");
+				
+				SortIndex(2);
+			}
+			
+			Item("Nightrunners_Infection_Bundle", "Accessories")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 300);
+				SortIndex(0);
+			}
+		}
+		
+		Level(4)
+		{
+			Item("Craftplan_charm_nightrunnerhook", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 1000);
+				SortIndex(2);
+			}
+			
+			Item("Nightrunners_Safety_Bundle", "Accessories")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 300);
+				SortIndex(1);
+			}
+		}
+		
+		Level(5)
+		{
+			//WEEKLY BOUNTY 2 UNLOCK
+			
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 600);
+				SortIndex(3);
+			}
+		}	
+		
+		Level(6)
+		{
+			ToolSkin("ToolSkin_Paraglider_Cobra", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 1200);	
+				SortIndex(3);
+			}
+			
+			Item("Nightrunners_Healing_Bundle", "Accessories")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 400);
+				SortIndex(2);
+			}
+		}
+		
+		Level(7)
+		{
+			Item("Artifact_Weapon_1hBladed", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Chapter1_1hBladed_Artifact");
+				SortIndex(3);
+			}
+			
+			Item("Artifact_Bruiser_Gear", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 600);
+				
+				UseLoot("Chapter1_OutfitsOrange_Bruiser");
+				SortIndex(7);
+			}
+		}
+		
+		Level(8)
+		{
+			Outfit("E3_2019", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 2000);
+				SortIndex(5);
+			}
+		}
+		
+		Level(9)
+		{
+			//WEEKLY BOUNTY 3 UNLOCK
+			
+			Item("Chapter1_Elite_Mission_Ticket", "Resources")
+			{
+				Cost("Token_MutationSamples", 600);
+				Featured("Chapter1_Elite_Mission_Ticket"); //show in the bounties tab also with count
+			}
+			
+			Item("wpn_1hs_knuckle_duster_d_fpp_nightrunnersclaws", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+			
+			Item("Nightrunners_Crystal_Bundle", "Resources")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 400);
+				SortIndex(4);
+			}
+			
+		}
+		
+		Level(10)
+		{
+			
+			Item("Platinum_Weapon_1hBladed", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 1200);
+				
+				UseLoot("Chapter1_1hBladed_Platinum");
+				SortIndex(5);
+			}
+			
+			Outfit("E3_2019_Elite", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 15);
+				Cost("Token_MutationSamples", 15000);
+				SortIndex(6);
+			}
+			
+			ToolSkin("ToolSkin_Paraglider_NightCreatures_Bat", "Appearance")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 10);
+				Cost("Token_MutationSamples", 10000);
+				SortIndex(4);
+			}
+		}
+		
+		Level(12)
+		{
+			Item("Nightrunners_VisionPotions_Bundle", "Accessories")
+			{
+				Cost("Token_NightrunnerToken", 1);
+				Cost("Token_MutationSamples", 400);
+				SortIndex(2);
+			}
+		}
+		
+		Level(15)
+		{
+			Item("Craftplan_Potion_NightrunnerVision", "Accessories")
+			{
+				Unique();
+				Cost("Token_NightrunnerToken", 3);
+				Cost("Token_MutationSamples", 2000);
+				SortIndex(4);
+			}
+			
+			Item("NocturnalWeapons_Unique", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				UseLoot("Chapter1_NightWeapons_Unique");
+				SortIndex(5);
+			}
+
+		}
+		Level(20)
+		{
+			Item("wpn_15hs_b_fpp_redkatana", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+			
+			Item("NocturnalWeapons_Artifact", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 2);
+				Cost("Token_MutationSamples", 2000);
+				
+				UseLoot("Chapter1_NightWeapons_Arifact");
+				SortIndex(5);
+			}
+		}
+		Level(25)
+		{
+			Item("NocturnalWeapons_Legendary", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 3);
+				Cost("Token_MutationSamples", 2500);
+				
+				UseLoot("Chapter1_NightWeapons_Legendary");
+				SortIndex(5);
+			}
+		}
+		Level(30)
+		{
+			Item("wpn_15hs_b_fpp_redkatana_Exotic", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 5);
+				Cost("Token_MutationSamples", 2500);
+				
+				SortIndex(8);				
+			}
+		}
+		Level(35)
+		{
+			Item("NocturnalWeapons_Exotic", "Weapons")
+			{
+				Cost("Token_NightrunnerToken", 5);
+				Cost("Token_MutationSamples", 3000);
+				
+				UseLoot("Chapter1_NightWeapons_Exotic");
+				SortIndex(8);				
+			}
+		}
+    }
+	
+	Agent(StoryAgent_Chapter2)
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Token_HuntersToken", 1);
+        }
+		
+		MenuInfo("&Agent_Chapter2&", "&Agent_Chapter2_desc&"); //name, desc
+		ChaptersMenuInfo("&Bounties_tile2_header&", "&magent_chapter2_tooltipheader&", "&magent_chapter2_fluff&");
+		ChapterColor("f3f20e");
+		MapCoords([1724.041870, 4.787152, -454.234070]);
+		
+		DailyBountiesLimit(5, "Coop", 1);
+		
+		TutorialName("Tutorial_Chapter2");
+
+		BackgroundTexture("menu_background_ch2");
+
+		// Agent rank.
+		AgentIconRegular("token_ch2");
+
+		// Rank icons.
+		RankRegularTexture("agent_Chapter2_rank_regular");
+		RankPrestigeTexture("agent_Chapter2_rank_elite");
+		RankLevelRequiredForPrestigeTexture(10);
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_ch2");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_ch2");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_ch2");
+		BountiesDailyDefaultForegroundIcon("bounty_mission_ch2");
+		BountiesIconForegroundColorTracked("f3f20e");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bigmsg_reward_agentxp_ch2");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_ch2");
+		HudBigmsgXpIcon("bigmsg_reward_agentxp_ch2");
+		HudRankRegularTextureLevelUp("RankUp_agent_bigmsg_r_ch2");
+		HudRankPrestigeTextureLevelUp("RankUp_agent_bigmsg_e_ch2");
+		
+		//resources to show in menu
+		Resource("Token_HuntersToken");
+		Resource("Token_MutationSamples");
+
+		//Icon shown next to objective in chapters menu
+		AgentBountyIcon("map_agent_chapter2");
+		
+		Level(1)
+		{
+			//WARNING: there are some replacements from what it displays
+			//Weapons -> "&CategoryType_Weapons& / &CategoryType_Outfit&"
+			//Accessories -> "&CategoryType_Consumables& / &CategoryType_Equipment&"
+			//Appearance -> "&Categorytype_Appearance& / &Mod_CharmCat&"
+			
+			//Item("item_id", "EGuiShopSubCategory")
+			
+			//WEEKLY BOUNTY 1 UNLOCK
+			
+			Item("Hunters_Arrow_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 300);				
+				SortIndex(1);
+			}
+			Item("Hunters_Craftpart_Bundle", "Resources")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 300);				
+				SortIndex(1);
+			}
+		}
+
+		Level(2)
+		{
+			Item("Chapter2_Regular_Mission_Ticket", "Resources")
+			{
+				Cost("Token_MutationSamples", 300);
+				Featured("Chapter2_Regular_Mission_Ticket"); //show in the bounties tab also with count
+			}
+			Item("Hunters_Bolt_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 300);				
+				SortIndex(1);
+			}
+			Item("Hunters_Elemental_Arrow_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			Item("Epic_Ranged_Gear", "Weapons")
+			{
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 500);
+				
+				UseLoot("Chapter2_OutfitsViolet_Ranged");				
+				SortIndex(6);
+			}
+			Item("Craftplan_Shrapnel_Trap", "Accessories")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 2000);
+				SortIndex(4);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Craftplan_charm_lucky_feathers", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1000);
+				SortIndex(2);
+			}
+			
+			Item("Hunters_Elemental_Bolt_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			Item("Epic_Weapon_1hBlunt", "Weapons")
+			{
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 500);
+				
+				UseLoot("Chapter2_1hBlunt_Epic");				
+				SortIndex(6);
+			}
+			Item("Hunters_Throwing_Knives_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 300);				
+				SortIndex(1);
+			}
+		}
+		
+		Level(4)
+		{
+			//WEEKLY BOUNTY 2 UNLOCK
+			
+			Item("wpn_2hp_bow_ballista", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+			
+			Item("Hunters_Ballista_Arrow_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			Item("Hunters_Traps_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+		}
+		
+		Level(5)
+		{
+			Item("Hunters_Infecting_Arrow_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			Item("Hunters_Impact_Bolt_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			
+			Item("Craftplan_charm_voletail_jaw", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1000);
+				SortIndex(2);
+			}
+		}	
+		
+		Level(6)
+		{
+			ToolSkin("ToolSkin_Paraglider_HunterNormal", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1200);	
+				SortIndex(3);
+			}
+			
+			Item("wpn_1hb_mace_c_fpp_blastmace", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+			
+			Item("Hunters_Booster_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+		}
+		
+		Level(7)
+		{
+			Item("Artifact_Weapon_1hBlunt", "Weapons")
+			{
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 800);
+				
+				UseLoot("Chapter2_1hBlunt_Artifact");				
+				SortIndex(6);
+			}
+			Item("Artifact_Ranged_Gear", "Weapons")
+			{
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 600);
+				
+				UseLoot("Chapter2_OutfitsOrange_Ranged");				
+				SortIndex(6);
+			}
+
+			Item("wpn_2hs_polearm_c", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1200);
+				
+				SortIndex(6);
+			}
+		}
+		
+		Level(8)
+		{
+			//WEEKLY BOUNTY 3 UNLOCK
+			
+			Outfit("Hunter_Basic", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 2000);
+				SortIndex(5);
+			}
+			
+			Item("wpn_1hb_stk_e_fpp_crushtonfa", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+		}
+		
+		Level(9)
+		{
+			Item("Chapter2_Elite_Mission_Ticket", "Resources")
+			{
+				Cost("Token_MutationSamples", 600);
+				Featured("Chapter2_Elite_Mission_Ticket"); //show in the bounties tab also with count
+			}
+			
+			Item("wpn_2hr_crossbow_hunters", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1500);
+				
+				SortIndex(8);				
+			}
+			
+			Item("Hunters_Crossbow_Bolt_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 400);				
+				SortIndex(1);
+			}
+			Item("Hunters_Valuable_Bundle", "Accessories")
+			{				
+				Cost("Token_HuntersToken", 1);
+				Cost("Token_MutationSamples", 500);				
+				SortIndex(1);
+			}
+		}
+		
+		Level(10)
+		{
+			
+			Item("Platinum_Weapon_1hBlunt", "Weapons")
+			{
+				Cost("Token_HuntersToken", 2);
+				Cost("Token_MutationSamples", 1200);
+				
+				UseLoot("Chapter2_1hBlunt_Platinum");				
+				SortIndex(6);
+			}
+			
+			Outfit("Hunter_Elite", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 15);
+				Cost("Token_MutationSamples", 15000);
+				SortIndex(6);
+			}
+			
+			ToolSkin("ToolSkin_Paraglider_HunterElite", "Appearance")
+			{
+				Unique();
+				Cost("Token_HuntersToken", 10);
+				Cost("Token_MutationSamples", 10000);	
+				SortIndex(3);
+			}
+		}
+    }
+
+	Agent(StoryAgent_Chapter3) //TGG 
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Token_HuntersToken", 1);
+        }
+
+		MenuInfo("&Agent_Chapter3&", "&Agent_Chapter3_desc&"); //name, desc
+		ChaptersMenuInfo("&POutpost_tile_title&", "&Bounties_tile3_subheader&", "&magent_chapter3_fluff&");
+		ChapterColor("5d8b8b");
+		//MapCoords([1724.041870, 4.787152, -454.234070]);
+		
+		DailyBountiesLimit(5, "Coop", 1);
+		
+		TutorialName("Tutorial_Chapter3");
+
+		BackgroundTexture("menu_background_ch3");
+
+		// Agent rank.
+		AgentIconRegular("token_ch3");
+
+		// Rank icons.
+		RankRegularTexture("agent_Chapter3_rank_regular");
+		RankPrestigeTexture("agent_Chapter3_rank_elite");
+		RankLevelRequiredForPrestigeTexture(10);
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_ch3");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_ch3");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_ch3");
+		BountiesDailyDefaultForegroundIcon("bounty_mission_ch3");
+		BountiesIconForegroundColorTracked("f3f20e");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bigmsg_reward_agentxp_ch3");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_ch3");
+		HudBigmsgXpIcon("bigmsg_reward_agentxp_ch3");
+		HudRankRegularTextureLevelUp("RankUp_agent_bigmsg_r_ch3");
+		HudRankPrestigeTextureLevelUp("RankUp_agent_bigmsg_e_ch3");
+		
+		//resources to show in menu
+		Resource("Token_HuntersToken");
+		Resource("Token_MutationSamples");
+		
+		
+
+		BountyIcon(""); //TODO
+    }
+	
+	Agent(StoryAgent_Event3)
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Event_Halloween_Treats", 500);
+        }
+		
+		NoInfoPanel();
+		ShowPerks();
+		MenuInfo("&Agent_Event1&", "&Agent_Event1_desc&");
+		ChapterColor("eb6123");
+		
+		AgentDailyType("AgentDaily");
+		DailyBountiesLimit(5, "Coop", 0);
+		TutorialName("Tutorial_HalloweenEvent2");
+
+		// Agent Icons.
+		AgentIconRegular("token_event1");
+
+		// Rank icons.
+		RankRegularTexture("agent_event3_rank");
+		RankPrestigeTexture("agent_event3_rank");
+		RankLevelRequiredForPrestigeTexture(10);
+		RankPrestigeReputationProgressbarColor("e5cb6a");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event1");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event1");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event1");
+		BountiesDailyDefaultForegroundIcon("bounty_event1");
+		BountiesIconForegroundColorTracked("e18a3d");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event1");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event1");
+		HudBigmsgXpIcon("bigmsg_reward_agent_event1");
+		HudRankRegularTextureLevelUp("RankUp_event1_bigmsg_icon");
+		
+		Resource("Event_Halloween_Treats");
+		AgentBountyIcon("agent_event3_rank");
+		
+		Level(1)
+		{
+			
+			Item("Event_Halloween_Potion_Pack2022", "Accessories")
+			{
+				Cost("Event_Halloween_Treats", 40);
+				SortIndex(1);
+			}
+			
+			Item("Event_Halloween_Potion_Pack2023", "Accessories")
+			{
+				Cost("Event_Halloween_Treats", 50);
+				SortIndex(1);
+			}
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{
+				Cost("Event_Halloween_Treats", 200);
+				SortIndex(3);
+			}
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Event_Halloween_Treats", 350);
+				SortIndex(4);
+			}
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Event_Halloween_Treats", 500);
+				SortIndex(5);
+			}
+			Item("Medkit_Large", "Accessories")
+			{
+				Cost("Event_Halloween_Treats", 100);
+				SortIndex(1);
+			}				
+		}
+		
+		Level(2)
+		{
+			Item("Event_Halloween_paint_c", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 150);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_t", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 150);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_u", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 150);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_i", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 150);			
+				SortIndex(6);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Event_Halloween_paint_slasher", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_scarecrow", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_pumpkin", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_HalloweenGuard", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_BloodyMask", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_StoneKiller", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 250);			
+				SortIndex(6);
+			}
+		}
+		
+		Level(4)
+		{
+			Item("Event_Halloween_paint_CarvedPumpkin", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 300);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_RedDemon", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 300);			
+				SortIndex(6);
+			}
+			Item("Event_Halloween_paint_CreepyPumpkin", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 300);			
+				SortIndex(6);
+			}
+		}
+		
+		Level(5)
+		{
+			Item("Craftplan_HalloweenKnife_Common", "Weapons")
+			{
+				Unique();
+				Cost("Event_Halloween_Treats", 1200);			
+				SortIndex(1);
+			}
+			Item("Event_Halloween_PumpkinGrenade", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 50);	
+				SortIndex(2);
+			}
+		}
+		
+		Level(6)
+		{
+			Item("wpn_1hs_knife_a_HalloweenKnife", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 900);			
+				SortIndex(1);
+			}
+			Item("wpn_1hs_knuckle_duster_HalloweenClaw", "Weapons")
+			{
+				Cost("Event_Halloween_Treats", 900);			
+				SortIndex(1);
+			}
+		}
+    }
+	
+	
+	
+	Agent(StoryAgent_Event4)
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Event_WinterEvent_Valuable_SantaLetter", 1);
+        }
+		
+		NoInfoPanel();
+		MenuInfo("&Agent_Event1&", "&Agent_Event1_desc&");
+		ChapterColor("ffffff");
+		
+		AgentDailyType("AgentDuty");
+		DailyBountiesLimit(5);
+		TutorialName("Tutorial_WinterEvent_2023");
+
+		// Agent Icons.
+		AgentIconRegular("valuables_santa_letter");
+		
+		// Rank icons.
+		RankRegularTexture("agent_event4_rank");
+		RankPrestigeTexture("agent_event4_rank");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event2");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event2");
+
+		// Daily bounties.
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event2");
+		BountiesDailyDefaultForegroundIcon("bounty_event2");
+		BountiesIconForegroundColorTracked("ffffff");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event2");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event2");
+		HudBigmsgXpIcon("bigmsg_event2_rank");
+		HudRankRegularTextureLevelUp("RankUp_event2_bigmsg_icon");
+		
+		Resource("Event_WinterEvent_Candies");
+		AgentBountyIcon("agent_event4_rank");
+		
+		Level(1)
+		{
+			Item("Event_WinterEvent_Hat_Nut", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 200);
+				SortIndex(1);
+			}
+			Item("Event_WinterEvent_Hat_Elf", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 200);
+				SortIndex(2);
+			}
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Candies", 50);
+				SortIndex(3);
+			}
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Candies", 100);
+				SortIndex(4);
+			}
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Candies", 200);
+				SortIndex(5);
+			}
+		}
+		
+		Level(2)
+		{
+			Item("Event_WinterEvent_Mask_Nut", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 300);
+				SortIndex(6);
+			}
+			Item("Medkit_Large", "Accessories")
+			{
+				Cost("Event_WinterEvent_Candies", 150);
+				SortIndex(1);
+			}
+			Item("Event_WinterEvent_Snowball_Bundle", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 150);
+				SortIndex(2);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Event_WinterEvent_Mask_IceCrown", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 300);
+				SortIndex(6);
+			}
+			Item("Event_WinterEvent_Mask_Shatter", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 300);
+				SortIndex(6);
+			}
+			Item("wpn_1hb_stk_l_fpp_winter", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 600);
+				
+				SortIndex(8);
+			}
+		}
+		
+		Level(4)
+		{
+			Item("Event_WinterEvent_Mask_Snowman", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 300);
+				SortIndex(6);
+			}
+			Item("Event_WinterEvent_Mask_Reindeer", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 300);
+				SortIndex(6);
+			}
+			
+			Item("Event_WinterEvent_Valuable_DecorationsBundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Valuable_Baubles", 30);
+				Cost("Event_WinterEvent_Valuable_TwinkleLights", 5);
+				SortIndex(1);
+			}
+		}
+		
+		Level(5)
+		{
+			
+			Item("wpn_2hp_bow_winter_elf_Artifact", "Weapons")
+			{
+				Cost("Event_WinterEvent_Candies", 800);
+				
+				SortIndex(8);
+			}
+			
+			Item("Event_WinterEvent_Bundle_Arrow_DeepFreeze", "Accessories")
+			{
+				Cost("Event_WinterEvent_Candies", 50);				
+				SortIndex(1);
+			}
+		}
+		
+		Level(6)
+		{
+			Item("Craftplan_AxeFrost_Artifact", "Weapons")
+			{
+				Unique();
+				Cost("Event_WinterEvent_Candies", 1600);
+				SortIndex(8);
+			}
+			
+			ToolSkin("ToolSkin_Paraglider_Evil_Elf", "Appearance")
+			{
+				Unique();
+				Cost("Event_WinterEvent_Candies", 1600);
+				SortIndex(3);
+			}
+		}
+		
+		Level(10)
+		{
+			Item("Event_WinterEvent_Valuable_FinalDecorationsBundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Valuable_Star", 20);
+				SortIndex(1);
+			}
+		}
+    }
+
+	Agent(StoryAgent_Chapter4) // Coop Mission Agent
+    {
+        PointsPerLevel(1000);
+
+		OverridePointsPerLevel()
+		{
+			LevelPoints(10, 2000); //Points needed to reach lvl 11
+			LevelPoints(11, 2500); //Points needed to reach lvl 12
+			LevelPoints(12, 3000); //Points needed to reach lvl 13
+			LevelPoints(13, 3000); //Points needed to reach lvl 14
+			LevelPoints(14, 3000); //Points needed to reach lvl 15
+		}
+		
+		LevelCap(15);
+
+        // LevelUpRewards()
+        // {
+        //     Item("Token_CoopMission", 1);
+        // }
+		
+		MenuInfo("&Agent_CoopMission&", "&Agent_CoopMission_desc&");
+		ChaptersMenuInfo("&CoopMission_Bounties_tile_header&", "&obj_7312789272035111253_text&", "&agent_coopmission_fluff&");
+		ChapterColor("E3924B"); // TO BE CHANGED
+		//MapCoords([1141.187988, 40.743431, -123.986946]);
+		
+		DailyBountiesLimit(3);
+		BountiesWeeklyShowLimit(5);
+		
+		TutorialName("Tutorial_CoopMission"); // 
+
+		BackgroundTexture("menu_background_ch4");
+		// Agent rank.
+		AgentIconRegular("map_agent_chapter4");
+
+		// Rank icons.
+		RankRegularTexture("agent_Chapter4_rank_regular");
+		RankPrestigeTexture("agent_Chapter4_rank_regular");
+		RankLevelRequiredForPrestigeTexture(99);
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_ch4");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_ch4");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_ch4");
+		BountiesDailyDefaultForegroundIcon("bounty_mission_ch4");
+		BountiesIconForegroundColorTracked("E3924B"); // TO BE CHANGED
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_mission_ch4");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_ch4");
+		HudBigmsgXpIcon("bounty_mission_ch4");
+		HudRankRegularTextureLevelUp("RankUp_agent_bigmsg_ch4");
+		HudRankPrestigeTextureLevelUp("RankUp_agent_bigmsg_ch4");
+		
+		//resources to show in menu
+		Resource("Token_CoopMission");
+
+		//Icon shown next to objective in chapters menu
+		AgentBountyIcon("map_agent_chapter4");
+		
+		Level(1)
+		{
+						
+			Item("Mag_Bundle_Ammo_Firearm_Pistol", "Accessories")
+			{		
+				Cost("Token_CoopMission", 6);
+				SortIndex(1);
+				AllowMultibuy();
+			}
+			Item("Mag_Bundle_Ammo_Firearm_SMG", "Accessories")
+			{		
+				Cost("Token_CoopMission", 10);
+				SortIndex(1);
+				AllowMultibuy();
+			}
+			Item("Mag_Bundle_Ammo_Firearm_Shotgun", "Accessories")
+			{		
+				Cost("Token_CoopMission", 12);
+				SortIndex(1);
+				AllowMultibuy();
+			}
+			Item("Mag_Bundle_Ammo_Firearm_Rifle", "Accessories")
+			{		
+				Cost("Token_CoopMission", 12);
+				SortIndex(1);
+				AllowMultibuy();
+			}
+			Item("wpn_1hs_axe_k_coop", "Weapons")
+			{		
+				Cost("Token_CoopMission", 178);
+				SortIndex(2);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T1", "Resources")
+			{				
+				Cost("Token_CoopMission", 1);		
+				SortIndex(4);
+			}
+			Item("Outfitset_TankCoop_Shoes", "Weapons")
+			{
+				Cost("Token_CoopMission", 104);			
+				SortIndex(3);
+			}
+		}
+
+		Level(2)
+		{
+			Item("wpn_15hb_u_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 190);			
+				SortIndex(5);
+			}
+			Item("Weapon_Firearm_Submachinegun", "Weapons") 
+			{
+				Cost("Token_CoopMission", 180);			
+				SortIndex(8);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T2", "Resources")
+			{				
+				Cost("Token_CoopMission", 6);		
+				SortIndex(1);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Weapon_Firearm_Rifle", "Weapons") 
+			{
+				Cost("Token_CoopMission", 182);			
+				SortIndex(8);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T3", "Resources")
+			{				
+				Cost("Token_CoopMission", 10);		
+				SortIndex(1);
+			}
+			Item("Weapon_Firearm_Shotgun", "Weapons") 
+			{
+				Cost("Token_CoopMission", 190);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(4)
+		{
+			Item("wpn_15hb_f_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 170);			
+				SortIndex(5);
+			}
+			Item("wpn_2hb_d_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 156);			
+				SortIndex(5);
+			}
+			Item("Outfitset_TankCoop_TorsoAddon", "Weapons")
+			{
+				Cost("Token_CoopMission", 108);		
+				SortIndex(8);
+			}
+		}
+		
+		Level(5)
+		{
+			Item("wpn_15hs_w_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 184);			
+				SortIndex(5);
+			}
+			Item("Outfitset_TankCoop_Legs", "Weapons") 
+			{
+				Cost("Token_CoopMission", 120);			
+				SortIndex(8);
+			}
+			Item("Replayable_Missions_LootPack", "Accessories") 
+			{				
+				Cost("Token_CoopMission", 150);			
+				SortIndex(1);
+			}
+			
+		}	
+		
+		Level(6)
+		{
+			Item("wpn_2hs_g_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 178);			
+				SortIndex(5);
+			}
+			
+			Item("Outfitset_TankCoop_Torso", "Weapons")
+			{
+				Cost("Token_CoopMission", 122);		
+				SortIndex(8);
+			}
+
+			Item("Potion_NightXPBoost", "Accessories")
+			{				
+				Cost("Token_CoopMission", 170);		
+				SortIndex(3);
+			}
+		}
+		
+		Level(7)
+		{
+			Item("wpn_1hs_knuckle_duster_d_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 154);			
+				SortIndex(5);
+			}
+			Item("Weapon_Firearm_Pistol_Golden", "Weapons") 
+			{
+				Cost("Token_CoopMission", 300);			
+				SortIndex(10);
+			}
+
+			Item("Outfitset_TankCoop_Gloves", "Weapons")
+			{
+				Cost("Token_CoopMission", 98);			
+				SortIndex(5);
+			}
+			
+		}
+		
+		Level(8)
+		{
+			Item("wpn_1hs_knife_e_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 120);			
+				SortIndex(5);
+			}
+			Item("Weapon_Firearm_Submachinegun_Golden", "Weapons") 
+			{
+				Cost("Token_CoopMission", 350);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(9)
+		{
+			Item("Outfitset_TankCoop_Head", "Weapons")
+			{
+				Cost("Token_CoopMission", 100);			
+				SortIndex(5);
+			}
+			Item("Weapon_Firearm_Shotgun_Golden", "Weapons") 
+			{
+				Cost("Token_CoopMission", 400);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(10)
+		{
+			Item("wpn_15hs_b_coop", "Weapons")
+			{
+				Cost("Token_CoopMission", 198);			
+				SortIndex(5);
+			}
+			Item("Weapon_Firearm_Rifle_Golden", "Weapons") 
+			{
+				Cost("Token_CoopMission", 430);			
+				SortIndex(10);
+			}
+			Outfit("Aitor", "Appearance")
+			{				
+				Unique();
+				Cost("Token_CoopMission", 320);		
+				SortIndex(8);
+			}
+		}
+		
+		Level(11)
+		{
+			Item("TowerRaid_LootPack", "Accessories")
+			{
+				Cost("Token_CoopMission", 160);			
+				SortIndex(7);
+			}
+			Item("wpn_1hs_axe_d_tower_raid", "Weapons") 
+			{
+				Cost("Token_CoopMission", 164);			
+				SortIndex(10);
+			}
+			Item("Scorpio_WeaponBundle_noammo", "Weapons") 
+			{
+				Unique();
+				Cost("Token_CoopMission", 180);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(12)
+		{
+			Outfit("Wierzbowski", "Appearance")
+			{
+				Unique();
+				Cost("Token_CoopMission", 420);			
+				SortIndex(8);
+			}
+			Item("TribalMachete_WeaponBundle", "Weapons") 
+			{
+				Cost("Token_CoopMission", 170);			
+				SortIndex(10);
+			}
+			Item("Bundle_ShockThrowingKnife", "Weapons") 
+			{
+				Cost("Token_CoopMission", 140);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(13)
+		{
+			Item("Weapon_Firearm_Incendiary_Shotgun", "Weapons") 
+			{
+				Cost("Token_CoopMission", 700);			
+				SortIndex(10);
+			}
+			Item("Bundle_ToxicThrowingKnife", "Weapons") 
+			{
+				Cost("Token_CoopMission", 140);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(14)
+		{
+			Item("wpn_15hb_a_tower_raid", "Weapons") 
+			{
+				Cost("Token_CoopMission", 136);			
+				SortIndex(10);
+			}
+			Item("wpn_15hb_k_tower_raid", "Weapons") 
+			{
+				Cost("Token_CoopMission", 154);			
+				SortIndex(10);
+			}
+		}
+		
+		Level(15)
+		{
+			Item("wpn_2hs_r_tower_raid", "Weapons") 
+			{
+				Cost("Token_CoopMission", 166);			
+				SortIndex(10);
+			}
+			Outfit("Rowe", "Appearance") 
+			{
+				Unique();
+				Cost("Token_CoopMission", 500);			
+				SortIndex(8);
+			}
+		}
+    }
+
+	Agent(StoryAgent_Event5)
+    {
+        PointsPerLevel(100);
+
+		OverridePointsPerLevel()
+		{
+			LevelPoints(2, 100);
+    		LevelPoints(3, 100);
+    		LevelPoints(4, 200);
+    		LevelPoints(5, 200);
+    		LevelPoints(6, 300);
+    		LevelPoints(7, 300);
+   			LevelPoints(8, 400);
+    		LevelPoints(9, 400);
+    		LevelPoints(10, 500);
+    		LevelPoints(11, 500);
+    		LevelPoints(12, 750);
+    		LevelPoints(13, 750);
+    		LevelPoints(14, 1000);
+    		LevelPoints(15, 1000);
+    		LevelPoints(16, 1250);
+    		LevelPoints(17, 1250);
+    		LevelPoints(18, 1500);
+    		LevelPoints(19, 2000);
+    		LevelPoints(20, 2500);
+    		LevelPoints(21, 3000);
+   			LevelPoints(22, 3500);
+    		LevelPoints(23, 4000);
+    		LevelPoints(24, 4500);
+    		LevelPoints(25, 5000);
+		}
+		
+		LevelCap(25);
+
+		LevelUpRewards()
+        {
+            Item("Token_Halloween_Perk", 1);
+        }
+		
+		//these rewards add on top of the default LevelUpRewards() depending on the reached Agent level
+		LevelUpBonusRewards(5)
+		{
+			Item("Token_Halloween_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(10)
+		{
+			Item("Token_Halloween_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(15)
+		{
+			Item("Token_Halloween_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(20)
+		{
+			Item("Token_Halloween_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(25)
+		{
+			Item("Token_Halloween_Perk", 1);
+		}
+
+		NoInfoPanel();
+		ShowPerks();
+		MenuInfo("&Agent_Event1&", "&Agent_Event1_desc&");
+		ChapterColor("eb6123");
+		
+		//AgentDailyType("AgentDuty");
+		// DailyBountiesLimit(5, "Coop", 0);
+		TutorialName("Tutorial_HalloweenEvent3");
+		DailyBountiesLimit(5);
+		BountiesWeeklyShowLimit(5);
+
+		// Agent Icons.
+		AgentIconRegular("reward_Agent_Nightrunner_Icon");
+		//AgentIconRegular("token_event5");
+
+		// Rank icons.
+		RankRegularTexture("agent_event3_rank");
+		RankPrestigeTexture("agent_event3_rank");
+		RankLevelRequiredForPrestigeTexture(25);
+		RankPrestigeReputationProgressbarColor("e5cb6a");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event1");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event1");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event1");
+		BountiesDailyDefaultForegroundIcon("bounty_event1");
+		BountiesIconForegroundColorTracked("e18a3d");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event1");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event1");
+		HudBigmsgXpIcon("bigmsg_reward_agent_event1");
+		HudRankRegularTextureLevelUp("RankUp_event1_bigmsg_icon");
+		
+		Resource("Token_Halloween");
+		AgentBountyIcon("agent_event3_rank");
+		
+		Perks("Token_Halloween_Perk")
+		{
+		}
+		
+		Level(1)
+		{
+			
+			Item("Medkit_Large", "Accessories")
+			{
+				Cost("Token_Halloween", 150);
+				SortIndex(1);
+			}
+			
+			
+		}
+		
+		Level(2)
+		{
+			
+			Item("Event_Halloween_PumpkinGrenade", "Accessories")
+			{
+				Cost("Token_Halloween", 150);
+				SortIndex(1);
+			}
+			
+		}
+		
+		Level(3)
+		{
+			
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{
+				Cost("Token_Halloween", 750);
+				SortIndex(1);
+			}
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Token_Halloween", 1000);
+				SortIndex(1);
+			}
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Token_Halloween", 1250);
+				SortIndex(1);
+			}
+			Item("Craftplan_charm_vanaiden", "Weapons")
+			{
+				Unique();
+				Cost("Token_Halloween", 1500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(4)
+		{
+			Item("Event_Halloween_paint_HalloweenGuard", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_BloodyMask", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(5)
+		{
+			
+			Item("Event_Halloween_paint_RedDemon", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_StoneKiller", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_pumpkin", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			SessionPerk("TowerRaidPerk_Session_Reincarnation_1")
+			{
+				Cost("Token_Halloween", 1000);
+				SortIndex(1);
+			}
+			
+			
+		}
+
+		Level(6)
+		{
+			
+			Item("Event_Halloween_paint_c", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_t", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_u", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("gameover_Foodbar_Bundle", "Accessories")
+			{
+				Cost("Token_Halloween", 1500);
+				SortIndex(1);
+			}
+		}
+
+		Level(7)
+		{
+			
+			Item("Event_Halloween_paint_i", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_slasher", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_paint_scarecrow", "Weapons")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			SessionPerk("TowerRaidPerk_Session_Insatiable_1")
+			{
+				Cost("Token_Halloween", 1000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(8)
+		{
+			
+			Item("Outfitset_Vanaiden_Shoes", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(9)
+		{
+			Item("wpn_sword_vanaiden", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+		}
+
+		Level(10)
+		{
+			
+			Item("Event_Halloween_paint_CarvedPumpkin", "Weapons")
+			{
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			Item("Craftplan_vanaiden_Common", "Weapons")
+			{
+				Unique();
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			SessionPerk("TowerRaidPerk_Session_Reincarnation_2")
+			{
+				Cost("Token_Halloween", 1500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(11)
+		{
+			
+			Item("Event_Halloween_Potion_Pack2022", "Accessories")
+			{
+				Cost("Token_Halloween", 1500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(12)
+		{
+			
+			Item("Weapon_Firearm_Pistol_Toy_1", "Accessories")
+			{
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			// SessionPerk("TowerRaidPerk_Session_SweetTooth_1")
+			// {
+			// 	Cost("Token_Halloween", 1500);
+			// 	SortIndex(1);
+			// }
+			
+		}
+
+		Level(13)
+		{
+			
+			Item("wpn_1hs_knife_a_HalloweenKnife", "Weapons")
+			{
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+
+			
+		}
+
+		Level(14)
+		{
+			
+			Item("Outfitset_Vanaiden_Legs", "Weapons")
+			{
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(15)
+		{
+			SessionPerk("TowerRaidPerk_Session_Reincarnation_3")
+			{
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(16)
+		{
+			
+			ToolSkin("ToolSkin_Paraglider_Vanaiden", "Appearance")
+			{
+				Unique();
+				Cost("Token_Halloween", 800);
+				SortIndex(1);
+			}
+			Item("Event_Halloween_Potion_Pack2023", "Accessories")
+			{
+				Cost("Token_Halloween", 1500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(17)
+		{
+			
+			Item("wpn_1hs_knuckle_duster_HalloweenClaw", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(18)
+		{
+			
+			Item("Outfitset_Vanaiden_Gloves", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(19)
+		{
+			
+			Item("Event_Halloween_paint_CreepyPumpkin", "Weapons")
+			{
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(20)
+		{
+			
+			Item("Outfitset_Vanaiden_TorsoAddon", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+		}
+
+		Level(21)
+		{
+			
+			Item("Craftplan_HalloweenKnife_Common", "Weapons")
+			{
+				Unique();
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(22)
+		{
+			
+			Item("wpn_15hs_l_vanaiden", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(23)
+		{
+			
+			Item("TowerRaid_LootPack", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(24)
+		{
+
+
+			Item("Craftplan_vanaiden_sword_Common", "Weapons")
+			{
+				Unique();
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(25)
+		{
+			
+			Item("Craftplan_HalloweenClaw_Common", "Weapons")
+			{
+				Unique();
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+
+			Item("Outfitset_Vanaiden_Head", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+
+			Item("Outfitset_Vanaiden_Torso", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+
+			Outfit("VanAiden", "Appearance") 
+			{
+				Unique();
+				UseCollectable("Collectable_Outfit_Vanaiden");
+				Cost("Token_Halloween", 2000);
+				SortIndex(1);
+			}
+			
+			Item("wpn_2hr_crossbow_e_vanaiden", "Weapons")
+			{
+				Cost("Token_Halloween", 3500);
+				SortIndex(1);
+			}
+		}
+		
+    }
+
+	Agent(StoryAgent_Event6)
+    {
+        PointsPerLevel(1000);
+
+        LevelUpRewards()
+        {
+            Item("Event_WinterEvent_Valuable_SantaLetter", 1);
+        }
+		
+		NoInfoPanel();
+		MenuInfo("&Agent_Event1&", "&Agent_Event1_desc&");
+		ChapterColor("ffffff");
+		
+		AgentDailyType("AgentDuty");
+		DailyBountiesLimit(5);
+		TutorialName("Tutorial_WinterEvent_2024");
+
+		// Agent Icons.
+		AgentIconRegular("valuables_santa_letter");
+		
+		// Rank icons.
+		RankRegularTexture("agent_event4_rank");
+		RankPrestigeTexture("agent_event4_rank");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event2");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event2");
+
+		// Daily bounties.
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event2");
+		BountiesDailyDefaultForegroundIcon("bounty_event2");
+		BountiesIconForegroundColorTracked("ffffff");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event2");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event2");
+		HudBigmsgXpIcon("bigmsg_event2_rank");
+		HudRankRegularTextureLevelUp("RankUp_event2_bigmsg_icon");
+		
+		Resource("Token_Winter");
+		AgentBountyIcon("agent_event4_rank");
+		
+		Level(1)
+		{
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{
+				Cost("Token_Winter", 50);
+				SortIndex(3);
+			}
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Token_Winter", 100);
+				SortIndex(4);
+			}
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Token_Winter", 200);
+				SortIndex(5);
+			}
+			Item("Craftplan_charm_krampus", "Weapons")
+			{
+				Unique();
+				Cost("Token_Winter", 1500);
+				SortIndex(8);
+			}
+			Item("Event_WinterEvent_Snowball_Bundle", "Weapons")
+			{
+				Cost("Token_Winter", 120);
+				SortIndex(2);
+			}
+		}
+		
+		Level(2)
+		{
+			Item("Event_WinterEvent_Mask_Nut", "Weapons")
+			{
+				Cost("Token_Winter", 225);
+				SortIndex(6);
+			}
+			Item("Medkit_Large", "Accessories")
+			{
+				Cost("Token_Winter", 120);
+				SortIndex(1);
+			}
+			ToolSkin("ToolSkin_Paraglider_Krampus", "Appearance")
+			{
+				Unique();
+				Cost("Token_Winter", 2000);
+				SortIndex(3);
+			}
+			Item("Event_WinterEvent_Hat_Nut", "Weapons")
+			{
+				Cost("Token_Winter", 150);
+				SortIndex(1);
+			}
+			Item("Event_WinterEvent_Hat_Elf", "Weapons")
+			{
+				Cost("Token_Winter", 150);
+				SortIndex(2);
+			}
+		}
+		
+		Level(3)
+		{
+			Item("Event_WinterEvent_Mask_IceCrown", "Weapons")
+			{
+				Cost("Token_Winter", 225);
+				SortIndex(6);
+			}
+			Item("Event_WinterEvent_Mask_Shatter", "Weapons")
+			{
+				Cost("Token_Winter", 225);
+				SortIndex(6);
+			}
+			Item("wpn_1hb_stk_l_fpp_winter", "Weapons")
+			{
+				Cost("Token_Winter", 450);
+				SortIndex(8);
+			}
+			Item("Weapon_Firearm_Pistol_Toy_2", "Weapons")
+			{
+				Unique();
+				Cost("Token_Winter", 800);
+				SortIndex(8);
+			}
+			Item("Event_WinterEvent_Valuable_DecorationsBundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Valuable_Baubles", 30);
+				Cost("Event_WinterEvent_Valuable_TwinkleLights", 5);
+				SortIndex(1);
+			}
+		}
+		
+		Level(4)
+		{
+			Item("Event_WinterEvent_Mask_Snowman", "Weapons")
+			{
+				Cost("Token_Winter", 225);
+				SortIndex(6);
+			}
+			Item("Event_WinterEvent_Mask_Reindeer", "Weapons")
+			{
+				Cost("Token_Winter", 225);
+				SortIndex(6);
+			}
+			ToolSkin("ToolSkin_RopeHook_Krampus", "Appearance")
+			{
+				Unique();
+				Cost("Token_Winter", 1500);
+				SortIndex(3);
+			}
+		}
+		
+		Level(5)
+		{
+			Item("Craftplan_AxeFrost_Artifact", "Weapons")
+			{
+				Unique();
+				Cost("Token_Winter", 1200);
+				SortIndex(8);
+			}
+			Item("wpn_2hs_krampus", "Weapons")
+			{
+				Cost("Token_Winter", 2000);
+				SortIndex(8);
+			}
+			Item("Craftplan_Krampus_Common", "Weapons")
+			{
+				Unique();
+				Cost("Token_Winter", 1020);
+				SortIndex(8);
+			}
+		}
+		
+		Level(6)
+		{
+			//ToolSkin("ToolSkin_Paraglider_Evil_Elf", "Appearance")
+			//{
+			//	Unique();
+			//	Cost("Token_Winter", 1200);
+			//	SortIndex(3);
+			//}
+
+			// Final Week Items
+
+			//Item("Outfitset_Krampus_Torso", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+			//Item("Outfitset_Krampus_Legs", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+			//Item("Outfitset_Krampus_Shoes", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+			//Item("Outfitset_Krampus_Head", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+			//Item("Outfitset_Krampus_Gloves", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+			//Item("Outfitset_Krampus_TorsoAddon", "Weapons")
+			//{
+			//	Cost("Token_Winter", 4000);
+			//	SortIndex(6);
+			//}
+		}
+		
+		Level(10)
+		{
+			Item("Event_WinterEvent_Valuable_FinalDecorationsBundle", "Resources")
+			{
+				Cost("Event_WinterEvent_Valuable_Star", 20);
+				SortIndex(1);
+			}
+		}
+    }
+	
+	Agent(StoryAgent_OnlineVendorPrimary)
+    {		
+		ReplaceCategoryText("CustomAgent_1", "&CategoryType_Weapons_TR_Chests&"); 
+		ReplaceCategoryText("CustomAgent_2", "&CategoryType_Weapons_TR_Elevator_Vendor&"); 
+		ReplaceCategoryText("CustomAgent_3", "&CategoryType_Items_TR&");
+		ReplaceCategoryText("CustomAgent_4", "&CategoryType_Craftplan&"); 
+		
+		PointsPerLevel(100);
+
+		OverridePointsPerLevel()
+		{
+			LevelPoints(2, 100);
+    		LevelPoints(3, 200);
+    		LevelPoints(4, 300);
+    		LevelPoints(5, 400);
+    		LevelPoints(6, 500);
+    		LevelPoints(7, 600);
+   			LevelPoints(8, 750);
+    		LevelPoints(9, 900);
+    		LevelPoints(10, 1000);
+    		LevelPoints(11, 1100);
+    		LevelPoints(12, 1100);
+    		LevelPoints(13, 1100);
+    		LevelPoints(14, 1200);
+    		LevelPoints(15, 1200);
+    		LevelPoints(16, 1200);
+    		LevelPoints(17, 1300);
+    		LevelPoints(18, 1300);
+			LevelPoints(19, 1300);
+    		LevelPoints(20, 1400);
+			LevelPoints(21, 1400);
+    		LevelPoints(22, 1600);
+			LevelPoints(23, 1600);
+    		LevelPoints(24, 1800);
+			LevelPoints(25, 1800);
+   			LevelPoints(26, 1800);
+			LevelPoints(27, 2000);
+    		LevelPoints(28, 2000);
+			LevelPoints(29, 2000);
+    		LevelPoints(30, 2300);
+			LevelPoints(31, 2300);
+    		LevelPoints(32, 2500);
+			LevelPoints(33, 2800);
+			LevelPoints(34, 2800);
+			LevelPoints(35, 3000);
+			LevelPoints(36, 3000);
+			LevelPoints(37, 3000);
+			LevelPoints(38, 3000);
+			LevelPoints(39, 3000);
+			LevelPoints(40, 3000);
+			LevelPoints(41, 3000);
+			LevelPoints(42, 3000);
+			LevelPoints(43, 3000);
+			LevelPoints(44, 3000);
+			LevelPoints(45, 3000);
+			LevelPoints(46, 3000);
+			LevelPoints(47, 3000);
+			LevelPoints(48, 3000);
+			LevelPoints(49, 3000);
+			LevelPoints(50, 3000);
+			LevelPoints(51, 3000);
+			LevelPoints(52, 3000);
+			LevelPoints(53, 3000);
+			LevelPoints(54, 3000);
+			LevelPoints(55, 3000);
+			LevelPoints(56, 3000);
+			LevelPoints(57, 3000);
+			LevelPoints(58, 3000);
+			LevelPoints(59, 3000);
+			LevelPoints(60, 3000);
+			LevelPoints(61, 3000);
+			LevelPoints(62, 3000);
+			LevelPoints(63, 3000);
+			LevelPoints(64, 3000);
+			LevelPoints(65, 3000);
+			LevelPoints(66, 3000);
+			LevelPoints(67, 3000);
+			LevelPoints(68, 3000);
+			LevelPoints(69, 3000);
+			LevelPoints(70, 3000);
+			LevelPoints(71, 3000);
+			LevelPoints(72, 3000);
+			LevelPoints(73, 3000);
+			LevelPoints(74, 3000);
+			LevelPoints(75, 3000);
+			LevelPoints(76, 3000);
+			LevelPoints(77, 3000);
+			LevelPoints(78, 3000);
+			LevelPoints(79, 3000);
+			LevelPoints(80, 3000);
+			LevelPoints(81, 3000);
+			LevelPoints(82, 3000);
+			LevelPoints(83, 3000);
+			LevelPoints(84, 3000);
+			LevelPoints(85, 3000);
+			LevelPoints(86, 3000);
+			LevelPoints(87, 3000);
+			LevelPoints(88, 3000);
+			LevelPoints(89, 3000);
+			LevelPoints(90, 3000);
+			LevelPoints(91, 3000);
+			LevelPoints(92, 3000);
+			LevelPoints(93, 3000);
+			LevelPoints(94, 3000);
+			LevelPoints(95, 3000);
+			LevelPoints(96, 3000);
+			LevelPoints(97, 3000);
+			LevelPoints(98, 3000);
+			LevelPoints(99, 3000);
+			LevelPoints(100, 3000);
+		}
+		
+		LevelCap(100);
+
+		LevelUpBonusRewards(1)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(2)
+		{
+			Item("Token_TowerRaid_Perk", 2);
+		}
+		
+		LevelUpBonusRewards(3)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(4)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(5)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(6)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(7)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(8)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(9)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(10)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(11)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(12)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(13)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(14)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(15)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(16)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(17)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(18)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(19)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(20)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(21)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(22)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(23)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(24)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(25)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(26)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(27)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(28)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(29)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(30)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(31)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(32)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(33)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(34)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(35)
+		{
+			Item("Token_TowerRaid_Perk", 1);
+		}
+		
+		LevelUpBonusRewards(36)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(37)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(38)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(39)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(40)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(41)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(42)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(43)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(44)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(45)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(46)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(47)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(48)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(49)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(50)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(51)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(52)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(53)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(54)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(55)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(56)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(57)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(58)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(59)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(60)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(61)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(62)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(63)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(64)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(65)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(66)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(67)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(68)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(69)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(70)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(71)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(72)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(73)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(74)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(75)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(76)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(77)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(78)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(79)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(80)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(81)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(82)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(83)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(84)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(85)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(86)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(87)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(88)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(89)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(90)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(91)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(92)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(93)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(94)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(95)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(96)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(97)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(98)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(99)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+		
+		LevelUpBonusRewards(100)
+		{
+			Item("Token_TowerRaid_Currency", 1500);
+		}
+
+		NoInfoPanel();
+		NoBounties();
+		ShowAchievements();
+		ShowPerks();
+		MenuInfo("&Agent_OnlineVendorPrimary1&", "&Agent_OnlineVendorPrimary1_desc&");
+		ChapterColor("E3924B");
+		
+		//AgentDailyType("AgentDuty");
+		//DailyBountiesLimit(5, "Coop", 0);
+		TutorialName("Tutorial_RaidHubAgent");
+		DailyBountiesLimit(5);
+		BountiesWeeklyShowLimit(5);
+
+		// Agent Icons.
+		AgentIconRegular("reward_Agent_Nightrunner_Icon");
+		//AgentIconRegular("token_event5");
+
+		BackgroundTexture("menu_background_ch4");
+
+		// Rank icons.
+		RankRegularTexture("Agent_OnlineVendorPrimary_rank_regular");
+		RankPrestigeTexture("Agent_OnlineVendorPrimary_rank_regular");
+		RankLevelRequiredForPrestigeTexture(40);
+		RankPrestigeReputationProgressbarColor("E3924B");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event1");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event1");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event1");
+		BountiesDailyDefaultForegroundIcon("bounty_event1");
+		BountiesIconForegroundColorTracked("e18a3d");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event1");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event1");
+		HudBigmsgXpIcon("achievement_OnlineVendorPrimary");
+		HudRankRegularTextureLevelUp("RankUp_OnlineVendorPrimary_bigmsg_icon");
+		HudBigmsgRewardIconScale(1.22);
+		
+		Resource("Token_TowerRaid_Currency");
+		AgentBountyIcon("map_Agent_OnlineVendorPrimary");
+		
+		Perks("Token_TowerRaid_Perk")
+		{
+			Tree(1, "&MenuStoryAgent_PerkTreeName_1&")
+			{
+				Tier(1, 0)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_RapidRecovery_1", 0);
+						PerkLevel("TowerRaidPerk_Character_Permanent_RapidRecovery_2", 1);
+					}
+				}
+
+				Tier(2, 1)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Fortress_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Fortress_2", 2);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_FirstAidTraining_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_FirstAidTraining_2", 2);
+					}
+				}	
+
+				Tier(3, 3)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_HungryManiac_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_HungryManiac_2", 3);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_StrongBones_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_StrongBones_2", 3);
+					}
+				}
+
+				Tier(4, 6)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_GeneticallyGifted_1", 3);
+						PerkLevel("TowerRaidPerk_Character_Permanent_GeneticallyGifted_2", 4);
+					}
+				}
+			}
+
+			Tree(2, "&MenuStoryAgent_PerkTreeName_2&")
+			{
+				Tier(1, 0)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_BloodLetting_1", 0);
+						PerkLevel("TowerRaidPerk_Character_Permanent_BloodLetting_2", 1);
+					}
+				}
+
+				Tier(2, 1)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_ShatteringForce_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_ShatteringForce_2", 2);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_AdvantagePusher_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_AdvantagePusher_2", 2);
+					}
+				}
+
+				Tier(3, 3)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Resilience_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Resilience_2", 3);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Brutoholic_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Brutoholic_2", 3);
+					}
+				}
+
+				Tier(4, 6)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_TankBuster_1", 3);
+						PerkLevel("TowerRaidPerk_Character_Permanent_TankBuster_2", 4);
+					}
+				}
+			}
+
+			Tree(3, "&MenuStoryAgent_PerkTreeName_3&")
+			{
+				Tier(1, 0)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Scavenger_1", 0);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Scavenger_2", 1);
+					}
+				}
+
+				Tier(2, 1)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_BallisticsExpertise_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_BallisticsExpertise_2", 2);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_HeadshotAffinity_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_HeadshotAffinity_2", 2);
+					}
+				}
+
+				Tier(3, 3)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_PracticedReloads_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_PracticedReloads_2", 3);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Bomberman_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Bomberman_2", 3);
+					}
+				}
+
+				Tier(4, 6)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_Shaman_1", 3);
+						PerkLevel("TowerRaidPerk_Character_Permanent_Shaman_2", 4);
+					}
+				}
+			}
+			Tree(4, "&MenuStoryAgent_PerkTreeName_4&")
+			{
+				Tier(1, 0)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_AllAboutSpeed_1", 0);
+						PerkLevel("TowerRaidPerk_Character_Permanent_AllAboutSpeed_2", 1);
+					}
+				}
+
+				Tier(2, 1)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_ChronicInvincibility_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_ChronicInvincibility_2", 2);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_BackpackMitosis_1", 1);
+						PerkLevel("TowerRaidPerk_Character_Permanent_BackpackMitosis_2", 2);
+					}
+				}
+
+				Tier(3, 3)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_AcquiredTaste_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_AcquiredTaste_2", 3);
+					}
+					
+					Perk(2)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_WorkMuscles_1", 2);
+						PerkLevel("TowerRaidPerk_Character_Permanent_WorkMuscles_2", 3);
+					}
+				}
+
+				Tier(4, 6)
+				{
+					Perk(1)
+					{
+						PerkLevel("TowerRaidPerk_Character_Permanent_FInaleInsurance_1", 3);
+						PerkLevel("TowerRaidPerk_Character_Permanent_FInaleInsurance_2", 4);
+					}
+				}
+			}
+		}
+		
+		Level(1)
+		{
+			
+			Item("Craftplan_TR_Molotov_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Grenade_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Firecrackers_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Potion_DamageReduction_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Potion_StaminaUpgrade_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Potion_DamageDealtIncrease_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Potion_Rage_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1800);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Impact_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Shock_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Heat_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Toxic_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Bleeding_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Freeze_Random_Upgrade4_TIP", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Impact_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Shock_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Heat_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Toxic_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Bleeding_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			Item("Craftplan_TR_Mod_Freeze_Random_Upgrade4_SHAFT", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+		}
+		
+		Level(5)
+		{
+			Item("Craftplan_TR_Mod_Damage_Upgrade4", "CustomAgent_4")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}		
+			SessionPerk("TowerRaidPerk_Session_Permanent_Reincarnation_1")
+			{
+				Cost("Token_TowerRaid_Currency", 1000);
+				SortIndex(1);
+			}
+		}
+			
+		Level(6)
+		{
+			Item("Collectable_Unlock_ThrowableMolotov_Stage2", "CustomAgent_3")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_ThrowingKnife_Stage2", "CustomAgent_3")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Grenade_Stage1", "CustomAgent_3")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_RemoteExplosive_Stage1", "CustomAgent_3")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_PotionHealthRegen_Stage2", "CustomAgent_3")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_LastHope", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_TheGrinder", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_SawbladeAxe", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_PlumbersChoice", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_Jigsaw", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_Flambeau", "CustomAgent_1")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireAxe_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.lasthope");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostAxe_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.lasthope");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockAxe_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.lasthope");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireHammer_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thegrinder");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostHammer_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thegrinder");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockHammer_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thegrinder");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireSword_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.sawbladeaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostSword_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.sawbladeaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockSword_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.sawbladeaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireCricketBat_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.plumberschoice");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostCricketBat_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.plumberschoice");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockCricketBat_T5", "CustomAgent_1")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.plumberschoice");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+		}
+
+		Level(7)
+		{			
+			Item("Collectable_Unlock_Weapon_ExecutionersAxe", "CustomAgent_2")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_Turbine", "CustomAgent_2")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_StreetCleaver", "CustomAgent_2")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_HookStick", "CustomAgent_2")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_Thingamabob", "CustomAgent_2")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireAxe_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.executionersaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostAxe_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.executionersaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockAxe_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.executionersaxe");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireHammer_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.turbine");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostHammer_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.turbine");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockHammer_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.turbine");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireSword_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.streetcleaver");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostSword_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.streetcleaver");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockSword_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.streetcleaver");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireCricketBat_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.hookstick");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostCricketBat_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.hookstick");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockCricketBat_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.hookstick");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireGlaive_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thingamabob");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostGlaive_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thingamabob");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockGlaive_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.thingamabob");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FireHalberd_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.flambeau");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_FrostHalberd_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.flambeau");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_Weapon_ShockHalberd_T8", "CustomAgent_2")
+			{
+				Unique();
+				LootUnlockTag("tr.weapon.flambeau");
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			SessionPerk("TowerRaidPerk_Session_Permanent_Insatiable_1")
+			{
+				Cost("Token_TowerRaid_Currency", 1000);
+				SortIndex(1);
+			}
+		}
+
+		Level(8)
+		{
+			Item("Collectable_Unlock_Grenade_Stage2", "CustomAgent_3")
+			{
+				Unique();
+				LootUnlockTag("tr.grenade.stage1");
+				Cost("Token_TowerRaid_Currency", 2300);
+				SortIndex(1);
+			}
+			Item("Collectable_Unlock_RemoteExplosive_Stage2", "CustomAgent_3")
+			{
+				Unique();
+				LootUnlockTag("tr.remoteexplosive.stage1");
+				Cost("Token_TowerRaid_Currency", 2300);
+				SortIndex(1);
+			}
+		}
+		
+		Level(10)
+		{
+			
+			SessionPerk("TowerRaidPerk_Session_Permanent_Reincarnation_2")
+			{
+				Cost("Token_TowerRaid_Currency", 1500);
+				SortIndex(1);
+			}
+		}
+		
+		Level(15)
+		{
+			SessionPerk("TowerRaidPerk_Session_Permanent_Reincarnation_3")
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			
+		}
+    }
+	
+	Agent(StoryAgent_OnlineVendorSecondary1)
+    {
+        PointsPerLevel(900);
+
+		OverridePointsPerLevel()
+		{
+			LevelPoints(2, 600);
+    		LevelPoints(3, 1500);
+    		LevelPoints(4, 3000);
+    		LevelPoints(5, 3500);
+    		LevelPoints(6, 3500);
+    		LevelPoints(7, 3900);
+   			LevelPoints(8, 4200);
+    		LevelPoints(9, 4600);
+    		LevelPoints(10, 5000);
+    		LevelPoints(11, 5500);
+    		LevelPoints(12, 5500);
+    		LevelPoints(13, 5900);
+    		LevelPoints(14, 8800);
+    		LevelPoints(15, 9200);
+    		LevelPoints(16, 9200);
+    		LevelPoints(17, 9200);
+    		LevelPoints(18, 9200);
+			LevelPoints(19, 9200);
+    		LevelPoints(20, 11000);
+			LevelPoints(21, 11500);
+			LevelPoints(22, 12000);
+			LevelPoints(23, 12500);
+			LevelPoints(24, 13000);
+			LevelPoints(25, 13500);
+			LevelPoints(26, 13500);
+    		LevelPoints(27, 13500);
+    		LevelPoints(28, 13500);
+    		LevelPoints(29, 13500);
+    		LevelPoints(30, 13500);
+    		LevelPoints(31, 13500);
+   			LevelPoints(32, 13500);
+    		LevelPoints(33, 13500);
+    		LevelPoints(34, 13500);
+    		LevelPoints(35, 13500);
+    		LevelPoints(36, 13500);
+    		LevelPoints(37, 13500);
+    		LevelPoints(38, 13500);
+    		LevelPoints(39, 13500);
+    		LevelPoints(40, 13500);
+    		LevelPoints(41, 13500);
+    		LevelPoints(42, 13500);
+			LevelPoints(43, 13500);
+    		LevelPoints(44, 13500);
+			LevelPoints(45, 13500);
+			LevelPoints(46, 13500);
+			LevelPoints(47, 13500);
+			LevelPoints(48, 13500);
+			LevelPoints(49, 13500);
+			LevelPoints(50, 13500);
+			LevelPoints(51, 13500);
+			LevelPoints(52, 13500);
+    		LevelPoints(53, 13500);
+    		LevelPoints(54, 13500);
+    		LevelPoints(55, 13500);
+    		LevelPoints(56, 13500);
+    		LevelPoints(57, 13500);
+   			LevelPoints(58, 13500);
+    		LevelPoints(59, 13500);
+    		LevelPoints(60, 13500);
+    		LevelPoints(61, 13500);
+    		LevelPoints(62, 13500);
+    		LevelPoints(63, 13500);
+    		LevelPoints(64, 13500);
+    		LevelPoints(65, 13500);
+    		LevelPoints(66, 13500);
+    		LevelPoints(67, 13500);
+    		LevelPoints(68, 13500);
+			LevelPoints(69, 13500);
+    		LevelPoints(70, 13500);
+			LevelPoints(71, 13500);
+			LevelPoints(72, 13500);
+			LevelPoints(73, 13500);
+			LevelPoints(74, 13500);
+			LevelPoints(75, 13500);
+			LevelPoints(76, 13500);
+			LevelPoints(77, 13500);
+    		LevelPoints(78, 13500);
+    		LevelPoints(79, 13500);
+    		LevelPoints(80, 13500);
+    		LevelPoints(81, 13500);
+   			LevelPoints(82, 13500);
+    		LevelPoints(83, 13500);
+    		LevelPoints(84, 13500);
+    		LevelPoints(85, 13500);
+    		LevelPoints(86, 13500);
+    		LevelPoints(87, 13500);
+    		LevelPoints(88, 13500);
+    		LevelPoints(89, 13500);
+    		LevelPoints(90, 13500);
+    		LevelPoints(91, 13500);
+    		LevelPoints(92, 13500);
+			LevelPoints(93, 13500);
+    		LevelPoints(94, 13500);
+			LevelPoints(95, 13500);
+			LevelPoints(96, 13500);
+			LevelPoints(97, 13500);
+			LevelPoints(98, 13500);
+			LevelPoints(99, 13500);
+			LevelPoints(100, 13500);
+		}
+		
+		LevelCap(100); 
+		
+		// Every claimable reward item MUST have the property 'RewardItemID' declared. It HAS TO be unique for each item. Should the ID be omitted or not unique, the reward WILL NOT be added.
+		// Items with the ID less than 2000 are considered 'legacy', meaning they were added prior introduction of claimable rewards in patch22. ALL NEW items MUST have IDs larger than 2000.
+		
+		ClaimableLevelUpRewards(2) 
+		{
+			Icon("Sola_reward_level_2_icon");
+			
+			Item("wpn_1hs_machete_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2000);
+			}
+			Item("Craftplan_wpn_1hs_machete_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2029);
+			}
+			Item("gameover_Foodbar_Bundle", 1)
+			{
+				RewardItemID(1000);
+			}
+		}
+		
+		ClaimableLevelUpRewards(3)
+		{
+			Icon("Sola_reward_level_3_icon");
+			
+			Item("wpn_1hb_hammer_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2001);
+			}
+			Item("Craftplan_wpn_1hb_hammer_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2030);
+			}
+			Item("Portable_Camouflage_3", 3)
+			{
+				RewardItemID(1001);
+			}
+		}
+		
+		ClaimableLevelUpRewards(4)
+		{
+			Icon("Sola_reward_level_4_icon");
+		
+			Item("wpn_2hs_polearm_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2002);
+			}
+			Item("Craftplan_wpn_2hs_polearm_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2031);
+			}
+			Item("Ammo_Arrow_Toxic", 10)
+			{
+				RewardItemID(1002);
+			}
+		}
+		
+		ClaimableLevelUpRewards(5)
+		{
+			Icon("Sola_reward_level_5_icon");
+			
+			Item("wpn_1hs_small_axe_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2003);
+			}
+			Item("Craftplan_wpn_1hs_small_axe_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2032);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1003);
+			}
+		}
+		
+		ClaimableLevelUpRewards(6)
+		{
+			Icon("Sola_reward_level_6_icon");
+			
+			Item("wpn_15hb_bat_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2004);
+			}
+			Item("Craftplan_wpn_15hb_bat_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2033);
+			}
+			Item("MusclePotion_Bundle", 1)
+			{
+				RewardItemID(1004);
+			}
+		}
+		
+		ClaimableLevelUpRewards(7)
+		{
+			Icon("Sola_reward_level_7_icon");
+			
+			Item("wpn_1hb_mace_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2005);
+			}
+			Item("Craftplan_wpn_1hb_mace_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2034);
+			}
+			Item("Large_Ammo_Firearm_Pistol", 100)
+			{
+				RewardItemID(1005);
+			}
+		}
+		
+		ClaimableLevelUpRewards(8)
+		{
+			Icon("Sola_reward_level_8_icon");
+			
+			Item("wpn_2hs_glaive_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2006);
+			}
+			Item("Craftplan_wpn_2hs_glaive_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2035);
+			}
+			Item("Shrapnel_Trap_Upgrade5", 5)
+			{
+				RewardItemID(1006);
+			}
+		}
+		
+		ClaimableLevelUpRewards(9)
+		{
+			Icon("Sola_reward_level_9_icon");
+
+			Item("wpn_15hs_katana_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2007);
+			}
+			Item("Craftplan_wpn_15hs_katana_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2036);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T1", 30)
+			{
+				RewardItemID(1007);
+			}
+		}
+		
+		ClaimableLevelUpRewards(10)
+		{
+			Icon("Sola_reward_level_10_icon");
+			
+			Item("Weapon_Firearm_Pistol_Shock_TowerRaid", 1)
+			{
+				RewardItemID(2008);
+			}
+			Item("KuaiDagger_bundle", 1)
+			{
+				RewardItemID(1008);
+			}
+		}
+		
+		ClaimableLevelUpRewards(11)
+		{
+			Icon("Sola_reward_level_11_icon");
+		
+			Item("wpn_1hs_machete_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2009);
+			}
+			Item("Craftplan_wpn_1hs_machete_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2037);
+			}
+			Item("Gunslinger_Dynamite", 1)
+			{
+				RewardItemID(1009);
+			}
+		}
+		
+		ClaimableLevelUpRewards(12)
+		{
+			Icon("Sola_reward_level_12_icon");
+			
+			Item("wpn_1hb_hammer_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2010);
+			}
+			Item("Craftplan_wpn_1hb_hammer_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2038);
+			}
+			Item("Ammo_Arrow_Shock", 10)
+			{
+				RewardItemID(1010);
+			}
+		}
+		
+		ClaimableLevelUpRewards(13)
+		{
+			Icon("Sola_reward_level_13_icon");
+			
+			Item("wpn_2hs_polearm_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2011);
+			}
+			Item("Craftplan_wpn_2hs_polearm_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2039);
+			}
+			Item("Large_Ammo_Firearm_SMG", 250)
+			{
+				RewardItemID(1011);
+			}
+		}
+		
+		ClaimableLevelUpRewards(14)
+		{
+			Icon("Sola_reward_level_14_icon");
+		
+			Item("wpn_1hs_small_axe_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2012);
+			}
+			Item("Craftplan_wpn_1hs_small_axe_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2040);
+			}
+			Item("Bundle_Shurikens", 1)
+			{
+				RewardItemID(1012);
+			}
+		}
+		
+		ClaimableLevelUpRewards(15)
+		{
+			Icon("Sola_reward_level_15_icon");
+			
+			Item("wpn_15hb_bat_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2013);
+			}
+			Item("Craftplan_wpn_15hb_bat_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2041);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1013);
+			}
+		}
+		
+		ClaimableLevelUpRewards(16)
+		{
+			Icon("Sola_reward_level_16_icon");
+			
+			Item("wpn_1hb_mace_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2014);
+			}
+			Item("Craftplan_wpn_1hb_mace_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2042);
+			}
+			Item("RagePotion_Bundle", 1)
+			{
+				RewardItemID(1014);
+			}
+		}
+		
+		ClaimableLevelUpRewards(17)
+		{
+			Icon("Sola_reward_level_17_icon");
+			
+			Item("wpn_2hs_glaive_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2015);
+			}
+			Item("Craftplan_wpn_2hs_glaive_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2043);
+			}
+			Item("Large_Ammo_Firearm_Rifle", 200)
+			{
+				RewardItemID(1015);
+			}
+		}
+		
+		ClaimableLevelUpRewards(18)
+		{
+			Icon("Sola_reward_level_18_icon");
+			
+			Item("wpn_15hs_katana_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2016);
+			}
+			Item("Craftplan_wpn_15hs_katana_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2044);
+			}
+			Item("Weapon_Firearm_Pistol_Toy_1", 1)
+			{
+				RewardItemID(1016);
+			}
+		}
+		
+		ClaimableLevelUpRewards(19)
+		{
+			Icon("Sola_reward_level_19_icon");
+			
+			Item("Weapon_Firearm_Pistol_Ice_TowerRaid", 1)
+			{
+				RewardItemID(2017);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T2", 25)
+			{
+				RewardItemID(1017);
+			}
+		}
+		
+		ClaimableLevelUpRewards(20)
+		{
+			Icon("Sola_reward_level_20_icon");
+			
+			Item("Weapon_Firearm_Pistol_SilencedPistol", 1)
+			{
+				RewardItemID(1018);
+			}
+		}
+		
+		ClaimableLevelUpRewards(21)
+		{
+			Icon("Sola_reward_level_21_icon");
+			
+			Item("wpn_1hs_machete_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2018);
+			}
+			Item("Craftplan_wpn_1hs_machete_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2045);
+			}
+			Item("Bundle_Grenades_Military", 1)
+			{
+				RewardItemID(1019);
+			}
+		}
+		
+		ClaimableLevelUpRewards(22)
+		{
+			Icon("Sola_reward_level_22_icon");
+			
+			Item("wpn_1hb_hammer_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2019);
+			}
+			Item("Craftplan_wpn_1hb_hammer_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2046);
+			}
+			Item("Large_Ammo_Firearm_Shotgun", 50)
+			{
+				RewardItemID(1020);
+			}
+		}
+		
+		ClaimableLevelUpRewards(23)
+		{
+			Icon("Sola_reward_level_23_icon");
+			
+			Item("wpn_2hs_polearm_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2020);
+			}
+			Item("Craftplan_wpn_2hs_polearm_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2047);
+			}
+			Item("TowerRaid_AirdropBundle", 1)
+			{
+				RewardItemID(1021);
+			}
+		}
+		
+		ClaimableLevelUpRewards(24)
+		{
+			Icon("Sola_reward_level_24_icon");
+			
+			Item("wpn_1hs_small_axe_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2021);
+			}
+			Item("Craftplan_wpn_1hs_small_axe_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2048);
+			}
+			Item("KeyCraft_SpecialInfected_Token_T3", 20)
+			{
+				RewardItemID(1022);
+			}
+		}
+		
+		ClaimableLevelUpRewards(25)
+		{
+			Icon("Sola_reward_level_25_icon");
+			
+			Item("BadOfficeDay_bundle", 1)
+			{
+				RewardItemID(1023);
+			}
+			Item("wpn_15hb_bat_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2022);
+			}
+			Item("Craftplan_wpn_15hb_bat_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2049);
+			}
+			Item("BadOfficeDay_bundle", 1)
+			{
+				RewardItemID(1023);
+			}
+		}
+		
+		ClaimableLevelUpRewards(26)
+		{
+			Icon("Sola_reward_level_26_icon");
+			
+			Item("wpn_1hb_mace_TR_fire_Exotic", 1)
+			{
+				RewardItemID(2023);
+			}
+			Item("Craftplan_wpn_1hb_mace_TR_Blueprint_fire_Common", 1)
+			{
+				RewardItemID(2050);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1024);
+			}
+		}
+		
+		ClaimableLevelUpRewards(27)
+		{
+			Icon("Sola_reward_level_27_icon");
+			
+			Item("wpn_2hs_glaive_TR_ice_Exotic", 1)
+			{
+				RewardItemID(2024);
+			}
+			Item("Craftplan_wpn_2hs_glaive_TR_Blueprint_ice_Common", 1)
+			{
+				RewardItemID(2051);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1025);
+			}
+		}
+		
+		ClaimableLevelUpRewards(28)
+		{
+			Icon("Sola_reward_level_28_icon");
+			
+			Item("wpn_15hs_katana_TR_shock_Exotic", 1)
+			{
+				RewardItemID(2025);
+			}
+			Item("Craftplan_wpn_15hs_katana_TR_Blueprint_shock_Common", 1)
+			{
+				RewardItemID(2052);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1026);
+			}
+		}
+		
+		ClaimableLevelUpRewards(29)
+		{
+			Icon("Sola_reward_level_29_icon");
+			
+			Item("Weapon_Firearm_Pistol_Fire_TowerRaid", 1)
+			{
+				RewardItemID(2026);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1027);
+			}
+		}
+		
+		ClaimableLevelUpRewards(30)
+		{
+			Icon("Sola_reward_level_30_icon");
+			
+			Item("Collectable_Outfit_Breach", 1)
+			{
+				RewardItemID(2027);
+			}
+			Item("wpn_specialist_TR_white_Exotic", 1)
+			{
+				RewardItemID(2028);
+			}
+			Item("Craftplan_wpn_specialist_TR_Blueprint_white_Common", 1)
+			{
+				RewardItemID(2053);
+			}
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1028);
+			}
+		}
+		
+		ClaimableLevelUpRewards(31,-1)	// If the reward has to level values declared it will be treated as a repeatable one.
+		{
+			Icon("Sola_reward_level_31_icon");
+			
+			IsRepeatable(true);
+			Item("TowerRaid_LootPack", 1)
+			{
+				RewardItemID(1029);
+			}
+		}
+		
+		NoInfoPanel();		
+		ShowProgressionRewards();
+		MenuInfo("&Agent_OnlineVendorSecondary1&", "&Agent_OnlineVendorSecondary1_desc&");
+		ChaptersMenuInfo("&Sola_Bounties_Tile_Header&", "&Sola_Bounties_Tile_Chapter_Header&", "&Sola_Bounties_Tile_Fluff&");
+		ChapterColor("DDC32D");
+		
+		//AgentDailyType("AgentDuty");
+		//DailyBountiesLimit(5, "Coop", 0);
+		TutorialName("Tutorial_RaidHub_ProgressionRewards");
+		DailyBountiesLimit(5);
+		BountiesWeeklyShowLimit(5);
+
+		BackgroundTexture("menu_background_OnlineVendorSecondary");
+
+		// Agent Icons.
+		AgentIconRegular("map_Agent_OnlineVendorSecondary");
+		//AgentIconRegular("token_event5");
+
+		// Rank icons.
+		RankRegularTexture("Agent_OnlineVendorSecondary1_rank_regular");
+		RankPrestigeTexture("Agent_OnlineVendorSecondary1_rank_regular");
+		RankLevelRequiredForPrestigeTexture(40);
+		RankPrestigeReputationProgressbarColor("DDC32D");
+
+		// Weekly bounties
+		BountiesWeeklyBackgroundAvailableIcon("bounty_weekly_available_event1");
+		BountiesWeeklyBackgroundTrackedIcon("bounty_weekly_active_event1");
+
+		// Daily bounties
+		BountiesDailyBackgroundTrackedIcon("bounty_slot_active_event1");
+		BountiesDailyDefaultForegroundIcon("bounty_event1");
+		BountiesIconForegroundColorTracked("e18a3d");
+
+		// Hud & Bigmsg.
+		HudWeeklyBountyIcon("bounty_event1");
+		HudWeeklyBountyBackgroundIcon("hud_pattern_event1");
+		HudBigmsgXpIcon("bigmsg_reward_agentxp_OnlineVendorSecondary1");
+		HudRankRegularTextureLevelUp("RankUp_OnlineVendorSecondary_bigmsg_icon");
+		HudBigmsgRewardIconScale(1.22);
+		
+		Resource("Token_TowerRaid_Currency");
+		AgentBountyIcon("map_Agent_OnlineVendorSecondary");
+		
+		Level(1)
+		{
+			
+			Item("Bundle_ConfettiGrenades", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 300);
+				SortIndex(1);
+			}
+			
+			Item("Bundle_MeatDecoy", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 210);
+				SortIndex(1);
+			}
+			
+			Item("InfectedTokens_Uncommon_Bundle", "Resources")
+			{
+				Cost("Token_TowerRaid_Currency", 300);
+				SortIndex(1);
+			}
+			
+			Item("MutationSamples_Bundle", "Resources")
+			{
+				Cost("Token_TowerRaid_Currency", 300);
+				SortIndex(1);
+			}
+			
+			Item("wpn_15hb_b_NocturnalUnique", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("wpn_2hs_f_Unique", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("wpn_15hb_c_Unique", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 350);
+				SortIndex(1);
+			}
+		}
+		
+		Level(2)
+		{
+			
+			Item("gameover_Foodbar_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+		}
+		
+		Level(3)
+		{
+			Item("wpn_2hb_g_pktwitch_Artifact", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 800);
+				SortIndex(1);
+			}
+			
+			Item("wpn_15hs_l_NocturnalArtifact", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 800);
+				SortIndex(1);
+			}
+		}
+		Level(4)
+		{
+			Item("Nightrunners_Safety_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 700);
+				SortIndex(1);
+			}
+			
+			Item("Nightrunners_Healing_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 700);
+				SortIndex(1);
+			}
+			
+		}
+		
+		Level(5)
+		{	
+			Item("wpn_1hs_mach_w_fpp_timeout_Legendary", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+		}
+
+		Level(6)
+		{
+			Item("InfectedTokens_Rare_Bundle", "Resources")
+			{
+				Cost("Token_TowerRaid_Currency", 800);
+				SortIndex(1);
+			}
+		}
+
+		Level(7)
+		{
+			
+			Item("TowerRaid_Bundle_Bullet_Arrow_Shock", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("TowerRaid_Bundle_Bullet_Arrow_DeepFreeze", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1500);
+				SortIndex(1);
+			}
+			
+			Item("TowerRaid_Bundle_Bullet_Arrow_Explosive", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			
+			Item("RagePotion_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("ToughnessPotion_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("RegenerationPotion_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("MusclePotion_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("Immunity_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+			
+			Item("Stamina_Bundle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1200);
+				SortIndex(1);
+			}
+		}
+
+		Level(8)
+		{
+			
+			Item("TowerRaid_Bundle_Bullet_Bolt_Fire", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			
+			Item("TowerRaid_Bundle_Bullet_Bolt_Explosive", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+			
+			Item("TowerRaid_Bundle_Bullet_Bolt_Toxic", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			
+			Item("TowerRaid_AirdropBundle", "Resources")
+			{
+				Cost("Token_TowerRaid_Currency", 1700);
+				SortIndex(1);
+			}
+			
+			Item("wpn_1hs_TR_black_retro_Legendary", "Weapons")
+
+
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}
+		}
+		
+		Level(11)
+		{
+			Item("Outfitset_Tank_TorsoAddon_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Tank_Gloves_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Tank_Head_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Tank_Shoes_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Tank_Legs_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Tank_Torso_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_TorsoAddon_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_Gloves_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_Head_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_Shoes_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_Legs_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_Healer_Torso_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+		}
+		
+		Level(12)
+		{
+			Item("Outfitset_RangedDPS_TorsoAddon_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_RangedDPS_Gloves_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_RangedDPS_Head_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_RangedDPS_Shoes_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_RangedDPS_Legs_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_RangedDPS_Torso_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_TorsoAddon_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_Gloves_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_Head_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_Shoes_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_Legs_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("Outfitset_MeleeDPS_Torso_Tier9_Orange", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 500);
+				SortIndex(1);
+			}
+			
+			Item("wpn_2hs_TR_blue_wave_Legendary", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+		}
+
+		Level(13)
+		{
+			
+			Item("InfectedTokens_Unique_Bundle", "Resources")
+			{
+				Cost("Token_TowerRaid_Currency", 1300);
+				SortIndex(1);
+			}
+			
+		}
+
+		Level(15)
+		{
+			Item("Bundle_ExplodingThrowingKnife", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+			
+			Item("Bundle_ToxicThrowingKnife", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+			
+			Item("Bundle_BleedThrowingKnife", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+			
+			Item("Bundle_ShockThrowingKnife", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+			
+			Item("wpn_axdb_TR_yellow_Legendary", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 1400);
+				SortIndex(1);
+			}
+		}
+
+		Level(16)
+		{
+			Item("wpn_ranged_TR_blue_camo_Legendary", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}	
+		}
+		
+		Level(17)
+		{
+			Item("Gunslinger_Dynamite", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2200);
+				SortIndex(1);
+			}
+		}
+		
+		Level(18)
+		{
+			Item("wpn_1hs_mach_z_NocturnalLegendary", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2000);
+				SortIndex(1);
+			}	
+		}
+
+		Level(19)
+		{
+			Item("Bundle_Shurikens", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2700);
+				SortIndex(1);
+			}
+			
+			Item("Medium_Ammo_Firearm_Pistol", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2250);
+				SortIndex(1);
+			}
+			
+			Item("Medium_Ammo_Firearm_SMG", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2500);
+				SortIndex(1);
+			}
+			
+			Item("Medium_Ammo_Firearm_Rifle", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 2750);
+				SortIndex(1);
+			}
+			
+			Item("Medium_Ammo_Firearm_Shotgun", "Accessories")
+			{
+				Cost("Token_TowerRaid_Currency", 3000);
+				SortIndex(1);
+			}
+			
+			Item("wpn_axdb_TR_green_Exotic", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2500);
+				SortIndex(1);
+			}
+		}
+
+		Level(21)
+		{
+			
+			Item("TowerRaid_LootPack", "Resources")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 4000);
+				SortIndex(1);
+			}
+			
+			Outfit("CarrierLeader", "Appearance")
+			{
+				Unique();
+				Cost("Token_TowerRaid_Currency", 4000);
+				SortIndex(1);
+			}
+			
+			Item("wpn_1hs_TR_celtic_Exotic", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2500);
+				SortIndex(1);
+			}
+		}
+
+		Level(23)
+		{
+			
+			Item("wpn_15hs_b_fpp_redkatana_Exotic", "Weapons")
+			{
+				Cost("Token_TowerRaid_Currency", 2500);
+				SortIndex(1);
+			}
+			
+		}
+		
+    }
+	
+}
