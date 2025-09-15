@@ -14,7 +14,7 @@ sub PlayerVariables()
 
     Param("PerfectBlockTimingEnd", "0.15");
 
-    Param("MeleeWpnDurabilityMulReduce", "0.00");
+    Param("MeleeWpnDurabilityMulReduce", "0");
 
     //Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
    //Param("HealthRegenerationMul", "DefaultRegenHardMul");
@@ -76,9 +76,6 @@ sub PlayerVariables()
     Param("PushAttackAdvancedStaminaCost", "0.4");
     Param("AdvancedStaminaRegenerationRelative", "0.75");
     Param("AdvancedStaminaRegenerationRelativeOutsideDanger", "0.75");
-
-    Param("OpenWorldXPModifier", "1.5");
-    Param("OpenWorldNightXPModifier", "2.0");
 
     Param("EquipmentSlotsCount", "52");          //total (on player) inventory slots for equipment
     Param("ConsumableSlotsCount", "52");         //total (on player) inventory slots for consumables

@@ -1,0 +1,10 @@
+import "player_variables.scr"
+
+sub PlayerVariables()
+{
+    use main();
+	
+	Param("SlowMoProbability", "0.0");
+	Param("TowerRaid_FlashlightIntensityMul", "0.35");
+	Param("MeleeWpnDurabilityMulReduce", "0");
+}

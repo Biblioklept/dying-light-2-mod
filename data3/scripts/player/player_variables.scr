@@ -27,6 +27,11 @@ sub main()
 	Param("WallRunSideMinSideInput", "0.0");
 	Param("WallrunHoldJumpTime", "0.0");
 	
+    Param("ApplyBuffOnEnemyKilled", "false");
+    Param("BuffNameOnEnemyKilled", "WinterBoon_Momentum");
+
+    Param("BuffNameApplyBuffInstant", "");
+    Param("WeaponNameApplyFreeStaimnaUsage", "");
 	
 	Param("WallRunSideMaxSpeed", "7.0");
     Param("WallRunSideMinSpeed", "4.5");
@@ -384,10 +389,10 @@ sub main()
     Param("MinStaminaLevelFromHit", "0.0");
     Param("StaminaTimeToRegenerateOnEmpty", "1.5");
     Param("AdvancedStaminaTimeToRegenerateOnEmpty", "0.0");
-    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.2");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
-    Param("StaminaTimeToRegenerate", "0.9");                 // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.0");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
+    Param("StaminaTimeToRegenerate", "0.6");                 // time after which stamina starts to regenerate if player still has some stamina left
     Param("AdvancedStaminaTimeToRegenerate", "3.0");
-    Param("StaminaTimeToRegenerateAfterParkour", "0.85");     // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerateAfterParkour", "0.6");     // time after which stamina starts to regenerate if player still has some stamina left
     Param("StaminaRegeneration", "1.5");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
 	Param("StaminaRegenerationOutsideDanger", "1.5");
     Param("StaminaRegenerationRelative", "2.0");
@@ -451,14 +456,14 @@ sub main()
     Param("MoveSprintStaminaConsumption", "0.0");
     Param("MoveSpeedFitnessFactor", "0.6");
     Param("MoveSpeedFitnessFactorTime", "5.0");
-    Param("XrayEffectProbability", "0.25");
+    Param("XrayEffectProbability", "0.5");
     Param("XRayVisEffectRadius", "0.7");
     Param("XRayVisEffectDuration", "1.5");
     Param("XRayEffectDuration", "0.3");  
     Param("EnableXray", "1");
     Param("EnableXRayEffectOnAllHits", "false");
     Param("DisableXRaySlowMoLimit", "false");
-    Param("SlowMoProbability", "0.5");
+    Param("SlowMoProbability", "1.0");
 	Param("SlowMoLastGroupTime", "30.0");
 	Param("GroupOfEnemiesCount", "3.0");	
     Param("SkipObstacleMechanimsOnEnemyProb", "0.4");
@@ -618,18 +623,18 @@ sub main()
     Param("AfterDeathHealthFactor", "Player_AfterDeathHealth");   // Part of MaxHealth restored after respawn
     Param("BulletAccuracyFactor", "1.0");
 	Param("UnlockedLoadoutsCount", "4.0");
-    Param("EquipmentSlotsCount", "16");          //total inventory slots for equipment
+    Param("EquipmentSlotsCount", "32");          //total inventory slots for equipment
     Param("VisibleEquipmentSlotsCount", "4");   //how many "quick slots" player has in hud wheels (must be < EquipmentSlotsCount)
-    Param("ConsumableSlotsCount", "16");         //total inventory slots for consumables
+    Param("ConsumableSlotsCount", "32");         //total inventory slots for consumables
     Param("VisibleConsumableSlotsCount", "4");  //how many "quick slots" player has in hud wheels (must be < ConsumableSlotsCount)
     Param("RestrictedEquipmentSlotsCount", "0"); // UV Flashlight, Binoculars, RopeHook. Value is increased from skills that grants thoes equipments
-	Param("QuickSlotsCount", "24");              //total inventory slots for weapons
+	Param("QuickSlotsCount", "48");              //total inventory slots for weapons
     Param("VisibleQuickSlotsCount", "4");       //how many "quick slots" player have on hud wheels (must be < QuickSlotsCount)
     Param("InventorySize", "0");
-    Param("ItemsInventorySize", "489");
-    Param("MaxInventorySize", "8");
-    Param("AmmoSlotsCount", "12"); // limited max is 100
-    Param("StorageAmmoSlotsCount", "100");
+    Param("ItemsInventorySize", "882");
+    Param("MaxInventorySize", "16");
+    Param("AmmoSlotsCount", "100"); // limited max is 100
+    Param("StorageAmmoSlotsCount", "999");
     Param("SwimMoveSpeed", "2.5");
     Param("SwimSprintSpeed", "4.0");
     Param("SwimImpulsSpeed", "2.0");
@@ -648,9 +653,9 @@ sub main()
     Param("MoveForwardMaxSpeed", "3.5");                // DL: 3.5, PREPROD: 3.0
     Param("MoveBackwardMinSpeed", "0.5");
     Param("MoveBackwardMaxSpeed", "2.5");             // DL: 2.5, PREPROD: 2.0
-	Param("StorageEquipmentSlotsCount", "100");
-    Param("StorageConsumamblesSlotsCount", "100");
-    Param("StorageOtherSlotsCount", "320");
+	Param("StorageEquipmentSlotsCount", "200");
+    Param("StorageConsumamblesSlotsCount", "200");
+    Param("StorageOtherSlotsCount", "500");
 
     Param("ImmortalityBuff", "false");
 	
@@ -757,7 +762,7 @@ sub main()
 	Param("GraplePullMinAngle", "-40.0");
 	Param("GraplePullMidAngle", "-10.0");
 	Param("GraplePullMaxAngle", "60.0");
-	Param("GraplePullScaleDownFactor", "1.13");
+	Param("GraplePullScaleDownFactor", "1.0");
 	
     Param("GrappleHookLevel", "0");
 
@@ -808,7 +813,7 @@ sub main()
 	Param("ChargeDamageStaminaMul", "1.5");
     Param("ChargeAutoReleaseTime", "-1.0"); // to restore auto release for power attack, set 1.2 here
     Param("ChargeHoldDuration", "0.35");
-    Param("ChargeWeaponDurabilityMul", "0");
+    Param("ChargeWeaponDurabilityMul", "1.0");
 	Param("MeleeWpnDurabilityMulReduce", "0");
 	Param("ChargeSpinCrouchOffset", "-0.2");
 	Param("ChargeSpinAdditionalRange", "1.0");
@@ -984,8 +989,8 @@ sub main()
     Param("MaxTackleInRow", "0");
 	// BLOCK RUN
 	Param("BlockRunMinTimeInSprint", "-1.0");
-	Param("BlockRunStaminaUsage", "0.50");
-	Param("BlockRunDamageResistanceFactor", "0.50");
+	Param("BlockRunStaminaUsage", "0.25");
+	Param("BlockRunDamageResistanceFactor", "0.25");
 	
     // tackle prototype in PH
     Param("TackleHit", "0");
@@ -1045,7 +1050,8 @@ sub main()
 
     // Charged Blast Attack
     Param("ChargedBlastAttackRange", "6.0");
-    Param("ChargedBlastAttackHalfAngle", "60.0");    
+    Param("ChargedBlastAttackHalfAngle", "60.0");
+	
     // NAGE WAZA
     Param("NageWazaFront", "false");
     Param("NageWazaCooldown", "-1.0");
@@ -1111,7 +1117,7 @@ sub main()
     // THROWING SKILL - multi
     Param("ThrowingMultiSkillEnabled", "1");
     Param("ThrowingMultiSkillCooldown", "-1.0");
-    Param("ThrowingMultiSkillMarkingDelay", "0.8");
+    Param("ThrowingMultiSkillMarkingDelay", "0.2");
     Param("ThrowingMultiSkillMaxEnemies", "1.0");
     Param("ThrowingMultiSkillRange", "40.0");
     Param("ThrowingMultiSkillAutoAimAngle", "2.0");
@@ -1353,7 +1359,7 @@ sub main()
 	Param("InfectionPostprocessMaxValue", "0.7");
     Param("InfectionChangePerSecond", "0.0");
     Param("InfectionPercentageChangePerSecond", "0.0");
-    Param("PlayersAntizinCapacity", "1.0");
+    Param("PlayersAntizinCapacity", "0.8");
     Param("PlayersAntizinCapacityNightmare", "0.8");
     Param("PlayersAntizinCapacityCombatBoost", "0.0");
     Param("PlayersAntizinCapacityParkourBoost", "0.0");
@@ -1489,6 +1495,13 @@ sub main()
 	
 	Param("AccuracyAngleInWalk", "1.0"); //hip fire
 	Param("AccuracyBlendTimInWalk", "0.5");
+
+    Param("AidenSmashKillBuffName", "");
+    Param("AidenSmashKillBuffDamageMul", "0.0");
+    Param("AidenSmashKillBuffTargetType", "");
+
+    Param("AidenSmashKillFrenzyBuffName", "");
+    Param("AidenSmashKillFrenzyBuffCountToApply", "0.0");
 	
     Param("CrouchAccuracyGainFactor", "1.0");
     Param("BestTargetMeleeRange", "4.0"); 
@@ -1519,6 +1532,7 @@ sub main()
     Param("PowerAttack2h15hFullBodyCutProbability", "0.3");
     Param("PowerAttack1hFullBodyCutProbability", "0.3");
     Param("ChargeSpinFullBodyCutProbability", "0.6");
+    Param("AxeLimbCutProbability", "0.0");
 	
 	Param("GrenadeBlastIndicatorRange", "15.0");
 	Param("ThrowableExplosiveBlastIndicatorRenge", "15.0");
@@ -1603,7 +1617,9 @@ sub main()
     Param("JudoMasterEnabled", "false");
     Param("LowStaminaAttackEnabled", "false");
     Param("LowStaminaAttackResetsRegeneration", "false");
-	Param("ExhaustedAttackIsPush", "true");	
+	Param("ExhaustedAttackIsPush", "true");
+	Param("ExhaustedAttackIsPowerAttack", "false");
+	Param("ExhaustedPowerAttackDamageMul", "0.0");
 	Param("PushAttackStaminaCost", "0.1");
     Param("PushAttackAdvancedStaminaCost", "0.0");
 	Param("PushLookTimeMul", "0.5");
@@ -1903,6 +1919,9 @@ sub main()
     Param("AIDamageVulnerability", "0.0");
     Param("StaminaDamageMul", "1.0");
 
+    Param("StaminaDamageMulForSpecificItem", "0.0");
+    Param("StaminaDamageMulForSpecificItemName", "");
+
     Param("InfectionResistanceFactor", "0.0");
 
     Param("ParkourKickEnabled", "true");
@@ -2051,8 +2070,8 @@ sub main()
 
     Param("LowerLevelRandomModProcProbMul", "0.5");
 
-    Param("OpenWorldXPModifier", "2.0");
-    Param("OpenWorldNightXPModifier", "4.0");
+    Param("OpenWorldXPModifier", "1.0");
+    Param("OpenWorldNightXPModifier", "1.0");
 
     Param("PostReviveInvisibility", "false");
     Param("PostReviveInvincibility", "false");
@@ -2238,6 +2257,8 @@ sub main()
     Param("WeaponAffixStunChance", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
     Param("WeaponAffixStunChanceNight", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
     Param("WeaponAffixStunDuration", "3.0");
+	
+	Param("WeaponAffixPushBackChance", "0.0");
 
     Param("AutoStaminaDamageTierMul", "1.0");
 
@@ -2415,6 +2436,7 @@ sub main()
     Param("TowerRaid_DamageResistanceFactor", "0.0");
     Param("StaminaFreezeOnDecapitationDuration", "0.0");
     Param("MaxHealthPercentHealOnDecapitation", "0.0");
+	Param("MaxHealthPercentHealOnDecapitationWithAxe", "0.0");
     Param("TowerRaid_NormalAdditionalRandomModifiers", "0.0");
     Param("TowerRaid_EliteAdditionalRandomModifiers", "0.0");
     Param("TowerRaid_LiteAdditionalRandomModifiers", "0.0");
@@ -2471,6 +2493,8 @@ sub main()
     Param("WeaponAfterBoostStaminaRegain", "0.25");
     Param("DropkickDamageIncreaseOnStaminaPercentageMissing", "0");
     Param("DropkickPhysicalDamageBoost", "0");
+	
+	Param("DamageIncreaseOnStaminaPercentageMissing", "0");
 
     Param("LegendLevelGainMultiplier", "0.0");
     Param("TowerRaid_StatusLevel", "1.0");
@@ -2482,9 +2506,10 @@ sub main()
 
     Param("TowerRaid_CrowdDamageMitigationRadius", "3.0");
     Param("TowerRaid_CrowdDamageMitigationMinReductionCount", "3.0");
-    Param("TowerRaid_CrowdDamageMitigationMinReductionMul", "0.25");
+    Param("TowerRaid_CrowdDamageMitigationMinReductionMul", "0.20");
     Param("TowerRaid_CrowdDamageMitigationMaxReductionCount", "6.0");
-    Param("TowerRaid_CrowdDamageMitigationMaxReductionMul", "0.5");
+    Param("TowerRaid_CrowdDamageMitigationMaxReductionMul", "0.4");
+
 	Param("BleedingOnPowerAttackChance", "0.0");
 	Param("BleedingOnPowerAttackDuration", "10");
 	Param("BleedingOnPowerAttackLevel", "3");
@@ -2497,8 +2522,10 @@ sub main()
 	Param("NoArrowConsumptionSoundEvent", "weapon_no_ammo_consumption_bow");
 	Param("NoBoltConsumptionSoundEvent", "weapon_no_ammo_consumption_crossbow");
 	Param("NoBulletConsumptionSoundEvent", "weapon_no_ammo_consumption_firearms");
+	Param("WeaponCharmEnemyKilledSoundEvent", "");
+	Param("WeaponCharmPushBackEffectSoundEvent", "");
 	
-	Param("FirearmsMaxHealthPoolPercentageBasedDamageFactor", "3.5");			
+	Param("FirearmsMaxHealthPoolPercentageBasedDamageFactor", "3.5");
 
 	Param("EnemyAffectedByBurningDamageMulFactor", "0.0");
 
@@ -2565,4 +2592,6 @@ sub main()
     Param("Charm_CeremonialDaggerItemName", "wpn_1hs_knife_x");
 
     // Charm related END
+	
+	Param("MascotHammerItemName", "wpn_1hb_ham_u_mascot");
 }

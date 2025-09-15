@@ -10,7 +10,7 @@ sub PlayerVariables()
 	
 	Param("WeaponStaminaUsageMul", "0.50");
     Param("StaminaRegenerationMul", "1.25");
-    Param("MeleeWpnDurabilityMulReduce", "0.00");
+    Param("MeleeWpnDurabilityMulReduce", "0");
     Param("ThrownMeleeWeaponHitSeverity", "Heavy"); // Light, Medium, Heavy
     Param("ThrownMeleeWeaponMoveSeverity", "Heavy"); // Light, Medium, Heavy
 
@@ -18,9 +18,6 @@ sub PlayerVariables()
 	Param("SpecialMoveDropKickAbusePenaltyCount", "2.0"); // max time the AI will avoid the move
 	
 	Param("MaxDodgesInSequence", "4");
-
-    Param("OpenWorldXPModifier", "1.5");
-    Param("OpenWorldNightXPModifier", "2.0");
 
     Param("EquipmentSlotsCount", "52");          //total (on player) inventory slots for equipment
     Param("ConsumableSlotsCount", "52");         //total (on player) inventory slots for consumables

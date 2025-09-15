@@ -1,0 +1,63 @@
+import "EngineDefs.mth"
+import "common.ppfx"
+import "blood_hit.ppfx"
+
+sub sprint()
+{
+	If("f_game_player_sprint")
+	{
+		PushMarker("Player sprint");
+			SetRenderTargets(S_SDR_A, "");//srgb write causes banding
+					Mesh("player_sprint.msh", "stencil_clear_mask.mat", "std");
+		PopMarker();
+	}
+}
+
+sub contamination()
+{
+	If("f_contamination_pp_on")
+	{
+		PushMarker("Chemical Contamination");
+			SetRenderTargets(S_SDR_A + " f:srgb", "");
+				Mesh("radial_uv_postproces_short.msh", "chemical_contamination.mat", "std");
+		PopMarker();
+	}
+}
+
+sub poissoned()
+{
+	If("f_pp_color_grading_effect_poisoned")
+	{
+		PushMarker("Infection PP");
+			SetRenderTargets(S_SDR_A, "");//srgb write causes banding
+					Mesh("tri_screen.msh", "player_state_inf.mat", "std");
+		PopMarker();
+	}
+}
+
+sub bloody_eye()
+{
+	If("f_game_player_blood_eye")
+	{
+		PushMarker("Critical Hit Eye Closure");
+			SetRenderTargets(S_PP_ZBUFFER + " " + S_SDR_A + " f:srgb", "");
+				Mesh("tri_screen.msh", "stencil_clear_mask.mat", "std");
+		PopMarker();				
+	}
+}
+
+sub last()
+{
+	If("f_pp_game_pp_on")
+	{
+		use sprint();
+
+		use contamination();
+
+		use blood_hit_resolve();
+
+		use poissoned();
+
+		use bloody_eye();
+	}	
+}
