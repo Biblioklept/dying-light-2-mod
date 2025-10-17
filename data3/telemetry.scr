@@ -1,4 +1,0 @@
-sub main()
-{
-	telemetry_enabled(false);
-}

@@ -39,7 +39,6 @@ sub PlayerVariables()
     Param("AdvancedStaminaRegenerationRelative", "0.50");
     Param("AdvancedStaminaRegenerationRelativeOutsideDanger", "0.50");
 
-
     Param("EquipmentSlotsCount", "52");          //total (on player) inventory slots for equipment
     Param("ConsumableSlotsCount", "52");         //total (on player) inventory slots for consumables
     Param("QuickSlotsCount", "72");              //total (on player) inventory slots for weapons

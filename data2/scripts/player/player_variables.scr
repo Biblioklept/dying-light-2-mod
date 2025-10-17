@@ -581,7 +581,7 @@ sub main()
 	Param("ThrowablesSpeedFactor", "0.70");	
 
 	Param("FOVCorrection", "0.0");
-    Param("CameraDefaultFOV", "57.0");
+    Param("CameraDefaultFOV", "73.0");
     Param("CameraDynamicFOV","0.0");
     Param("BulletHitMissEffects", "1.0");
     Param("HideWeaponsDuringSprintDelay", "6.0");
